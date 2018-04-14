@@ -25,7 +25,15 @@ public class PanelRA extends javax.swing.JPanel {
     public int right;
 
     /**
-     * Creates new form Panel
+     * 
+     * @param result
+     * @param operation
+     * @param number
+     * @param isFirst
+     * @param up
+     * @param down
+     * @param left
+     * @param right 
      */
     public PanelRA(int result, String operation, int number, Boolean isFirst, int up, int down, int left, int right) {
         initComponents();

@@ -8,14 +8,15 @@ import java.util.Random;
  * @author Andres Obando
  */
 public class KenKen_Board {
-    private ArrayList<ArrayList<Integer>> board;
+    public ArrayList<ArrayList<Integer>> board;
     private ArrayList<ArrayList<Integer>> transverseBoard;
-    private int[][] group;
+    public int[][] group;
     private final Random random = new Random();
     private static int actual;
-    
+    public int size;
     // Constructor
     public KenKen_Board(int size) {
+        this.size=size;
         initializeBoard(size);
         fillBoards();
         group = new int[size + 6][size + 6];

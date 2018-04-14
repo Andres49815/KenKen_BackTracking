@@ -22,10 +22,7 @@ public class MainMenu extends javax.swing.JFrame {
         
         Model.KenKen_Board KenKen = new KenKen_Board(5);
         KenKen.print();
-//        
-//        panel.setBounds(200, 200, 200, 200);
-//        this.add(panel);
-        tablaBase.ver_tabla(jTable1,5);
+        tablaBase.ver_tabla(jTable1,KenKen);
         
     }
 

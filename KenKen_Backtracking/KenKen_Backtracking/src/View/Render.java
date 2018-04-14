@@ -22,14 +22,6 @@ public class Render extends DefaultTableCellRenderer{
         
         if(value instanceof JTextPane){
             JTextPane boton = (JTextPane) value;
-            if(isSelected){
-                boton.setForeground(table.getSelectionForeground());
-                // boton.setBackground(table.getSelectionBackground());
-            }else{
-                
-                boton.setForeground(table.getForeground());
-                //boton.setBackground(UIManager.getColor("Button.background"));
-            }
             return boton;
         } else {
         }

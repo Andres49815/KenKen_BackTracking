@@ -6,17 +6,12 @@
 package View;
 
 
-import java.awt.Button;
 import java.awt.Color;
-import java.awt.Label;
+import java.awt.Dimension;
 import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JTextPane;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
-import javax.swing.text.SimpleAttributeSet;
 
 /**
  *
@@ -24,7 +19,7 @@ import javax.swing.text.SimpleAttributeSet;
  */
 public class TablaJuego {
     
-    public void ver_tabla(JTable pTabla,int tamaño ){
+    public void ver_tabla(JTable pTabla,Model.KenKen_Board KenKen ){
         
         pTabla.setDefaultRenderer(Object.class, new Render());
         DefaultTableModel tablaPredeterminada = new DefaultTableModel(){
@@ -32,23 +27,41 @@ public class TablaJuego {
                 return false;
             }
         };
-        for(int a=0; a<tamaño; a++){
+        for(int a=3; a<KenKen.group.length-3; a++){
             tablaPredeterminada.addColumn(a);
         }   
-        Object fila[] = new Object[tamaño];
-        for(int i=0;i<tamaño;i++)
+        Object fila[] = new Object[KenKen.group.length];
+        for(int i=3;i<KenKen.group.length-3;i++)
         {
-            for (int j=0;j<tamaño;j++)
-            {
+            int contador=0;
+            for (int j=3;j<KenKen.group.length-3 ;j++)
+            {          
+                int number = KenKen.board.get(i-3).get(j-3);
                 JTextPane text = new JTextPane();
                 text.setContentType("text/html"); 
-                text.setText(5+"+"+"\n"+"<html><center><b>9</h1></b></html>");
-                text.setBorder(BorderFactory.createMatteBorder(5, 5, 5, 5, Color.BLACK));
-                fila[j] = text;
+                text.setText(5+"+"+"\n"+"<html><center><b>"+number+"</h1></b></html>");
+                borders(text,i,j,KenKen.group);
+                fila[contador++] = text;
             }
             tablaPredeterminada.addRow(fila);
         }
         pTabla.setModel(tablaPredeterminada);
-        pTabla.setRowHeight(pTabla.getWidth()/tamaño);
+        pTabla.setRowHeight(pTabla.getWidth()/KenKen.size);
+    }
+
+    private void borders(JTextPane text, int i, int j, int[][] group)
+    {
+        int up , down,left,right;
+        up = down = left = right = 5;
+        int number = group[i][j];
+        if(group[i+1][j]==number)
+            down=0;
+        if(group[i-1][j]==number)
+            up=0;
+        if(group[i][j+1]==number)
+            right=0;
+        if(group[i][j-1]==number)
+            left=0;
+        text.setBorder(BorderFactory.createMatteBorder(up, left, down, right, Color.BLACK));
     }
 }
