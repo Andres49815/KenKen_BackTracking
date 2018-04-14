@@ -9,11 +9,14 @@ package View;
 import java.awt.Button;
 import java.awt.Color;
 import java.awt.Label;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTable;
+import javax.swing.JTextPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
+import javax.swing.text.SimpleAttributeSet;
 
 /**
  *
@@ -37,12 +40,15 @@ public class TablaJuego {
         {
             for (int j=0;j<tamaño;j++)
             {
-                PanelRA panel  = new PanelRA(10,"+",5,true,5,5,5,5);
-                fila[j] = panel;
+                JTextPane text = new JTextPane();
+                text.setContentType("text/html"); 
+                text.setText(5+"+"+"\n"+"<html><center><b>9</h1></b></html>");
+                text.setBorder(BorderFactory.createMatteBorder(5, 5, 5, 5, Color.BLACK));
+                fila[j] = text;
             }
             tablaPredeterminada.addRow(fila);
         }
         pTabla.setModel(tablaPredeterminada);
-        pTabla.setRowHeight(column.getWidth());
+        pTabla.setRowHeight(pTabla.getWidth()/tamaño);
     }
 }

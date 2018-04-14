@@ -37,15 +37,12 @@ public class PanelRA extends javax.swing.JPanel {
         this.down = down;
         this.left = left;
         this.right = right;
-        labelNumber.setText(String.valueOf(number));
-        labelOperation.setText(String.valueOf(result)+operation);
+        jTextPane1.setText(String.valueOf(result)+operation+"\n"+String.valueOf(number));
+//        labelNumber.setText(String.valueOf(number));
+//        labelOperation.setText(String.valueOf(result)+operation);
         this.setBorder(BorderFactory.createMatteBorder(up, left, down, right, Color.BLACK));
     }
 
-    public void changeText(String text)
-    {
-        labelOperation.setText(text);
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -55,43 +52,28 @@ public class PanelRA extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        labelOperation = new javax.swing.JLabel();
-        labelNumber = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
 
         setPreferredSize(new java.awt.Dimension(100, 100));
 
-        labelOperation.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        labelOperation.setText("Hola");
-
-        labelNumber.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        labelNumber.setText("9");
-        labelNumber.setMaximumSize(new java.awt.Dimension(500, 500));
+        jScrollPane2.setViewportView(jTextPane1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(labelOperation, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(44, Short.MAX_VALUE)
-                .addComponent(labelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(labelOperation, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel labelNumber;
-    private javax.swing.JLabel labelOperation;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }

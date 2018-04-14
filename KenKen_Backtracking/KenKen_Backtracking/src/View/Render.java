@@ -6,10 +6,8 @@
 package View;
 
 import java.awt.Component;
-import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JTable;
-import javax.swing.UIManager;
+import javax.swing.JTextPane;
 import javax.swing.table.DefaultTableCellRenderer;
 
 /**
@@ -22,17 +20,18 @@ public class Render extends DefaultTableCellRenderer{
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
         
-        if(value instanceof PanelRA){
-            PanelRA boton = (PanelRA) value;
+        if(value instanceof JTextPane){
+            JTextPane boton = (JTextPane) value;
             if(isSelected){
                 boton.setForeground(table.getSelectionForeground());
-               // boton.setBackground(table.getSelectionBackground());
+                // boton.setBackground(table.getSelectionBackground());
             }else{
                 
                 boton.setForeground(table.getForeground());
                 //boton.setBackground(UIManager.getColor("Button.background"));
             }
             return boton;
+        } else {
         }
         return super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column); //To change body of generated methods, choose Tools | Templates.
     }
