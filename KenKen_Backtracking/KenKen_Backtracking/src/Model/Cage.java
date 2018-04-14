@@ -15,7 +15,7 @@ public class Cage {
     
     // Obtein the cage
     public static boolean[][] getCage() {
-        switch(random.nextInt(9)) {
+        switch(random.nextInt(10)) {
             case 0:
                 return Line();
             case 1:
@@ -34,6 +34,8 @@ public class Cage {
                 return InvertedL();
             case 8:
                 return UpsideL();
+            case 9:
+                return LineDot();
             default:
                 return Dot();
         }
@@ -51,6 +53,7 @@ public class Cage {
             {true}};
         return cage;
     }
+    
     /**
      * XX XX XX XX
      */
@@ -135,6 +138,15 @@ public class Cage {
     private static boolean[][] Dot() {
         boolean[][] cage = {{true}};
         
+        return cage;
+    }
+    /**
+     * XX // // //
+     * XX // // //
+     */
+    private static boolean[][] LineDot() {
+        boolean[][] cage = {{true},
+            {true}};
         return cage;
     }
 }
