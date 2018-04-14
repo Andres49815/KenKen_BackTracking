@@ -16,7 +16,7 @@ public class KenKen_Board {
     public int size;
     // Constructor
     public KenKen_Board(int size) {
-        this.size=size;
+        this.size = size;
         initializeBoard(size);
         fillBoards();
         group = new int[size + 6][size + 6];
@@ -61,8 +61,12 @@ public class KenKen_Board {
                     // Travel the obtained cage with a tetris figure.
                     for (int y = 0; y < grp.length; y++)
                         for (int x = 0; x < grp[0].length; x++)
-                            if (grp[y][x] && group[i + y][j + x] == 0)
-                                group[i + y][j + x] = actual;
+                            if (group[i + y][j + x] == 0) {
+                                if (grp[y][x])
+                                    group[i + y][j + x] = actual;
+                            }
+                            else
+                                break;
                     actual++;
                 }
     }
@@ -80,6 +84,7 @@ public class KenKen_Board {
         printBoard(this.board);
         printBoard(this.transverseBoard);
         
+        // Print the group board
         for (int i = 3; i < group.length - 3; i++) {
             for (int j = 3; j < group.length - 3; j++)
                 System.out.print(group[i][j] + "\t");
