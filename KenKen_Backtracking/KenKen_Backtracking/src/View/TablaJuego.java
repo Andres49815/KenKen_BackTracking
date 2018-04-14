@@ -38,8 +38,9 @@ public class TablaJuego {
             {          
                 int number = KenKen.board.get(i-3).get(j-3);
                 JTextPane text = new JTextPane();
-                text.setContentType("text/html"); 
-                text.setText(5+"+"+"\n"+"<html><center><b>"+number+"</h1></b></html>");
+                text.setContentType("text/html");
+                String operation = 5+"+";
+                text.setText("<html><small>"+operation+"</small>"+"<center><b>"+number+"</b></center>"+"</html>");
                 borders(text,i,j,KenKen.group);
                 fila[contador++] = text;
             }
@@ -52,7 +53,7 @@ public class TablaJuego {
     private void borders(JTextPane text, int i, int j, int[][] group)
     {
         int up , down,left,right;
-        up = down = left = right = 5;
+        up = down = left = right = 2;
         int number = group[i][j];
         if(group[i+1][j]==number)
             down=0;
