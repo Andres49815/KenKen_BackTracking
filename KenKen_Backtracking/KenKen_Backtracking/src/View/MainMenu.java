@@ -5,6 +5,8 @@
  */
 package View;
 
+import Model.KenKen_Board;
+
 /**
  *
  * @author Lenovo
@@ -16,6 +18,12 @@ public class MainMenu extends javax.swing.JFrame {
      */
     public MainMenu() {
         initComponents();
+        Model.KenKen_Board KenKen = new KenKen_Board(5);
+        KenKen.print();
+        PanelRA panel = new PanelRA(10,"+",5,true,10,10,10,10);
+        panel.setBounds(200, 200, 200, 200);
+        this.add(panel);
+        
     }
 
     /**
@@ -44,7 +52,7 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(407, Short.MAX_VALUE))
+                .addContainerGap(559, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,6 +98,7 @@ public class MainMenu extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainMenu().setVisible(true);
+               
             }
         });
     }

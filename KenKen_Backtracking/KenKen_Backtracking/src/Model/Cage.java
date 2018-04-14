@@ -133,14 +133,6 @@ public class Cage {
         return cage;
     }
     /**
-     * XX
-     */
-    private static boolean[][] Dot() {
-        boolean[][] cage = {{true}};
-        
-        return cage;
-    }
-    /**
      * XX // // //
      * XX // // //
      */
@@ -149,4 +141,13 @@ public class Cage {
             {true}};
         return cage;
     }
+    /**
+     * XX
+     */
+    private static boolean[][] Dot() {
+        boolean[][] cage = {{true}};
+        
+        return cage;
+    }
+    
 }

@@ -25,11 +25,11 @@ public class KenKen_Board {
         while (!isGrouped());
     }
     private void initializeBoard(int size) {
-        board = new ArrayList<ArrayList<Integer>>();
-        transverseBoard = new ArrayList<ArrayList<Integer>>();
+        board = new ArrayList<>();
+        transverseBoard = new ArrayList<>();
         for (int i = 0; i < size; i++) {
-            board.add(new ArrayList<Integer>());
-            transverseBoard.add(new ArrayList<Integer>());
+            board.add(new ArrayList<>());
+            transverseBoard.add(new ArrayList<>());
             for (int j = 0; j < size; j++) {
                 board.get(i).add(size + 2);
                 transverseBoard.get(i).add(size + 2);
