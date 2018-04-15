@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.KenKen_Board;
+import Model.Solver;
 import View.MainMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,6 +18,7 @@ public class C_MainMenu implements ActionListener {
         view = v;
         // For MVC
         view.button_Generate.addActionListener(this);
+        view.button_Powers.addActionListener(this);
         view.table_Game.setVisible(false);
         
         // Display view
@@ -28,6 +30,10 @@ public class C_MainMenu implements ActionListener {
         switch (ae.getActionCommand()) {
             case "Generar":
                 generate();
+                break;
+            case "Resolver Potencias":
+                Powers();
+                break;
         }
     }
     private void generate() {
@@ -40,5 +46,11 @@ public class C_MainMenu implements ActionListener {
             model.print();
             view.gameTable.setTable(view.table_Game, model);
         }
+    }
+    private void Powers() {
+        Solver solver;
+        
+        solver = new Solver(model);
+        Solver.Solve();
     }
 }

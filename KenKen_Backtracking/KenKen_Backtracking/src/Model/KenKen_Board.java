@@ -13,15 +13,15 @@ public class KenKen_Board {
     private ArrayList<ArrayList<Integer>> board;
     private ArrayList<ArrayList<Integer>> transverseBoard;
     // Group
-    private int[][] group;
+    private static int[][] group;
     // Results
-    private int[][] results;
+    private static int[][] results;
     private static HashMap<Integer, ArrayList<Integer>> map;
     private static HashMap<Integer, Integer> resultsMap;
     private static HashMap<Integer, String> operations;
     // Other Variables
     private static int actual;
-    private int size;
+    private static int size;
     private final Random random = new Random();
     
     // Constructor
@@ -34,6 +34,8 @@ public class KenKen_Board {
         Group(size);
         // View the results
         Results();
+        // Clean the boards
+        // CleanBoards();
     }
     // On Created Solution and Transverse board
     private void Boards(int size) {
@@ -67,12 +69,20 @@ public class KenKen_Board {
                 transverseBoard.get(j).set(i, rand);
             }
     }
+    private void CleanBoards() {
+        for (int i = 0; i < size; i++)
+            for (int j = 0; j < size; j++) {
+                board.get(i).add(j, 100);
+                transverseBoard.get(i).add(j, 100);
+            }
+    }
     // On group matrix
     private void Group(int n) {
         group = new int[n + 6][n + 6];
         do
             Group();
-        while(!isGrouped());
+        while (!isGrouped());
+        fixDimensions();
     }
     private void Group() {
         boolean[][] grp;
@@ -106,6 +116,15 @@ public class KenKen_Board {
         
         return true;
     }
+    private void fixDimensions() {
+        int[][] newGroup = new int[size][size];
+        
+        for (int i = 3; i < group.length - 3; i++)
+            for (int j = 3; j < group.length - 3; j++)
+                newGroup[i - 3][j - 3] = group[i][j];
+        this.group = new int[size][size];
+        this.group = newGroup;
+    }
     // On Operations
     private void Results() {
         fillMap();
@@ -116,10 +135,10 @@ public class KenKen_Board {
         
         map = new HashMap<Integer, ArrayList<Integer>>();
         // Fill the map in order to relate the group with the result.
-        for (int i = 3; i < group.length - 3; i++)
-            for (int j = 3; j < group.length - 3; j++) {
+        for (int i = 0; i < group.length; i++)
+            for (int j = 0; j < group.length; j++) {
                 key = group[i][j];
-                value = board.get(i - 3).get(j - 3);
+                value = board.get(i).get(j);
                 if (map.containsKey(key))
                     map.get(key).add(value);
                 else {
@@ -172,9 +191,9 @@ public class KenKen_Board {
         return 0;
     }
     private void fillResultsMatrix() {
-        for (int i = 3; i < group.length - 3; i++)
-            for (int j = 3; j < group.length - 3; j++)
-                results[i - 3][j - 3] = resultsMap.get(group[i][j]);
+        for (int i = 0; i < group.length; i++)
+            for (int j = 0; j < group.length; j++)
+                results[i][j] = resultsMap.get(group[i][j]);
     }
     
     // Getters and Setters
@@ -184,23 +203,39 @@ public class KenKen_Board {
     public int[][] getGroup() {
         return this.group;
     }
+    public ArrayList<Integer> getGroup(int n) {
+        return map.get(n);
+    }
+    public ArrayList<Integer> getGroup(int i, int j) {
+        return map.get(group[i][j]);
+    }
     public int[][] getResults() {
         return this.results;
     }
+    public int getResult(int i, int j) {
+        return resultsMap.get(group[i][j]);
+    }
     public int getSize() {
         return this.size;
+    }
+    public HashMap<Integer, ArrayList<Integer>> getMap() {
+        return map;
     }
     public HashMap<Integer, String> getOperations() {
         return operations;
     }
     
+    // Other Methods
+    public int group(int i, int j) {
+        return group[i][j];
+    }
     // Print
     public void print() {
         printBoard(this.board);
         
         // Print the group board
-        for (int i = 3; i < group.length - 3; i++) {
-            for (int j = 3; j < group.length - 3; j++)
+        for (int i = 0; i < group.length; i++) {
+            for (int j = 0; j < group.length; j++)
                 System.out.print(group[i][j] + "\t");
             System.out.println();
         }
