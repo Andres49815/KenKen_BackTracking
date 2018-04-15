@@ -9,16 +9,20 @@ import java.util.Random;
  * @author Andres Obando
  */
 public class KenKen_Board {
-    public ArrayList<ArrayList<Integer>> board;
+    // Boards
+    private ArrayList<ArrayList<Integer>> board;
     private ArrayList<ArrayList<Integer>> transverseBoard;
-    public int[][] group;
-    public int[][] results;
-    private final Random random = new Random();
-    private static int actual;
-    public int size;
+    // Group
+    private int[][] group;
+    // Results
+    private int[][] results;
     private static HashMap<Integer, ArrayList<Integer>> map;
     private static HashMap<Integer, Integer> resultsMap;
     private static HashMap<Integer, String> operations;
+    // Other Variables
+    private static int actual;
+    private int size;
+    private final Random random = new Random();
     
     // Constructor
     public KenKen_Board(int size) {
@@ -52,8 +56,10 @@ public class KenKen_Board {
         int rand;
         
         size = board.size();
+        // Create a possible solution for the KenKen
         for (int i = 0; i < size; i++)
             for (int j = 0; j < size; j++) {
+                // Secure the rand number isn't in the row and column.
                 do
                     rand = (random.nextInt() % 2 == 0 ? 1 : -1) * random.nextInt(size + 1);
                 while (board.get(i).contains(rand) || transverseBoard.get(j).contains(rand));
@@ -87,7 +93,8 @@ public class KenKen_Board {
                                         break;
                                 }
                                 else {}
-                        else break;
+                        else
+                            break;
                     actual++;
                 }
     }
@@ -108,6 +115,7 @@ public class KenKen_Board {
         int key, value;
         
         map = new HashMap<Integer, ArrayList<Integer>>();
+        // Fill the map in order to relate the group with the result.
         for (int i = 3; i < group.length - 3; i++)
             for (int j = 3; j < group.length - 3; j++) {
                 key = group[i][j];
@@ -145,7 +153,13 @@ public class KenKen_Board {
                 return (int)Math.pow(set.get(0), 2);
             case 2:
                 operations.put(key, "%");
-                return set.get(0) % set.get(1);
+                try {
+                    return set.get(0) % set.get(1);
+                }
+                // For 0 division.
+                catch (ArithmeticException ae) {
+                    return set.get(1) % set.get(0);
+                }
             case 3:
             case 4:
                 result = set.get(0);
@@ -163,10 +177,23 @@ public class KenKen_Board {
                 results[i - 3][j - 3] = resultsMap.get(group[i][j]);
     }
     
-    // Gets and Sets
+    // Getters and Setters
+    public ArrayList<ArrayList<Integer>> getBoard() {
+        return this.board;
+    }
+    public int[][] getGroup() {
+        return this.group;
+    }
+    public int[][] getResults() {
+        return this.results;
+    }
+    public int getSize() {
+        return this.size;
+    }
     public HashMap<Integer, String> getOperations() {
         return operations;
     }
+    
     // Print
     public void print() {
         printBoard(this.board);
@@ -177,7 +204,6 @@ public class KenKen_Board {
                 System.out.print(group[i][j] + "\t");
             System.out.println();
         }
-        System.out.println();
         System.out.println();
         // Print Last Board
         printBoard(this.results);
