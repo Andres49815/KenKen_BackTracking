@@ -13,15 +13,20 @@ import javax.swing.JOptionPane;
  * @author Lenovo
  */
 public class MainMenu extends javax.swing.JFrame {
-    public TablaJuego tablaBase = new TablaJuego();
+    public GameTable gameTable = new GameTable();
 
     /**
      * Creates new form MainMenu
      */
     public MainMenu() {
         initComponents();
-        table_Game.setVisible(false);
+    }
+    
+    public boolean isComplete() {
+        int n;
         
+        n = (int)spinner_Size.getValue();
+        return 4 < n && n < 19;
     }
 
     /**
@@ -37,12 +42,10 @@ public class MainMenu extends javax.swing.JFrame {
         table_Game = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        txfTamaño = new javax.swing.JTextField();
-        txfHilos = new javax.swing.JTextField();
-        btnGenerar = new javax.swing.JButton();
+        label_Threads = new javax.swing.JLabel();
+        label_Size = new javax.swing.JLabel();
         button_Generate = new javax.swing.JButton();
+        spinner_Size = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -64,17 +67,9 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel1.setText("KenKen");
 
-        jLabel2.setText("Cantidad de Hilos Máximo: ");
+        label_Threads.setText("Cantidad de Hilos Máximo: ");
 
-        jLabel3.setText("Tamaño del KenKen: ");
-
-        btnGenerar.setBackground(javax.swing.UIManager.getDefaults().getColor("CheckBoxMenuItem.selectionBackground"));
-        btnGenerar.setText("Generar KenKen");
-        btnGenerar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGenerarActionPerformed(evt);
-            }
-        });
+        label_Size.setText("Tamaño del KenKen: ");
 
         button_Generate.setText("Generar");
 
@@ -90,15 +85,13 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(67, 67, 67)
-                        .addComponent(jLabel3))
+                        .addComponent(label_Size))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(54, 54, 54)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txfTamaño)
-                            .addComponent(txfHilos)
-                            .addComponent(btnGenerar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(button_Generate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(label_Threads, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(button_Generate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(spinner_Size))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -107,16 +100,12 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addGap(21, 21, 21)
-                .addComponent(txfTamaño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addGap(35, 35, 35)
-                .addComponent(txfHilos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
-                .addComponent(btnGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addComponent(label_Size)
+                .addGap(18, 18, 18)
+                .addComponent(spinner_Size, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(label_Threads)
+                .addGap(73, 73, 73)
                 .addComponent(button_Generate, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -139,23 +128,6 @@ public class MainMenu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarActionPerformed
-        // TODO add your handling code here:
-        int size = Integer.parseInt(txfTamaño.getText());
-        if(size<5 || size>19)
-        {
-            JOptionPane.showMessageDialog(this, "El tamaño debe de ser de 5 a 19");
-        }
-        else
-        {
-            table_Game.setVisible(true);
-            Model.KenKen_Board KenKen = new KenKen_Board(size);
-            KenKen.print();
-            tablaBase.ver_tabla(table_Game,KenKen);
-        }
-
-    }//GEN-LAST:event_btnGenerarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,15 +166,13 @@ public class MainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnGenerar;
     public javax.swing.JButton button_Generate;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel label_Size;
+    private javax.swing.JLabel label_Threads;
+    public javax.swing.JSpinner spinner_Size;
     public javax.swing.JTable table_Game;
-    private javax.swing.JTextField txfHilos;
-    private javax.swing.JTextField txfTamaño;
     // End of variables declaration//GEN-END:variables
 }
