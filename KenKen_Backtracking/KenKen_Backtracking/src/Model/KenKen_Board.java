@@ -268,7 +268,7 @@ public class KenKen_Board {
     public static boolean isComplete() {
         for (int i = 0; i < group.length; i++)
             for (int j = 0; j < group.length; j++) {
-                if(operations.get(group[i][j]).equals("^")) {
+                if(operations.get(group[i][j]).equals("^") || operations.get(group[i][j]).equals("%")) {
                     if(board.get(i).get(j) == 100)
                         return false;
                 }
@@ -286,14 +286,14 @@ public class KenKen_Board {
     }
     // Print
     public static void print() {
-        printBoard(board);
-        /*
-        // Print the group board
+        //printBoard(board);
+        
         for (int i = 0; i < group.length; i++) {
             for (int j = 0; j < group.length; j++)
                 System.out.print(group[i][j] + "\t");
             System.out.println();
         }
+        /*
         System.out.println();
         // Print Last Board
         printBoard(this.results);

@@ -5,6 +5,7 @@ import Model.Solver;
 import View.MainMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -34,6 +35,9 @@ public class C_MainMenu implements ActionListener {
             case "Resolver Potencias":
                 Powers();
                 break;
+            case "Resolver Modulos":
+                Moduls();
+                break;
         }
     }
     private void generate() {
@@ -54,4 +58,9 @@ public class C_MainMenu implements ActionListener {
         KenKen_Board.print();
         Solver.print();
     }
+
+    private void Moduls() {
+        
+    }
+    
 }
