@@ -37,7 +37,7 @@ public class KenKen_Board {
         // View the results
         Results();
         // Clean the boards
-        CleanBoards();
+        //CleanBoards();
     }
     // On Created Solution and Transverse board
     private void Boards(int size) {
@@ -176,9 +176,16 @@ public class KenKen_Board {
         
         switch (set.size()) {
             case 1:
-                operations.put(key, "^");
-                Powers++;
-                return (int)Math.pow(set.get(0), 2);
+                if (set.get(0) >= 0) {
+                    operations.put(key, "^");
+                    Powers++;
+                    return (int)Math.pow(2, set.get(0));
+                }
+                else {
+                    operations.put(key, " ");
+                    return set.get(0);
+                }
+
             case 2:
                 operations.put(key, "%");
                 Modules++;
