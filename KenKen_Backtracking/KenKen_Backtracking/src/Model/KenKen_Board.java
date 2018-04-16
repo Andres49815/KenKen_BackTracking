@@ -103,7 +103,7 @@ public class KenKen_Board {
                     for (int y = 0; y < grp.length; y++)
                         if (group[i + y][j] == 0)
                             for (int x = 0; x < grp[0].length; x++)
-                                if (grp[y][x]) {
+                                if (grp[y][x] ) {
                                     if (group[i + y][j + x] == 0)
                                         group[i + y][j + x] = actual;
                                     else
@@ -190,10 +190,18 @@ public class KenKen_Board {
                 operations.put(key, "%");
                 Modules++;
                 try {
-                    return set.get(0) % set.get(1);
+                    result = set.get(0) % set.get(1);
+                    if (result < 0) {
+                        result = set.get(0) * set.get(1);
+                        operations.put(key, "*");
+                    }
+                    else
+                        operations.put(key, "%");
+                    return result;
                 }
                 // For 0 division.
                 catch (ArithmeticException ae) {
+                    operations.put(key, "%");
                     return set.get(1) % set.get(0);
                 }
             case 3:
