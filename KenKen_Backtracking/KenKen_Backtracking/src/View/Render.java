@@ -18,6 +18,7 @@ public class Render extends DefaultTableCellRenderer{
         
         if (value instanceof JTextPane) {
             button = (JTextPane)value;
+            
             return button;
         }
         return super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);

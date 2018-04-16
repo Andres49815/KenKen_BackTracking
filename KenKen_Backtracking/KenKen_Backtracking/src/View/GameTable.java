@@ -40,6 +40,7 @@ public class GameTable {
                 operation = results[i][j] + KKB.getOperations().get(group[i][j]);
                 text.setText("<html><small>" + operation + "</small>" + "<center><b>" + number + "</b></center>" + "</html>");
                 borders(text, i, j, group);
+                putColor(text,KKB.getOperations().get(group[i][j]));
                 row[counter++] = text;
             }
             defaultTable.addRow(row);
@@ -74,5 +75,38 @@ public class GameTable {
         }
         catch (ArrayIndexOutOfBoundsException e){}
         text.setBorder(BorderFactory.createMatteBorder(up, left, down, right, Color.BLACK));
+    }
+
+    private void putColor(JTextPane text, String get) {
+        switch(get) {
+            case "+":
+                text.setOpaque(true);
+                text.setBackground(new Color(241, 148, 138));
+                break;
+            case "-":
+                text.setOpaque(true);
+                text.setBackground(new Color(229, 152, 102));
+                break;
+            case "*":
+                text.setOpaque(true);
+                text.setBackground(new Color(249, 231, 159));  
+                break;
+            case "/":
+                text.setOpaque(true);
+                text.setBackground(new Color(171, 235, 198));  
+                break;
+            case "%":
+                text.setOpaque(true);
+                text.setBackground(new Color(133, 193, 233)); 
+                break;
+            case "^":
+                text.setOpaque(true);
+                text.setBackground(new Color(210, 180, 222)); 
+                break;
+            default:
+                text.setOpaque(true);
+                text.setBackground(new Color(213, 216, 220)); 
+                break;
+        }
     }
 }
