@@ -149,10 +149,14 @@ public class Solver {
         ArrayList<Integer> place = new ArrayList<>();  
         for (int a = 0; a < KenKen_Board.getSize(); a++) {
             for (int b = 0; b < KenKen_Board.getSize(); b++) {
-                if (group[a][b]==groupID && a!=i && b!=j)
+                if (group[a][b]==groupID)
                 {
-                     place.add(a);
-                     place.add(b);
+                    System.out.println("a: "+a+ " b: "+b);
+                    if( a!=i || b!=j)
+                    {
+                        place.add(a);
+                        place.add(b);
+                    }
                 }
             }
         }
