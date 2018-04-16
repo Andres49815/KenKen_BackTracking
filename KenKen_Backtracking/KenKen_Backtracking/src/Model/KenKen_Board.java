@@ -37,7 +37,7 @@ public class KenKen_Board {
         // View the results
         Results();
         // Clean the boards
-        //CleanBoards();
+        CleanBoards();
     }
     // On Created Solution and Transverse board
     private void Boards(int size) {

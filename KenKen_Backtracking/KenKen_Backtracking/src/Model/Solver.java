@@ -18,6 +18,41 @@ public class Solver {
         
     }
     public static void Solve() {
+        SolveStatics();
+        SolvePowers();
+    }
+    private static ArrayList<Integer> possibilities(int i, int j) {
+        ArrayList<Integer> results, roots;
+        
+        int number = KenKen_Board.getResult(i, j);
+        roots = Power(number);
+        results = new ArrayList<Integer>();
+        for (int possible : roots)
+            if (KenKen_Board.isPossible(i, j, possible))
+                results.add(possible);
+        
+        return results;
+    }
+    private static ArrayList<Integer> Power(int number) {
+        int result;
+        ArrayList<Integer> possibilities;
+        
+        result = (int)(Math.log(number) / Math.log(2));
+        possibilities = new ArrayList<Integer>();
+        possibilities.add(result);
+        return possibilities;
+    }
+    private static ArrayList<Integer> Module(int number) {
+        return null;
+    }
+    
+    private static void SolveStatics() {
+        for (int i = 0; i < KenKen_Board.getSize(); i++)
+            for (int j = 0; j < KenKen_Board.getSize(); j++)
+                if (KenKen_Board.getOperation(i, j).equals(" "))
+                    KenKen_Board.set(i, j, KenKen_Board.getResult(i, j));
+    }
+    private static void SolvePowers() {
         int i, j;
         
         if (KenKen_Board.isComplete()) {
@@ -40,34 +75,9 @@ public class Solver {
         ArrayList<Integer> possibilities = possibilities(i, j);
         for (int n : possibilities) {
             KenKen_Board.set(i, j, n);
-            Solve();
+            SolvePowers();
         }
         KenKen_Board.set(i, j, 100);
-    }
-    private static ArrayList<Integer> possibilities(int i, int j) {
-        ArrayList<Integer> results, roots;
-        
-        int number = KenKen_Board.getResult(i, j);
-        roots = Power(number);
-        results = new ArrayList<Integer>();
-        for (int possible : roots)
-            if (KenKen_Board.isPossible(i, j, possible))
-                results.add(possible);
-        
-        return results;
-    }
-    private static ArrayList<Integer> Power(int number) {
-        int result;
-        ArrayList<Integer> possibilities;
-        
-        result = (int)Math.sqrt(number);
-        possibilities = new ArrayList<Integer>();
-        possibilities.add(result);
-        possibilities.add(-1 * result);
-        return possibilities;
-    }
-    private static ArrayList<Integer> Module(int number) {
-        return null;
     }
     
     // Other methods
