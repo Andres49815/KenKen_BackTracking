@@ -77,7 +77,7 @@ public class Solver {
             KenKen_Board.set(i, j, n);
             SolvePowers();
         }
-        KenKen_Board.set(i, j, 100);
+        //KenKen_Board.set(i, j, 100);
     }
     
     // Other methods
