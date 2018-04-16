@@ -10,8 +10,8 @@ import java.util.Random;
  */
 public class KenKen_Board {
     // Boards
-    private ArrayList<ArrayList<Integer>> board;
-    private ArrayList<ArrayList<Integer>> transverseBoard;
+    private static ArrayList<ArrayList<Integer>> board;
+    private static ArrayList<ArrayList<Integer>> transverseBoard;
     // Group
     private static int[][] group;
     // Results
@@ -23,6 +23,8 @@ public class KenKen_Board {
     private static int actual;
     private static int size;
     private final Random random = new Random();
+    public static byte Powers;
+    public static byte Modules;
     
     // Constructor
     public KenKen_Board(int size) {
@@ -35,7 +37,7 @@ public class KenKen_Board {
         // View the results
         Results();
         // Clean the boards
-        // CleanBoards();
+        CleanBoards();
     }
     // On Created Solution and Transverse board
     private void Boards(int size) {
@@ -49,8 +51,8 @@ public class KenKen_Board {
             board.add(new ArrayList<>());
             transverseBoard.add(new ArrayList<>());
             for (int j = 0; j < size; j++) {
-                board.get(i).add(size + 2);
-                transverseBoard.get(i).add(size + 2);
+                board.get(i).add(100);
+                transverseBoard.get(i).add(100);
             }
         }
     }
@@ -63,18 +65,23 @@ public class KenKen_Board {
             for (int j = 0; j < size; j++) {
                 // Secure the rand number isn't in the row and column.
                 do
-                    rand = (random.nextInt() % 2 == 0 ? 1 : -1) * random.nextInt(size + 1);
+                    rand = (random.nextInt() % 2 == 0 ? 1 : -1) * random.nextInt(size);
                 while (board.get(i).contains(rand) || transverseBoard.get(j).contains(rand));
                 board.get(i).set(j, rand);
                 transverseBoard.get(j).set(i, rand);
             }
     }
     private void CleanBoards() {
-        for (int i = 0; i < size; i++)
-            for (int j = 0; j < size; j++) {
-                board.get(i).add(j, 100);
-                transverseBoard.get(i).add(j, 100);
-            }
+        initializeBoards(size);
+    }
+    private int getRandomNumber() {
+        if (size < 10) {
+            return random.nextInt(10);
+        }
+        else {
+            int n = size - 9;
+            return random.nextInt(size + n) - n;
+        }
     }
     // On group matrix
     private void Group(int n) {
@@ -158,6 +165,7 @@ public class KenKen_Board {
     private void calculateResults() {
         ArrayList<Integer> ar;
         
+        Powers = Modules = 0;
         for (int key : map.keySet()) {
             ar = map.get(key);
             resultsMap.put(key, calculate(key, ar));
@@ -169,9 +177,11 @@ public class KenKen_Board {
         switch (set.size()) {
             case 1:
                 operations.put(key, "^");
+                Powers++;
                 return (int)Math.pow(set.get(0), 2);
             case 2:
                 operations.put(key, "%");
+                Modules++;
                 try {
                     return set.get(0) % set.get(1);
                 }
@@ -195,33 +205,52 @@ public class KenKen_Board {
             for (int j = 0; j < group.length; j++)
                 results[i][j] = resultsMap.get(group[i][j]);
     }
-    
-    // Getters and Setters
-    public ArrayList<ArrayList<Integer>> getBoard() {
-        return this.board;
-    }
-    public int[][] getGroup() {
-        return this.group;
-    }
-    public ArrayList<Integer> getGroup(int n) {
-        return map.get(n);
-    }
-    public ArrayList<Integer> getGroup(int i, int j) {
-        return map.get(group[i][j]);
-    }
-    public int[][] getResults() {
-        return this.results;
-    }
-    public int getResult(int i, int j) {
+    public int Results(int i, int j) {
         return resultsMap.get(group[i][j]);
     }
-    public int getSize() {
-        return this.size;
+    
+    // Getters and Setters
+    // On Boards
+    public static ArrayList<ArrayList<Integer>> getBoard() {
+        return board;
     }
-    public HashMap<Integer, ArrayList<Integer>> getMap() {
+    public static int get(int i, int j) {
+        return board.get(i).get(j);
+    }
+    public static void set(int i, int j, int val) {
+        board.get(i).set(j, val);
+        transverseBoard.get(j).set(i, val);
+    }
+    // On Groups
+    public static int[][] getGroup() {
+        return group;
+    }
+    public static ArrayList<Integer> getGroup(int n) {
+        return map.get(n);
+    }
+    public static ArrayList<Integer> getGroup(int i, int j) {
+        return map.get(group[i][j]);
+    }
+    // On Results
+    public static int[][] getResults() {
+        return results;
+    }
+    public static int getResult(int i, int j) {
+        return resultsMap.get(group[i][j]);
+
+    }
+    // On Operations
+    public static String getOperation(int i, int j) {
+        return operations.get(group[i][j]);
+    }
+    // Others
+    public static int getSize() {
+        return size;
+    }
+    public static HashMap<Integer, ArrayList<Integer>> getMap() {
         return map;
     }
-    public HashMap<Integer, String> getOperations() {
+    public static HashMap<Integer, String> getOperations() {
         return operations;
     }
     
@@ -229,10 +258,29 @@ public class KenKen_Board {
     public int group(int i, int j) {
         return group[i][j];
     }
+    public static boolean isComplete() {
+        for (int i = 0; i < group.length; i++)
+            for (int j = 0; j < group.length; j++) {
+                if(operations.get(group[i][j]).equals("^")) {
+                    if(board.get(i).get(j) == 100)
+                        return false;
+                }
+            }
+        return true;
+        /*
+        for (ArrayList<Integer> row : board)
+            if (row.contains(100))
+                return false;
+        return true;
+        */
+    }
+    public static boolean isPossible(int i, int j, int value) {
+        return !board.get(i).contains(value) && !transverseBoard.get(j).contains(value);
+    }
     // Print
-    public void print() {
-        printBoard(this.board);
-        
+    public static void print() {
+        printBoard(board);
+        /*
         // Print the group board
         for (int i = 0; i < group.length; i++) {
             for (int j = 0; j < group.length; j++)
@@ -242,6 +290,7 @@ public class KenKen_Board {
         System.out.println();
         // Print Last Board
         printBoard(this.results);
+        */
     }
     private static void printBoard(ArrayList<ArrayList<Integer>> b) {
         for (ArrayList<Integer> row : b) {

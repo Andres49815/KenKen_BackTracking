@@ -48,9 +48,10 @@ public class C_MainMenu implements ActionListener {
         }
     }
     private void Powers() {
-        Solver solver;
-        
-        solver = new Solver(model);
         Solver.Solve();
+        view.gameTable.setTable(view.table_Game, model);
+        System.out.println("Matriz ----------------------------------------- ");
+        KenKen_Board.print();
+        Solver.print();
     }
 }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package View;
 
 import Model.KenKen_Board;
@@ -26,7 +21,7 @@ public class MainMenu extends javax.swing.JFrame {
         int n;
         
         n = (int)spinner_Size.getValue();
-        return 4 < n && n < 19;
+        return 0 < n && n < 100;
     }
 
     /**
