@@ -5,7 +5,6 @@ import Model.Solver;
 import View.MainMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -56,7 +55,6 @@ public class C_MainMenu implements ActionListener {
         view.gameTable.setTable(view.table_Game, model);
         System.out.println("Matriz ----------------------------------------- ");
         KenKen_Board.print();
-        Solver.print();
     }
 
     private void Moduls() {

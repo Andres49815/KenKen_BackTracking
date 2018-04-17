@@ -276,7 +276,7 @@ public class KenKen_Board {
     public static boolean isComplete() {
         for (int i = 0; i < group.length; i++)
             for (int j = 0; j < group.length; j++) {
-                if(operations.get(group[i][j]).equals("^") || operations.get(group[i][j]).equals("%")) {
+                if(operations.get(group[i][j]).equals("^") || operations.get(group[i][j]).equals("%") || operations.get(group[i][j]).equals("*") ) {
                     if(board.get(i).get(j) == 100)
                         return false;
                 }
