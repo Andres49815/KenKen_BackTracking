@@ -26,23 +26,82 @@ public class KenKen_Board {
     public static byte Powers;
     public static byte Modules;
     
+    ////////////////////////////////////////////////////////////////////////////
+    private void SetRandoms() {
+        int randX, randY, rand;
+        
+        for (int i = 0; i < size / 2 * size; i++) {
+            randX = random.nextInt(size);
+            randY = random.nextInt(size);
+            do
+                rand = random.nextInt(size) + 1;
+            while (!isPossible(randX, randY, rand));
+            set(randX, randY, rand);
+        }
+    }
+    private ArrayList<Integer> Possibilities(int i, int j) {
+        ArrayList<Integer> possibilities;
+        
+        possibilities = new ArrayList<Integer>();
+        for (int n = 1; n < size + 1; n++)
+            if (isPossible(i, j, n))
+                possibilities.add(n);
+        return possibilities;
+    }
+    private void BackTracking() {
+        int i, j;
+        ArrayList<Integer> possibilities;
+        
+        if (Complete()) {
+            print();
+            return;
+        }
+        else {
+            // Buscar
+            i = j = 0;
+            for (int a = 0; a < size; a++)
+                for (int b = 0; b < size; b++)
+                    if (get(a, b) == 100) {
+                        i = a;
+                        j = b;
+                    }
+            
+            possibilities = Possibilities(i, j);
+            for (int n : possibilities) {
+                set(i, j, n);
+                BackTracking();
+            }
+            set(i, j, 100);
+        }
+    }
+    private boolean Complete() {
+        for (ArrayList<Integer> ar : board)
+            if (ar.contains(100))
+                return false;
+        return true;
+    }
+    ////////////////////////////////////////////////////////////////////////////
     // Constructor
     public KenKen_Board(int size) {
         this.size = size;
         actual = 1;
         // Initialize Boards
-        Boards(size);
+        //Boards(size);
         // Group the boards
-        Group(size);
+        //Group(size);
         // View the results
-        Results();
+        //Results();
         // Clean the boards
-        CleanBoards();
+        //CleanBoards();
+        initializeBoards(size);
+        SetRandoms();
+        BackTracking();
+        print();
     }
     // On Created Solution and Transverse board
     private void Boards(int size) {
         initializeBoards(size);
-        fillBoards();
+        //Boards();//fillBoards();
     }
     private void initializeBoards(int size) {
         board = new ArrayList<>();
@@ -65,7 +124,7 @@ public class KenKen_Board {
             for (int j = 0; j < size; j++) {
                 // Secure the rand number isn't in the row and column.
                 do
-                    rand = (random.nextInt() % 2 == 0 ? 1 : -1) * random.nextInt(size);
+                    rand = getRandomNumber();//(random.nextInt() % 2 == 0 ? 1 : -1) * random.nextInt(size);
                 while (board.get(i).contains(rand) || transverseBoard.get(j).contains(rand));
                 board.get(i).set(j, rand);
                 transverseBoard.get(j).set(i, rand);
@@ -76,7 +135,7 @@ public class KenKen_Board {
     }
     private int getRandomNumber() {
         if (size < 10) {
-            return random.nextInt(10);
+            return 1 + random.nextInt(size);
         }
         else {
             int n = size - 9;
@@ -294,13 +353,13 @@ public class KenKen_Board {
     }
     // Print
     public static void print() {
-        //printBoard(board);
+        printBoard(board);
         
-        for (int i = 0; i < group.length; i++) {
+        /*for (int i = 0; i < group.length; i++) {
             for (int j = 0; j < group.length; j++)
                 System.out.print(group[i][j] + "\t");
             System.out.println();
-        }
+        }*/
         /*
         System.out.println();
         // Print Last Board
