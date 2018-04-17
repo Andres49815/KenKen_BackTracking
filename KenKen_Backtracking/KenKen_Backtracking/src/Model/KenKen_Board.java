@@ -25,12 +25,13 @@ public class KenKen_Board {
     private final Random random = new Random();
     public static byte Powers;
     public static byte Modules;
+    public static boolean solutionFound;
     
     ////////////////////////////////////////////////////////////////////////////
     private void SetRandoms() {
         int randX, randY, rand;
         
-        for (int i = 0; i < size / 2 * size; i++) {
+        for (int i = 0; i < (size / 2) * size; i++) {
             randX = random.nextInt(size);
             randY = random.nextInt(size);
             do
@@ -54,6 +55,7 @@ public class KenKen_Board {
         
         if (Complete()) {
             print();
+            solutionFound = true;
             return;
         }
         else {
@@ -68,9 +70,13 @@ public class KenKen_Board {
             
             possibilities = Possibilities(i, j);
             for (int n : possibilities) {
+                if (!solutionFound) {
                 set(i, j, n);
-                BackTracking();
+                BackTracking();}
+                else
+                    return;
             }
+            if (!solutionFound)
             set(i, j, 100);
         }
     }
@@ -85,6 +91,7 @@ public class KenKen_Board {
     public KenKen_Board(int size) {
         this.size = size;
         actual = 1;
+        solutionFound = false;
         // Initialize Boards
         //Boards(size);
         // Group the boards
