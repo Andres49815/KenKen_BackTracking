@@ -80,7 +80,6 @@ public class Solver {
             KenKen_Board.set(i, j, n);
             SolvePowers();
         }
-        //KenKen_Board.set(i, j, 100);
     }
     private static void SolveModuls() {
         
@@ -112,10 +111,9 @@ public class Solver {
             int y = place.get(1);
             KenKen_Board.set(i, j, possibility.get(0));
             KenKen_Board.set(x, y, possibility.get(1));
-            KenKen_Board.print();
-            break;
+            SolveModuls();
         }
-        SolveModuls();
+        
     }
     
     private static ArrayList<ArrayList<Integer>> modulsPossibilities(int size, int i,int j) {
