@@ -76,7 +76,7 @@ public class Solver {
         }
         
         ArrayList<Integer> possibilities = possibilities(i, j);
-        for (int n : possibilities) {
+        for (int n : possibilities) {    
             KenKen_Board.set(i, j, n);
             SolvePowers();
         }
@@ -111,33 +111,25 @@ public class Solver {
                     break;
                 }
                     
-                    
-//                    switch(KenKen_Board.getOperation(a, b))
-//                    {
-//                        case "%":
-//                            possibilities = modulsPossibilities(KenKen_Board.getSize(), i, j);
-//                            break;
-//                        case "*":
-//                            possibilities = multiplicationPossibilities(KenKen_Board.getSize(), i, j);
-//                            break;
-//                    }
-                    
                 
             }
         }
         if (operation.equals("*")||operation.equals("%"))
         {
-            for (ArrayList<Integer> possibility : possibilities) 
+            if(!possibilities.isEmpty())
             {
-                ArrayList<Integer> place = searchNear(i,j);
-                int x = place.get(0);
-                int y = place.get(1);
-                if(KenKen_Board.isPossible(i, j, possibility.get(0)) && KenKen_Board.isPossible(x, y, possibility.get(1)))
+                for (ArrayList<Integer> possibility : possibilities) 
                 {
-                    KenKen_Board.set(i, j, possibility.get(0));
-                    KenKen_Board.set(x, y, possibility.get(1));
+                    ArrayList<Integer> place = searchNear(i,j);
+                    int x = place.get(0);
+                    int y = place.get(1);
+                    if(KenKen_Board.isPossible(i, j, possibility.get(0)) && KenKen_Board.isPossible(x, y, possibility.get(1)))
+                    {
+                        KenKen_Board.set(i, j, possibility.get(0));
+                        KenKen_Board.set(x, y, possibility.get(1));
+                        SolveOperations();
+                    }
                 }
-                SolveOperations();
             }
         }
         
@@ -149,13 +141,14 @@ public class Solver {
         int number = KenKen_Board.getResult(i, j);
         
         ArrayList<ArrayList<Integer>> solutions = new ArrayList<>();
+        
         for (int x=1; x<=size; x++)
         {
             for (int y=1; y<=size; y++)
             {
+                ArrayList<Integer> possibility = new ArrayList<>();
                 if (x%y==number && x!=y)
                 {
-                    ArrayList<Integer> possibility = new ArrayList<>();
                     possibility.add(x);
                     possibility.add(y);
                     solutions.add(possibility);
