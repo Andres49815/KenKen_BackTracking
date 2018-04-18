@@ -43,11 +43,11 @@ public class C_MainMenu implements ActionListener {
         int size;
         
         if (view.isComplete()) {
-            //view.table_Game.setVisible(true);
+            view.table_Game.setVisible(true);
             size = (int)view.spinner_Size.getValue();
             model = new KenKen_Board(size);
-            //model.print();
-            //view.gameTable.setTable(view.table_Game, model);
+            model.print();
+            view.gameTable.setTable(view.table_Game, model);
         }
     }
     private void Powers() {
