@@ -1,13 +1,14 @@
 package View;
 
-import javax.swing.JOptionPane;
+import Model.KenKen_Board;
 
 /**
  *
  * @author Lenovo
  */
-public class MainMenu extends javax.swing.JFrame {
+public class MainMenu extends javax.swing.JFrame implements Runnable{
     public GameTable gameTable = new GameTable();
+    public KenKen_Board model;
 
     /**
      * Creates new form MainMenu
@@ -42,7 +43,6 @@ public class MainMenu extends javax.swing.JFrame {
         button_Generate = new javax.swing.JButton();
         spinner_Size = new javax.swing.JSpinner();
         button_Powers = new javax.swing.JButton();
-        button_Modulos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -70,9 +70,7 @@ public class MainMenu extends javax.swing.JFrame {
 
         button_Generate.setText("Generar");
 
-        button_Powers.setText("Resolver Potencias");
-
-        button_Modulos.setText("Resolver Módulos");
+        button_Powers.setText("Resolver");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -93,8 +91,7 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(label_Threads, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(button_Generate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(spinner_Size)
-                            .addComponent(button_Powers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(button_Modulos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(button_Powers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -112,8 +109,6 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(button_Generate, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(button_Powers, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(button_Modulos, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -174,7 +169,6 @@ public class MainMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton button_Generate;
-    public javax.swing.JButton button_Modulos;
     public javax.swing.JButton button_Powers;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
@@ -184,4 +178,14 @@ public class MainMenu extends javax.swing.JFrame {
     public javax.swing.JSpinner spinner_Size;
     public javax.swing.JTable table_Game;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void run() {
+        while (true) {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {}
+            gameTable.actualizar(table_Game, model);
+        }
+    }
 }

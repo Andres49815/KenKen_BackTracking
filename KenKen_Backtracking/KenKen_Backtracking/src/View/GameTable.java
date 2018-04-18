@@ -5,6 +5,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JTable;
 import javax.swing.JTextPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -47,6 +48,32 @@ public class GameTable {
         }
         t.setModel(defaultTable);
         t.setRowHeight(t.getWidth() / KKB.getSize());
+    }
+    public void actualizar(JTable t, Model.KenKen_Board KKB) {
+        
+        JTextPane text;
+        String operation;
+        int counter, number;
+        int[][] group, results;
+        
+        DefaultTableModel defaultTable = (DefaultTableModel) t.getModel();
+        
+        group = KKB.getGroup();
+        results = KKB.getResults();
+        for (int i = 0; i < group.length; i++) {
+            counter = 0;
+            for (int j = 0; j < group.length; j++) {
+                text =  (JTextPane) defaultTable.getValueAt(i, counter++);
+                number = KKB.getBoard().get(i).get(j);
+                text.setContentType("text/html");
+                operation = results[i][j] + KKB.getOperations().get(group[i][j]);
+                text.setText("<html><small>" + operation + "</small>" + "<center><b>" + number + "</b></center>" + "</html>");
+                borders(text, i, j, group);
+                putColor(text,KKB.getOperations().get(group[i][j]));
+                defaultTable.setValueAt(text, i, counter);
+            }
+        }
+        t.setModel(defaultTable);
     }
     
     private void borders(JTextPane text, int i, int j, int[][] group) {

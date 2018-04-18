@@ -87,7 +87,6 @@
                               <Component id="button_Generate" max="32767" attributes="0"/>
                               <Component id="spinner_Size" max="32767" attributes="0"/>
                               <Component id="button_Powers" max="32767" attributes="0"/>
-                              <Component id="button_Modulos" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -110,8 +109,6 @@
                   <Component id="button_Generate" min="-2" pref="47" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="button_Powers" min="-2" pref="52" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="button_Modulos" min="-2" pref="52" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -151,15 +148,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="button_Powers">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Resolver Potencias"/>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JButton" name="button_Modulos">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Resolver M&#xf3;dulos"/>
+            <Property name="text" type="java.lang.String" value="Resolver"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

@@ -21,7 +21,7 @@ public class KenKen_Board {
     private static HashMap<Integer, String> operations;
     // Other Variables
     private static int actual;
-    private static int size;
+    public static int size;
     private final Random random = new Random();
     public static byte Powers;
     public static byte Modules;

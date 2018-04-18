@@ -24,6 +24,7 @@ public class C_MainMenu implements ActionListener {
         // Display view
         view.setLocationRelativeTo(null);
         view.setVisible(true);
+        
     }
 
     @Override public void actionPerformed(ActionEvent ae) {
@@ -31,11 +32,8 @@ public class C_MainMenu implements ActionListener {
             case "Generar":
                 generate();
                 break;
-            case "Resolver Potencias":
-                Powers();
-                break;
-            case "Resolver Modulos":
-                Moduls();
+            case "Resolver":
+                Solve();
                 break;
         }
     }
@@ -45,20 +43,29 @@ public class C_MainMenu implements ActionListener {
         if (view.isComplete()) {
             view.table_Game.setVisible(true);
             size = (int)view.spinner_Size.getValue();
+            
             model = new KenKen_Board(size);
+            view.model = model;
             model.print();
             view.gameTable.setTable(view.table_Game, model);
+            
+            
         }
     }
-    private void Powers() {
+    private void Solve() {
         Solver.Solve();
-        view.gameTable.setTable(view.table_Game, model);
+        ThreadInterface();
         System.out.println("Matriz ----------------------------------------- ");
         KenKen_Board.print();
     }
 
-    private void Moduls() {
-        
+    
+
+    private void ThreadInterface() {
+        Thread thread = new Thread(view);
+        thread.start();
     }
+    
+    
     
 }
