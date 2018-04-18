@@ -54,7 +54,7 @@ public class C_MainMenu implements ActionListener {
     }
     private void Solve() {
         Solver.Solve();
-        ThreadInterface();
+        //ThreadInterface();
         System.out.println("Matriz ----------------------------------------- ");
         KenKen_Board.print();
     }
