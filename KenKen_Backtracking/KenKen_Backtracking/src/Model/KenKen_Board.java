@@ -26,12 +26,14 @@ public class KenKen_Board {
     public static byte Powers;
     public static byte Modules;
     public static boolean solutionFound;
+    public static ArrayList<Integer> range;
     
     // Constructor
     public KenKen_Board(int size) {
         this.size = size;
         actual = 1;
         solutionFound = false;
+        range = range();
         // Initialize Boards
         Boards();
         // Group the boards
@@ -40,9 +42,6 @@ public class KenKen_Board {
         Results();
         // Clean the boards
         //CleanBoards();
-        //initializeBoards(size);
-        //SetRandoms();
-        //BackTracking();
         //print();
     }
     // On Created Solution and Transverse board
@@ -66,11 +65,12 @@ public class KenKen_Board {
     private void SetRandoms() {
         int randX, randY, rand;
         
-        for (int i = 0; i < (size / 2) * size; i++) {
+        
+        for (int i = 0; i < size * size / 4; i++) {
             randX = random.nextInt(size);
             randY = random.nextInt(size);
             do
-                rand = random.nextInt(size) + 1;
+                rand = range.get(random.nextInt(range.size()));//random.nextInt(size) + 1;
             while (!isPossible(randX, randY, rand));
             set(randX, randY, rand);
         }
@@ -112,7 +112,7 @@ public class KenKen_Board {
         
         possibilities = new ArrayList<Integer>();
         //for (int n = 1; n < size + 1; n++)
-        for(int n : range())
+        for(int n : range)
             if (isPossible(i, j, n))
                 possibilities.add(n);
         return possibilities;
