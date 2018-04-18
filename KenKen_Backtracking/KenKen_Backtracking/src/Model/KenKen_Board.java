@@ -334,7 +334,7 @@ public class KenKen_Board {
         */
     }
     public static boolean isPossible(int i, int j, int value) {
-        return !board.get(i).contains(value) && !transverseBoard.get(j).contains(value);
+        return !board.get(i).contains(value) && !transverseBoard.get(j).contains(value) && range().contains(value);
     }
     // Print
     public static void print() {
