@@ -141,10 +141,10 @@ public class Solver {
         int number = KenKen_Board.getResult(i, j);
         
         ArrayList<ArrayList<Integer>> solutions = new ArrayList<>();
-        
-        for (int x=1; x<=size; x++)
+        ArrayList<Integer> range = KenKen_Board.range();
+        for (int x : range)
         {
-            for (int y=1; y<=size; y++)
+            for (int y : range)
             {
                 ArrayList<Integer> possibility = new ArrayList<>();
                 if (x%y==number && x!=y)
@@ -167,9 +167,10 @@ public class Solver {
         int number = KenKen_Board.getResult(i, j);
         
         ArrayList<ArrayList<Integer>> solutions = new ArrayList<>();
-        for (int x=1; x<=size; x++)
+        ArrayList<Integer> range = KenKen_Board.range();
+        for (int x : range)
         {
-            for (int y=1; y<=size; y++)
+            for (int y : range)
             {
                 if (x*y==number && x!=y)
                 {

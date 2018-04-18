@@ -366,4 +366,43 @@ public class KenKen_Board {
         }
         System.out.println();
     }
+    
+    public static int cantOfGroup(int groupID)
+    {
+        int cant = 0;
+        for (int x = 0; x<size; x++)
+        {
+            for (int y = 0; y<size; y++)
+            {
+                if(group[x][y] == groupID)
+                    cant++;
+            }
+        }
+        return cant;
+    }
+    
+    public static  ArrayList<Integer> range()
+    {
+        ArrayList<Integer> range = new ArrayList<>();
+        if(size < 10)
+        {
+            for(int x = 1; x <= size; x++)
+                range.add(x);
+        }
+        else
+        {
+            for(int x = 1; x<10; x++)
+                range.add(x);
+            if(size==10)
+            {
+                range.add(0);
+            }
+            else
+            {
+                for(int x = 1; x< size-10; x++)
+                    range.add(x*-1);
+            }
+        }
+        return range;
+    }
 }
