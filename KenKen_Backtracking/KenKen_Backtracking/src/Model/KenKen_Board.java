@@ -394,13 +394,10 @@ public class KenKen_Board {
         {
             for(int x = 1; x<10; x++)
                 range.add(x);
-            if(size==10)
+            range.add(0);
+            if(size>10)
             {
-                range.add(0);
-            }
-            else
-            {
-                for(int x = 1; x< size-10; x++)
+                for(int x = 1; x<= size-10; x++)
                     range.add(x*-1);
             }
         }
