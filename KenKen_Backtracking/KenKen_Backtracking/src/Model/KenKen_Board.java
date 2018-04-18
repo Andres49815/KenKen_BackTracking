@@ -33,7 +33,7 @@ public class KenKen_Board {
         actual = 1;
         solutionFound = false;
         // Initialize Boards
-        Boards(size);
+        Boards();
         // Group the boards
         Group(size);
         // View the results
@@ -46,12 +46,12 @@ public class KenKen_Board {
         //print();
     }
     // On Created Solution and Transverse board
-    private void Boards(int size) {
-        initializeBoards(size);
+    private void Boards() {
+        initializeBoards();
         SetRandoms();
         BackTracking();
     }
-    private void initializeBoards(int size) {
+    private void initializeBoards() {
         board = new ArrayList<>();
         transverseBoard = new ArrayList<>();
         for (int i = 0; i < size; i++) {
@@ -98,12 +98,13 @@ public class KenKen_Board {
             for (int n : possibilities) {
                 if (!solutionFound) {
                     set(i, j, n);
-                    BackTracking();}
+                    BackTracking();
+                }
                 else
                     return;
             }
             if (!solutionFound)
-            set(i, j, 100);
+                set(i, j, 100);
         }
     }
     private ArrayList<Integer> Possibilities(int i, int j) {
@@ -122,7 +123,7 @@ public class KenKen_Board {
         return true;
     }
     private void CleanBoards() {
-        initializeBoards(size);
+        initializeBoards();
     }
     
     // On group matrix
