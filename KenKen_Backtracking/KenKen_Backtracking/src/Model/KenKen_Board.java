@@ -111,7 +111,8 @@ public class KenKen_Board {
         ArrayList<Integer> possibilities;
         
         possibilities = new ArrayList<Integer>();
-        for (int n = 1; n < size + 1; n++)
+        //for (int n = 1; n < size + 1; n++)
+        for(int n : range())
             if (isPossible(i, j, n))
                 possibilities.add(n);
         return possibilities;
@@ -403,6 +404,8 @@ public class KenKen_Board {
                     range.add(x*-1);
             }
         }
+                System.out.println(range.toString());
+
         return range;
     }
 }
