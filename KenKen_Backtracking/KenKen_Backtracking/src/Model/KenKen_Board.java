@@ -46,6 +46,21 @@ public class KenKen_Board {
         CleanBoards();
         //print();
     }
+    public KenKen_Board(ArrayList<ArrayList<Integer>> board, ArrayList<ArrayList<Integer>> transverseBoard, int[][] group, int[][] results, HashMap<Integer, ArrayList<Integer>> map, HashMap<Integer, Integer> resultsMap, HashMap<Integer, String> operations, int actual, int size, byte Powers, byte Modules, boolean solutionFound, ArrayList<Integer> range) {
+        KenKen_Board.board = board;
+        KenKen_Board.transverseBoard = transverseBoard;
+        KenKen_Board.group = group;
+        KenKen_Board.results = results;
+        KenKen_Board.map = map;
+        KenKen_Board.resultsMap = resultsMap;
+        KenKen_Board.operations = operations;
+        KenKen_Board.actual = actual;
+        KenKen_Board.size = size;
+        KenKen_Board.Powers = Powers;
+        KenKen_Board.Modules = Modules;
+        KenKen_Board.solutionFound = solutionFound;
+        KenKen_Board.range = range;
+    }
     // On Created Solution and Transverse board
     private void Boards() {
         initializeBoards();

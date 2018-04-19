@@ -5,7 +5,6 @@ import javax.swing.BorderFactory;
 import javax.swing.JTable;
 import javax.swing.JTextPane;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 
 /**
  *
@@ -33,7 +32,6 @@ public class GameTable {
             defaultTable.addColumn(i);
         row = new Object[group.length];
         for (int i = 0; i < group.length; i++) {
-            counter = 0;
             for (int j = 0; j < group.length; j++) {
                 number = KKB.getBoard().get(i).get(j);
                 text = new JTextPane();
@@ -42,7 +40,7 @@ public class GameTable {
                 text.setText("<html><small>" + operation + "</small>" + "<center><b>" + number + "</b></center>" + "</html>");
                 borders(text, i, j, group);
                 putColor(text,KKB.getOperations().get(group[i][j]));
-                row[counter++] = text;
+                row[j] = text;
             }
             defaultTable.addRow(row);
         }
@@ -61,16 +59,15 @@ public class GameTable {
         group = KKB.getGroup();
         results = KKB.getResults();
         for (int i = 0; i < group.length; i++) {
-            counter = 0;
             for (int j = 0; j < group.length; j++) {
-                text =  (JTextPane) defaultTable.getValueAt(i, counter++);
+                text =  (JTextPane) defaultTable.getValueAt(i, j);
                 number = KKB.getBoard().get(i).get(j);
                 text.setContentType("text/html");
                 operation = results[i][j] + KKB.getOperations().get(group[i][j]);
                 text.setText("<html><small>" + operation + "</small>" + "<center><b>" + number + "</b></center>" + "</html>");
                 borders(text, i, j, group);
                 putColor(text,KKB.getOperations().get(group[i][j]));
-                defaultTable.setValueAt(text, i, counter);
+                defaultTable.setValueAt(text, i, j);
             }
         }
         t.setModel(defaultTable);

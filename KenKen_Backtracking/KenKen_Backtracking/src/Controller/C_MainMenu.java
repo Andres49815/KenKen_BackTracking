@@ -12,6 +12,8 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -45,7 +47,7 @@ public class C_MainMenu implements ActionListener {
                 break;
             case "Resolver":
                 Solve();
-                break;/*
+                break;
             case "Guardar":
                 try {
                     
@@ -60,7 +62,7 @@ public class C_MainMenu implements ActionListener {
                 } catch (FileNotFoundException ex) {
                     Logger.getLogger(C_MainMenu.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                break;*/
+                break;
                               
                 
         }
@@ -76,6 +78,7 @@ public class C_MainMenu implements ActionListener {
             view.model = model;
             model.print();
             view.gameTable.setTable(view.table_Game, model);
+            view.gameTable.actualizar(view.table_Game, model);
             System.out.println("Grupo");
             for (int i = 0; i < model.group.length; i++) {
                 for (int j = 0; j < model.group.length; j++)
@@ -113,6 +116,7 @@ public class C_MainMenu implements ActionListener {
     }
     private void Open() throws FileNotFoundException {
         reader = new FileReader("kenken.xml");
+        
         XML xml = (XML) (xstream.fromXML(reader));
         KenKen_Board.board = xml.board;
         KenKen_Board.transverseBoard = xml.transverseBoard;
@@ -127,6 +131,15 @@ public class C_MainMenu implements ActionListener {
         KenKen_Board.Modules = xml.Modules;
         KenKen_Board.solutionFound = xml.solutionFound;
         KenKen_Board.range = xml.range;
+        
+        model =  new KenKen_Board(xml.board,xml.transverseBoard,
+                xml.group,xml.results,xml.map,
+                xml.resultsMap,xml.operations,xml.actual,
+                xml.size,xml.Powers,xml.Modules,
+                xml.solutionFound,xml.range);
+        
+        view.model = model;
+        view.gameTable.setTable(view.table_Game, model);
     }
            
         
