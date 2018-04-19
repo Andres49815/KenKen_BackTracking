@@ -22,6 +22,7 @@ public class KenKen_Board {
     // Other Variables
     public static int actual;
     public static int size;
+    public static ArrayList<Integer> groupsArray;
 
     
     private final Random random = new Random();
@@ -40,6 +41,8 @@ public class KenKen_Board {
         Boards();
         // Group the boards
         Group(size);
+        // ArrayGroup
+        FillGroupArray();
         // View the results
         Results();
         // Clean the boards
@@ -198,6 +201,16 @@ public class KenKen_Board {
                 newGroup[i - 3][j - 3] = group[i][j];
         this.group = new int[size][size];
         this.group = newGroup;
+    }
+    private static void FillGroupArray() {
+        groupsArray = new ArrayList<Integer>();
+        
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (!groupsArray.contains(group[i][j]))
+                    groupsArray.add(group[i][j]);
+            }
+        }
     }
     // On Operations
     private void Results() {

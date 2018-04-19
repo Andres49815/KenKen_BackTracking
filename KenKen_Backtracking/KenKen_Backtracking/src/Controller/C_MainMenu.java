@@ -8,8 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileReader;
 
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.io.xml.DomDriver;
+//import com.thoughtworks.xstream.XStream;
+//import com.thoughtworks.xstream.io.xml.DomDriver;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
@@ -20,7 +20,7 @@ import java.util.logging.Logger;
  * @author Andres Obando Alfaro
  */
 public class C_MainMenu implements ActionListener {
-   XStream xstream = new XStream(new DomDriver());
+   //XStream xstream = new XStream(new DomDriver());
     FileReader reader = null; 
     private MainMenu view;
     private KenKen_Board model;
@@ -48,7 +48,7 @@ public class C_MainMenu implements ActionListener {
             case "Resolver":
                 Solve();
                 break;
-            case "Guardar":
+            case "Guardar":/*
                 try {
                     
                     Save();
@@ -57,11 +57,12 @@ public class C_MainMenu implements ActionListener {
                 }
                 break;
             case "Cargar":
+                
                 try {
                     Open();
                 } catch (FileNotFoundException ex) {
                     Logger.getLogger(C_MainMenu.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                }*/
                 break;
                               
                 
@@ -95,7 +96,7 @@ public class C_MainMenu implements ActionListener {
         KenKen_Board.print();
     }
 
-    
+    /*
 
     private void ThreadInterface() {
         Thread thread = new Thread(view);
@@ -145,6 +146,6 @@ public class C_MainMenu implements ActionListener {
         
        
             
-    
+    */
     
 }
