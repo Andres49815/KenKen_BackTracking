@@ -13,15 +13,17 @@ public class KenKen_Board {
     private static ArrayList<ArrayList<Integer>> board;
     private static ArrayList<ArrayList<Integer>> transverseBoard;
     // Group
-    private static int[][] group;
+    public static int[][] group;
     // Results
     private static int[][] results;
     private static HashMap<Integer, ArrayList<Integer>> map;
-    private static HashMap<Integer, Integer> resultsMap;
-    private static HashMap<Integer, String> operations;
+    public static HashMap<Integer, Integer> resultsMap;
+    public static HashMap<Integer, String> operations;
     // Other Variables
     private static int actual;
     public static int size;
+
+    
     private final Random random = new Random();
     public static byte Powers;
     public static byte Modules;
@@ -62,6 +64,7 @@ public class KenKen_Board {
             }
         }
     }
+    
     private void SetRandoms() {
         int randX, randY, rand;
         
@@ -153,7 +156,7 @@ public class KenKen_Board {
                                     else
                                         break;
                                 }
-                                else {}
+                                //else {}
                         else
                             break;
                     actual++;
@@ -264,7 +267,7 @@ public class KenKen_Board {
             for (int j = 0; j < group.length; j++)
                 results[i][j] = resultsMap.get(group[i][j]);
     }
-    public int Results(int i, int j) {
+    public  int Results(int i, int j) {
         return resultsMap.get(group[i][j]);
     }
     
@@ -344,10 +347,10 @@ public class KenKen_Board {
             for (int j = 0; j < group.length; j++)
                 System.out.print(group[i][j] + "\t");
             System.out.println();
-        }*/
+        }
         /*
         System.out.println();
-        // Print Last Board
+         Print Last Board
         printBoard(this.results);
         */
     }
@@ -401,8 +404,37 @@ public class KenKen_Board {
                     range.add(x*-1);
             }
         }
-                System.out.println(range.toString());
-
         return range;
+    }
+    
+    public static int maxGroup ()
+    {
+        int big = 1;
+        for (int x = 0; x<size; x++)
+        {
+            for (int y = 0; y<size; y++)
+            {
+                if(group[x][y] >= big)
+                    big = group[x][y];
+            }
+        }
+        return big;
+    }
+    
+    static ArrayList<ArrayList<Integer>> getPeople(int i) {
+        ArrayList<ArrayList<Integer>> places = new ArrayList<>();  
+        for (int a = 0; a < size; a++) {
+            for (int b = 0; b < size; b++) {
+                if (group[a][b]==i)
+                {
+                    ArrayList<Integer> place = new ArrayList<>();
+                    place.add(a);
+                    place.add(b);
+                    places.add(place);
+                }
+            }
+        }
+        return places;
+        
     }
 }

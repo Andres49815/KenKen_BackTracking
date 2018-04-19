@@ -1,8 +1,7 @@
 package Model;
 
-import Controller.C_MainMenu;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
+import java.util.HashMap;
 
 /**
  *
@@ -11,31 +10,56 @@ import javax.swing.JOptionPane;
 public class Solver {
     
     private static ArrayList<ArrayList<Integer>> solution;
+    private static HashMap<Integer, ArrayList<ArrayList<Integer>>> possibilitiesMap = new HashMap<>();
     private static ArrayList<ArrayList<Integer>> transverseSolution;
     private static int powSolved = 0;
     private static int moduleSolver = 0;
 
-    
-
-    
+    public static void DoPossibilities() {
+        for (int i = 1; i < KenKen_Board.maxGroup();i++)
+        {
+            String operation = KenKen_Board.operations.get(i);
+            System.out.println(operation);
+            int result = KenKen_Board.resultsMap.get(i);
+            switch(operation)
+            {
+                case " ":
+                    ArrayList<ArrayList<Integer>> statics = new  ArrayList<>();
+                    ArrayList<Integer> staticNumber = new ArrayList<>();
+                    staticNumber.add(result);
+                    statics.add(staticNumber);
+                    possibilitiesMap.put(i,statics);
+                    break;
+                case "^":
+                    ArrayList<ArrayList<Integer>> potencias = new  ArrayList<>();
+                    potencias.add(possibilities(result));
+                    possibilitiesMap.put(i,potencias);
+                    break;
+                case "%":
+                    possibilitiesMap.put(i, modulsPossibilities(result));
+                    break;
+                case "*":
+                    possibilitiesMap.put(i, multiplicationPossibilities(result));
+                    break;
+            }
+        }
+    }
     public Solver() {
         
     }
     public static void Solve() {
-        SolveStatics();
-        SolvePowers();
+        DoPossibilities();
+//      SolveStatics();
+//      SolvePowers();
         SolveOperations();
     }
-    private static ArrayList<Integer> possibilities(int i, int j) {
+    private static ArrayList<Integer> possibilities(int number) {
         ArrayList<Integer> results, roots;
         
-        int number = KenKen_Board.getResult(i, j);
         roots = Power(number);
         results = new ArrayList<>();
         for (int possible : roots)
-            if (KenKen_Board.isPossible(i, j, possible))
-                results.add(possible);
-        
+            results.add(possible);
         return results;
     }
     private static ArrayList<Integer> Power(int number) {
@@ -49,96 +73,145 @@ public class Solver {
     }
     
     
-    private static void SolveStatics() {
-        for (int i = 0; i < KenKen_Board.getSize(); i++)
-            for (int j = 0; j < KenKen_Board.getSize(); j++)
-                if (KenKen_Board.getOperation(i, j).equals(" "))
-                    KenKen_Board.set(i, j, KenKen_Board.getResult(i, j));
-    }
-    private static void SolvePowers() {
-        int i, j;
-        
-        if (KenKen_Board.isComplete()) {
-            KenKen_Board.print();
-            solution = (ArrayList<ArrayList<Integer>>)KenKen_Board.getBoard().clone();
-            return;
-        }
-        i = j = 0;
-        for (int a = 0; a < KenKen_Board.getSize(); a++) {
-            for (int b = 0; b < KenKen_Board.getSize(); b++) {
-                // Si es potencia y esta vacio
-                if (KenKen_Board.getOperation(a, b).equals("^") && KenKen_Board.get(a, b) == 100) {
-                    i = a;
-                    j = b;
-                    break;
-                }
-            }
-        }
-        
-        ArrayList<Integer> possibilities = possibilities(i, j);
-        for (int n : possibilities) {    
-            KenKen_Board.set(i, j, n);
-            SolvePowers();
-        }
-    }
+//    private static void SolveStatics() {
+//        for (int i = 0; i < KenKen_Board.getSize(); i++)
+//            for (int j = 0; j < KenKen_Board.getSize(); j++)
+//                if (KenKen_Board.getOperation(i, j).equals(" "))
+//                    KenKen_Board.set(i, j, KenKen_Board.getResult(i, j));
+//    }
+//    private static void SolvePowers() {
+//        int i, j;
+//        
+//        if (KenKen_Board.isComplete()) {
+//            KenKen_Board.print();
+//            solution = (ArrayList<ArrayList<Integer>>)KenKen_Board.getBoard().clone();
+//            return;
+//        }
+//        i = j = 0;
+//        for (int a = 0; a < KenKen_Board.getSize(); a++) {
+//            for (int b = 0; b < KenKen_Board.getSize(); b++) {
+//                // Si es potencia y esta vacio
+//                if (KenKen_Board.getOperation(a, b).equals("^") && KenKen_Board.get(a, b) == 100) {
+//                    i = a;
+//                    j = b;
+//                    break;
+//                }
+//            }
+//        }
+//        ArrayList<Integer> possibilities = possibilities(i, j);
+//        for (int n : possibilities) {    
+//            KenKen_Board.set(i, j, n);
+//            SolvePowers();
+//        }
+//    }
     private static void SolveOperations() {
         
-        int i, j;
-        String operation = "";
-        
         if (KenKen_Board.isComplete()) {
             KenKen_Board.print();
             solution = (ArrayList<ArrayList<Integer>>)KenKen_Board.getBoard().clone();
             return;
         }
-        i = j = 0;
-        ArrayList<ArrayList<Integer>> possibilities = new ArrayList<>();
-        for (int a = 0; a < KenKen_Board.getSize(); a++) {
-            for (int b = 0; b < KenKen_Board.getSize(); b++) {
-                // Si es potencia y esta vacio
-                if (KenKen_Board.get(a, b) == 100 && KenKen_Board.getOperation(a, b).equals("%")) {
-                    i = a;
-                    j = b;
-                    possibilities = modulsPossibilities(KenKen_Board.getSize(), i, j);
-                    operation = "%";
-                    break;
-                }
-                else if (KenKen_Board.get(a, b) == 100 && KenKen_Board.getOperation(a, b).equals("*")) {
-                    i = a;
-                    j = b;
-                    possibilities = multiplicationPossibilities(KenKen_Board.getSize(), i, j);
-                    operation = "*";
-                    break;
-                }
-                    
-                
-            }
-        }
-        if (operation.equals("*")||operation.equals("%"))
+        for (int i = 1; i<=KenKen_Board.maxGroup();i++)
         {
+            ArrayList<ArrayList<Integer>> people = KenKen_Board.getPeople(i);
+            ArrayList<ArrayList<Integer>> possibilities = possibilitiesMap.get(i);
+            ArrayList<Integer> coordenadas = new ArrayList<>();
+            int sizeGroup = KenKen_Board.cantOfGroup(i);
             if(!possibilities.isEmpty())
             {
                 for (ArrayList<Integer> possibility : possibilities) 
                 {
-                    ArrayList<Integer> place = searchNear(i,j);
-                    int x = place.get(0);
-                    int y = place.get(1);
-                    if(KenKen_Board.isPossible(i, j, possibility.get(0)) && KenKen_Board.isPossible(x, y, possibility.get(1)))
+                    if (sizeGroup==2 && people.size() == 2)
                     {
-                        KenKen_Board.set(i, j, possibility.get(0));
-                        KenKen_Board.set(x, y, possibility.get(1));
-                        SolveOperations();
+                        coordenadas = people.get(0);
+                        int x1 = coordenadas.get(0);
+                        int y1 = coordenadas.get(1);
+                        coordenadas = people.get(1);
+                        int x2 = coordenadas.get(0);
+                        int y2 = coordenadas.get(1);
+                        if(KenKen_Board.isPossible(x1, y1, possibility.get(0)) && KenKen_Board.isPossible(x2, y2, possibility.get(1)))
+                        {
+                            KenKen_Board.set(x1, y1, possibility.get(0));
+                            KenKen_Board.set(x2, y2, possibility.get(1));
+                            SolveOperations();
+                        }
+                    }
+                    else if (sizeGroup==1 && people.size() == 1)
+                    {
+                        coordenadas = people.get(0);
+                        int x1 = coordenadas.get(0);
+                        int y1 = coordenadas.get(1);
+                        if(KenKen_Board.isPossible(x1, y1, possibility.get(0)));
+                        {
+                            KenKen_Board.set(x1, y1, possibility.get(0));
+                            SolveOperations();
+                        }
                     }
                 }
             }
         }
-        
-        
     }
-    
-    private static ArrayList<ArrayList<Integer>> modulsPossibilities(int size, int i,int j) {
         
-        int number = KenKen_Board.getResult(i, j);
+        
+        
+    
+    
+//    private static void SolveOperationsCell() {
+//        
+//        int i, j;
+//        String operation = "";
+//        
+//        if (KenKen_Board.isComplete()) {
+//            KenKen_Board.print();
+//            solution = (ArrayList<ArrayList<Integer>>)KenKen_Board.getBoard().clone();
+//            return;
+//        }
+//        i = j = 0;
+//        ArrayList<ArrayList<Integer>> possibilities = new ArrayList<>();
+//        for (int a = 0; a < KenKen_Board.getSize(); a++) {
+//            for (int b = 0; b < KenKen_Board.getSize(); b++) {
+//                // Si es potencia y esta vacio
+//                if (KenKen_Board.get(a, b) == 100 && KenKen_Board.getOperation(a, b).equals("%")) {
+//                    i = a;
+//                    j = b;
+//                    possibilities = modulsPossibilities(KenKen_Board.getSize(), i, j);
+//                    operation = "%";
+//                    break;
+//                }
+//                else if (KenKen_Board.get(a, b) == 100 && KenKen_Board.getOperation(a, b).equals("*")) {
+//                    i = a;
+//                    j = b;
+//                    possibilities = multiplicationPossibilities(KenKen_Board.getSize(), i, j);
+//                    operation = "*";
+//                    break;
+//                }
+//                    
+//                
+//            }
+//        }
+//        if (operation.equals("*")||operation.equals("%"))
+//        {
+//            if(!possibilities.isEmpty())
+//            {
+//                for (ArrayList<Integer> possibility : possibilities) 
+//                {
+//                    ArrayList<Integer> place = searchNear(i,j);
+//                    int x = place.get(0);
+//                    int y = place.get(1);
+//                    if(KenKen_Board.isPossible(i, j, possibility.get(0)) && KenKen_Board.isPossible(x, y, possibility.get(1)))
+//                    {
+//                        KenKen_Board.set(i, j, possibility.get(0));
+//                        KenKen_Board.set(x, y, possibility.get(1));
+//                        SolveOperations();
+//                    }
+//                }
+//            }
+//        }
+//        
+//        
+//    }
+    
+    private static ArrayList<ArrayList<Integer>> modulsPossibilities(int number) {
         
         ArrayList<ArrayList<Integer>> solutions = new ArrayList<>();
         ArrayList<Integer> range = KenKen_Board.range();
@@ -162,10 +235,7 @@ public class Solver {
         return solutions;  
     }
     
-    private static ArrayList<ArrayList<Integer>> multiplicationPossibilities(int size, int i,int j) {
-        
-        int number = KenKen_Board.getResult(i, j);
-        
+    private static ArrayList<ArrayList<Integer>> multiplicationPossibilities(int number) {
         ArrayList<ArrayList<Integer>> solutions = new ArrayList<>();
         ArrayList<Integer> range = KenKen_Board.range();
         for (int x : range)

@@ -2,6 +2,8 @@ package kenken_backtracking;
 
 import Controller.C_MainMenu;
 import View.MainMenu;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 

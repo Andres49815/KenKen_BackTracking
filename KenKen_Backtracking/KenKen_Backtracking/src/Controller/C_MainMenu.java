@@ -48,8 +48,12 @@ public class C_MainMenu implements ActionListener {
             view.model = model;
             model.print();
             view.gameTable.setTable(view.table_Game, model);
-            
-            
+            System.out.println("Grupo");
+            for (int i = 0; i < model.group.length; i++) {
+                for (int j = 0; j < model.group.length; j++)
+                    System.out.print(model.group[i][j] + "\t");
+                System.out.println();
+            }
         }
     }
     private void Solve() {
