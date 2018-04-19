@@ -10,17 +10,17 @@ import java.util.Random;
  */
 public class KenKen_Board {
     // Boards
-    private static ArrayList<ArrayList<Integer>> board;
-    private static ArrayList<ArrayList<Integer>> transverseBoard;
+    public static ArrayList<ArrayList<Integer>> board;
+    public static ArrayList<ArrayList<Integer>> transverseBoard;
     // Group
     public static int[][] group;
     // Results
-    private static int[][] results;
-    private static HashMap<Integer, ArrayList<Integer>> map;
+    public static int[][] results;
+    public static HashMap<Integer, ArrayList<Integer>> map;
     public static HashMap<Integer, Integer> resultsMap;
     public static HashMap<Integer, String> operations;
     // Other Variables
-    private static int actual;
+    public static int actual;
     public static int size;
 
     

@@ -2,9 +2,18 @@ package Controller;
 
 import Model.KenKen_Board;
 import Model.Solver;
+import Model.XML;
 import View.MainMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileReader;
+
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.DomDriver;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -34,6 +43,15 @@ public class C_MainMenu implements ActionListener {
                 break;
             case "Resolver":
                 Solve();
+                break;
+            case "Guardar":
+            
+                try {
+                    Open();
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(C_MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            
                 break;
         }
     }
@@ -68,6 +86,20 @@ public class C_MainMenu implements ActionListener {
     private void ThreadInterface() {
         Thread thread = new Thread(view);
         thread.start();
+    }
+
+    private void Open() throws FileNotFoundException {
+        XML saved = new XML(KenKen_Board.board,KenKen_Board.transverseBoard,
+                KenKen_Board.group,KenKen_Board.results,KenKen_Board.map,
+                KenKen_Board.resultsMap,KenKen_Board.operations,KenKen_Board.actual,
+                KenKen_Board.size,KenKen_Board.Powers,KenKen_Board.Modules,
+                KenKen_Board.solutionFound,KenKen_Board.range);
+        XStream xstream = new XStream(new DomDriver());
+        FileReader reader = null;    
+        try (PrintWriter outA = new PrintWriter("kenken.xml")) {
+            String xml = xstream.toXML(saved);
+            outA.println(xml);
+        }
     }
     
     
