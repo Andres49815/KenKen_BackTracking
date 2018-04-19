@@ -327,6 +327,23 @@ public class KenKen_Board {
     public static ArrayList<Integer> getGroup(int i, int j) {
         return map.get(group[i][j]);
     }
+    public static void set100(int groupNo) {
+        for (int i = 0; i < group.length; i++) {
+            for (int j = 0; j < group.length; j++) {
+                if (group[i][j] == groupNo)
+                    group[i][j] = 100;
+            }
+        }
+    }
+    public static boolean groupIsComplete(int groupNo) {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (group[i][j] == groupNo && board.get(i).get(j) == 100)
+                    return false;
+            }
+        }
+        return true;
+    }
     // On Results
     public static int[][] getResults() {
         return results;
@@ -364,7 +381,6 @@ public class KenKen_Board {
             }
         return true;
     }
-
     /**
      *
      * @return
