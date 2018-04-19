@@ -156,7 +156,7 @@ public class KenKen_Board {
                                     else
                                         break;
                                 }
-                                //else {}
+                                else {}
                         else
                             break;
                     actual++;
