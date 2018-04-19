@@ -16,10 +16,10 @@ public class Solver {
     private static int moduleSolver = 0;
 
     public static void DoPossibilities() {
-        for (int i = 1; i < KenKen_Board.maxGroup();i++)
+        for (int i = 1; i <= KenKen_Board.maxGroup();i++)
         {
+            System.out.println("Grupo"+i);
             String operation = KenKen_Board.operations.get(i);
-            System.out.println(operation);
             int result = KenKen_Board.resultsMap.get(i);
             switch(operation)
             {
@@ -111,7 +111,7 @@ public class Solver {
             solution = (ArrayList<ArrayList<Integer>>)KenKen_Board.getBoard().clone();
             return;
         }
-        for (int i = 1; i<=KenKen_Board.maxGroup();i++)
+        for (int i = 1; i<= KenKen_Board.maxGroup();i++)
         {
             ArrayList<ArrayList<Integer>> people = KenKen_Board.getPeople(i);
             ArrayList<ArrayList<Integer>> possibilities = possibilitiesMap.get(i);

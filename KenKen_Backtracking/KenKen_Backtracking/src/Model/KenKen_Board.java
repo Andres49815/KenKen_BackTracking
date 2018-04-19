@@ -43,7 +43,7 @@ public class KenKen_Board {
         // View the results
         Results();
         // Clean the boards
-        //CleanBoards();
+        CleanBoards();
         //print();
     }
     // On Created Solution and Transverse board
