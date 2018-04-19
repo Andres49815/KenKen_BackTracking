@@ -140,26 +140,31 @@ public class KenKen_Board {
     }
     private void Group() {
         boolean[][] grp;
+        boolean doSomething;
         
         for (int i = 3; i < group.length - 3; i++)
             for (int j = 3; j < group.length - 3; j++)
                 // Only for those without value.
                 if (group[i][j] == 0) {
                     grp = Cage.getCage();
+                    doSomething = false;
                     // Travel the obtained cage with a tetris figure.
                     for (int y = 0; y < grp.length; y++)
                         if (group[i + y][j] == 0)
                             for (int x = 0; x < grp[0].length; x++)
-                                if (grp[y][x] ) {
-                                    if (group[i + y][j + x] == 0)
+                                if (grp[y][x]) {
+                                    if (group[i + y][j + x] == 0) {
                                         group[i + y][j + x] = actual;
+                                        doSomething = true;
+                                    }
                                     else
                                         break;
                                 }
                                 else {}
                         else
                             break;
-                    actual++;
+                    if (doSomething)
+                        actual++;
                 }
     }
     private boolean isGrouped() {
