@@ -20,6 +20,8 @@ import java.util.logging.Logger;
  * @author Andres Obando Alfaro
  */
 public class C_MainMenu implements ActionListener {
+    XStream xstream = new XStream(new DomDriver());
+    FileReader reader = null; 
     private MainMenu view;
     private KenKen_Board model;
     
@@ -28,6 +30,8 @@ public class C_MainMenu implements ActionListener {
         // For MVC
         view.button_Generate.addActionListener(this);
         view.button_Powers.addActionListener(this);
+        view.button_Save.addActionListener(this);
+        view.button_Open.addActionListener(this);
         view.table_Game.setVisible(false);
         
         // Display view
@@ -45,14 +49,22 @@ public class C_MainMenu implements ActionListener {
                 Solve();
                 break;
             case "Guardar":
-            
+                try {
+                    
+                    Save();
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(C_MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                break;
+            case "Cargar":
                 try {
                     Open();
                 } catch (FileNotFoundException ex) {
                     Logger.getLogger(C_MainMenu.class.getName()).log(Level.SEVERE, null, ex);
                 }
-            
                 break;
+                              
+                
         }
     }
     private void generate() {
@@ -88,20 +100,39 @@ public class C_MainMenu implements ActionListener {
         thread.start();
     }
 
-    private void Open() throws FileNotFoundException {
+    private void Save() throws FileNotFoundException {
         XML saved = new XML(KenKen_Board.board,KenKen_Board.transverseBoard,
                 KenKen_Board.group,KenKen_Board.results,KenKen_Board.map,
                 KenKen_Board.resultsMap,KenKen_Board.operations,KenKen_Board.actual,
                 KenKen_Board.size,KenKen_Board.Powers,KenKen_Board.Modules,
                 KenKen_Board.solutionFound,KenKen_Board.range);
-        XStream xstream = new XStream(new DomDriver());
-        FileReader reader = null;    
+           
         try (PrintWriter outA = new PrintWriter("kenken.xml")) {
             String xml = xstream.toXML(saved);
             outA.println(xml);
         }
     }
-    
+    private void Open() throws FileNotFoundException {
+        reader = new FileReader("kenken.xml");
+        XML xml = (XML) (xstream.fromXML(reader));
+        KenKen_Board.board = xml.board;
+        KenKen_Board.transverseBoard = xml.transverseBoard;
+        KenKen_Board.group = xml.group;
+        KenKen_Board.results = xml.results;
+        KenKen_Board.map = xml.map;
+        KenKen_Board.resultsMap = xml.resultsMap;
+        KenKen_Board.operations = xml.operations;
+        KenKen_Board.actual = xml.actual;
+        KenKen_Board.size = xml.size;
+        KenKen_Board.Powers = xml.Powers;
+        KenKen_Board.Modules = xml.Modules;
+        KenKen_Board.solutionFound = xml.solutionFound;
+        KenKen_Board.range = xml.range;
+    }
+           
+        
+       
+            
     
     
 }

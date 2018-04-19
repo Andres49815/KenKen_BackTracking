@@ -43,7 +43,8 @@ public class MainMenu extends javax.swing.JFrame implements Runnable{
         button_Generate = new javax.swing.JButton();
         spinner_Size = new javax.swing.JSpinner();
         button_Powers = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        button_Save = new javax.swing.JButton();
+        button_Open = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -73,7 +74,9 @@ public class MainMenu extends javax.swing.JFrame implements Runnable{
 
         button_Powers.setText("Resolver");
 
-        jButton1.setText("Cargar");
+        button_Save.setText("Guardar");
+
+        button_Open.setText("Cargar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -95,7 +98,8 @@ public class MainMenu extends javax.swing.JFrame implements Runnable{
                             .addComponent(button_Generate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(spinner_Size)
                             .addComponent(button_Powers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(button_Save, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(button_Open, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -113,8 +117,10 @@ public class MainMenu extends javax.swing.JFrame implements Runnable{
                 .addComponent(button_Generate, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(button_Powers, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(button_Open, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(button_Save, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -175,8 +181,9 @@ public class MainMenu extends javax.swing.JFrame implements Runnable{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton button_Generate;
+    public javax.swing.JButton button_Open;
     public javax.swing.JButton button_Powers;
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton button_Save;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

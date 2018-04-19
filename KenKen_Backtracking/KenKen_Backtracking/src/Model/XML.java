@@ -13,17 +13,17 @@ import java.util.HashMap;
  * @author Rubén González V
  */
 public class XML {
-    private  ArrayList<ArrayList<Integer>> board;
-    private  ArrayList<ArrayList<Integer>> transverseBoard;
+    public  ArrayList<ArrayList<Integer>> board;
+    public  ArrayList<ArrayList<Integer>> transverseBoard;
     // Group
     public  int[][] group;
     // Results
-    private  int[][] results;
-    private  HashMap<Integer, ArrayList<Integer>> map;
+    public  int[][] results;
+    public  HashMap<Integer, ArrayList<Integer>> map;
     public  HashMap<Integer, Integer> resultsMap;
     public  HashMap<Integer, String> operations;
     // Other Variables
-    private  int actual;
+    public  int actual;
     public  int size;
 
     
