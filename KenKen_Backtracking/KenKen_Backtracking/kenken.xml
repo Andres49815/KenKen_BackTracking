@@ -1,450 +1,829 @@
 <Model.XML>
   <board>
     <list>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
+      <int>1</int>
+      <int>4</int>
+      <int>8</int>
+      <int>2</int>
+      <int>3</int>
+      <int>6</int>
+      <int>5</int>
+      <int>7</int>
+      <int>0</int>
+      <int>9</int>
     </list>
     <list>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
+      <int>6</int>
+      <int>1</int>
+      <int>4</int>
+      <int>8</int>
+      <int>2</int>
+      <int>7</int>
+      <int>3</int>
+      <int>5</int>
+      <int>9</int>
+      <int>0</int>
     </list>
     <list>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
+      <int>2</int>
+      <int>3</int>
+      <int>6</int>
+      <int>5</int>
+      <int>1</int>
+      <int>9</int>
+      <int>4</int>
+      <int>0</int>
+      <int>8</int>
+      <int>7</int>
     </list>
     <list>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
+      <int>5</int>
+      <int>8</int>
+      <int>3</int>
+      <int>1</int>
+      <int>0</int>
+      <int>2</int>
+      <int>9</int>
+      <int>4</int>
+      <int>7</int>
+      <int>6</int>
     </list>
     <list>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
+      <int>8</int>
+      <int>5</int>
+      <int>1</int>
+      <int>3</int>
+      <int>9</int>
+      <int>0</int>
+      <int>7</int>
+      <int>2</int>
+      <int>6</int>
+      <int>4</int>
     </list>
     <list>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
+      <int>4</int>
+      <int>2</int>
+      <int>9</int>
+      <int>0</int>
+      <int>7</int>
+      <int>8</int>
+      <int>6</int>
+      <int>1</int>
+      <int>3</int>
+      <int>5</int>
     </list>
     <list>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
+      <int>3</int>
+      <int>6</int>
+      <int>7</int>
+      <int>4</int>
+      <int>8</int>
+      <int>1</int>
+      <int>0</int>
+      <int>9</int>
+      <int>5</int>
+      <int>2</int>
+    </list>
+    <list>
+      <int>7</int>
+      <int>0</int>
+      <int>2</int>
+      <int>9</int>
+      <int>6</int>
+      <int>5</int>
+      <int>1</int>
+      <int>8</int>
+      <int>4</int>
+      <int>3</int>
+    </list>
+    <list>
+      <int>9</int>
+      <int>7</int>
+      <int>0</int>
+      <int>6</int>
+      <int>5</int>
+      <int>4</int>
+      <int>8</int>
+      <int>3</int>
+      <int>2</int>
+      <int>1</int>
+    </list>
+    <list>
+      <int>0</int>
+      <int>9</int>
+      <int>5</int>
+      <int>7</int>
+      <int>4</int>
+      <int>3</int>
+      <int>2</int>
+      <int>6</int>
+      <int>1</int>
+      <int>8</int>
     </list>
   </board>
   <transverseBoard>
     <list>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
+      <int>1</int>
+      <int>6</int>
+      <int>2</int>
+      <int>5</int>
+      <int>8</int>
+      <int>4</int>
+      <int>3</int>
+      <int>7</int>
+      <int>9</int>
+      <int>0</int>
     </list>
     <list>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
+      <int>4</int>
+      <int>1</int>
+      <int>3</int>
+      <int>8</int>
+      <int>5</int>
+      <int>2</int>
+      <int>6</int>
+      <int>0</int>
+      <int>7</int>
+      <int>9</int>
     </list>
     <list>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
+      <int>8</int>
+      <int>4</int>
+      <int>6</int>
+      <int>3</int>
+      <int>1</int>
+      <int>9</int>
+      <int>7</int>
+      <int>2</int>
+      <int>0</int>
+      <int>5</int>
     </list>
     <list>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
+      <int>2</int>
+      <int>8</int>
+      <int>5</int>
+      <int>1</int>
+      <int>3</int>
+      <int>0</int>
+      <int>4</int>
+      <int>9</int>
+      <int>6</int>
+      <int>7</int>
     </list>
     <list>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
+      <int>3</int>
+      <int>2</int>
+      <int>1</int>
+      <int>0</int>
+      <int>9</int>
+      <int>7</int>
+      <int>8</int>
+      <int>6</int>
+      <int>5</int>
+      <int>4</int>
     </list>
     <list>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
+      <int>6</int>
+      <int>7</int>
+      <int>9</int>
+      <int>2</int>
+      <int>0</int>
+      <int>8</int>
+      <int>1</int>
+      <int>5</int>
+      <int>4</int>
+      <int>3</int>
     </list>
     <list>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
-      <int>100</int>
+      <int>5</int>
+      <int>3</int>
+      <int>4</int>
+      <int>9</int>
+      <int>7</int>
+      <int>6</int>
+      <int>0</int>
+      <int>1</int>
+      <int>8</int>
+      <int>2</int>
+    </list>
+    <list>
+      <int>7</int>
+      <int>5</int>
+      <int>0</int>
+      <int>4</int>
+      <int>2</int>
+      <int>1</int>
+      <int>9</int>
+      <int>8</int>
+      <int>3</int>
+      <int>6</int>
+    </list>
+    <list>
+      <int>0</int>
+      <int>9</int>
+      <int>8</int>
+      <int>7</int>
+      <int>6</int>
+      <int>3</int>
+      <int>5</int>
+      <int>4</int>
+      <int>2</int>
+      <int>1</int>
+    </list>
+    <list>
+      <int>9</int>
+      <int>0</int>
+      <int>7</int>
+      <int>6</int>
+      <int>4</int>
+      <int>5</int>
+      <int>2</int>
+      <int>3</int>
+      <int>1</int>
+      <int>8</int>
     </list>
   </transverseBoard>
   <group>
     <int-array>
       <int>1</int>
-      <int>2</int>
-      <int>3</int>
-      <int>3</int>
-      <int>3</int>
-      <int>3</int>
-      <int>19</int>
-    </int-array>
-    <int-array>
+      <int>1</int>
+      <int>1</int>
       <int>1</int>
       <int>2</int>
-      <int>20</int>
-      <int>5</int>
-      <int>21</int>
-      <int>6</int>
+      <int>3</int>
+      <int>4</int>
+      <int>4</int>
+      <int>4</int>
       <int>4</int>
     </int-array>
     <int-array>
-      <int>1</int>
-      <int>2</int>
-      <int>2</int>
-      <int>24</int>
-      <int>7</int>
+      <int>34</int>
+      <int>5</int>
       <int>6</int>
-      <int>8</int>
+      <int>6</int>
+      <int>2</int>
+      <int>3</int>
+      <int>3</int>
+      <int>3</int>
+      <int>35</int>
+      <int>7</int>
     </int-array>
     <int-array>
-      <int>1</int>
+      <int>8</int>
+      <int>5</int>
+      <int>6</int>
+      <int>6</int>
+      <int>2</int>
+      <int>36</int>
       <int>9</int>
+      <int>37</int>
       <int>10</int>
       <int>7</int>
-      <int>6</int>
-      <int>6</int>
-      <int>8</int>
     </int-array>
     <int-array>
+      <int>5</int>
+      <int>5</int>
       <int>11</int>
+      <int>11</int>
+      <int>2</int>
+      <int>9</int>
       <int>9</int>
       <int>10</int>
-      <int>10</int>
+      <int>7</int>
+      <int>7</int>
+    </int-array>
+    <int-array>
+      <int>43</int>
       <int>12</int>
       <int>13</int>
-      <int>13</int>
-    </int-array>
-    <int-array>
       <int>11</int>
       <int>14</int>
-      <int>10</int>
+      <int>14</int>
+      <int>9</int>
       <int>15</int>
-      <int>12</int>
       <int>16</int>
       <int>17</int>
     </int-array>
     <int-array>
-      <int>11</int>
-      <int>11</int>
-      <int>22</int>
+      <int>18</int>
+      <int>12</int>
+      <int>19</int>
+      <int>19</int>
+      <int>19</int>
+      <int>20</int>
+      <int>20</int>
       <int>15</int>
-      <int>23</int>
       <int>16</int>
       <int>17</int>
+    </int-array>
+    <int-array>
+      <int>12</int>
+      <int>12</int>
+      <int>40</int>
+      <int>19</int>
+      <int>22</int>
+      <int>22</int>
+      <int>41</int>
+      <int>15</int>
+      <int>16</int>
+      <int>24</int>
+    </int-array>
+    <int-array>
+      <int>25</int>
+      <int>26</int>
+      <int>27</int>
+      <int>21</int>
+      <int>22</int>
+      <int>22</int>
+      <int>23</int>
+      <int>15</int>
+      <int>16</int>
+      <int>24</int>
+    </int-array>
+    <int-array>
+      <int>25</int>
+      <int>26</int>
+      <int>21</int>
+      <int>21</int>
+      <int>28</int>
+      <int>28</int>
+      <int>38</int>
+      <int>23</int>
+      <int>39</int>
+      <int>30</int>
+    </int-array>
+    <int-array>
+      <int>31</int>
+      <int>42</int>
+      <int>32</int>
+      <int>33</int>
+      <int>28</int>
+      <int>28</int>
+      <int>29</int>
+      <int>29</int>
+      <int>39</int>
+      <int>30</int>
     </int-array>
   </group>
   <results>
     <int-array>
-      <int>12</int>
-      <int>15</int>
-      <int>-8</int>
-      <int>-8</int>
-      <int>-8</int>
-      <int>-8</int>
-      <int>32</int>
+      <int>-13</int>
+      <int>-13</int>
+      <int>-13</int>
+      <int>-13</int>
+      <int>6</int>
+      <int>21</int>
+      <int>-11</int>
+      <int>-11</int>
+      <int>-11</int>
+      <int>-11</int>
     </int-array>
     <int-array>
-      <int>12</int>
-      <int>15</int>
-      <int>16</int>
-      <int>4</int>
-      <int>32</int>
-      <int>23</int>
-      <int>128</int>
-    </int-array>
-    <int-array>
-      <int>12</int>
-      <int>15</int>
-      <int>15</int>
       <int>64</int>
-      <int>0</int>
-      <int>23</int>
-      <int>2</int>
-    </int-array>
-    <int-array>
-      <int>12</int>
-      <int>0</int>
-      <int>-18</int>
-      <int>0</int>
+      <int>-15</int>
       <int>23</int>
       <int>23</int>
-      <int>2</int>
+      <int>6</int>
+      <int>21</int>
+      <int>21</int>
+      <int>21</int>
+      <int>512</int>
+      <int>-20</int>
     </int-array>
     <int-array>
-      <int>-16</int>
-      <int>0</int>
-      <int>-18</int>
-      <int>-18</int>
-      <int>0</int>
-      <int>1</int>
-      <int>1</int>
-    </int-array>
-    <int-array>
-      <int>-16</int>
       <int>4</int>
-      <int>-18</int>
-      <int>2</int>
+      <int>-15</int>
+      <int>23</int>
+      <int>23</int>
+      <int>6</int>
+      <int>512</int>
+      <int>-14</int>
+      <int>1</int>
       <int>0</int>
-      <int>0</int>
-      <int>0</int>
+      <int>-20</int>
     </int-array>
     <int-array>
-      <int>-16</int>
-      <int>-16</int>
-      <int>32</int>
-      <int>2</int>
+      <int>-15</int>
+      <int>-15</int>
+      <int>-1</int>
+      <int>-1</int>
+      <int>6</int>
+      <int>-14</int>
+      <int>-14</int>
+      <int>0</int>
+      <int>-20</int>
+      <int>-20</int>
+    </int-array>
+    <int-array>
+      <int>256</int>
       <int>16</int>
+      <int>2</int>
+      <int>-1</int>
       <int>0</int>
       <int>0</int>
+      <int>-14</int>
+      <int>-16</int>
+      <int>18</int>
+      <int>4</int>
+    </int-array>
+    <int-array>
+      <int>16</int>
+      <int>16</int>
+      <int>20</int>
+      <int>20</int>
+      <int>20</int>
+      <int>2</int>
+      <int>2</int>
+      <int>-16</int>
+      <int>18</int>
+      <int>4</int>
+    </int-array>
+    <int-array>
+      <int>16</int>
+      <int>16</int>
+      <int>128</int>
+      <int>20</int>
+      <int>-4</int>
+      <int>-4</int>
+      <int>1</int>
+      <int>-16</int>
+      <int>18</int>
+      <int>2</int>
+    </int-array>
+    <int-array>
+      <int>7</int>
+      <int>0</int>
+      <int>4</int>
+      <int>15</int>
+      <int>-4</int>
+      <int>-4</int>
+      <int>1</int>
+      <int>-16</int>
+      <int>18</int>
+      <int>2</int>
+    </int-array>
+    <int-array>
+      <int>7</int>
+      <int>0</int>
+      <int>15</int>
+      <int>15</int>
+      <int>-6</int>
+      <int>-6</int>
+      <int>256</int>
+      <int>1</int>
+      <int>0</int>
+      <int>1</int>
+    </int-array>
+    <int-array>
+      <int>1</int>
+      <int>512</int>
+      <int>32</int>
+      <int>128</int>
+      <int>-6</int>
+      <int>-6</int>
+      <int>2</int>
+      <int>2</int>
+      <int>0</int>
+      <int>1</int>
     </int-array>
   </results>
   <map>
     <entry>
       <int>1</int>
       <list>
-        <int>2</int>
         <int>1</int>
-        <int>5</int>
         <int>4</int>
+        <int>8</int>
+        <int>2</int>
       </list>
     </entry>
     <entry>
       <int>2</int>
       <list>
-        <int>7</int>
         <int>3</int>
-        <int>4</int>
+        <int>2</int>
         <int>1</int>
+        <int>0</int>
       </list>
     </entry>
     <entry>
       <int>3</int>
       <list>
-        <int>3</int>
-        <int>4</int>
         <int>6</int>
-        <int>1</int>
+        <int>7</int>
+        <int>3</int>
+        <int>5</int>
       </list>
     </entry>
     <entry>
       <int>4</int>
       <list>
+        <int>5</int>
         <int>7</int>
+        <int>0</int>
+        <int>9</int>
       </list>
     </entry>
     <entry>
       <int>5</int>
       <list>
-        <int>2</int>
+        <int>1</int>
+        <int>3</int>
+        <int>5</int>
+        <int>8</int>
       </list>
     </entry>
     <entry>
       <int>6</int>
       <list>
+        <int>4</int>
+        <int>8</int>
         <int>6</int>
-        <int>7</int>
-        <int>7</int>
-        <int>3</int>
+        <int>5</int>
       </list>
     </entry>
     <entry>
       <int>7</int>
       <list>
-        <int>3</int>
-        <int>1</int>
+        <int>0</int>
+        <int>7</int>
+        <int>7</int>
+        <int>6</int>
       </list>
     </entry>
     <entry>
       <int>8</int>
       <list>
         <int>2</int>
-        <int>6</int>
       </list>
     </entry>
     <entry>
       <int>9</int>
       <list>
-        <int>5</int>
-        <int>1</int>
+        <int>4</int>
+        <int>2</int>
+        <int>9</int>
+        <int>7</int>
       </list>
     </entry>
     <entry>
       <int>10</int>
       <list>
-        <int>2</int>
-        <int>6</int>
-        <int>7</int>
-        <int>7</int>
+        <int>8</int>
+        <int>4</int>
       </list>
     </entry>
     <entry>
       <int>11</int>
       <list>
         <int>3</int>
-        <int>6</int>
-        <int>7</int>
-        <int>6</int>
+        <int>1</int>
+        <int>3</int>
       </list>
     </entry>
     <entry>
       <int>12</int>
       <list>
+        <int>5</int>
         <int>2</int>
-        <int>1</int>
+        <int>3</int>
+        <int>6</int>
       </list>
     </entry>
     <entry>
       <int>13</int>
       <list>
-        <int>5</int>
-        <int>4</int>
+        <int>1</int>
       </list>
     </entry>
     <entry>
       <int>14</int>
       <list>
-        <int>2</int>
+        <int>9</int>
+        <int>0</int>
       </list>
     </entry>
     <entry>
       <int>15</int>
       <list>
-        <int>5</int>
-        <int>3</int>
+        <int>2</int>
+        <int>1</int>
+        <int>9</int>
+        <int>8</int>
       </list>
     </entry>
     <entry>
       <int>16</int>
       <list>
+        <int>6</int>
+        <int>3</int>
+        <int>5</int>
         <int>4</int>
-        <int>2</int>
       </list>
     </entry>
     <entry>
       <int>17</int>
       <list>
-        <int>3</int>
-        <int>1</int>
-      </list>
-    </entry>
-    <entry>
-      <int>19</int>
-      <list>
+        <int>4</int>
         <int>5</int>
       </list>
     </entry>
     <entry>
-      <int>20</int>
+      <int>18</int>
       <list>
         <int>4</int>
       </list>
     </entry>
     <entry>
+      <int>19</int>
+      <list>
+        <int>9</int>
+        <int>0</int>
+        <int>7</int>
+        <int>4</int>
+      </list>
+    </entry>
+    <entry>
+      <int>20</int>
+      <list>
+        <int>8</int>
+        <int>6</int>
+      </list>
+    </entry>
+    <entry>
       <int>21</int>
       <list>
-        <int>5</int>
+        <int>9</int>
+        <int>0</int>
+        <int>6</int>
       </list>
     </entry>
     <entry>
       <int>22</int>
       <list>
+        <int>8</int>
+        <int>1</int>
+        <int>6</int>
         <int>5</int>
       </list>
     </entry>
     <entry>
       <int>23</int>
       <list>
-        <int>4</int>
+        <int>1</int>
+        <int>3</int>
       </list>
     </entry>
     <entry>
       <int>24</int>
       <list>
+        <int>2</int>
+        <int>3</int>
+      </list>
+    </entry>
+    <entry>
+      <int>25</int>
+      <list>
+        <int>7</int>
+        <int>9</int>
+      </list>
+    </entry>
+    <entry>
+      <int>26</int>
+      <list>
+        <int>0</int>
+        <int>7</int>
+      </list>
+    </entry>
+    <entry>
+      <int>27</int>
+      <list>
+        <int>2</int>
+      </list>
+    </entry>
+    <entry>
+      <int>28</int>
+      <list>
+        <int>5</int>
+        <int>4</int>
+        <int>4</int>
+        <int>3</int>
+      </list>
+    </entry>
+    <entry>
+      <int>29</int>
+      <list>
+        <int>2</int>
         <int>6</int>
+      </list>
+    </entry>
+    <entry>
+      <int>30</int>
+      <list>
+        <int>1</int>
+        <int>8</int>
+      </list>
+    </entry>
+    <entry>
+      <int>31</int>
+      <list>
+        <int>0</int>
+      </list>
+    </entry>
+    <entry>
+      <int>32</int>
+      <list>
+        <int>5</int>
+      </list>
+    </entry>
+    <entry>
+      <int>33</int>
+      <list>
+        <int>7</int>
+      </list>
+    </entry>
+    <entry>
+      <int>34</int>
+      <list>
+        <int>6</int>
+      </list>
+    </entry>
+    <entry>
+      <int>35</int>
+      <list>
+        <int>9</int>
+      </list>
+    </entry>
+    <entry>
+      <int>36</int>
+      <list>
+        <int>9</int>
+      </list>
+    </entry>
+    <entry>
+      <int>37</int>
+      <list>
+        <int>0</int>
+      </list>
+    </entry>
+    <entry>
+      <int>38</int>
+      <list>
+        <int>8</int>
+      </list>
+    </entry>
+    <entry>
+      <int>39</int>
+      <list>
+        <int>2</int>
+        <int>1</int>
+      </list>
+    </entry>
+    <entry>
+      <int>40</int>
+      <list>
+        <int>7</int>
+      </list>
+    </entry>
+    <entry>
+      <int>41</int>
+      <list>
+        <int>0</int>
+      </list>
+    </entry>
+    <entry>
+      <int>42</int>
+      <list>
+        <int>9</int>
+      </list>
+    </entry>
+    <entry>
+      <int>43</int>
+      <list>
+        <int>8</int>
       </list>
     </entry>
   </map>
   <resultsMap>
     <entry>
       <int>1</int>
-      <int>12</int>
+      <int>-13</int>
     </entry>
     <entry>
       <int>2</int>
-      <int>15</int>
+      <int>6</int>
     </entry>
     <entry>
       <int>3</int>
-      <int>-8</int>
+      <int>21</int>
     </entry>
     <entry>
       <int>4</int>
-      <int>128</int>
+      <int>-11</int>
     </entry>
     <entry>
       <int>5</int>
-      <int>4</int>
+      <int>-15</int>
     </entry>
     <entry>
       <int>6</int>
@@ -452,77 +831,157 @@
     </entry>
     <entry>
       <int>7</int>
-      <int>0</int>
+      <int>-20</int>
     </entry>
     <entry>
       <int>8</int>
-      <int>2</int>
-    </entry>
-    <entry>
-      <int>9</int>
-      <int>0</int>
-    </entry>
-    <entry>
-      <int>10</int>
-      <int>-18</int>
-    </entry>
-    <entry>
-      <int>11</int>
-      <int>-16</int>
-    </entry>
-    <entry>
-      <int>12</int>
-      <int>0</int>
-    </entry>
-    <entry>
-      <int>13</int>
-      <int>1</int>
-    </entry>
-    <entry>
-      <int>14</int>
       <int>4</int>
     </entry>
     <entry>
-      <int>15</int>
+      <int>9</int>
+      <int>-14</int>
+    </entry>
+    <entry>
+      <int>10</int>
+      <int>0</int>
+    </entry>
+    <entry>
+      <int>11</int>
+      <int>-1</int>
+    </entry>
+    <entry>
+      <int>12</int>
+      <int>16</int>
+    </entry>
+    <entry>
+      <int>13</int>
       <int>2</int>
     </entry>
     <entry>
-      <int>16</int>
+      <int>14</int>
       <int>0</int>
+    </entry>
+    <entry>
+      <int>15</int>
+      <int>-16</int>
+    </entry>
+    <entry>
+      <int>16</int>
+      <int>18</int>
     </entry>
     <entry>
       <int>17</int>
-      <int>0</int>
+      <int>4</int>
+    </entry>
+    <entry>
+      <int>18</int>
+      <int>16</int>
     </entry>
     <entry>
       <int>19</int>
-      <int>32</int>
+      <int>20</int>
     </entry>
     <entry>
       <int>20</int>
-      <int>16</int>
+      <int>2</int>
     </entry>
     <entry>
       <int>21</int>
-      <int>32</int>
+      <int>15</int>
     </entry>
     <entry>
       <int>22</int>
-      <int>32</int>
+      <int>-4</int>
     </entry>
     <entry>
       <int>23</int>
-      <int>16</int>
+      <int>1</int>
     </entry>
     <entry>
       <int>24</int>
+      <int>2</int>
+    </entry>
+    <entry>
+      <int>25</int>
+      <int>7</int>
+    </entry>
+    <entry>
+      <int>26</int>
+      <int>0</int>
+    </entry>
+    <entry>
+      <int>27</int>
+      <int>4</int>
+    </entry>
+    <entry>
+      <int>28</int>
+      <int>-6</int>
+    </entry>
+    <entry>
+      <int>29</int>
+      <int>2</int>
+    </entry>
+    <entry>
+      <int>30</int>
+      <int>1</int>
+    </entry>
+    <entry>
+      <int>31</int>
+      <int>1</int>
+    </entry>
+    <entry>
+      <int>32</int>
+      <int>32</int>
+    </entry>
+    <entry>
+      <int>33</int>
+      <int>128</int>
+    </entry>
+    <entry>
+      <int>34</int>
       <int>64</int>
+    </entry>
+    <entry>
+      <int>35</int>
+      <int>512</int>
+    </entry>
+    <entry>
+      <int>36</int>
+      <int>512</int>
+    </entry>
+    <entry>
+      <int>37</int>
+      <int>1</int>
+    </entry>
+    <entry>
+      <int>38</int>
+      <int>256</int>
+    </entry>
+    <entry>
+      <int>39</int>
+      <int>0</int>
+    </entry>
+    <entry>
+      <int>40</int>
+      <int>128</int>
+    </entry>
+    <entry>
+      <int>41</int>
+      <int>1</int>
+    </entry>
+    <entry>
+      <int>42</int>
+      <int>512</int>
+    </entry>
+    <entry>
+      <int>43</int>
+      <int>256</int>
     </entry>
   </resultsMap>
   <operations>
     <entry>
       <int>1</int>
-      <string>+</string>
+      <string>-</string>
     </entry>
     <entry>
       <int>2</int>
@@ -530,15 +989,15 @@
     </entry>
     <entry>
       <int>3</int>
-      <string>-</string>
+      <string>+</string>
     </entry>
     <entry>
       <int>4</int>
-      <string>^</string>
+      <string>-</string>
     </entry>
     <entry>
       <int>5</int>
-      <string>^</string>
+      <string>-</string>
     </entry>
     <entry>
       <int>6</int>
@@ -546,19 +1005,19 @@
     </entry>
     <entry>
       <int>7</int>
-      <string>%</string>
+      <string>-</string>
     </entry>
     <entry>
       <int>8</int>
-      <string>%</string>
+      <string>^</string>
     </entry>
     <entry>
       <int>9</int>
-      <string>%</string>
+      <string>-</string>
     </entry>
     <entry>
       <int>10</int>
-      <string>-</string>
+      <string>%</string>
     </entry>
     <entry>
       <int>11</int>
@@ -566,57 +1025,182 @@
     </entry>
     <entry>
       <int>12</int>
-      <string>%</string>
+      <string>+</string>
     </entry>
     <entry>
       <int>13</int>
-      <string>%</string>
-    </entry>
-    <entry>
-      <int>14</int>
       <string>^</string>
     </entry>
     <entry>
-      <int>15</int>
+      <int>14</int>
       <string>%</string>
     </entry>
     <entry>
+      <int>15</int>
+      <string>-</string>
+    </entry>
+    <entry>
       <int>16</int>
-      <string>%</string>
+      <string>+</string>
     </entry>
     <entry>
       <int>17</int>
       <string>%</string>
     </entry>
     <entry>
-      <int>19</int>
+      <int>18</int>
       <string>^</string>
+    </entry>
+    <entry>
+      <int>19</int>
+      <string>+</string>
     </entry>
     <entry>
       <int>20</int>
-      <string>^</string>
+      <string>%</string>
     </entry>
     <entry>
       <int>21</int>
-      <string>^</string>
+      <string>+</string>
     </entry>
     <entry>
       <int>22</int>
-      <string>^</string>
+      <string>-</string>
     </entry>
     <entry>
       <int>23</int>
-      <string>^</string>
+      <string>%</string>
     </entry>
     <entry>
       <int>24</int>
+      <string>%</string>
+    </entry>
+    <entry>
+      <int>25</int>
+      <string>%</string>
+    </entry>
+    <entry>
+      <int>26</int>
+      <string>%</string>
+    </entry>
+    <entry>
+      <int>27</int>
+      <string>^</string>
+    </entry>
+    <entry>
+      <int>28</int>
+      <string>-</string>
+    </entry>
+    <entry>
+      <int>29</int>
+      <string>%</string>
+    </entry>
+    <entry>
+      <int>30</int>
+      <string>%</string>
+    </entry>
+    <entry>
+      <int>31</int>
+      <string>^</string>
+    </entry>
+    <entry>
+      <int>32</int>
+      <string>^</string>
+    </entry>
+    <entry>
+      <int>33</int>
+      <string>^</string>
+    </entry>
+    <entry>
+      <int>34</int>
+      <string>^</string>
+    </entry>
+    <entry>
+      <int>35</int>
+      <string>^</string>
+    </entry>
+    <entry>
+      <int>36</int>
+      <string>^</string>
+    </entry>
+    <entry>
+      <int>37</int>
+      <string>^</string>
+    </entry>
+    <entry>
+      <int>38</int>
+      <string>^</string>
+    </entry>
+    <entry>
+      <int>39</int>
+      <string>%</string>
+    </entry>
+    <entry>
+      <int>40</int>
+      <string>^</string>
+    </entry>
+    <entry>
+      <int>41</int>
+      <string>^</string>
+    </entry>
+    <entry>
+      <int>42</int>
+      <string>^</string>
+    </entry>
+    <entry>
+      <int>43</int>
       <string>^</string>
     </entry>
   </operations>
-  <actual>25</actual>
-  <size>7</size>
-  <Powers>9</Powers>
-  <Modules>8</Modules>
+  <actual>44</actual>
+  <size>10</size>
+  <groupsArray>
+    <int>1</int>
+    <int>2</int>
+    <int>3</int>
+    <int>4</int>
+    <int>34</int>
+    <int>5</int>
+    <int>6</int>
+    <int>35</int>
+    <int>7</int>
+    <int>8</int>
+    <int>36</int>
+    <int>9</int>
+    <int>37</int>
+    <int>10</int>
+    <int>11</int>
+    <int>43</int>
+    <int>12</int>
+    <int>13</int>
+    <int>14</int>
+    <int>15</int>
+    <int>16</int>
+    <int>17</int>
+    <int>18</int>
+    <int>19</int>
+    <int>20</int>
+    <int>40</int>
+    <int>22</int>
+    <int>41</int>
+    <int>24</int>
+    <int>25</int>
+    <int>26</int>
+    <int>27</int>
+    <int>21</int>
+    <int>23</int>
+    <int>28</int>
+    <int>38</int>
+    <int>39</int>
+    <int>30</int>
+    <int>31</int>
+    <int>42</int>
+    <int>32</int>
+    <int>33</int>
+    <int>29</int>
+  </groupsArray>
+  <Powers>16</Powers>
+  <Modules>11</Modules>
   <solutionFound>true</solutionFound>
   <range>
     <int>1</int>
@@ -626,5 +1210,8 @@
     <int>5</int>
     <int>6</int>
     <int>7</int>
+    <int>8</int>
+    <int>9</int>
+    <int>0</int>
   </range>
 </Model.XML>

@@ -46,10 +46,10 @@ public class KenKen_Board {
         // View the results
         Results();
         // Clean the boards
-        CleanBoards();
+        //CleanBoards();
         //print();
     }
-    public KenKen_Board(ArrayList<ArrayList<Integer>> board, ArrayList<ArrayList<Integer>> transverseBoard, int[][] group, int[][] results, HashMap<Integer, ArrayList<Integer>> map, HashMap<Integer, Integer> resultsMap, HashMap<Integer, String> operations, int actual, int size, byte Powers, byte Modules, boolean solutionFound, ArrayList<Integer> range) {
+    public KenKen_Board(ArrayList<ArrayList<Integer>> board, ArrayList<ArrayList<Integer>> transverseBoard, int[][] group, int[][] results, HashMap<Integer, ArrayList<Integer>> map, HashMap<Integer, Integer> resultsMap, HashMap<Integer, String> operations, int actual, int size, byte Powers, byte Modules, boolean solutionFound, ArrayList<Integer> range,ArrayList<Integer> groupsArray) {
         KenKen_Board.board = board;
         KenKen_Board.transverseBoard = transverseBoard;
         KenKen_Board.group = group;
@@ -63,6 +63,7 @@ public class KenKen_Board {
         KenKen_Board.Modules = Modules;
         KenKen_Board.solutionFound = solutionFound;
         KenKen_Board.range = range;
+        KenKen_Board.groupsArray = groupsArray;
     }
     // On Created Solution and Transverse board
     private void Boards() {
@@ -70,7 +71,7 @@ public class KenKen_Board {
         SetRandoms();
         BackTracking();
     }
-    private void initializeBoards() {
+    private static void initializeBoards() {
         board = new ArrayList<>();
         transverseBoard = new ArrayList<>();
         for (int i = 0; i < size; i++) {
@@ -144,7 +145,7 @@ public class KenKen_Board {
                 return false;
         return true;
     }
-    private void CleanBoards() {
+    public static void CleanBoards() {
         initializeBoards();
     }
     
@@ -362,15 +363,46 @@ public class KenKen_Board {
                 }
             }
         return true;
-        /*
-        for (ArrayList<Integer> row : board)
-            if (row.contains(100))
-                return false;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public static boolean isCompletePowers() {
+        for (int i = 0; i < group.length; i++)
+            for (int j = 0; j < group.length; j++) {
+                if(operations.get(group[i][j]).equals("^") ) {
+                    if(board.get(i).get(j) == 100)
+                        return false;
+                }
+            }
         return true;
-        */
     }
     public static boolean isPossible(int i, int j, int value) {
-        return !board.get(i).contains(value) && !transverseBoard.get(j).contains(value) && range().contains(value);
+        boolean result = true;
+        if(range().contains(value))
+        {
+            for (int x = 0; x<board.get(i).size();x++)
+            {
+                if(board.get(i).contains(value) && x!=j)
+                    result = false;
+            }
+            for (int x = 0; x<transverseBoard.get(i).size();x++)
+            {
+                if(transverseBoard.get(j).contains(value) && x!=i)
+                    result = false;
+            }
+        }
+        else
+        {
+            result = false;
+        }
+        return result;
+        
+            
+        
+       // return !board.get(i).contains(value) && !transverseBoard.get(j).contains(value) && range().contains(value);
     }
     // Print
     public static void print() {

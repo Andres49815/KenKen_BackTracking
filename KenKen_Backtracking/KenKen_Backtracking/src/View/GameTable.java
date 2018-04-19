@@ -51,7 +51,7 @@ public class GameTable {
         
         JTextPane text;
         String operation;
-        int counter, number;
+        int  number;
         int[][] group, results;
         
         DefaultTableModel defaultTable = (DefaultTableModel) t.getModel();

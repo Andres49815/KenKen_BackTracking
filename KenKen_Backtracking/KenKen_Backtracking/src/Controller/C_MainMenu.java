@@ -8,8 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileReader;
 
-//import com.thoughtworks.xstream.XStream;
-//import com.thoughtworks.xstream.io.xml.DomDriver;
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.DomDriver;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
@@ -20,7 +20,7 @@ import java.util.logging.Logger;
  * @author Andres Obando Alfaro
  */
 public class C_MainMenu implements ActionListener {
-   //XStream xstream = new XStream(new DomDriver());
+   XStream xstream = new XStream(new DomDriver());
     FileReader reader = null; 
     private MainMenu view;
     private KenKen_Board model;
@@ -32,6 +32,7 @@ public class C_MainMenu implements ActionListener {
         view.button_Powers.addActionListener(this);
         view.button_Save.addActionListener(this);
         view.button_Open.addActionListener(this);
+        view.button_Clear.addActionListener(this);
         view.table_Game.setVisible(false);
         
         // Display view
@@ -45,10 +46,14 @@ public class C_MainMenu implements ActionListener {
             case "Generar":
                 generate();
                 break;
+            case "Borrar":
+                KenKen_Board.CleanBoards();
+                view.gameTable.actualizar(view.table_Game, model);
+                break;
             case "Resolver":
                 Solve();
                 break;
-            case "Guardar":/*
+            case "Guardar":
                 try {
                     
                     Save();
@@ -62,7 +67,7 @@ public class C_MainMenu implements ActionListener {
                     Open();
                 } catch (FileNotFoundException ex) {
                     Logger.getLogger(C_MainMenu.class.getName()).log(Level.SEVERE, null, ex);
-                }*/
+                }
                 break;
                               
                 
@@ -79,24 +84,18 @@ public class C_MainMenu implements ActionListener {
             view.model = model;
             model.print();
             view.gameTable.setTable(view.table_Game, model);
-            view.gameTable.actualizar(view.table_Game, model);
-            System.out.println("Grupo");
-            for (int i = 0; i < model.group.length; i++) {
-                for (int j = 0; j < model.group.length; j++)
-                    System.out.print(model.group[i][j] + "\t");
-                System.out.println();
-            }
         }
         
     }
     private void Solve() {
         Solver.Solve();
         //ThreadInterface();
+        view.gameTable.actualizar(view.table_Game, model);
         System.out.println("Matriz ----------------------------------------- ");
         KenKen_Board.print();
     }
 
-    /*
+    
 
     private void ThreadInterface() {
         Thread thread = new Thread(view);
@@ -108,7 +107,7 @@ public class C_MainMenu implements ActionListener {
                 KenKen_Board.group,KenKen_Board.results,KenKen_Board.map,
                 KenKen_Board.resultsMap,KenKen_Board.operations,KenKen_Board.actual,
                 KenKen_Board.size,KenKen_Board.Powers,KenKen_Board.Modules,
-                KenKen_Board.solutionFound,KenKen_Board.range);
+                KenKen_Board.solutionFound,KenKen_Board.range,KenKen_Board.groupsArray);
            
         try (PrintWriter outA = new PrintWriter("kenken.xml")) {
             String xml = xstream.toXML(saved);
@@ -116,6 +115,7 @@ public class C_MainMenu implements ActionListener {
         }
     }
     private void Open() throws FileNotFoundException {
+        view.table_Game.setVisible(true);
         reader = new FileReader("kenken.xml");
         
         XML xml = (XML) (xstream.fromXML(reader));
@@ -132,12 +132,13 @@ public class C_MainMenu implements ActionListener {
         KenKen_Board.Modules = xml.Modules;
         KenKen_Board.solutionFound = xml.solutionFound;
         KenKen_Board.range = xml.range;
+        KenKen_Board.groupsArray = xml.groupsArray;
         
         model =  new KenKen_Board(xml.board,xml.transverseBoard,
                 xml.group,xml.results,xml.map,
                 xml.resultsMap,xml.operations,xml.actual,
                 xml.size,xml.Powers,xml.Modules,
-                xml.solutionFound,xml.range);
+                xml.solutionFound,xml.range,xml.groupsArray);
         
         view.model = model;
         view.gameTable.setTable(view.table_Game, model);
@@ -146,6 +147,6 @@ public class C_MainMenu implements ActionListener {
         
        
             
-    */
+    
     
 }

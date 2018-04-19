@@ -25,6 +25,7 @@ public class XML {
     // Other Variables
     public  int actual;
     public  int size;
+    public  ArrayList<Integer> groupsArray;
 
     
     public  byte Powers;
@@ -32,7 +33,7 @@ public class XML {
     public  boolean solutionFound;
     public  ArrayList<Integer> range;
 
-    public XML(ArrayList<ArrayList<Integer>> board, ArrayList<ArrayList<Integer>> transverseBoard, int[][] group, int[][] results, HashMap<Integer, ArrayList<Integer>> map, HashMap<Integer, Integer> resultsMap, HashMap<Integer, String> operations, int actual, int size, byte Powers, byte Modules, boolean solutionFound, ArrayList<Integer> range) {
+    public XML(ArrayList<ArrayList<Integer>> board, ArrayList<ArrayList<Integer>> transverseBoard, int[][] group, int[][] results, HashMap<Integer, ArrayList<Integer>> map, HashMap<Integer, Integer> resultsMap, HashMap<Integer, String> operations, int actual, int size, byte Powers, byte Modules, boolean solutionFound, ArrayList<Integer> range, ArrayList<Integer> groupsArray) {
         this.board = board;
         this.transverseBoard = transverseBoard;
         this.group = group;
@@ -46,6 +47,7 @@ public class XML {
         this.Modules = Modules;
         this.solutionFound = solutionFound;
         this.range = range;
+        this.groupsArray = groupsArray;
     }
     
     
