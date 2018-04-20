@@ -257,16 +257,8 @@ public class KenKen_Board {
         
         switch (set.size()) {
             case 1:
-                if (set.get(0) >= 0) {
-                    operations.put(key, "^");
-                    Powers++;
-                    return (int)Math.pow(2, set.get(0));
-                }
-                else {
-                    operations.put(key, " ");
-                    return set.get(0);
-                }
-
+                operations.put(key, "^");
+                return (int)Math.pow(set.get(0), 3);
             case 2:
                 operations.put(key, "%");
                 Modules++;

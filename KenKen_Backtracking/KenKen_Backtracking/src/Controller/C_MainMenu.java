@@ -7,20 +7,20 @@ import View.MainMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileReader;
-
+/*
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+*/
 /**
  *
  * @author Andres Obando Alfaro
  */
 public class C_MainMenu implements ActionListener {
-   XStream xstream = new XStream(new DomDriver());
+    //XStream xstream = new XStream(new DomDriver());
     FileReader reader = null; 
     private MainMenu view;
     private KenKen_Board model;
@@ -53,7 +53,7 @@ public class C_MainMenu implements ActionListener {
             case "Resolver":
                 Solve();
                 break;
-            case "Guardar":
+            case "Guardar":/*
                 try {
                     
                     Save();
@@ -68,9 +68,7 @@ public class C_MainMenu implements ActionListener {
                 } catch (FileNotFoundException ex) {
                     Logger.getLogger(C_MainMenu.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                break;
-                              
-                
+                break;*/
         }
     }
     private void generate() {
@@ -101,7 +99,7 @@ public class C_MainMenu implements ActionListener {
         Thread thread = new Thread(view);
         thread.start();
     }
-
+/*
     private void Save() throws FileNotFoundException {
         XML saved = new XML(KenKen_Board.board,KenKen_Board.transverseBoard,
                 KenKen_Board.group,KenKen_Board.results,KenKen_Board.map,
@@ -142,11 +140,5 @@ public class C_MainMenu implements ActionListener {
         
         view.model = model;
         view.gameTable.setTable(view.table_Game, model);
-    }
-           
-        
-       
-            
-    
-    
+    }*/
 }

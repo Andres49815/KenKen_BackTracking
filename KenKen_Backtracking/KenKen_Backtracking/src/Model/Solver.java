@@ -70,7 +70,7 @@ public class Solver {
         int result;
         ArrayList<Integer> possibilities;
         
-        result = (int)(Math.log(number) / Math.log(2));
+        result = (int)Math.round(Math.pow(Math.E, Math.log(number) / 3));
         possibilities = new ArrayList<>();
         possibilities.add(result);
         return possibilities;
