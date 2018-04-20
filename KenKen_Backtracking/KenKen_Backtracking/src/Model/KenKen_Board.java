@@ -27,14 +27,12 @@ public class KenKen_Board {
     public static byte Powers;
     public static byte Modules;
     public static boolean solutionFound;
-    public static ArrayList<Integer> range;
     
     // Constructor
     public KenKen_Board(int size) {
         this.size = size;
         actual = 1;
         solutionFound = false;
-        range = range();
         // Initialize Boards
         Boards();
         // Group the boards
@@ -51,8 +49,7 @@ public class KenKen_Board {
             int[][] group, int[][] results, HashMap<Integer, ArrayList<Integer>> map, 
             HashMap<Integer, Integer> resultsMap, HashMap<Integer, String> operations, 
             int actual, int size, byte Powers, byte Modules, 
-            boolean solutionFound, ArrayList<Integer> range,
-            ArrayList<Integer> groupsArray) {
+            boolean solutionFound, ArrayList<Integer> groupsArray) {
         KenKen_Board.board = board;
         KenKen_Board.transverseBoard = transverseBoard;
         KenKen_Board.group = group;
@@ -65,7 +62,6 @@ public class KenKen_Board {
         KenKen_Board.Powers = Powers;
         KenKen_Board.Modules = Modules;
         KenKen_Board.solutionFound = solutionFound;
-        KenKen_Board.range = range;
         KenKen_Board.groupsArray = groupsArray;
     }
     
@@ -96,7 +92,7 @@ public class KenKen_Board {
             randX = random.nextInt(size);
             randY = random.nextInt(size);
             do
-                rand = range.get(random.nextInt(range.size()));
+                rand = random.nextInt(size);
             while (!isPossible(randX, randY, rand));
             set(randX, randY, rand);
         }
@@ -139,8 +135,7 @@ public class KenKen_Board {
         ArrayList<Integer> possibilities;
         
         possibilities = new ArrayList<Integer>();
-        //for (int n = 1; n < size + 1; n++)
-        for(int n : range)
+        for (int n = 0; n < size ; n++)
             if (isPossible(i, j, n))
                 possibilities.add(n);
         return possibilities;
@@ -398,7 +393,7 @@ public class KenKen_Board {
     }
     public static boolean isPossible(int i, int j, int value) {
         boolean result = true;
-        if(range().contains(value))
+        if(value>=size)
         {
             for (int x = 0; x<board.get(i).size();x++)
             {
@@ -467,27 +462,7 @@ public class KenKen_Board {
         return cant;
     }
     
-    public static  ArrayList<Integer> range()
-    {
-        ArrayList<Integer> range = new ArrayList<>();
-        if(size < 10)
-        {
-            for(int x = 1; x <= size; x++)
-                range.add(x);
-        }
-        else
-        {
-            for(int x = 1; x<10; x++)
-                range.add(x);
-            range.add(0);
-            if(size>10)
-            {
-                for(int x = 1; x<= size-10; x++)
-                    range.add(x*-1);
-            }
-        }
-        return range;
-    }
+    
     
     public static int maxGroup ()
     {

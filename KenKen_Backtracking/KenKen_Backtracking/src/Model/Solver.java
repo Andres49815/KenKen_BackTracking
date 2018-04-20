@@ -225,40 +225,31 @@ public class Solver {
     private static ArrayList<ArrayList<Integer>> modulsPossibilities(int number) {
         
         ArrayList<ArrayList<Integer>> solutions = new ArrayList<>();
-        ArrayList<Integer> range = KenKen_Board.range();
-        for (int x : range)
+        for (int x = 1;x<KenKen_Board.size;x++)
         {
-            if(x!=0)
+            for (int y = 1;y<KenKen_Board.size;y++)
             {
-                for (int y : range)
-                {
-                    ArrayList<Integer> possibility = new ArrayList<>();
-                    if(y!=0)
+                ArrayList<Integer> possibility = new ArrayList<>();
+                    if (x%y==number && x!=y)
                     {
-                        if (x%y==number && x!=y)
-                        {
-                            possibility.add(x);
-                            possibility.add(y);
-                            solutions.add(possibility);
-                            possibility = new ArrayList<>();
-                            possibility.add(y);
-                            possibility.add(x);
-                            solutions.add(possibility);
-                        }    
-                    }
-                }
+                        possibility.add(x);
+                        possibility.add(y);
+                        solutions.add(possibility);
+                        possibility = new ArrayList<>();
+                        possibility.add(y);
+                        possibility.add(x);
+                        solutions.add(possibility);
+                    }    
             }
-            
         }
         return solutions;  
     }
     
     private static ArrayList<ArrayList<Integer>> multiplicationPossibilities(int number) {
         ArrayList<ArrayList<Integer>> solutions = new ArrayList<>();
-        ArrayList<Integer> range = KenKen_Board.range();
-        for (int x : range)
+        for (int x = 0;x<KenKen_Board.size;x++)
         {
-            for (int y : range)
+            for (int y = 0;y<KenKen_Board.size;y++)
             {
                 if (x*y==number && x!=y)
                 {

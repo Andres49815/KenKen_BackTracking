@@ -2,7 +2,6 @@ package Controller;
 
 import Model.KenKen_Board;
 import Model.Solver;
-import Model.XML;
 import View.MainMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
