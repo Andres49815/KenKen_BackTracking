@@ -120,21 +120,20 @@ public class Solver {
             ArrayList<ArrayList<Integer>> possibilities = possibilitiesMap.get(groupID);
             ArrayList<Integer> coordenadas = new ArrayList<>();
             int sizeGroup = KenKen_Board.cantOfGroup(groupID);
-            
-            if(!possibilities.isEmpty())
+            if(!KenKen_Board.groupIsComplete(groupID))
             {
-                for (ArrayList<Integer> possibility : possibilities) 
+                if(!possibilities.isEmpty())
                 {
-                    if (sizeGroup==2 && people.size() == 2)
+                    for (ArrayList<Integer> possibility : possibilities) 
                     {
-                        coordenadas = people.get(0);
-                        int x1 = coordenadas.get(0);
-                        int y1 = coordenadas.get(1);
-                        coordenadas = people.get(1);
-                        int x2 = coordenadas.get(0);
-                        int y2 = coordenadas.get(1);
-                        if((KenKen_Board.get(x1, y1) == 100 && KenKen_Board.get(x2, y2) == 100))
+                        if (sizeGroup==2 && people.size() == 2)
                         {
+                            coordenadas = people.get(0);
+                            int x1 = coordenadas.get(0);
+                            int y1 = coordenadas.get(1);
+                            coordenadas = people.get(1);
+                            int x2 = coordenadas.get(0);
+                            int y2 = coordenadas.get(1);
                             if(KenKen_Board.isPossible(x1, y1, possibility.get(0)) && KenKen_Board.isPossible(x2, y2, possibility.get(1)))
                             {
                                 KenKen_Board.set(x1, y1, possibility.get(0));
@@ -142,22 +141,23 @@ public class Solver {
                                 SolveOperations();
                             }
                         }
+    //                    else if (sizeGroup==1 && people.size() == 1)
+    //                    {
+    //                        coordenadas = people.get(0);
+    //                        int x1 = coordenadas.get(0);
+    //                        int y1 = coordenadas.get(1);
+    //                        if(KenKen_Board.get(x1, y1) == 100)
+    //                        {
+    //                            if(KenKen_Board.isPossible(x1, y1, possibility.get(0)))
+    //                            {
+    //                                KenKen_Board.set(x1, y1, possibility.get(0));
+    //                                SolveOperations();
+    //                            }
+    //                            
+    //                        }
+    //                    }
                     }
-//                    else if (sizeGroup==1 && people.size() == 1)
-//                    {
-//                        coordenadas = people.get(0);
-//                        int x1 = coordenadas.get(0);
-//                        int y1 = coordenadas.get(1);
-//                        if(KenKen_Board.get(x1, y1) == 100)
-//                        {
-//                            if(KenKen_Board.isPossible(x1, y1, possibility.get(0)))
-//                            {
-//                                KenKen_Board.set(x1, y1, possibility.get(0));
-//                                SolveOperations();
-//                            }
-//                            
-//                        }
-//                    }
+                    KenKen_Board.set100(groupID);
                 }
             }
         }

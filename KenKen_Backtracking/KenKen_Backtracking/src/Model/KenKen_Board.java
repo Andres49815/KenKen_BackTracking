@@ -392,29 +392,29 @@ public class KenKen_Board {
         return true;
     }
     public static boolean isPossible(int i, int j, int value) {
-        boolean result = true;
-        if(value>=size)
-        {
-            for (int x = 0; x<board.get(i).size();x++)
-            {
-                if(board.get(i).contains(value) && x!=j)
-                    result = false;
-            }
-            for (int x = 0; x<transverseBoard.get(i).size();x++)
-            {
-                if(transverseBoard.get(j).contains(value) && x!=i)
-                    result = false;
-            }
-        }
-        else
-        {
-            result = false;
-        }
-        return result;
+//        boolean result = true;
+//        if(value>=size)
+//        {
+//            for (int x = 0; x<size;x++)
+//            {
+//                if(board.get(i).contains(value) && x!=j)
+//                    result = false;
+//            }
+//            for (int x = 0; x<size;x++)
+//            {
+//                if(transverseBoard.get(j).contains(value) && x!=i)
+//                    result = false;
+//            }
+//        }
+//        else
+//        {
+//            result = false;
+//        }
+//        return result;
+//        
+//            
         
-            
-        
-       // return !board.get(i).contains(value) && !transverseBoard.get(j).contains(value) && range().contains(value);
+        return !board.get(i).contains(value) && !transverseBoard.get(j).contains(value) && value< size;
     }
     // Print
     public static void print() {
