@@ -11,10 +11,7 @@ public class Solver {
     
     private static ArrayList<ArrayList<Integer>> solution;
     private static HashMap<Integer, ArrayList<ArrayList<Integer>>> possibilitiesMap = new HashMap<>();
-    private static ArrayList<ArrayList<Integer>> transverseSolution;
-    private static int powSolved = 0;
-    private static int moduleSolver = 0;
-
+    
     public static void DoPossibilities() {
         for (int i = 0; i < KenKen_Board.groupsArray.size();i++)
         {
@@ -53,8 +50,8 @@ public class Solver {
     }
     public static void Solve() {
         DoPossibilities();
-      SolveStatics();
-      SolvePowers();
+        SolveStatics();
+        SolvePowers();
         SolveOperations();
     }
     private static ArrayList<Integer> possibilities(int number) {

@@ -23,8 +23,6 @@ public class KenKen_Board {
     public static int actual;
     public static int size;
     public static ArrayList<Integer> groupsArray;
-
-    
     private final Random random = new Random();
     public static byte Powers;
     public static byte Modules;
@@ -49,7 +47,12 @@ public class KenKen_Board {
         //CleanBoards();
         //print();
     }
-    public KenKen_Board(ArrayList<ArrayList<Integer>> board, ArrayList<ArrayList<Integer>> transverseBoard, int[][] group, int[][] results, HashMap<Integer, ArrayList<Integer>> map, HashMap<Integer, Integer> resultsMap, HashMap<Integer, String> operations, int actual, int size, byte Powers, byte Modules, boolean solutionFound, ArrayList<Integer> range,ArrayList<Integer> groupsArray) {
+    public KenKen_Board(ArrayList<ArrayList<Integer>> board, ArrayList<ArrayList<Integer>> transverseBoard, 
+            int[][] group, int[][] results, HashMap<Integer, ArrayList<Integer>> map, 
+            HashMap<Integer, Integer> resultsMap, HashMap<Integer, String> operations, 
+            int actual, int size, byte Powers, byte Modules, 
+            boolean solutionFound, ArrayList<Integer> range,
+            ArrayList<Integer> groupsArray) {
         KenKen_Board.board = board;
         KenKen_Board.transverseBoard = transverseBoard;
         KenKen_Board.group = group;
@@ -65,13 +68,15 @@ public class KenKen_Board {
         KenKen_Board.range = range;
         KenKen_Board.groupsArray = groupsArray;
     }
-    // On Created Solution and Transverse board
+    
+    /* Initialize the boards in order to get clean arrays to work and use get
+    different combinations of boards */
     private void Boards() {
-        initializeBoards();
+        InitializeBoards();
         SetRandoms();
-        BackTracking();
+        FillBoards();
     }
-    private static void initializeBoards() {
+    private static void InitializeBoards() {
         board = new ArrayList<>();
         transverseBoard = new ArrayList<>();
         for (int i = 0; i < size; i++) {
@@ -83,21 +88,21 @@ public class KenKen_Board {
             }
         }
     }
-    
     private void SetRandoms() {
         int randX, randY, rand;
         
-        
+        // Fill 25% of the board with random numbers.
         for (int i = 0; i < size * size / 4; i++) {
             randX = random.nextInt(size);
             randY = random.nextInt(size);
             do
-                rand = range.get(random.nextInt(range.size()));//random.nextInt(size) + 1;
+                rand = range.get(random.nextInt(range.size()));
             while (!isPossible(randX, randY, rand));
             set(randX, randY, rand);
         }
     }
-    private void BackTracking() {
+    // For backtracking functions
+    private void FillBoards() {
         int i, j;
         ArrayList<Integer> possibilities;
         
@@ -115,16 +120,17 @@ public class KenKen_Board {
                         i = a;
                         j = b;
                     }
-            
+            // Search for the possible values to be in the array
             possibilities = Possibilities(i, j);
             for (int n : possibilities) {
                 if (!solutionFound) {
                     set(i, j, n);
-                    BackTracking();
+                    FillBoards();
                 }
                 else
                     return;
             }
+            // Control Backtracking
             if (!solutionFound)
                 set(i, j, 100);
         }
@@ -145,11 +151,12 @@ public class KenKen_Board {
                 return false;
         return true;
     }
+    // Restore boards
     public static void CleanBoards() {
-        initializeBoards();
+        InitializeBoards();
     }
     
-    // On group matrix
+    /* Defines the groups in wich each operation will work*/
     private void Group(int n) {
         group = new int[n + 6][n + 6];
         do
@@ -213,7 +220,8 @@ public class KenKen_Board {
             }
         }
     }
-    // On Operations
+    
+    /* Fill the results maps in order to get a O(n) each time we consult */
     private void Results() {
         fillMap();
         fillResults();
@@ -309,6 +317,7 @@ public class KenKen_Board {
         board.get(i).set(j, val);
         transverseBoard.get(j).set(i, val);
     }
+    
     // On Groups
     public static int[][] getGroup() {
         return group;
