@@ -78,7 +78,7 @@ public class Solver {
         for (int i = 0; i < KenKen_Board.getSize(); i++)
             for (int j = 0; j < KenKen_Board.getSize(); j++)
                 if (KenKen_Board.getOperation(i, j).equals(" "))
-                    KenKen_Board.set(i, j, KenKen_Board.getResult(i, j));
+                    KenKen_Board.set(new Place(i, j), KenKen_Board.getResult(i, j));
     }
     private static void SolvePowers() {
         int i, j;
@@ -102,7 +102,7 @@ public class Solver {
         int number = KenKen_Board.getResult(i, j);
         ArrayList<Integer> possibilities = possibilities(number);
         for (int n : possibilities) {    
-            KenKen_Board.set(i, j, n);
+            KenKen_Board.set(new Place(i, j), n);
             SolvePowers();
         }
     }
@@ -116,9 +116,8 @@ public class Solver {
         for (int i = 0; i < KenKen_Board.groupsArray.size();i++)
         {
             int groupID = KenKen_Board.groupsArray.get(i);
-            ArrayList<ArrayList<Integer>> people = KenKen_Board.getPeople(groupID);
+            ArrayList<Place> people = KenKen_Board.getPeople(groupID);
             ArrayList<ArrayList<Integer>> possibilities = possibilitiesMap.get(groupID);
-            ArrayList<Integer> coordenadas = new ArrayList<>();
             int sizeGroup = KenKen_Board.cantOfGroup(groupID);
             if(!KenKen_Board.groupIsComplete(groupID))
             {
@@ -128,16 +127,12 @@ public class Solver {
                     {
                         if (sizeGroup==2 && people.size() == 2)
                         {
-                            coordenadas = people.get(0);
-                            int x1 = coordenadas.get(0);
-                            int y1 = coordenadas.get(1);
-                            coordenadas = people.get(1);
-                            int x2 = coordenadas.get(0);
-                            int y2 = coordenadas.get(1);
-                            if(KenKen_Board.isPossible(x1, y1, possibility.get(0)) && KenKen_Board.isPossible(x2, y2, possibility.get(1)))
+                            Place place1 = people.get(0);
+                            Place place2 = people.get(1);
+                            if(KenKen_Board.isPossible(place1, possibility.get(0)) && KenKen_Board.isPossible(place2, possibility.get(1)))
                             {
-                                KenKen_Board.set(x1, y1, possibility.get(0));
-                                KenKen_Board.set(x2, y2, possibility.get(1));
+                                KenKen_Board.set(place1, possibility.get(0));
+                                KenKen_Board.set(place2, possibility.get(1));
                                 SolveOperations();
                             }
                         }

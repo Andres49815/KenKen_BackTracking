@@ -91,10 +91,11 @@ public class KenKen_Board {
         for (int i = 0; i < size * size / 4; i++) {
             randX = random.nextInt(size);
             randY = random.nextInt(size);
+            Place place = new Place(randX,randY);
             do
                 rand = random.nextInt(size);
-            while (!isPossible(randX, randY, rand));
-            set(randX, randY, rand);
+            while (!isPossible(new Place(randX, randY), rand));
+            set(place, rand);
         }
     }
     // For backtracking functions
@@ -117,10 +118,11 @@ public class KenKen_Board {
                         j = b;
                     }
             // Search for the possible values to be in the array
-            possibilities = Possibilities(i, j);
+            Place place = new Place(i, j);
+            possibilities = Possibilities(place);
             for (int n : possibilities) {
                 if (!solutionFound) {
-                    set(i, j, n);
+                    set(place, n);
                     FillBoards();
                 }
                 else
@@ -128,15 +130,15 @@ public class KenKen_Board {
             }
             // Control Backtracking
             if (!solutionFound)
-                set(i, j, 100);
+                set(place, 100);
         }
     }
-    private ArrayList<Integer> Possibilities(int i, int j) {
+    private ArrayList<Integer> Possibilities(Place place) {
         ArrayList<Integer> possibilities;
         
         possibilities = new ArrayList<Integer>();
         for (int n = 0; n < size ; n++)
-            if (isPossible(i, j, n))
+            if (isPossible(place, n))
                 possibilities.add(n);
         return possibilities;
     }
@@ -308,9 +310,9 @@ public class KenKen_Board {
     public static int get(int i, int j) {
         return board.get(i).get(j);
     }
-    public static void set(int i, int j, int val) {
-        board.get(i).set(j, val);
-        transverseBoard.get(j).set(i, val);
+    public static void set(Place place, int val) {
+        board.get(place.x).set(place.y, val);
+        transverseBoard.get(place.y).set(place.x, val);
     }
     
     // On Groups
@@ -391,7 +393,7 @@ public class KenKen_Board {
             }
         return true;
     }
-    public static boolean isPossible(int i, int j, int value) {
+    public static boolean isPossible(Place place, int value) {
 //        boolean result = true;
 //        if(value>=size)
 //        {
@@ -414,7 +416,7 @@ public class KenKen_Board {
 //        
 //            
         
-        return !board.get(i).contains(value) && !transverseBoard.get(j).contains(value) && value< size;
+        return !board.get(place.x).contains(value) && !transverseBoard.get(place.y).contains(value) && value< size;
     }
     // Print
     public static void print() {
@@ -478,15 +480,13 @@ public class KenKen_Board {
         return big;
     }
     
-    static ArrayList<ArrayList<Integer>> getPeople(int i) {
-        ArrayList<ArrayList<Integer>> places = new ArrayList<>();  
+    static ArrayList<Place> getPeople(int i) {
+        ArrayList<Place> places = new ArrayList<>();  
         for (int a = 0; a < size; a++) {
             for (int b = 0; b < size; b++) {
                 if (group[a][b]==i)
                 {
-                    ArrayList<Integer> place = new ArrayList<>();
-                    place.add(a);
-                    place.add(b);
+                    Place place = new Place(a, b);
                     places.add(place);
                 }
             }
