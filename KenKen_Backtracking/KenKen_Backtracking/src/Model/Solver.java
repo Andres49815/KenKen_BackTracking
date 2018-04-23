@@ -20,18 +20,6 @@ public class Solver {
             Cage cage = KenKen_Board.getCage(groupID);
             switch(cage.operation)
             {
-                case " ":
-                    ArrayList<ArrayList<Integer>> statics = new  ArrayList<>();
-                    ArrayList<Integer> staticNumber = new ArrayList<>();
-                    staticNumber.add(cage.result);
-                    statics.add(staticNumber);
-                    possibilitiesMap.put(groupID,statics);
-                    break;
-                case "^":
-                    ArrayList<ArrayList<Integer>> potencias = new  ArrayList<>();
-                    potencias.add(powerpossibilities(cage.result));
-                    possibilitiesMap.put(groupID,potencias);
-                    break;
                 case "%":
                     possibilitiesMap.put(groupID, modulsPossibilities(cage.result));
                     break;
@@ -69,13 +57,9 @@ public class Solver {
         SolvePowers();
         SolveOperations();
     }
-    private static ArrayList<Integer> powerpossibilities(int number) {
-        int result;
-        ArrayList<Integer> possibilities;
-        result = (int)Math.round(Math.pow(Math.E, Math.log(number) / 3));
-        possibilities = new ArrayList<>();
-        possibilities.add(result);
-        return possibilities;
+    private static Integer Power(int number) {
+        int result = (int)Math.round(Math.pow(Math.E, Math.log(number) / 3));
+        return result;
     }
     
     
@@ -104,11 +88,10 @@ public class Solver {
                 }
             }
         }
-        ArrayList<Integer> possibilities = possibilitiesMap.get(KenKen_Board.cages[i][j].id);
-        for (int n : possibilities) {    
-            KenKen_Board.set(new Place(i, j), n);
-            SolvePowers();
-        }
+        int result = KenKen_Board.cages[i][j].result;
+        int n = Power(result);
+        KenKen_Board.set(new Place(i, j), n);
+        SolvePowers();
     }
     private static void SolveOperations() {
         
