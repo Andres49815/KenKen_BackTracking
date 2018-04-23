@@ -221,6 +221,7 @@ public class KenKen_Board {
     }
     // On Cages
     private void Cages(int n) {
+        new Cage();
         cages = new Cage[n + 6][n + 6];
         group = new int[n + 6][n + 6];
         

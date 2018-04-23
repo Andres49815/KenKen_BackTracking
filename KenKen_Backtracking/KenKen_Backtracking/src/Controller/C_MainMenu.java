@@ -72,17 +72,20 @@ public class C_MainMenu implements ActionListener {
     }
     private void generate() {
         int size;
-        
-        if (view.isComplete()) {
-            view.table_Game.setVisible(true);
-            size = (int)view.spinner_Size.getValue();
-            
-            model = new KenKen_Board(size);
-            view.model = model;
-            model.print();
-            view.gameTable.setTable(view.table_Game, model);
+        try {
+            if (view.isComplete()) {
+                view.table_Game.setVisible(true);
+                size = (int)view.spinner_Size.getValue();
+
+                model = new KenKen_Board(size);
+                view.model = model;
+                model.print();
+                view.gameTable.setTable(view.table_Game, model);
+            }
         }
-        
+        catch (Exception e) {
+            generate();
+        }
     }
     private void Solve() {
         Solver.Solve();

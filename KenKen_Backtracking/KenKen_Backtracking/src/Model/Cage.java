@@ -12,6 +12,10 @@ public class Cage {
     public int id;
     public boolean[][] cage;
     
+    public Cage() {
+        actual = 1;
+    }
+    
     public Cage(int i, int j) {
         boolean[][] c;
         boolean doSomething = false;
