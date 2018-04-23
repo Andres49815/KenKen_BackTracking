@@ -40,7 +40,7 @@ public class GameTable {
                 text.setContentType("text/html");
                 operation = cage.result + cage.operation;
                 text.setText("<html><small>" + operation + "</small>" + "<center><b>" + number + "</b></center>" + "</html>");
-                borders(text, i, j, group);
+                borders(text, i, j, KenKen_Board.cages);
                 putColor(text,cage.operation);
                 row[j] = text;
             }
@@ -67,7 +67,7 @@ public class GameTable {
                 text.setContentType("text/html");
                 operation = cage.result + cage.operation;
                 text.setText("<html><small>" + operation + "</small>" + "<center><b>" + number + "</b></center>" + "</html>");
-                borders(text, i, j, group);
+                borders(text, i, j, KenKen_Board.cages);
                 putColor(text,cage.operation);
                 defaultTable.setValueAt(text, i, j);
             }
@@ -75,28 +75,28 @@ public class GameTable {
         t.setModel(defaultTable);
     }
     
-    private void borders(JTextPane text, int i, int j, int[][] group) {
+    private void borders(JTextPane text, int i, int j, Cage[][] group) {
         int up , down, left, right;
         
         up = down = left = right = 2;
-        int number = group[i][j];
+        int number = group[i][j].id;
         try {
-            if (group[i + 1][j] == number)
+            if (group[i + 1][j].id == number)
                 down = 0;
         }
         catch (ArrayIndexOutOfBoundsException e){}
         try {
-            if (group[i - 1][j] == number)
+            if (group[i - 1][j].id == number)
                 up = 0;
         }
         catch (ArrayIndexOutOfBoundsException e){}
         try {
-            if (group[i][j + 1] == number)
+            if (group[i][j + 1].id == number)
                 right = 0;
         }
         catch (ArrayIndexOutOfBoundsException e){}
         try {
-            if (group[i][j - 1] == number)
+            if (group[i][j - 1].id == number)
                 left = 0;
         }
         catch (ArrayIndexOutOfBoundsException e){}

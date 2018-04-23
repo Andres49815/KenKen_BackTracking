@@ -359,13 +359,14 @@ public class KenKen_Board {
     }
     // Print
     public static void print() {
-        printBoard(board);
+//        printBoard(board);
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++)
                 System.out.print(cages[i][j].id + ": " + cages[i][j].operation + "\t");
             System.out.println();
         }
-        /*for (int i = 0; i < group.length; i++) {
+        System.out.println();
+        for (int i = 0; i < group.length; i++) {
             for (int j = 0; j < group.length; j++)
                 System.out.print(group[i][j] + "\t");
             System.out.println();
