@@ -39,7 +39,7 @@ public class Solver {
                     possibilitiesMap.put(groupID, multiplicationPossibilities(result));
                     break;
                 default:
-                    possibilitiesMap.put(groupID, new ArrayList<ArrayList<Integer>>());
+                    possibilitiesMap.put(groupID, new ArrayList<>());
                     break;
                     
             }
@@ -136,21 +136,6 @@ public class Solver {
                                 SolveOperations();
                             }
                         }
-    //                    else if (sizeGroup==1 && people.size() == 1)
-    //                    {
-    //                        coordenadas = people.get(0);
-    //                        int x1 = coordenadas.get(0);
-    //                        int y1 = coordenadas.get(1);
-    //                        if(KenKen_Board.get(x1, y1) == 100)
-    //                        {
-    //                            if(KenKen_Board.isPossible(x1, y1, possibility.get(0)))
-    //                            {
-    //                                KenKen_Board.set(x1, y1, possibility.get(0));
-    //                                SolveOperations();
-    //                            }
-    //                            
-    //                        }
-    //                    }
                     }
                     KenKen_Board.set100(groupID);
                 }
