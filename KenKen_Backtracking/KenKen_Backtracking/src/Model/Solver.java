@@ -29,14 +29,29 @@ public class Solver {
                     break;
                 case "^":
                     ArrayList<ArrayList<Integer>> potencias = new  ArrayList<>();
-                    potencias.add(possibilities(cage.result));
+                    potencias.add(powerpossibilities(cage.result));
                     possibilitiesMap.put(groupID,potencias);
                     break;
                 case "%":
                     possibilitiesMap.put(groupID, modulsPossibilities(cage.result));
                     break;
+                case "-":
+                    possibilitiesMap.put(groupID, substractionPossibilities(cage.result));
+                    break;
+                case "/":
+                    possibilitiesMap.put(groupID, divisionPossibilities(cage.result));
+                    break;
                 case "*":
-                    possibilitiesMap.put(groupID, multiplicationPossibilities(cage.result));
+                    if(cage.quantity==3)
+                        possibilitiesMap.put(groupID, multiplicationPossibilities3(cage.result));
+                    if(cage.quantity==4)
+                        possibilitiesMap.put(groupID, multiplicationPossibilities4(cage.result));
+                    break;
+                case "+":
+                    if(cage.quantity==3)
+                        possibilitiesMap.put(groupID, addPossibilities3(cage.result));
+                    if(cage.quantity==4)
+                        possibilitiesMap.put(groupID, addPossibilities4(cage.result));
                     break;
                 default:
                     possibilitiesMap.put(groupID, new ArrayList<>());
@@ -54,19 +69,9 @@ public class Solver {
         SolvePowers();
         SolveOperations();
     }
-    private static ArrayList<Integer> possibilities(int number) {
-        ArrayList<Integer> results, roots;
-        
-        roots = Power(number);
-        results = new ArrayList<>();
-        for (int possible : roots)
-            results.add(possible);
-        return results;
-    }
-    private static ArrayList<Integer> Power(int number) {
+    private static ArrayList<Integer> powerpossibilities(int number) {
         int result;
         ArrayList<Integer> possibilities;
-        
         result = (int)Math.round(Math.pow(Math.E, Math.log(number) / 3));
         possibilities = new ArrayList<>();
         possibilities.add(result);
@@ -99,8 +104,7 @@ public class Solver {
                 }
             }
         }
-        int number = KenKen_Board.cages[i][j].result;
-        ArrayList<Integer> possibilities = possibilities(number);
+        ArrayList<Integer> possibilities = possibilitiesMap.get(KenKen_Board.cages[i][j].id);
         for (int n : possibilities) {    
             KenKen_Board.set(new Place(i, j), n);
             SolvePowers();
@@ -137,6 +141,71 @@ public class Solver {
                                 SolveOperations();
                             }
                         }
+                        if (sizeGroup == 3 && people.size() == 3)
+                        {
+                            KenKen_Board.set100(groupID);
+                            Place place1 = people.get(0);
+                            Place place2 = people.get(1);
+                            Place place3 = people.get(2);
+                            if(KenKen_Board.isPossible(place1, possibility.get(0)))
+                            {
+                                KenKen_Board.set(place1, possibility.get(0));
+                                if(KenKen_Board.isPossible(place2, possibility.get(1)))
+                                {
+                                    KenKen_Board.set(place2, possibility.get(1));    
+                                    if(KenKen_Board.isPossible(place3, possibility.get(2)))
+                                    {
+                                        KenKen_Board.set(place3, possibility.get(2));   
+                                        SolveOperations();
+                                    }
+                                    else
+                                    {
+                                        KenKen_Board.set100(groupID);
+                                    }  
+                                }
+                                else
+                                {
+                                    KenKen_Board.set100(groupID);
+                                }
+                            }
+                        }
+                        if (sizeGroup == 4 && people.size() == 4)
+                        {
+                            KenKen_Board.set100(groupID);
+                            Place place1 = people.get(0);
+                            Place place2 = people.get(1);
+                            Place place3 = people.get(2);
+                            Place place4 = people.get(3);
+                            if(KenKen_Board.isPossible(place1, possibility.get(0)))
+                            {
+                                KenKen_Board.set(place1, possibility.get(0));
+                                if(KenKen_Board.isPossible(place2, possibility.get(1)))
+                                {
+                                    KenKen_Board.set(place2, possibility.get(1));    
+                                    if(KenKen_Board.isPossible(place3, possibility.get(2)))
+                                    {
+                                        KenKen_Board.set(place3, possibility.get(2));   
+                                        if(KenKen_Board.isPossible(place4, possibility.get(3)))
+                                        {
+                                            KenKen_Board.set(place4, possibility.get(3));   
+                                            SolveOperations();
+                                        }
+                                        else
+                                        {
+                                            KenKen_Board.set100(groupID);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        KenKen_Board.set100(groupID);
+                                    }  
+                                }
+                                else
+                                {
+                                    KenKen_Board.set100(groupID);
+                                }
+                            }
+                        }
                     }
                     KenKen_Board.set100(groupID);
                 }
@@ -165,6 +234,26 @@ public class Solver {
         }
         return solutions;  
     }
+    
+    private static ArrayList<ArrayList<Integer>> substractionPossibilities(int number) {
+        
+        ArrayList<ArrayList<Integer>> solutions = new ArrayList<>();
+        for (int x = 0;x<KenKen_Board.size;x++)
+        {
+            for (int y = 0;y<KenKen_Board.size;y++)
+            {
+                ArrayList<Integer> possibility = new ArrayList<>();
+                    if (x-y==number && x!=y)
+                    {
+                        possibility.add(x);
+                        possibility.add(y);
+                        solutions.add(possibility);
+                    }    
+            }
+        }
+        return solutions;  
+    }
+    
     private static ArrayList<ArrayList<Integer>> divisionPossibilities(int number) {
         ArrayList<ArrayList<Integer>> solutions = new ArrayList<>();
         for (int x = 0;x<KenKen_Board.size;x++)
@@ -183,25 +272,101 @@ public class Solver {
         return solutions;  
     }
     
-    private static ArrayList<ArrayList<Integer>> multiplicationPossibilities(int number) {
+    private static ArrayList<ArrayList<Integer>> multiplicationPossibilities3(int number) {
         ArrayList<ArrayList<Integer>> solutions = new ArrayList<>();
-        for (int x = 0;x<KenKen_Board.size;x++)
+        for (int a = 0;a<KenKen_Board.size;a++)
         {
-            for (int y = 0;y<KenKen_Board.size;y++)
+            for (int b = 0;b<KenKen_Board.size;b++)
             {
-                if (x*y==number && x!=y)
+                for (int c = 0; c < KenKen_Board.size;c++)
                 {
-                    ArrayList<Integer> possibility = new ArrayList<>();
-                    possibility.add(x);
-                    possibility.add(y);
-                    solutions.add(possibility);
-                }    
+                    if (a*b*c == number)
+                    {
+                        ArrayList<Integer> possibility = new ArrayList<>();
+                        possibility.add(a);
+                        possibility.add(b);
+                        possibility.add(c);
+                        solutions.add(possibility);
+                    }
+                }
             }
         }
         return solutions;  
     }
     
-   
+    private static ArrayList<ArrayList<Integer>> multiplicationPossibilities4(int number) {
+        ArrayList<ArrayList<Integer>> solutions = new ArrayList<>();
+        for (int a = 0; a < KenKen_Board.size; a++)
+        {
+            for (int b = 0; b < KenKen_Board.size; b++)
+            {
+                for (int c = 0; c < KenKen_Board.size; c++)
+                {
+                    for (int d = 0; d < KenKen_Board.size; d++)
+                    {
+                        if (a*b*c*d == number)
+                        {
+                            ArrayList<Integer> possibility = new ArrayList<>();
+                            possibility.add(a);
+                            possibility.add(b);
+                            possibility.add(c);
+                            possibility.add(d);
+                            solutions.add(possibility);
+                        }
+                    }
+                }
+            }
+        }
+        return solutions;  
+    }
+    
+   private static ArrayList<ArrayList<Integer>> addPossibilities3(int number) {
+        ArrayList<ArrayList<Integer>> solutions = new ArrayList<>();
+        for (int a = 0;a<KenKen_Board.size;a++)
+        {
+            for (int b = 0;b<KenKen_Board.size;b++)
+            {
+                for (int c = 0; c < KenKen_Board.size;c++)
+                {
+                    if (a+b+c == number)
+                    {
+                        ArrayList<Integer> possibility = new ArrayList<>();
+                        possibility.add(a);
+                        possibility.add(b);
+                        possibility.add(c);
+                        solutions.add(possibility);
+                    }
+                }
+            }
+        }
+        return solutions;  
+    }
+    
+    private static ArrayList<ArrayList<Integer>> addPossibilities4(int number) {
+        ArrayList<ArrayList<Integer>> solutions = new ArrayList<>();
+        for (int a = 0; a < KenKen_Board.size; a++)
+        {
+            for (int b = 0; b < KenKen_Board.size; b++)
+            {
+                for (int c = 0; c < KenKen_Board.size; c++)
+                {
+                    for (int d = 0; d < KenKen_Board.size; d++)
+                    {
+                        if (a+b+c+d == number)
+                        {
+                            ArrayList<Integer> possibility = new ArrayList<>();
+                            possibility.add(a);
+                            possibility.add(b);
+                            possibility.add(c);
+                            possibility.add(d);
+                            solutions.add(possibility);
+                        }
+                    }
+                }
+            }
+        }
+        return solutions;  
+    }
     // Other methods
     
     // Print
