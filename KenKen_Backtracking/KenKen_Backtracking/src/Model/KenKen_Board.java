@@ -194,7 +194,7 @@ public class KenKen_Board {
         for (int i = 3; i < group.length - 3; i++) {
             for (int j = 3; j < group.length - 3; j++) {
                 groupCages[i - 3][j - 3] = cages[i][j];
-                newGroup[i - 3][j - 3] = group[i][j];
+                newGroup[i - 3][j - 3] = cages[i][j].id;
             }
         }
         cages = new Cage[size][size];
