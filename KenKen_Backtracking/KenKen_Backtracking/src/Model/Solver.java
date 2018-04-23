@@ -1,5 +1,6 @@
 package Model;
 
+import static Model.KenKen_Board.cages;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -16,27 +17,26 @@ public class Solver {
         for (int i = 0; i < KenKen_Board.groupsArray.size();i++)
         {
             int groupID = KenKen_Board.groupsArray.get(i);
-            String operation = KenKen_Board.operations.get(groupID);
-            int result = KenKen_Board.resultsMap.get(groupID);
-            switch(operation)
+            Cage cage = KenKen_Board.getCage(groupID);
+            switch(cage.operation)
             {
                 case " ":
                     ArrayList<ArrayList<Integer>> statics = new  ArrayList<>();
                     ArrayList<Integer> staticNumber = new ArrayList<>();
-                    staticNumber.add(result);
+                    staticNumber.add(cage.result);
                     statics.add(staticNumber);
                     possibilitiesMap.put(groupID,statics);
                     break;
                 case "^":
                     ArrayList<ArrayList<Integer>> potencias = new  ArrayList<>();
-                    potencias.add(possibilities(result));
+                    potencias.add(possibilities(cage.result));
                     possibilitiesMap.put(groupID,potencias);
                     break;
                 case "%":
-                    possibilitiesMap.put(groupID, modulsPossibilities(result));
+                    possibilitiesMap.put(groupID, modulsPossibilities(cage.result));
                     break;
                 case "*":
-                    possibilitiesMap.put(groupID, multiplicationPossibilities(result));
+                    possibilitiesMap.put(groupID, multiplicationPossibilities(cage.result));
                     break;
                 default:
                     possibilitiesMap.put(groupID, new ArrayList<>());
@@ -77,8 +77,8 @@ public class Solver {
     private static void SolveStatics() {
         for (int i = 0; i < KenKen_Board.getSize(); i++)
             for (int j = 0; j < KenKen_Board.getSize(); j++)
-                if (KenKen_Board.getOperation(i, j).equals(" "))
-                    KenKen_Board.set(new Place(i, j), KenKen_Board.getResult(i, j));
+                if (KenKen_Board.cages[i][j].operation.equals(" "))
+                    KenKen_Board.set(new Place(i, j), cages[i][j].result);
     }
     private static void SolvePowers() {
         int i, j;
@@ -92,14 +92,14 @@ public class Solver {
         for (int a = 0; a < KenKen_Board.getSize(); a++) {
             for (int b = 0; b < KenKen_Board.getSize(); b++) {
                 // Si es potencia y esta vacio
-                if (KenKen_Board.getOperation(a, b).equals("^") && KenKen_Board.get(a, b) == 100) {
+                if (KenKen_Board.cages[i][j].operation.equals("^") && KenKen_Board.get(a, b) == 100) {
                     i = a;
                     j = b;
                     break;
                 }
             }
         }
-        int number = KenKen_Board.getResult(i, j);
+        int number = KenKen_Board.cages[i][j].result;
         ArrayList<Integer> possibilities = possibilities(number);
         for (int n : possibilities) {    
             KenKen_Board.set(new Place(i, j), n);

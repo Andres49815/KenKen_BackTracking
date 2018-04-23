@@ -5,6 +5,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JTable;
 import javax.swing.JTextPane;
 import javax.swing.table.DefaultTableModel;
+import Model.*;
 
 /**
  *
@@ -12,13 +13,14 @@ import javax.swing.table.DefaultTableModel;
  */
 public class GameTable {
     
-    public void setTable(JTable t, Model.KenKen_Board KKB) {
+    public void setTable(JTable t) {
         DefaultTableModel defaultTable;
         Object[] row;
         JTextPane text;
         String operation;
         int counter, number;
-        int[][] group, results;
+        int[][] group;
+        
         
         t.setDefaultRenderer(Object.class, new Render());
         defaultTable = new DefaultTableModel() {
@@ -26,28 +28,28 @@ public class GameTable {
                 return false;
             }
         };
-        group = KKB.getGroup();
-        results = KKB.getResults();
+        group = KenKen_Board.getGroup();
         for (int i = 0; i < group.length; i++)
             defaultTable.addColumn(i);
         row = new Object[group.length];
         for (int i = 0; i < group.length; i++) {
             for (int j = 0; j < group.length; j++) {
-                number = KKB.getBoard().get(i).get(j);
+                Cage cage = KenKen_Board.cages[i][j];
+                number = KenKen_Board.getBoard().get(i).get(j);
                 text = new JTextPane();
                 text.setContentType("text/html");
-                operation = results[i][j] + KKB.getOperations().get(group[i][j]);
+                operation = cage.result + cage.operation;
                 text.setText("<html><small>" + operation + "</small>" + "<center><b>" + number + "</b></center>" + "</html>");
                 borders(text, i, j, group);
-                putColor(text,KKB.getOperations().get(group[i][j]));
+                putColor(text,cage.operation);
                 row[j] = text;
             }
             defaultTable.addRow(row);
         }
         t.setModel(defaultTable);
-        t.setRowHeight(t.getWidth() / KKB.getSize());
+        t.setRowHeight(t.getWidth() / KenKen_Board.getSize());
     }
-    public void actualizar(JTable t, Model.KenKen_Board KKB) {
+    public void actualizar(JTable t) {
         
         JTextPane text;
         String operation;
@@ -56,17 +58,17 @@ public class GameTable {
         
         DefaultTableModel defaultTable = (DefaultTableModel) t.getModel();
         
-        group = KKB.getGroup();
-        results = KKB.getResults();
+        group = KenKen_Board.getGroup();
         for (int i = 0; i < group.length; i++) {
             for (int j = 0; j < group.length; j++) {
+                Cage cage = KenKen_Board.cages[i][j];
                 text =  (JTextPane) defaultTable.getValueAt(i, j);
-                number = KKB.getBoard().get(i).get(j);
+                number = KenKen_Board.getBoard().get(i).get(j);
                 text.setContentType("text/html");
-                operation = results[i][j] + KKB.getOperations().get(group[i][j]);
+                operation = cage.result + cage.operation;
                 text.setText("<html><small>" + operation + "</small>" + "<center><b>" + number + "</b></center>" + "</html>");
                 borders(text, i, j, group);
-                putColor(text,KKB.getOperations().get(group[i][j]));
+                putColor(text,cage.operation);
                 defaultTable.setValueAt(text, i, j);
             }
         }

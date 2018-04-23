@@ -16,10 +16,10 @@ public class KenKen_Board {
     public static int[][] group;
     public static Cage[][] cages;
     // Results
-    public static int[][] results;
+    //public static int[][] results;
     public static HashMap<Integer, ArrayList<Integer>> map;
-    public static HashMap<Integer, Integer> resultsMap;
-    public static HashMap<Integer, String> operations;
+    //public static HashMap<Integer, Integer> resultsMap;
+    //public static HashMap<Integer, String> operations;
     // Other Variables
     public static int size;
     public static ArrayList<Integer> groupsArray;
@@ -46,18 +46,14 @@ public class KenKen_Board {
         //print();
     }
     public KenKen_Board(ArrayList<ArrayList<Integer>> board, ArrayList<ArrayList<Integer>> transverseBoard, 
-            int[][] group,Cage[][] cages, int[][] results, HashMap<Integer, ArrayList<Integer>> map, 
-            HashMap<Integer, Integer> resultsMap, HashMap<Integer, String> operations, 
+            int[][] group,Cage[][] cages,  HashMap<Integer, ArrayList<Integer>> map, 
             int size, ArrayList<Integer> groupsArray, byte Powers, byte Modules, 
             boolean solutionFound ) {
         KenKen_Board.board = board;
         KenKen_Board.transverseBoard = transverseBoard;
         KenKen_Board.group = group;
         KenKen_Board.cages = cages;
-        KenKen_Board.results = results;
         KenKen_Board.map = map;
-        KenKen_Board.resultsMap = resultsMap;
-        KenKen_Board.operations = operations;
         KenKen_Board.size = size;
         KenKen_Board.groupsArray = groupsArray;
         KenKen_Board.Powers = Powers;
@@ -232,11 +228,7 @@ public class KenKen_Board {
             }
     }
     private void fillResults() {
-        resultsMap = new HashMap<>();
-        operations = new HashMap<>();
-        results = new int[size][size];
         calculateResults();
-        fillResultsMatrix();
         
     }
     private void calculateResults() {
@@ -284,14 +276,8 @@ public class KenKen_Board {
         }
         return 0;
     }
-    private void fillResultsMatrix() {
-        for (int i = 0; i < group.length; i++)
-            for (int j = 0; j < group.length; j++)
-                results[i][j] = resultsMap.get(group[i][j]);
-    }
-    public int Results(int i, int j) {
-        return resultsMap.get(group[i][j]);
-    }
+    
+   
     private void FillResultsM() {
         for (Cage[] row : cages) {
             for (Cage c : row) {
@@ -342,18 +328,8 @@ public class KenKen_Board {
     }
     // On Cages
     
-    // On Results
-    public static int[][] getResults() {
-        return results;
-    }
-    public static int getResult(int i, int j) {
-        return resultsMap.get(group[i][j]);
-
-    }
-    // On Operations
-    public static String getOperation(int i, int j) {
-        return operations.get(group[i][j]);
-    }
+    
+  
     // Others
     public static int getSize() {
         return size;
@@ -361,9 +337,7 @@ public class KenKen_Board {
     public static HashMap<Integer, ArrayList<Integer>> getMap() {
         return map;
     }
-    public static HashMap<Integer, String> getOperations() {
-        return operations;
-    }
+    
     
     // Other Methods
     public int group(int i, int j) {
@@ -372,7 +346,7 @@ public class KenKen_Board {
     public static boolean isComplete() {
         for (int i = 0; i < group.length; i++)
             for (int j = 0; j < group.length; j++) {
-                if(operations.get(group[i][j]).equals("^") || operations.get(group[i][j]).equals("%") || operations.get(group[i][j]).equals("*") ) {
+                if(cages[i][j].operation.equals("^") || cages[i][j].operation.equals("%") || cages[i][j].operation.equals("*") ) {
                     if(board.get(i).get(j) == 100)
                         return false;
                 }
@@ -386,7 +360,7 @@ public class KenKen_Board {
     public static boolean isCompletePowers() {
         for (int i = 0; i < group.length; i++)
             for (int j = 0; j < group.length; j++) {
-                if(operations.get(group[i][j]).equals("^") ) {
+                if(cages[i][j].operation.equals("^") ) {
                     if(board.get(i).get(j) == 100)
                         return false;
                 }
@@ -497,5 +471,18 @@ public class KenKen_Board {
         }
         return places;
         
+    }
+    
+    public static Cage getCage(int ID)
+    {
+        for(int x=0; x<size; x++)
+        {
+            for (int y=0; y< size; y++)
+            {
+                if(cages[x][y].id == ID)
+                    return cages[x][y];
+            }
+        }
+        return null;
     }
 }

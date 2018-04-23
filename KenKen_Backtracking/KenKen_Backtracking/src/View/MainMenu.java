@@ -1,14 +1,11 @@
 package View;
 
-import Model.KenKen_Board;
-
 /**
  *
  * @author Lenovo
  */
 public class MainMenu extends javax.swing.JFrame implements Runnable{
     public GameTable gameTable = new GameTable();
-    public KenKen_Board model;
 
     /**
      * Creates new form MainMenu
@@ -206,7 +203,7 @@ public class MainMenu extends javax.swing.JFrame implements Runnable{
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {}
-            gameTable.actualizar(table_Game, model);
+            gameTable.actualizar(table_Game);
         }
     }
 }

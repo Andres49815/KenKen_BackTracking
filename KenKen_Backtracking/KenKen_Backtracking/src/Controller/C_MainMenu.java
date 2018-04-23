@@ -14,8 +14,6 @@ import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import Model.XML;
-
 /**
  *
  * @author Andres Obando Alfaro
@@ -49,7 +47,7 @@ public class C_MainMenu implements ActionListener {
                 break;
             case "Borrar":
                 KenKen_Board.CleanBoards();
-                view.gameTable.actualizar(view.table_Game, model);
+                view.gameTable.actualizar(view.table_Game);
                 break;
             case "Resolver":
                 Solve();
@@ -80,9 +78,8 @@ public class C_MainMenu implements ActionListener {
                 size = (int)view.spinner_Size.getValue();
 
                 model = new KenKen_Board(size);
-                view.model = model;
                 model.print();
-                //view.gameTable.setTable(view.table_Game, model);
+                //view.gameTable.setTable(view.table_Game);
             }
         }
         catch (Exception e) {
@@ -92,7 +89,7 @@ public class C_MainMenu implements ActionListener {
     private void Solve() {
         Solver.Solve();
         //ThreadInterface();
-        view.gameTable.actualizar(view.table_Game, model);
+        view.gameTable.actualizar(view.table_Game);
         System.out.println("Matriz ----------------------------------------- ");
         KenKen_Board.print();
     }
@@ -105,14 +102,9 @@ public class C_MainMenu implements ActionListener {
     }
 
     private void Save() throws FileNotFoundException {
-        XML saved = new XML(KenKen_Board.board,KenKen_Board.transverseBoard,
-                KenKen_Board.group,KenKen_Board.cages,KenKen_Board.results,KenKen_Board.map,
-                KenKen_Board.resultsMap,KenKen_Board.operations,
-                KenKen_Board.size,KenKen_Board.groupsArray,KenKen_Board.Powers,
-                KenKen_Board.Modules, KenKen_Board.solutionFound);
-           
+                  
         try (PrintWriter outA = new PrintWriter("kenken.xml")) {
-            String xml = xstream.toXML(saved);
+            String xml = xstream.toXML(model);
             outA.println(xml);
         }
     }
@@ -120,29 +112,13 @@ public class C_MainMenu implements ActionListener {
         view.table_Game.setVisible(true);
         reader = new FileReader("kenken.xml");
         
-        XML xml = (XML) (xstream.fromXML(reader));
-        KenKen_Board.board = xml.board;
-        KenKen_Board.transverseBoard = xml.transverseBoard;
-        KenKen_Board.group = xml.group;
-        KenKen_Board.cages = xml.cages;
-        KenKen_Board.results = xml.results;
-        KenKen_Board.map = xml.map;
-        KenKen_Board.resultsMap = xml.resultsMap;
-        KenKen_Board.operations = xml.operations;
-        KenKen_Board.size = xml.size;
-        KenKen_Board.groupsArray = xml.groupsArray;
-        KenKen_Board.Powers = xml.Powers;
-        KenKen_Board.Modules = xml.Modules;
-        KenKen_Board.solutionFound = xml.solutionFound;
-        
-        
+        KenKen_Board xml = (KenKen_Board) (xstream.fromXML(reader));
+       
         model =  new KenKen_Board(xml.board,xml.transverseBoard,
-                xml.group,xml.cages,xml.results,xml.map,
-                xml.resultsMap,xml.operations,
+                xml.group,xml.cages,xml.map,
                 xml.size,xml.groupsArray,xml.Powers,xml.Modules,
                 xml.solutionFound);
         
-        view.model = model;
-        view.gameTable.setTable(view.table_Game, model);
+        view.gameTable.setTable(view.table_Game);
     }
 }
