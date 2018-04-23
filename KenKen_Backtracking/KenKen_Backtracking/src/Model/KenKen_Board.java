@@ -34,7 +34,6 @@ public class KenKen_Board {
         // Initialize Boards
         Boards();
         // Group the boards
-        //Group(size);
         Cages(size);
         // ArrayGroup
         FillGroupArray();
@@ -151,6 +150,16 @@ public class KenKen_Board {
     }
     
     /* Defines the groups in wich each operation will work*/
+    private void Cages(int n) {
+        new Cage();
+        cages = new Cage[n + 6][n + 6];
+        group = new int[n + 6][n + 6];
+        
+        do {
+            Cages();
+        } while (!isGrouped());
+        FixDims();
+    }
     private boolean isGrouped() {
         for (int i = 3; i < group.length - 3; i++)
             for (int j = 3; j < group.length - 3; j++)
@@ -168,17 +177,6 @@ public class KenKen_Board {
                     groupsArray.add(group[i][j]);
             }
         }
-    }
-    // On Cages
-    private void Cages(int n) {
-        new Cage();
-        cages = new Cage[n + 6][n + 6];
-        group = new int[n + 6][n + 6];
-        
-        do {
-            Cages();
-        } while (!isGrouped());
-        FixDims();
     }
     private static void Cages() {
         for (int i = 3; i < cages.length - 3; i++) {
@@ -211,126 +209,12 @@ public class KenKen_Board {
         //fillMap();
         //fillResults();
     }
-    private void fillMap() {
-        int key, value;
-        
-        map = new HashMap<>();
-        // Fill the map in order to relate the group with the result.
-        for (int i = 0; i < group.length; i++)
-            for (int j = 0; j < group.length; j++) {
-                key = group[i][j];
-                value = board.get(i).get(j);
-                if (map.containsKey(key))
-                    map.get(key).add(value);
-                else {
-                    map.put(key, new ArrayList<>());
-                    map.get(key).add(value);
-                }
-            }
-    }
-    private void fillResults() {
-        calculateResults();
-        
-    }
-    private void calculateResults() {
-        ArrayList<Integer> ar;
-        
-        Powers = Modules = 0;
-        for (int key : map.keySet()) {
-            ar = map.get(key);
-            resultsMap.put(key, calculate(key, ar));
-        }
-    }
-    
-    private int calculate(int key, ArrayList<Integer> set) {
-        int side, result;
-        
-        switch (set.size()) {
-            case 1:
-                //operations.put(key, "^");
-                return (int)Math.pow(set.get(0), 3);
-            case 2:
-                //operations.put(key, "%");
-                Modules++;
-                try {
-                    result = set.get(0) % set.get(1);
-                    if (result < 0) {
-                        result = set.get(0) * set.get(1);
-                        //operations.put(key, "*");
-                    }
-                    else {
-                        //operations.put(key, "%");
-                    }
-                    return result;
-                }
-                // For 0 division.
-                catch (ArithmeticException ae) {
-                    //operations.put(key, "%");
-                    return set.get(1) % set.get(0);
-                }
-            case 3:
-            case 4:
-                result = set.get(0);
-                side = random.nextInt() % 2 == 0 ? 1 : -1;
-                //operations.put(key, side == 1 ? "+" : "-");
-                for (int i = 1; i < set.size(); i++)
-                    result += side * set.get(i);
-                return result;
-        }
-        return 0;
-    }
-    
-   
     private void FillResultsM() {
         for (Cage[] row : cages) {
             for (Cage c : row) {
                 c.setOperation();
             }
         }
-    }
-    
-    // Getters and Setters
-    // On Boards
-    public static ArrayList<ArrayList<Integer>> getBoard() {
-        return board;
-    }
-    public static int get(int i, int j) {
-        return board.get(i).get(j);
-    }
-    public static void set(Place place, int val) {
-        board.get(place.x).set(place.y, val);
-        transverseBoard.get(place.y).set(place.x, val);
-    }
-    
-    // On Groups
-    public static int[][] getGroup() {
-        return group;
-    }
-    public static ArrayList<Integer> getGroup(int n) {
-        return map.get(n);
-    }
-    public static ArrayList<Integer> getGroup(int i, int j) {
-        return map.get(group[i][j]);
-    }
-    public static void set100(int groupNo) {
-        for (int i = 0; i < group.length; i++) {
-            for (int j = 0; j < group.length; j++) {
-                if (group[i][j] == groupNo)
-                    group[i][j] = 100;
-            }
-        }
-    }
-    public static boolean groupIsComplete(int groupNo) {
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                if (group[i][j] == groupNo && board.get(i).get(j) == 100)
-                    return false;
-            }
-        }
-        return true;
-    }
-    // On Cages
-    public static void defineOperations() {
     }
     public static void setCagesResults() {
         HashMap<Integer, ArrayList<Integer>> cagesResults;
@@ -392,7 +276,47 @@ public class KenKen_Board {
         }
         return 0;
     }
-  
+    
+    // Getters and Setters
+    // On Boards
+    public static ArrayList<ArrayList<Integer>> getBoard() {
+        return board;
+    }
+    public static int get(int i, int j) {
+        return board.get(i).get(j);
+    }
+    public static void set(Place place, int val) {
+        board.get(place.x).set(place.y, val);
+        transverseBoard.get(place.y).set(place.x, val);
+    }
+    
+    // On Groups
+    public static int[][] getGroup() {
+        return group;
+    }
+    public static ArrayList<Integer> getGroup(int n) {
+        return map.get(n);
+    }
+    public static ArrayList<Integer> getGroup(int i, int j) {
+        return map.get(group[i][j]);
+    }
+    public static void set100(int groupNo) {
+        for (int i = 0; i < group.length; i++) {
+            for (int j = 0; j < group.length; j++) {
+                if (group[i][j] == groupNo)
+                    group[i][j] = 100;
+            }
+        }
+    }
+    public static boolean groupIsComplete(int groupNo) {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (group[i][j] == groupNo && board.get(i).get(j) == 100)
+                    return false;
+            }
+        }
+        return true;
+    }
     // Others
     public static int getSize() {
         return size;
