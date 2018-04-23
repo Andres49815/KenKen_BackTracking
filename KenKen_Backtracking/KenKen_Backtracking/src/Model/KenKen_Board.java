@@ -19,7 +19,6 @@ public class KenKen_Board {
     //public static int[][] results;
     public static HashMap<Integer, ArrayList<Integer>> map;
     //public static HashMap<Integer, Integer> resultsMap;
-    //public static HashMap<Integer, String> operations;
     // Other Variables
     public static int size;
     public static ArrayList<Integer> groupsArray;
@@ -240,6 +239,7 @@ public class KenKen_Board {
             resultsMap.put(key, calculate(key, ar));
         }
     }
+    
     private int calculate(int key, ArrayList<Integer> set) {
         int side, result;
         

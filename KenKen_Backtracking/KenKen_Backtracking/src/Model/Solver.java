@@ -125,7 +125,7 @@ public class Solver {
                 {
                     for (ArrayList<Integer> possibility : possibilities) 
                     {
-                        if (sizeGroup==2 && people.size() == 2)
+                        if (sizeGroup == 2 && people.size() == 2)
                         {
                             KenKen_Board.set100(groupID);
                             Place place1 = people.get(0);
