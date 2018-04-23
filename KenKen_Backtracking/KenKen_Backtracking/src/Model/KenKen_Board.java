@@ -18,7 +18,7 @@ public class KenKen_Board {
     // Results
     //public static int[][] results;
     public static HashMap<Integer, ArrayList<Integer>> map;
-    //public static HashMap<Integer, Integer> resultsMap;
+    public static HashMap<Integer, Integer> resultsMap;
     // Other Variables
     public static int size;
     public static ArrayList<Integer> groupsArray;
@@ -40,6 +40,7 @@ public class KenKen_Board {
         FillGroupArray();
         // View the results
         Results();
+        setCagesResults();
         // Clean the boards
         //CleanBoards();
         //print();
@@ -102,6 +103,7 @@ public class KenKen_Board {
         if (Complete()) {
             print();
             solutionFound = true;
+            return;
         }
         else {
             // Search for the last unused space
@@ -245,31 +247,32 @@ public class KenKen_Board {
         
         switch (set.size()) {
             case 1:
-                operations.put(key, "^");
+                //operations.put(key, "^");
                 return (int)Math.pow(set.get(0), 3);
             case 2:
-                operations.put(key, "%");
+                //operations.put(key, "%");
                 Modules++;
                 try {
                     result = set.get(0) % set.get(1);
                     if (result < 0) {
                         result = set.get(0) * set.get(1);
-                        operations.put(key, "*");
+                        //operations.put(key, "*");
                     }
-                    else
-                        operations.put(key, "%");
+                    else {
+                        //operations.put(key, "%");
+                    }
                     return result;
                 }
                 // For 0 division.
                 catch (ArithmeticException ae) {
-                    operations.put(key, "%");
+                    //operations.put(key, "%");
                     return set.get(1) % set.get(0);
                 }
             case 3:
             case 4:
                 result = set.get(0);
                 side = random.nextInt() % 2 == 0 ? 1 : -1;
-                operations.put(key, side == 1 ? "+" : "-");
+                //operations.put(key, side == 1 ? "+" : "-");
                 for (int i = 1; i < set.size(); i++)
                     result += side * set.get(i);
                 return result;
@@ -327,8 +330,68 @@ public class KenKen_Board {
         return true;
     }
     // On Cages
-    
-    
+    public static void defineOperations() {
+    }
+    public static void setCagesResults() {
+        HashMap<Integer, ArrayList<Integer>> cagesResults;
+        
+        cagesResults = new HashMap<Integer, ArrayList<Integer>>();
+        for (int i = 0; i < cages.length; i++) {
+            for (int j = 0; j < cages.length; j++) {
+                if (!cagesResults.containsKey(cages[i][j].id))
+                    cagesResults.put(cages[i][j].id, new ArrayList<Integer>());
+                cagesResults.get(cages[i][j].id).add(get(i, j));
+            }
+        }
+        putResults(cagesResults);
+    }
+    public static void putResults(HashMap<Integer, ArrayList<Integer>> cagesResults) {
+        for (Cage[] row : cages) {
+            for (Cage c : row) {
+                c.result = CalculateResults(cagesResults.get(c.id), c);
+            }
+        }
+    }
+    public static int CalculateResults(ArrayList<Integer> ar, Cage c) {
+        switch(ar.size()) {
+            case 1:
+                return (int)Math.pow(ar.get(0), 3);
+            case 2:
+                switch (c.operation) {
+                    case "-":
+                        return ar.get(0) - ar.get(1) > 0 ? ar.get(0) - ar.get(1) : ar.get(1) - ar.get(0);
+                    case "%":
+                        try {
+                            return ar.get(0) % ar.get(1);
+                        }
+                        catch (ArithmeticException ae) {
+                            return ar.get(1) % ar.get(0);
+                        }
+                    case "/":
+                        try {
+                            return ar.get(1) / ar.get(0);
+                        }
+                        catch (ArithmeticException ae) {
+                            return ar.get(0) / ar.get(1);
+                        }
+                }
+            case 3:
+            case 4:
+                switch (c.operation) {
+                    case "+":
+                        int res = 0;
+                        for (int i : ar)
+                            res += i;
+                        return res;
+                    default:
+                        int rest = 1;
+                        for (int i : ar)
+                            rest *= i;
+                        return rest;
+                }
+        }
+        return 0;
+    }
   
     // Others
     public static int getSize() {
