@@ -16,12 +16,6 @@ import java.util.Queue;
 class main {
     
     public static void main(String[] args) {
-        boolean[][] s = new boolean[3][3];
-        for (boolean[] a : s) {
-            for (boolean e : a)
-                System.out.print(e + "\t");
-            System.out.println();
-        }
         new C_MainMenu(new MainMenu());
         
         Queue<Integer> cola=new LinkedList();

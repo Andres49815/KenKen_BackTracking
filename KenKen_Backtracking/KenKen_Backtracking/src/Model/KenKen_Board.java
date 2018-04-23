@@ -21,7 +21,6 @@ public class KenKen_Board {
     public static HashMap<Integer, Integer> resultsMap;
     public static HashMap<Integer, String> operations;
     // Other Variables
-    public static int actual;
     public static int size;
     public static ArrayList<Integer> groupsArray;
     private final Random random = new Random();
@@ -32,7 +31,6 @@ public class KenKen_Board {
     // Constructor
     public KenKen_Board(int size) {
         KenKen_Board.size = size;
-        actual = 1;
         solutionFound = false;
         // Initialize Boards
         Boards();
@@ -50,7 +48,7 @@ public class KenKen_Board {
     public KenKen_Board(ArrayList<ArrayList<Integer>> board, ArrayList<ArrayList<Integer>> transverseBoard, 
             int[][] group,Cage[][] cages, int[][] results, HashMap<Integer, ArrayList<Integer>> map, 
             HashMap<Integer, Integer> resultsMap, HashMap<Integer, String> operations, 
-            int actual, int size, ArrayList<Integer> groupsArray, byte Powers, byte Modules, 
+            int size, ArrayList<Integer> groupsArray, byte Powers, byte Modules, 
             boolean solutionFound ) {
         KenKen_Board.board = board;
         KenKen_Board.transverseBoard = transverseBoard;
@@ -60,7 +58,6 @@ public class KenKen_Board {
         KenKen_Board.map = map;
         KenKen_Board.resultsMap = resultsMap;
         KenKen_Board.operations = operations;
-        KenKen_Board.actual = actual;
         KenKen_Board.size = size;
         KenKen_Board.groupsArray = groupsArray;
         KenKen_Board.Powers = Powers;
@@ -157,42 +154,6 @@ public class KenKen_Board {
     }
     
     /* Defines the groups in wich each operation will work*/
-    private void Group(int n) {
-        group = new int[n + 6][n + 6];
-        do
-            Group();
-        while (!isGrouped());
-        fixDimensions();
-    }
-    private void Group() {
-        boolean[][] grp;
-        boolean doSomething;
-        
-        for (int i = 3; i < group.length - 3; i++)
-            for (int j = 3; j < group.length - 3; j++)
-                // Only for those without value.
-                if (group[i][j] == 0) {
-                    grp = Cage.getCage();
-                    doSomething = false;
-                    // Travel the obtained cage with a tetris figure.
-                    for (int y = 0; y < grp.length; y++)
-                        if (group[i + y][j] == 0)
-                            for (int x = 0; x < grp[0].length; x++)
-                                if (grp[y][x]) {
-                                    if (group[i + y][j + x] == 0) {
-                                        group[i + y][j + x] = actual;
-                                        doSomething = true;
-                                    }
-                                    else
-                                        break;
-                                }
-                                else {}
-                        else
-                            break;
-                    if (doSomething)
-                        actual++;
-                }
-    }
     private boolean isGrouped() {
         for (int i = 3; i < group.length - 3; i++)
             for (int j = 3; j < group.length - 3; j++)
@@ -200,15 +161,6 @@ public class KenKen_Board {
                     return false;
         
         return true;
-    }
-    private void fixDimensions() {
-        int[][] newGroup = new int[size][size];
-        
-        for (int i = 3; i < group.length - 3; i++)
-            for (int j = 3; j < group.length - 3; j++)
-                newGroup[i - 3][j - 3] = group[i][j];
-        KenKen_Board.group = new int[size][size];
-        KenKen_Board.group = newGroup;
     }
     private static void FillGroupArray() {
         groupsArray = new ArrayList<>();
@@ -258,8 +210,9 @@ public class KenKen_Board {
     
     /* Fill the results maps in order to get a O(n) each time we consult */
     private void Results() {
-        fillMap();
-        fillResults();
+        FillResultsM();
+        //fillMap();
+        //fillResults();
     }
     private void fillMap() {
         int key, value;
@@ -338,6 +291,13 @@ public class KenKen_Board {
     }
     public int Results(int i, int j) {
         return resultsMap.get(group[i][j]);
+    }
+    private void FillResultsM() {
+        for (Cage[] row : cages) {
+            for (Cage c : row) {
+                c.setOperation();
+            }
+        }
     }
     
     // Getters and Setters
@@ -461,7 +421,11 @@ public class KenKen_Board {
     // Print
     public static void print() {
         printBoard(board);
-        
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++)
+                System.out.print(cages[i][j].id + ": " + cages[i][j].operation + "\t");
+            System.out.println();
+        }
         /*for (int i = 0; i < group.length; i++) {
             for (int j = 0; j < group.length; j++)
                 System.out.print(group[i][j] + "\t");

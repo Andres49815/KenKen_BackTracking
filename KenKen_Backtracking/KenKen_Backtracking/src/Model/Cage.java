@@ -11,6 +11,9 @@ public class Cage {
     private static Random random = new Random();
     public int id;
     public boolean[][] cage;
+    public int result;
+    public String operation = "";
+    public int quantity = 0;
     
     public Cage() {
         actual = 1;
@@ -21,6 +24,7 @@ public class Cage {
         boolean doSomething = false;
         
         c = getCage();
+        cage = new boolean[c.length][c[0].length];
         
         for (int y = 0; y < c.length && y + i < KenKen_Board.size + 3; y++) {
             doSomething = false;
@@ -30,6 +34,9 @@ public class Cage {
                         if (KenKen_Board.group[i + y][j + x] == 0) {
                             KenKen_Board.group[i + y][j + x] = actual;
                             KenKen_Board.cages[i + y][j + x] = this;
+                            id = actual;
+                            cage[y][x] = true;
+                            quantity++;
                             doSomething = true;
                         }
                         else {
@@ -41,9 +48,38 @@ public class Cage {
             else {
                 break;
             }
+            if (doSomething)
+                actual++;
         }
-        if (doSomething)
-            actual++;
+    }
+    
+    public void setOperation() {
+        int r;
+        
+        if (operation.equals(""))
+            switch (quantity) {
+                case 1:
+                    operation = "^";
+                    break;
+                case 2:
+                    r = random.nextInt(3);
+                    switch (r) {
+                        case 0:
+                            operation = "-";
+                            break;
+                        case 1:
+                            operation = "%";
+                            break;
+                        case 2:
+                            operation = "/";
+                            break;
+                    }
+                    break;
+                case 3:
+                case 4:
+                    operation = random.nextInt() % 2 == 0 ? "+" : "*";
+                    break;
+            }
     }
     
     // Obtein the cage
