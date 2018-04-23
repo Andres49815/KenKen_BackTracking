@@ -7,10 +7,39 @@ import java.util.Random;
  * @author Andres Obando Alfaro
  */
 public class Cage {
+    public static int actual = 1;
     private static Random random = new Random();
+    public int id;
+    public boolean[][] cage;
     
-    public Cage() {
+    public Cage(int i, int j) {
+        boolean[][] c;
+        boolean doSomething = false;
         
+        c = getCage();
+        
+        for (int y = 0; y < c.length && y + i < KenKen_Board.size + 3; y++) {
+            doSomething = false;
+            if (KenKen_Board.group[i + y][j] == 0) {
+                for (int x = 0; x  < c[0].length && x + j < KenKen_Board.size + 3; x++) {
+                    if (c[y][x]) {
+                        if (KenKen_Board.group[i + y][j + x] == 0) {
+                            KenKen_Board.group[i + y][j + x] = actual;
+                            KenKen_Board.cages[i + y][j + x] = this;
+                            doSomething = true;
+                        }
+                        else {
+                            break;
+                        }
+                    }
+                }
+            }
+            else {
+                break;
+            }
+        }
+        if (doSomething)
+            actual++;
     }
     
     // Obtein the cage

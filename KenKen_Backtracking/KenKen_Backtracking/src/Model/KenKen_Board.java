@@ -14,6 +14,7 @@ public class KenKen_Board {
     public static ArrayList<ArrayList<Integer>> transverseBoard;
     // Group
     public static int[][] group;
+    public static Cage[][] cages;
     // Results
     public static int[][] results;
     public static HashMap<Integer, ArrayList<Integer>> map;
@@ -36,7 +37,8 @@ public class KenKen_Board {
         // Initialize Boards
         Boards();
         // Group the boards
-        Group(size);
+        //Group(size);
+        Cages(size);
         // ArrayGroup
         FillGroupArray();
         // View the results
@@ -217,6 +219,40 @@ public class KenKen_Board {
             }
         }
     }
+    // On Cages
+    private void Cages(int n) {
+        cages = new Cage[n + 6][n + 6];
+        group = new int[n + 6][n + 6];
+        
+        do {
+            Cages();
+        } while (!isGrouped());
+        FixDims();
+    }
+    private static void Cages() {
+        for (int i = 3; i < cages.length - 3; i++) {
+            for (int j = 3; j < cages.length - 3; j++) {
+                if (group[i][j] == 0) {
+                    new Cage(i, j);
+                }
+            }
+        }
+    }
+    private static void FixDims() {
+        int[][] newGroup = new int[size][size];
+        Cage[][] groupCages = new Cage[size][size];
+        
+        for (int i = 3; i < group.length - 3; i++) {
+            for (int j = 3; j < group.length - 3; j++) {
+                groupCages[i - 3][j - 3] = cages[i][j];
+                newGroup[i - 3][j - 3] = group[i][j];
+            }
+        }
+        cages = new Cage[size][size];
+        cages = groupCages;
+        group = new int[size][size];
+        group = newGroup;
+    }
     
     /* Fill the results maps in order to get a O(n) each time we consult */
     private void Results() {
@@ -298,7 +334,7 @@ public class KenKen_Board {
             for (int j = 0; j < group.length; j++)
                 results[i][j] = resultsMap.get(group[i][j]);
     }
-    public  int Results(int i, int j) {
+    public int Results(int i, int j) {
         return resultsMap.get(group[i][j]);
     }
     
@@ -342,6 +378,8 @@ public class KenKen_Board {
         }
         return true;
     }
+    // On Cages
+    
     // On Results
     public static int[][] getResults() {
         return results;
