@@ -127,6 +127,7 @@ public class Solver {
                     {
                         if (sizeGroup==2 && people.size() == 2)
                         {
+                            KenKen_Board.set100(groupID);
                             Place place1 = people.get(0);
                             Place place2 = people.get(1);
                             if(KenKen_Board.isPossible(place1, possibility.get(0)) && KenKen_Board.isPossible(place2, possibility.get(1)))
@@ -146,62 +147,6 @@ public class Solver {
         
         
     
-    
-//    private static void SolveOperationsCell() {
-//        
-//        int i, j;
-//        String operation = "";
-//        
-//        if (KenKen_Board.isComplete()) {
-//            KenKen_Board.print();
-//            solution = (ArrayList<ArrayList<Integer>>)KenKen_Board.getBoard().clone();
-//            return;
-//        }
-//        i = j = 0;
-//        ArrayList<ArrayList<Integer>> possibilities = new ArrayList<>();
-//        for (int a = 0; a < KenKen_Board.getSize(); a++) {
-//            for (int b = 0; b < KenKen_Board.getSize(); b++) {
-//                // Si es potencia y esta vacio
-//                if (KenKen_Board.get(a, b) == 100 && KenKen_Board.getOperation(a, b).equals("%")) {
-//                    i = a;
-//                    j = b;
-//                    possibilities = modulsPossibilities(KenKen_Board.getSize(), i, j);
-//                    operation = "%";
-//                    break;
-//                }
-//                else if (KenKen_Board.get(a, b) == 100 && KenKen_Board.getOperation(a, b).equals("*")) {
-//                    i = a;
-//                    j = b;
-//                    possibilities = multiplicationPossibilities(KenKen_Board.getSize(), i, j);
-//                    operation = "*";
-//                    break;
-//                }
-//                    
-//                
-//            }
-//        }
-//        if (operation.equals("*")||operation.equals("%"))
-//        {
-//            if(!possibilities.isEmpty())
-//            {
-//                for (ArrayList<Integer> possibility : possibilities) 
-//                {
-//                    ArrayList<Integer> place = searchNear(i,j);
-//                    int x = place.get(0);
-//                    int y = place.get(1);
-//                    if(KenKen_Board.isPossible(i, j, possibility.get(0)) && KenKen_Board.isPossible(x, y, possibility.get(1)))
-//                    {
-//                        KenKen_Board.set(i, j, possibility.get(0));
-//                        KenKen_Board.set(x, y, possibility.get(1));
-//                        SolveOperations();
-//                    }
-//                }
-//            }
-//        }
-//        
-//        
-//    }
-    
     private static ArrayList<ArrayList<Integer>> modulsPossibilities(int number) {
         
         ArrayList<ArrayList<Integer>> solutions = new ArrayList<>();
@@ -215,11 +160,24 @@ public class Solver {
                         possibility.add(x);
                         possibility.add(y);
                         solutions.add(possibility);
-                        possibility = new ArrayList<>();
-                        possibility.add(y);
-                        possibility.add(x);
-                        solutions.add(possibility);
                     }    
+            }
+        }
+        return solutions;  
+    }
+    private static ArrayList<ArrayList<Integer>> divisionPossibilities(int number) {
+        ArrayList<ArrayList<Integer>> solutions = new ArrayList<>();
+        for (int x = 0;x<KenKen_Board.size;x++)
+        {
+            for (int y = 1;y<KenKen_Board.size;y++)
+            {
+                if (x/y==number && x!=y && x%y==0)
+                {
+                    ArrayList<Integer> possibility = new ArrayList<>();
+                    possibility.add(x);
+                    possibility.add(y);
+                    solutions.add(possibility);
+                }    
             }
         }
         return solutions;  
@@ -243,24 +201,7 @@ public class Solver {
         return solutions;  
     }
     
-    private static ArrayList<Integer> searchNear(int i, int j) {
-        int[][] group = KenKen_Board.getGroup();
-        int groupID = group[i][j];
-        ArrayList<Integer> place = new ArrayList<>();  
-        for (int a = 0; a < KenKen_Board.getSize(); a++) {
-            for (int b = 0; b < KenKen_Board.getSize(); b++) {
-                if (group[a][b]==groupID)
-                {
-                    if( a!=i || b!=j)
-                    {
-                        place.add(a);
-                        place.add(b);
-                    }
-                }
-            }
-        }
-        return place;
-    }
+   
     // Other methods
     
     // Print
