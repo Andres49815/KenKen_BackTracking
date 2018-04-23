@@ -31,7 +31,7 @@ public class KenKen_Board {
     
     // Constructor
     public KenKen_Board(int size) {
-        this.size = size;
+        KenKen_Board.size = size;
         actual = 1;
         solutionFound = false;
         // Initialize Boards
@@ -48,23 +48,25 @@ public class KenKen_Board {
         //print();
     }
     public KenKen_Board(ArrayList<ArrayList<Integer>> board, ArrayList<ArrayList<Integer>> transverseBoard, 
-            int[][] group, int[][] results, HashMap<Integer, ArrayList<Integer>> map, 
+            int[][] group,Cage[][] cages, int[][] results, HashMap<Integer, ArrayList<Integer>> map, 
             HashMap<Integer, Integer> resultsMap, HashMap<Integer, String> operations, 
-            int actual, int size, byte Powers, byte Modules, 
-            boolean solutionFound, ArrayList<Integer> groupsArray) {
+            int actual, int size, ArrayList<Integer> groupsArray, byte Powers, byte Modules, 
+            boolean solutionFound ) {
         KenKen_Board.board = board;
         KenKen_Board.transverseBoard = transverseBoard;
         KenKen_Board.group = group;
+        KenKen_Board.cages = cages;
         KenKen_Board.results = results;
         KenKen_Board.map = map;
         KenKen_Board.resultsMap = resultsMap;
         KenKen_Board.operations = operations;
         KenKen_Board.actual = actual;
         KenKen_Board.size = size;
+        KenKen_Board.groupsArray = groupsArray;
         KenKen_Board.Powers = Powers;
         KenKen_Board.Modules = Modules;
         KenKen_Board.solutionFound = solutionFound;
-        KenKen_Board.groupsArray = groupsArray;
+        
     }
     
     /* Initialize the boards in order to get clean arrays to work and use get
@@ -108,7 +110,6 @@ public class KenKen_Board {
         if (Complete()) {
             print();
             solutionFound = true;
-            return;
         }
         else {
             // Search for the last unused space
@@ -138,7 +139,7 @@ public class KenKen_Board {
     private ArrayList<Integer> Possibilities(Place place) {
         ArrayList<Integer> possibilities;
         
-        possibilities = new ArrayList<Integer>();
+        possibilities = new ArrayList<>();
         for (int n = 0; n < size ; n++)
             if (isPossible(place, n))
                 possibilities.add(n);
@@ -206,11 +207,11 @@ public class KenKen_Board {
         for (int i = 3; i < group.length - 3; i++)
             for (int j = 3; j < group.length - 3; j++)
                 newGroup[i - 3][j - 3] = group[i][j];
-        this.group = new int[size][size];
-        this.group = newGroup;
+        KenKen_Board.group = new int[size][size];
+        KenKen_Board.group = newGroup;
     }
     private static void FillGroupArray() {
-        groupsArray = new ArrayList<Integer>();
+        groupsArray = new ArrayList<>();
         
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
@@ -263,7 +264,7 @@ public class KenKen_Board {
     private void fillMap() {
         int key, value;
         
-        map = new HashMap<Integer, ArrayList<Integer>>();
+        map = new HashMap<>();
         // Fill the map in order to relate the group with the result.
         for (int i = 0; i < group.length; i++)
             for (int j = 0; j < group.length; j++) {
@@ -272,14 +273,14 @@ public class KenKen_Board {
                 if (map.containsKey(key))
                     map.get(key).add(value);
                 else {
-                    map.put(key, new ArrayList<Integer>());
+                    map.put(key, new ArrayList<>());
                     map.get(key).add(value);
                 }
             }
     }
     private void fillResults() {
-        resultsMap = new HashMap<Integer, Integer>();
-        operations = new HashMap<Integer, String>();
+        resultsMap = new HashMap<>();
+        operations = new HashMap<>();
         results = new int[size][size];
         calculateResults();
         fillResultsMatrix();
