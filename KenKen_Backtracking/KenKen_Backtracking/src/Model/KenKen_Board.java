@@ -42,7 +42,7 @@ public class KenKen_Board {
         FillGroupArray();
         // View the results
         Results();
-        setCagesResults();
+        
         // Clean the boards
         //CleanBoards();
         //print();
@@ -154,14 +154,15 @@ public class KenKen_Board {
     
     /* Defines the groups in wich each operation will work*/
     private void Cages(int n) {
-        new Cage();
+        Cage.Reset();
         cages = new Cage[n + 6][n + 6];
         group = new int[n + 6][n + 6];
         
-        do {
+        do
             Cages();
-        } while (!isGrouped());
+        while (!isGrouped());
         FixDims();
+        FillCoordinates();
     }
     private boolean isGrouped() {
         for (int i = 3; i < group.length - 3; i++)
@@ -205,12 +206,18 @@ public class KenKen_Board {
         group = new int[size][size];
         group = newGroup;
     }
+    private static void FillCoordinates() {
+        for (int i = 0; i < size; i++)
+            for (int j = 0; j < size; j++) {
+                int[] coord = {j, i};
+                cages[i][j].coordinates.add(coord);
+            }
+    }
     
     /* Fill the results maps in order to get a O(n) each time we consult */
     private void Results() {
         FillResultsM();
-        //fillMap();
-        //fillResults();
+        setCagesResults();
     }
     private void FillResultsM() {
         for (Cage[] row : cages) {
@@ -342,10 +349,6 @@ public class KenKen_Board {
             }
         return true;
     }
-    /**
-     *
-     * @return
-     */
     public static boolean isCompletePowers() {
         for (int i = 0; i < group.length; i++)
             for (int j = 0; j < group.length; j++) {

@@ -1,5 +1,6 @@
 package Model;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -7,21 +8,25 @@ import java.util.Random;
  * @author Andres Obando Alfaro
  */
 public class Cage {
+    // Static Values
     public static int actual = 1;
     private static Random random = new Random();
+    // Individual Values
     public int id;
-    public boolean[][] cage;
-    public int result;
-    public String operation = "";
     public int quantity = 0;
+    public int result;
+    public ArrayList<int[]> coordinates;
+    public boolean[][] cage;
+    public String operation = "";
     
-    public Cage() {
+    
+    public static void Reset() {
         actual = 1;
     }
     
     public Cage(int i, int j) {
         boolean[][] c;
-        boolean doSomething = false;
+        boolean doSomething;
         
         c = getCage();
         cage = new boolean[c.length][c[0].length];
@@ -35,19 +40,17 @@ public class Cage {
                             KenKen_Board.group[i + y][j + x] = actual;
                             KenKen_Board.cages[i + y][j + x] = this;
                             id = actual;
-                            cage[y][x] = true;
                             quantity++;
+                            cage[y][x] = true;
                             doSomething = true;
                         }
-                        else {
+                        else
                             break;
-                        }
                     }
                 }
             }
-            else {
+            else
                 break;
-            }
             if (doSomething)
                 actual++;
         }
@@ -59,29 +62,48 @@ public class Cage {
         if (operation.equals(""))
             switch (quantity) {
                 case 1:
-                    operation = "^";
+                    size_1();
                     break;
                 case 2:
-                    r = random.nextInt(3);
-                    switch (r) {
-                        case 0:
-                            operation = "-";
-                            break;
-                        case 1:
-                            operation = "%";
-                            break;
-                        case 2:
-                            operation = "/";
-                            break;
-                    }
+                    size_2();
                     break;
                 case 3:
                 case 4:
-                    operation = random.nextInt() % 2 == 0 ? "+" : "*";
+                    size_3();
                     break;
             }
     }
-    
+    private boolean contaninsZero() {
+        for (int[] coord : coordinates)
+            if (KenKen_Board.get(coord[1], coord[0]) == 0)
+                return true;
+        return false;
+    }
+    // size_1: Powers
+    private void size_1() {
+        operation = "^";
+    }
+    // size_2: Difference, Module, Division
+    private void size_2() {
+        if (this.contaninsZero())
+            operation = "-";
+        else
+            if (Division() == 0)
+                operation = "/";
+            else
+                operation = "%";
+    }
+    private int Division() {
+        int divider, divident;
+        
+        divider = KenKen_Board.get(coordinates.get(0)[1], coordinates.get(0)[0]);
+        divident = KenKen_Board.get(coordinates.get(1)[1], coordinates.get(1)[0]);
+        return divider % divident;
+    }
+    // size_3: Sum, Multiplication
+    private void size_3() {
+        operation = this.contaninsZero() ? "+" : "*";
+    }
     // Obtein the cage
     public static boolean[][] getCage() {
         switch(random.nextInt(11)) {
