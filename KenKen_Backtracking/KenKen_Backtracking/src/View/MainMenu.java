@@ -19,7 +19,7 @@ public class MainMenu extends javax.swing.JFrame implements Runnable{
         int n;
         
         n = (int)spinner_Size.getValue();
-        return 0 < n && n < 100;
+        return 4 < n && n < 20;
     }
 
     /**

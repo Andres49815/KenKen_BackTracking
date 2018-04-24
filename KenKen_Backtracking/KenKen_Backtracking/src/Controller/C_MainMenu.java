@@ -78,7 +78,6 @@ public class C_MainMenu implements ActionListener {
                 size = (int)view.spinner_Size.getValue();
 
                 model = new KenKen_Board(size);
-                model.print();
                 
                 view.gameTable.setTable(view.table_Game);
             }

@@ -33,6 +33,7 @@ public class KenKen_Board {
         solutionFound = false;
         // Initialize Boards
         Boards();
+        
         // Group the boards
         Cages(size);
         // ArrayGroup
@@ -100,7 +101,7 @@ public class KenKen_Board {
         ArrayList<Integer> possibilities;
         
         if (Complete()) {
-            print();
+            //print();
             solutionFound = true;
             return;
         }
@@ -311,7 +312,7 @@ public class KenKen_Board {
     public static boolean groupIsComplete(int groupNo) {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                if (group[i][j] == groupNo && board.get(i).get(j) == 100)
+                if (cages[i][j].id == groupNo && board.get(i).get(j) == 100)
                     return false;
             }
         }
@@ -333,10 +334,10 @@ public class KenKen_Board {
     public static boolean isComplete() {
         for (int i = 0; i < group.length; i++)
             for (int j = 0; j < group.length; j++) {
-                if(cages[i][j].operation.equals("^") || cages[i][j].operation.equals("%") || cages[i][j].operation.equals("*") ) {
+                //if(cages[i][j].operation.equals("^") || cages[i][j].operation.equals("%") || cages[i][j].operation.equals("*") ) {
                     if(board.get(i).get(j) == 100)
                         return false;
-                }
+              //  }
             }
         return true;
     }
@@ -357,20 +358,34 @@ public class KenKen_Board {
     public static boolean isPossible(Place place, int value) {        
         return !board.get(place.x).contains(value) && !transverseBoard.get(place.y).contains(value) && value < size;
     }
+    
+    public static boolean isPossible2(ArrayList<Place> people) {
+        ArrayList<Integer> numbers = new ArrayList<>();
+        for (int a = 0; a< people.size() ; a++)
+        {
+            Place place = people.get(a);
+            if(!numbers.contains(KenKen_Board.get(place.x,place.y)))
+            {
+                numbers.add(KenKen_Board.get(place.x,place.y));
+            }
+        }
+        return numbers.size() == people.size();
+    }
+    
     // Print
     public static void print() {
-//        printBoard(board);
+        printBoard(board);
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++)
-                System.out.print(cages[i][j].id + ": " + cages[i][j].operation + "\t");
+                System.out.print(cages[i][j].result + ":" + cages[i][j].operation + ":" + cages[i][j].id + "\t");
             System.out.println();
         }
         System.out.println();
-        for (int i = 0; i < group.length; i++) {
-            for (int j = 0; j < group.length; j++)
-                System.out.print(group[i][j] + "\t");
-            System.out.println();
-        }
+////        for (int i = 0; i < group.length; i++) {
+////            for (int j = 0; j < group.length; j++)
+////                System.out.print(group[i][j] + "\t");
+////            System.out.println();
+////        }
         /*
         System.out.println();
          Print Last Board
@@ -401,7 +416,7 @@ public class KenKen_Board {
         {
             for (int y = 0; y<size; y++)
             {
-                if(group[x][y] == groupID)
+                if(cages[x][y].id == groupID)
                     cant++;
             }
         }
@@ -428,7 +443,7 @@ public class KenKen_Board {
         ArrayList<Place> places = new ArrayList<>();  
         for (int a = 0; a < size; a++) {
             for (int b = 0; b < size; b++) {
-                if (group[a][b]==i)
+                if (cages[a][b].id==i)
                 {
                     Place place = new Place(a, b);
                     places.add(place);
