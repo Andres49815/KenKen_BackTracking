@@ -68,16 +68,17 @@ public class Solver {
     }
     
     private static void SolvePowers() {
-        int root, number;
+        int number, root;
         
-        for (int i = 0; i < KenKen_Board.size; i++)
-            for (int j = 0; j < KenKen_Board.size; j++)
+        for (int i = 0; i < KenKen_Board.size; i++) {
+            for (int j = 0; j < KenKen_Board.size; j++) {
                 if (KenKen_Board.cages[i][j].operation.equals("^")) {
-                    number = KenKen_Board.get(i, j);
+                    number = KenKen_Board.cages[i][j].result;
                     root = (int)Math.round(Math.pow(Math.E, Math.log(number) / 3));
                     KenKen_Board.set(new Place(i, j), root);
-                    System.out.println("Resultado: " + root);
                 }
+            }
+        }
     }
     private static void SolveOperations() {
         
