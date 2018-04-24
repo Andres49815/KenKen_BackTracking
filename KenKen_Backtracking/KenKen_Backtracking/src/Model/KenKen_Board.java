@@ -251,38 +251,10 @@ public class KenKen_Board {
             case 1:
                 return size_1(ar);
             case 2:
-                switch (c.operation) {
-                    case "-":
-                        return ar.get(0) - ar.get(1) > 0 ? ar.get(0) - ar.get(1) : ar.get(1) - ar.get(0);
-                    case "%":
-                        try {
-                            return ar.get(0) % ar.get(1);
-                        }
-                        catch (ArithmeticException ae) {
-                            return ar.get(1) % ar.get(0);
-                        }
-                    case "/":
-                        try {
-                            return ar.get(1) / ar.get(0);
-                        }
-                        catch (ArithmeticException ae) {
-                            return ar.get(0) / ar.get(1);
-                        }
-                }
+                return size_2(ar, c.operation);
             case 3:
             case 4:
-                switch (c.operation) {
-                    case "+":
-                        int res = 0;
-                        for (int i : ar)
-                            res += i;
-                        return res;
-                    default:
-                        int rest = 1;
-                        for (int i : ar)
-                            rest *= i;
-                        return rest;
-                }
+                return size_3(ar, c.operation);
         }
         return 0;
     }
@@ -291,12 +263,49 @@ public class KenKen_Board {
     private static int size_1(ArrayList<Integer> numbers) {
         return (int)Math.pow(numbers.get(0), 3);
     }
-    // len 2: Difference, Division, Module
-    private static int size_2(ArrayList<Integer> numbers, Cage c) {
-        switch (c.operation) {
+    // size_2: Difference, Division, Module
+    private static int size_2(ArrayList<Integer> numbers, String operation) {
+        switch (operation) {
             case "-":
-                return get();
+                return Difference(numbers);
+            case "/":
+                return Division(numbers);
+            case "%":
+                return Module(numbers);
         }
+        return 0;
+    }
+    private static int Difference(ArrayList<Integer> ar) {
+        return (ar.get(0) - ar.get(1) > 0 ? 1 : -1) * ar.get(0) - ar.get(1);
+    }
+    private static int Division(ArrayList<Integer> ar) {
+        int result;
+        
+        result = ar.get(0) / ar.get(1);
+        return result != 0 ? result : ar.get(1) / ar.get(0);
+    }
+    private static int Module(ArrayList<Integer> ar) {
+        return ar.get(0) % ar.get(1);
+    }
+    // size_3: Multiplication, Sum
+    private static int size_3(ArrayList<Integer> numbers, String operation) {
+        return operation.equals("*") ? Multiplication(numbers) : Sum(numbers);
+    }
+    private static int Multiplication(ArrayList<Integer> ar) {
+        int result;
+        
+        result = 1;
+        for (int actual : ar)
+            result *= actual;
+        return result;
+    }
+    private static int Sum(ArrayList<Integer> ar) {
+        int result;
+        
+        result = 0;
+        for (int actual : ar)
+            result += actual;
+        return result;
     }
     
     // Getters and Setters

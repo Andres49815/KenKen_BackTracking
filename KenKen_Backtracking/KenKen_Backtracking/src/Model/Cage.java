@@ -98,7 +98,7 @@ public class Cage {
         divident = KenKen_Board.get(coordinates.get(1)[1], coordinates.get(1)[0]);
         return divider % divident;
     }
-    // size_3: Sum, Multiplication
+    // size_3: Multiplication, Sum
     private void size_3() {
         operation = this.contaninsZero() ? "+" : "*";
     }
