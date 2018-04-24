@@ -32,7 +32,9 @@ public class C_MainMenu implements ActionListener {
         view.button_Save.addActionListener(this);
         view.button_Open.addActionListener(this);
         view.button_Clear.addActionListener(this);
+        view.button_ViewGroup.addActionListener(this);
         view.table_Game.setVisible(false);
+        
         
         // Display view
         view.setLocationRelativeTo(null);
@@ -67,6 +69,9 @@ public class C_MainMenu implements ActionListener {
                 } catch (FileNotFoundException ex) {
                     Logger.getLogger(C_MainMenu.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                break;
+            case "Ver Grupo":
+                viewGroup();
                 break;
         }
     }
@@ -120,5 +125,12 @@ public class C_MainMenu implements ActionListener {
                 xml.solutionFound);
         
         view.gameTable.setTable(view.table_Game);
+    }
+    
+    private void viewGroup() {
+        int g;
+        
+        g = (int)view.spinner_Size.getValue();
+        model.printGroup(g);
     }
 }

@@ -1,5 +1,6 @@
 package Model;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -14,6 +15,7 @@ public class Cage {
     public int result;
     public String operation = "";
     public int quantity = 0;
+    public ArrayList<int[]> coord;
     
     public Cage() {
         actual = 1;
@@ -22,7 +24,7 @@ public class Cage {
     public Cage(int i, int j) {
         boolean[][] c;
         boolean doSomething = false;
-        
+        coord = new ArrayList<int[]>();
         c = getCage();
         cage = new boolean[c.length][c[0].length];
         
@@ -53,33 +55,72 @@ public class Cage {
         }
     }
     
+    /* Decide wich operation is convenient for each group */
     public void setOperation() {
         int r;
         
         if (operation.equals(""))
             switch (quantity) {
                 case 1:
-                    operation = "^";
+                    exponent();
                     break;
                 case 2:
-                    r = random.nextInt(3);
-                    switch (r) {
-                        case 0:
-                            operation = "-";
-                            break;
-                        case 1:
-                            operation = "%";
-                            break;
-                        case 2:
-                            operation = "/";
-                            break;
-                    }
+                    len2();
                     break;
                 case 3:
                 case 4:
-                    operation = random.nextInt() % 2 == 0 ? "+" : "*";
+                    len3();
                     break;
             }
+    }
+    private boolean hasZero() {
+        for (int[] coordinates : coord)
+            if (KenKen_Board.get(coordinates[1], coordinates[0]) == 0)
+                return true;
+        return false;
+    }
+    private int Division() {
+        int n1, n2;
+        
+        n1 = KenKen_Board.get(coord.get(0)[1], coord.get(0)[0]);
+        n2 = KenKen_Board.get(coord.get(1)[1], coord.get(1)[0]);
+        return n1 % n2;
+    }
+    // len 1
+    private void exponent() {
+        operation = "^";
+    }
+    // len 2
+    private void len2() {
+        if (this.hasZero())
+            difference();
+        else
+            if (Division() != 0)
+                module();
+            else
+                division();
+    }
+    private void difference() {
+        operation = "-";
+    }
+    private void division() {
+        operation = "/";
+    }
+    private void module() {
+        operation = "%";
+    }
+    // len 3
+    private void len3() {
+        if (this.hasZero())
+            sum();
+        else
+            multiplication();
+    }
+    private void sum() {
+        operation = "+";
+    }
+    private void multiplication() {
+        operation = "*";
     }
     
     // Obtein the cage
@@ -228,5 +269,10 @@ public class Cage {
         boolean[][] cage = {{true, true},
             {true, true}};
         return cage;
+    }
+    
+    public void print() {
+        for (int[] ar : coord)
+            System.out.println("x: " + ar[0] + ", y: " + ar[1]);
     }
 }

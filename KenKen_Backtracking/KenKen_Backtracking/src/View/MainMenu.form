@@ -90,6 +90,7 @@
                               <Component id="button_Save" alignment="1" max="32767" attributes="0"/>
                               <Component id="button_Open" alignment="0" max="32767" attributes="0"/>
                               <Component id="button_Clear" alignment="0" max="32767" attributes="0"/>
+                              <Component id="button_ViewGroup" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -118,7 +119,9 @@
                   <Component id="button_Open" min="-2" pref="52" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="button_Save" min="-2" pref="52" max="-2" attributes="0"/>
-                  <EmptySpace pref="221" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="button_ViewGroup" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="151" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -182,6 +185,14 @@
         <Component class="javax.swing.JButton" name="button_Clear">
           <Properties>
             <Property name="text" type="java.lang.String" value="Borrar"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="button_ViewGroup">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ver Grupo"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

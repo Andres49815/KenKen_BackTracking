@@ -33,17 +33,15 @@ public class KenKen_Board {
         solutionFound = false;
         // Initialize Boards
         Boards();
-        
         // Group the boards
         Cages(size);
         // ArrayGroup
         FillGroupArray();
         // View the results
         Results();
-        setCagesResults();
         // Clean the boards
         //CleanBoards();
-        //print();
+        print();
     }
     public KenKen_Board(ArrayList<ArrayList<Integer>> board, ArrayList<ArrayList<Integer>> transverseBoard, 
             int[][] group,Cage[][] cages,  HashMap<Integer, ArrayList<Integer>> map, 
@@ -160,6 +158,7 @@ public class KenKen_Board {
             Cages();
         } while (!isGrouped());
         FixDims();
+        Coordinates();
     }
     private boolean isGrouped() {
         for (int i = 3; i < group.length - 3; i++)
@@ -179,6 +178,7 @@ public class KenKen_Board {
             }
         }
     }
+    // On cages
     private static void Cages() {
         for (int i = 3; i < cages.length - 3; i++) {
             for (int j = 3; j < cages.length - 3; j++) {
@@ -203,12 +203,18 @@ public class KenKen_Board {
         group = new int[size][size];
         group = newGroup;
     }
+    private void Coordinates() {
+        for (int i = 0; i < size; i++)
+            for (int j = 0; j < size; j++) {
+                int[] n = {j, i};
+                cages[i][j].coord.add(n);
+            }
+    }
     
     /* Fill the results maps in order to get a O(n) each time we consult */
     private void Results() {
         FillResultsM();
-        //fillMap();
-        //fillResults();
+        setCagesResults();
     }
     private void FillResultsM() {
         for (Cage[] row : cages) {
@@ -240,42 +246,58 @@ public class KenKen_Board {
     public static int CalculateResults(ArrayList<Integer> ar, Cage c) {
         switch(ar.size()) {
             case 1:
-                return (int)Math.pow(ar.get(0), 3);
+                return Power(ar);
             case 2:
                 switch (c.operation) {
                     case "-":
-                        return ar.get(0) - ar.get(1) > 0 ? ar.get(0) - ar.get(1) : ar.get(1) - ar.get(0);
+                        return Difference(ar);
                     case "%":
-                        try {
-                            return ar.get(0) % ar.get(1);
-                        }
-                        catch (ArithmeticException ae) {
-                            return ar.get(1) % ar.get(0);
-                        }
+                        return Module(ar);
                     case "/":
-                        try {
-                            return ar.get(1) / ar.get(0);
-                        }
-                        catch (ArithmeticException ae) {
-                            return ar.get(0) / ar.get(1);
-                        }
+                        return Division(ar);
                 }
             case 3:
             case 4:
                 switch (c.operation) {
                     case "+":
-                        int res = 0;
-                        for (int i : ar)
-                            res += i;
-                        return res;
+                        return Sum(ar);
                     default:
-                        int rest = 1;
-                        for (int i : ar)
-                            rest *= i;
-                        return rest;
+                        return Multiplication(ar);
                 }
         }
         return 0;
+    }
+    // Operations
+    private static int Power(ArrayList<Integer> ar) {
+        return (int)Math.pow(ar.get(0), 3);
+    }
+    private static int Difference(ArrayList<Integer> ar) {
+        return (ar.get(0) - ar.get(1) > 0 ? 1 : -1) * ar.get(0) - ar.get(1);
+    }
+    private static int Module(ArrayList<Integer> ar) {
+        return ar.get(0) % ar.get(1);
+    }
+    private static int Division(ArrayList<Integer> ar) {
+        int result;
+        
+        result = ar.get(0) / ar.get(1);
+        return result != 0 ? result : ar.get(1) / ar.get(0);
+    }
+    private static int Sum(ArrayList<Integer> ar) {
+        int result;
+        
+        result = 0;
+        for (int actual : ar)
+            result += actual;
+        return result;
+    }
+    private static int Multiplication(ArrayList<Integer> ar) {
+        int result;
+        
+        result = 1;
+        for (int actual : ar)
+            result *= actual;
+        return result;
     }
     
     // Getters and Setters
@@ -341,10 +363,6 @@ public class KenKen_Board {
             }
         return true;
     }
-    /**
-     *
-     * @return
-     */
     public static boolean isCompletePowers() {
         for (int i = 0; i < group.length; i++)
             for (int j = 0; j < group.length; j++) {
@@ -358,7 +376,6 @@ public class KenKen_Board {
     public static boolean isPossible(Place place, int value) {        
         return !board.get(place.x).contains(value) && !transverseBoard.get(place.y).contains(value) && value < size;
     }
-    
     public static boolean isPossible2(ArrayList<Place> people) {
         
         for (int a = 0; a< people.size() ; a++)
@@ -369,7 +386,6 @@ public class KenKen_Board {
         }
         return true;
     }
-    
     public static boolean isPossible3(ArrayList<Integer> row) {
         ArrayList<Integer> nuevos = new ArrayList<>();
         int contador = 0;
@@ -396,16 +412,6 @@ public class KenKen_Board {
             System.out.println();
         }
         System.out.println();
-////        for (int i = 0; i < group.length; i++) {
-////            for (int j = 0; j < group.length; j++)
-////                System.out.print(group[i][j] + "\t");
-////            System.out.println();
-////        }
-        /*
-        System.out.println();
-         Print Last Board
-        printBoard(this.results);
-        */
     }
     private static void printBoard(ArrayList<ArrayList<Integer>> b) {
         for (ArrayList<Integer> row : b) {
@@ -422,6 +428,21 @@ public class KenKen_Board {
             System.out.println();
         }
         System.out.println();
+    }
+    
+    public void printGroup(int g) {
+        boolean found = false;
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (cages[i][j].id == g) {
+                    cages[i][j].print();
+                    found = true;
+                    break;
+                }
+            }
+            if (found)
+                break;
+        }
     }
     
     public static int cantOfGroup(int groupID)
@@ -458,7 +479,7 @@ public class KenKen_Board {
         ArrayList<Place> places = new ArrayList<>();  
         for (int a = 0; a < size; a++) {
             for (int b = 0; b < size; b++) {
-                if (cages[a][b].id==i)
+                if (cages[a][b].id == i)
                 {
                     Place place = new Place(a, b);
                     places.add(place);

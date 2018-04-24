@@ -80,27 +80,33 @@ public class Solver {
     }
     
     private static void SolvePowers() {
-        int i, j;
-        
-        if (KenKen_Board.isCompletePowers()) {
-            solution = (ArrayList<ArrayList<Integer>>)KenKen_Board.getBoard().clone();
-            return;
-        }
-        i = j = 0;
-        for (int a = 0; a < KenKen_Board.getSize(); a++) {
-            for (int b = 0; b < KenKen_Board.getSize(); b++) {
-                // Si es potencia y esta vacio
-                if (KenKen_Board.cages[a][b].operation.equals("^") && KenKen_Board.get(a, b) == 100) {
-                    i = a;
-                    j = b;
-                    break;
-                }
+        for (int i = 0; i < KenKen_Board.size; i++) {
+            for (int j = 0; j < KenKen_Board.size; j++) {
+                if (KenKen_Board.cages[i][j].operation.equals("^"))
+                    KenKen_Board.set(new Place(i, j), (int)Math.round(Math.pow(Math.E, Math.log(KenKen_Board.cages[i][j].result) / 3)));
             }
         }
-        int result = KenKen_Board.cages[i][j].result;
-        int n = Power(result);
-        KenKen_Board.set(new Place(i, j), n);
-        SolvePowers();
+//        int i, j;
+//        
+//        if (KenKen_Board.isCompletePowers()) {
+//            solution = (ArrayList<ArrayList<Integer>>)KenKen_Board.getBoard().clone();
+//            return;
+//        }
+//        i = j = 0;
+//        for (int a = 0; a < KenKen_Board.getSize(); a++) {
+//            for (int b = 0; b < KenKen_Board.getSize(); b++) {
+//                // Si es potencia y esta vacio
+//                if (KenKen_Board.cages[a][b].operation.equals("^") && KenKen_Board.get(a, b) == 100) {
+//                    i = a;
+//                    j = b;
+//                    break;
+//                }
+//            }
+//        }
+//        int result = KenKen_Board.cages[i][j].result;
+//        int n = Power(result);
+//        KenKen_Board.set(new Place(i, j), n);
+//        SolvePowers();
     }
     private static void SolveOperations() {
         
@@ -179,12 +185,12 @@ public class Solver {
     private static ArrayList<ArrayList<Integer>> modulsPossibilities(int number) {
         
         ArrayList<ArrayList<Integer>> solutions = new ArrayList<>();
-        for (int x = 1;x<KenKen_Board.size;x++)
+        for (int x = 1; x < KenKen_Board.size; x++)
         {
-            for (int y = 1;y<KenKen_Board.size;y++)
+            for (int y = 1; y < KenKen_Board.size; y++)
             {
                 ArrayList<Integer> possibility = new ArrayList<>();
-                    if (x%y==number && x!=y)
+                    if (x % y == number && x != y)
                     {
                         possibility.add(x);
                         possibility.add(y);
@@ -200,10 +206,10 @@ public class Solver {
         ArrayList<ArrayList<Integer>> solutions = new ArrayList<>();
         for (int x = 0;x<KenKen_Board.size;x++)
         {
-            for (int y = 0;y<KenKen_Board.size;y++)
+            for (int y = 0; y < KenKen_Board.size; y++)
             {
                 ArrayList<Integer> possibility = new ArrayList<>();
-                    if (x-y==number && x!=y)
+                    if (x - y == number && x != y)
                     {
                         possibility.add(x);
                         possibility.add(y);
@@ -216,11 +222,11 @@ public class Solver {
     
     private static ArrayList<ArrayList<Integer>> divisionPossibilities(int number) {
         ArrayList<ArrayList<Integer>> solutions = new ArrayList<>();
-        for (int x = 0;x<KenKen_Board.size;x++)
+        for (int x = 0; x < KenKen_Board.size; x++)
         {
-            for (int y = 1;y<KenKen_Board.size;y++)
+            for (int y = 1; y < KenKen_Board.size; y++)
             {
-                if (x/y==number && x!=y && x%y==0)
+                if (x / y == number && x != y && x % y == 0)
                 {
                     ArrayList<Integer> possibility = new ArrayList<>();
                     possibility.add(x);
