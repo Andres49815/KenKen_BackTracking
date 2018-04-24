@@ -360,16 +360,31 @@ public class KenKen_Board {
     }
     
     public static boolean isPossible2(ArrayList<Place> people) {
-        ArrayList<Integer> numbers = new ArrayList<>();
+        
         for (int a = 0; a< people.size() ; a++)
         {
             Place place = people.get(a);
-            if(!numbers.contains(KenKen_Board.get(place.x,place.y)))
+            if(!isPossible3(KenKen_Board.transverseBoard.get(place.y)) && !isPossible3(KenKen_Board.board.get(place.x)))
+                return false;
+        }
+        return true;
+    }
+    
+    public static boolean isPossible3(ArrayList<Integer> row) {
+        ArrayList<Integer> nuevos = new ArrayList<>();
+        int contador = 0;
+        for (int a = 0; a< size ; a++)
+        {
+            if (row.get(a)!=100)
             {
-                numbers.add(KenKen_Board.get(place.x,place.y));
+                if(!nuevos.contains(row.get(a)))
+                {
+                    nuevos.add(row.get(a));                
+                }
+                contador++;
             }
         }
-        return numbers.size() == people.size();
+        return nuevos.size() == contador;
     }
     
     // Print

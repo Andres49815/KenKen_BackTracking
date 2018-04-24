@@ -115,10 +115,9 @@ public class Solver {
             if(!KenKen_Board.groupIsComplete(groupID) && !possibilities.isEmpty())
             {
                 ArrayList<Place> people = KenKen_Board.getPeople(groupID);
-                int sizeGroup = KenKen_Board.cantOfGroup(groupID);
                 for (ArrayList<Integer> possibility : possibilities) 
                 {
-                    if (sizeGroup == 2 && people.size() == 2)
+                    if (people.size() == 2)
                     {
                         KenKen_Board.set100(groupID);
                         Place place1 = people.get(0);
@@ -130,7 +129,7 @@ public class Solver {
                             SolveOperations();
                         }
                     }
-                    if (sizeGroup == 3 && people.size() == 3)
+                    if (people.size() == 3)
                     {
                         KenKen_Board.set100(groupID);
                         Place place1 = people.get(0);
@@ -148,7 +147,7 @@ public class Solver {
                             KenKen_Board.set100(groupID);
                         }
                     }
-                    if (sizeGroup == 4 && people.size() == 4)
+                    if (people.size() == 4)
                     {
                         KenKen_Board.set100(groupID);
                         Place place1 = people.get(0);
