@@ -62,45 +62,22 @@ public class Solver {
         
     }
     public static void Solve() {
-        DoPossibilities();
+        //DoPossibilities();
         SolvePowers();
-        SolveOperations();
-    }
-    private static Integer Power(int number) {
-        int result;
-        if(number == 0)
-        {
-            result = 0;
-        }
-        else
-        {
-            result = (int)Math.round(Math.pow(Math.E, Math.log(number) / 3));
-        }
-        return result;
+        //SolveOperations();
     }
     
     private static void SolvePowers() {
-        int i, j;
+        int root, number;
         
-        if (KenKen_Board.isCompletePowers()) {
-            solution = (ArrayList<ArrayList<Integer>>)KenKen_Board.getBoard().clone();
-            return;
-        }
-        i = j = 0;
-        for (int a = 0; a < KenKen_Board.getSize(); a++) {
-            for (int b = 0; b < KenKen_Board.getSize(); b++) {
-                // Si es potencia y esta vacio
-                if (KenKen_Board.cages[a][b].operation.equals("^") && KenKen_Board.get(a, b) == 100) {
-                    i = a;
-                    j = b;
-                    break;
+        for (int i = 0; i < KenKen_Board.size; i++)
+            for (int j = 0; j < KenKen_Board.size; j++)
+                if (KenKen_Board.cages[i][j].operation.equals("^")) {
+                    number = KenKen_Board.get(i, j);
+                    root = (int)Math.round(Math.pow(Math.E, Math.log(number) / 3));
+                    KenKen_Board.set(new Place(i, j), root);
+                    System.out.println("Resultado: " + root);
                 }
-            }
-        }
-        int result = KenKen_Board.cages[i][j].result;
-        int n = Power(result);
-        KenKen_Board.set(new Place(i, j), n);
-        SolvePowers();
     }
     private static void SolveOperations() {
         
