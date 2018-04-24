@@ -79,6 +79,8 @@ public class C_MainMenu implements ActionListener {
 
                 model = new KenKen_Board(size);
                 
+                
+              
                 view.gameTable.setTable(view.table_Game);
             }
         }

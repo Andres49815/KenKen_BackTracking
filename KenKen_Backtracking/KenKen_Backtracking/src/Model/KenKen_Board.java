@@ -22,6 +22,8 @@ public class KenKen_Board {
     // Other Variables
     public static int size;
     public static ArrayList<Integer> groupsArray;
+
+    
     private final Random random = new Random();
     public static byte Powers;
     public static byte Modules;
@@ -302,10 +304,10 @@ public class KenKen_Board {
         return map.get(group[i][j]);
     }
     public static void set100(int groupNo) {
-        for (int i = 0; i < group.length; i++) {
-            for (int j = 0; j < group.length; j++) {
-                if (group[i][j] == groupNo)
-                    group[i][j] = 100;
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (cages[i][j].id == groupNo)
+                    KenKen_Board.set(new Place(i,j), 100);
             }
         }
     }
@@ -358,17 +360,17 @@ public class KenKen_Board {
     public static boolean isPossible(Place place, int value) {        
         return !board.get(place.x).contains(value) && !transverseBoard.get(place.y).contains(value) && value < size;
     }
-    
-    public static boolean isPossible2(ArrayList<Place> people) {
-        
-        for (int a = 0; a< people.size() ; a++)
-        {
-            Place place = people.get(a);
-            if(!isPossible3(KenKen_Board.transverseBoard.get(place.y)) && !isPossible3(KenKen_Board.board.get(place.x)))
-                return false;
-        }
-        return true;
-    }
+//    
+//    public static boolean isPossible2(ArrayList<Place> people) {
+//        
+//        for (int a = 0; a< people.size() ; a++)
+//        {
+//            Place place = people.get(a);
+//            if(!isPossible3(KenKen_Board.transverseBoard.get(place.y)) && !isPossible3(KenKen_Board.board.get(place.x)))
+//                return false;
+//        }
+//        return true;
+//    }
     
     public static boolean isPossible3(ArrayList<Integer> row) {
         ArrayList<Integer> nuevos = new ArrayList<>();
@@ -480,5 +482,13 @@ public class KenKen_Board {
             }
         }
         return null;
+    }
+    public static boolean real() {
+        for (int x=0; x<size; x++)
+        {
+            if(!isPossible3(KenKen_Board.transverseBoard.get(x)) && !isPossible3(KenKen_Board.board.get(x)))
+                return false;
+        }
+        return true;
     }
 }

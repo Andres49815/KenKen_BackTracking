@@ -117,55 +117,59 @@ public class Solver {
                 ArrayList<Place> people = KenKen_Board.getPeople(groupID);
                 for (ArrayList<Integer> possibility : possibilities) 
                 {
-                    if (people.size() == 2)
-                    {
-                        KenKen_Board.set100(groupID);
-                        Place place1 = people.get(0);
-                        Place place2 = people.get(1);
-                        if(KenKen_Board.isPossible(place1, possibility.get(0)) && KenKen_Board.isPossible(place2, possibility.get(1)))
-                        {
-                            KenKen_Board.set(place1, possibility.get(0));
-                            KenKen_Board.set(place2, possibility.get(1));
-                            SolveOperations();
-                        }
-                    }
-                    if (people.size() == 3)
-                    {
-                        KenKen_Board.set100(groupID);
-                        Place place1 = people.get(0);
-                        Place place2 = people.get(1);
-                        Place place3 = people.get(2);
-                        KenKen_Board.set(place1, possibility.get(0));
-                        KenKen_Board.set(place2, possibility.get(1));
-                        KenKen_Board.set(place3, possibility.get(2));  
-                        if(KenKen_Board.isPossible2(people))
-                        {
-                            SolveOperations();
-                        }
-                        else
-                        {
-                            KenKen_Board.set100(groupID);
-                        }
-                    }
-                    if (people.size() == 4)
-                    {
-                        KenKen_Board.set100(groupID);
-                        Place place1 = people.get(0);
-                        Place place2 = people.get(1);
-                        Place place3 = people.get(2);
-                        Place place4 = people.get(3);
-                        KenKen_Board.set(place1, possibility.get(0));
-                        KenKen_Board.set(place2, possibility.get(1));
-                        KenKen_Board.set(place3, possibility.get(2));  
-                        KenKen_Board.set(place4, possibility.get(3)); 
-                        if(KenKen_Board.isPossible2(people))
-                        {
-                            SolveOperations();
-                        }
-                        else
-                        {
-                            KenKen_Board.set100(groupID);
-                        }
+                    switch (people.size()) {
+                        case 2:
+                            {
+                                KenKen_Board.set100(groupID);
+                                Place place1 = people.get(0);
+                                Place place2 = people.get(1);
+                                if(KenKen_Board.isPossible(place1, possibility.get(0)) && KenKen_Board.isPossible(place2, possibility.get(1)))
+                                {
+                                    KenKen_Board.set(place1, possibility.get(0));
+                                    KenKen_Board.set(place2, possibility.get(1));
+                                    SolveOperations();
+                                }       break;
+                            }
+                        case 3:
+                            {
+                                KenKen_Board.set100(groupID);
+                                Place place1 = people.get(0);
+                                Place place2 = people.get(1);
+                                Place place3 = people.get(2);
+                                KenKen_Board.set(place1, possibility.get(0));
+                                KenKen_Board.set(place2, possibility.get(1));
+                                KenKen_Board.set(place3, possibility.get(2));
+                                if(KenKen_Board.real())
+                                {
+                                    SolveOperations();
+                                }
+                                else
+                                {
+                                    KenKen_Board.set100(groupID);
+                                }       break;
+                            }
+                        case 4:
+                            {
+                                KenKen_Board.set100(groupID);
+                                Place place1 = people.get(0);
+                                Place place2 = people.get(1);
+                                Place place3 = people.get(2);
+                                Place place4 = people.get(3);
+                                KenKen_Board.set(place1, possibility.get(0));
+                                KenKen_Board.set(place2, possibility.get(1));
+                                KenKen_Board.set(place3, possibility.get(2));
+                                KenKen_Board.set(place4, possibility.get(3));
+                                if(KenKen_Board.real())
+                                {
+                                    SolveOperations();
+                                }
+                                else
+                                {
+                                    KenKen_Board.set100(groupID);
+                                }       break;
+                            }
+                        default:
+                            break;
                     }
                 }
                 KenKen_Board.set100(groupID);
