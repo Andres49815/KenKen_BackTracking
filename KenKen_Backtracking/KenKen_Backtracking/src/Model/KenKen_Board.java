@@ -281,7 +281,6 @@ public class KenKen_Board {
     }
     
     // Getters and Setters
-    // On Boards
     public static ArrayList<ArrayList<Integer>> getBoard() {
         return board;
     }
