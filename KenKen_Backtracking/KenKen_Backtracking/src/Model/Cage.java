@@ -30,7 +30,7 @@ public class Cage {
         
         c = getCage();
         cage = new boolean[c.length][c[0].length];
-        
+        coordinates = new ArrayList<int[]>();
         for (int y = 0; y < c.length && y + i < KenKen_Board.size + 3; y++) {
             doSomething = false;
             if (KenKen_Board.group[i + y][j] == 0) {
@@ -57,8 +57,6 @@ public class Cage {
     }
     
     public void setOperation() {
-        int r;
-        
         if (operation.equals(""))
             switch (quantity) {
                 case 1:
@@ -83,7 +81,7 @@ public class Cage {
     private void size_1() {
         operation = "^";
     }
-    // size_2: Difference, Module, Division
+    // size_2: Difference, Division, Module
     private void size_2() {
         if (this.contaninsZero())
             operation = "-";

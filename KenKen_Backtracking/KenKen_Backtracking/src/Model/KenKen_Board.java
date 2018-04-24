@@ -249,7 +249,7 @@ public class KenKen_Board {
     public static int CalculateResults(ArrayList<Integer> ar, Cage c) {
         switch(ar.size()) {
             case 1:
-                return (int)Math.pow(ar.get(0), 3);
+                return size_1(ar);
             case 2:
                 switch (c.operation) {
                     case "-":
@@ -285,6 +285,18 @@ public class KenKen_Board {
                 }
         }
         return 0;
+    }
+    // Operations
+    // size_1: Powers
+    private static int size_1(ArrayList<Integer> numbers) {
+        return (int)Math.pow(numbers.get(0), 3);
+    }
+    // len 2: Difference, Division, Module
+    private static int size_2(ArrayList<Integer> numbers, Cage c) {
+        switch (c.operation) {
+            case "-":
+                return get();
+        }
     }
     
     // Getters and Setters
