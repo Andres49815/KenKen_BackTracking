@@ -35,17 +35,14 @@ public class KenKen_Board {
         solutionFound = false;
         // Initialize Boards
         Boards();
-        
         // Group the boards
         Cages(size);
         // ArrayGroup
         FillGroupArray();
         // View the results
         Results();
-        
         // Clean the boards
         //CleanBoards();
-        //print();
     }
     public KenKen_Board(ArrayList<ArrayList<Integer>> board, ArrayList<ArrayList<Integer>> transverseBoard, 
             int[][] group,Cage[][] cages,  HashMap<Integer, ArrayList<Integer>> map, 
@@ -152,7 +149,7 @@ public class KenKen_Board {
         InitializeBoards();
     }
     
-    /* Defines the groups in wich each operation will work*/
+    /* Defines the groups in wich each operation will work */
     private void Cages(int n) {
         Cage.Reset();
         cages = new Cage[n + 6][n + 6];
@@ -462,8 +459,6 @@ public class KenKen_Board {
         }
         return cant;
     }
-    
-    
     
     public static int maxGroup ()
     {

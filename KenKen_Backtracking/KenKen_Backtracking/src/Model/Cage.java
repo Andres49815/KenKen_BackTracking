@@ -102,9 +102,34 @@ public class Cage {
     private void size_3() {
         operation = this.contaninsZero() ? "+" : "*";
     }
+    
+    // Possibilities
+    public ArrayList<ArrayList<Integer>> Possibilities() {
+        return null;
+    }
+    private ArrayList<ArrayList<Integer>> PossibleModules() {
+        ArrayList<Integer> possibility;
+        ArrayList<ArrayList<Integer>> possibilities;
+        
+        possibility = new ArrayList<Integer>();
+        possibilities = new ArrayList<ArrayList<Integer>>();
+        
+        for (int i = 1; i < KenKen_Board.size; i++) {
+            for (int j = 1; j < KenKen_Board.size; j++) {
+                if (i % j == result) {
+                    possibility.add(i);
+                    possibility.add(j);
+                    possibilities.add(possibility);
+                    break;
+                }
+            }
+        }
+        return possibilities;
+    }
+    
     // Obtein the cage
     public static boolean[][] getCage() {
-        switch(random.nextInt(11)) {
+        switch(random.nextInt(13)) {
             case 0:
                 return Line();
             case 1:
@@ -127,6 +152,8 @@ public class Cage {
                 return LineDot();
             case 10:
                 return Square();
+            case 11:
+                return Z();
             default:
                 return Dot();
         }
@@ -247,6 +274,11 @@ public class Cage {
     private static boolean[][] Square() {
         boolean[][] cage = {{true, true},
             {true, true}};
+        return cage;
+    }
+    private static boolean[][] Z() {
+        boolean[][] cage = {{true, true, false},
+            {false, true, true}};
         return cage;
     }
 }

@@ -63,6 +63,7 @@ public class Solver {
     }
     public static void Solve() {
         DoPossibilities();
+        System.out.println("Hola sha termine xdxdxdxddxdddd");
         SolvePowers();
         SolveOperations();
     }
