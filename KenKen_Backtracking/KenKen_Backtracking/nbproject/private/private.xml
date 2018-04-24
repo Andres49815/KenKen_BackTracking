@@ -3,12 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Lenovo/OneDrive/TEC/Semestre%20III/Análisis%20de%20Algoritmos/Proyectos/Proyecto%202/KenKen_BackTracking/KenKen_Backtracking/KenKen_Backtracking/src/Model/Cage.java</file>
-            <file>file:/C:/Users/Lenovo/OneDrive/TEC/Semestre%20III/Análisis%20de%20Algoritmos/Proyectos/Proyecto%202/KenKen_BackTracking/KenKen_Backtracking/KenKen_Backtracking/src/View/MainMenu.java</file>
-            <file>file:/C:/Users/Lenovo/OneDrive/TEC/Semestre%20III/Análisis%20de%20Algoritmos/Proyectos/Proyecto%202/KenKen_BackTracking/KenKen_Backtracking/KenKen_Backtracking/src/Model/Solver.java</file>
-            <file>file:/C:/Users/Lenovo/OneDrive/TEC/Semestre%20III/Análisis%20de%20Algoritmos/Proyectos/Proyecto%202/KenKen_BackTracking/KenKen_Backtracking/KenKen_Backtracking/src/Controller/C_MainMenu.java</file>
-            <file>file:/C:/Users/Lenovo/OneDrive/TEC/Semestre%20III/Análisis%20de%20Algoritmos/Proyectos/Proyecto%202/KenKen_BackTracking/KenKen_Backtracking/KenKen_Backtracking/src/View/GameTable.java</file>
-            <file>file:/C:/Users/Lenovo/OneDrive/TEC/Semestre%20III/Análisis%20de%20Algoritmos/Proyectos/Proyecto%202/KenKen_BackTracking/KenKen_Backtracking/KenKen_Backtracking/src/Model/KenKen_Board.java</file>
+            <file>file:/C:/Users/Rubén%20González%20V/Documents/GitHub/KenKen_BackTracking/KenKen_Backtracking/KenKen_Backtracking/src/View/GameTable.java</file>
+            <file>file:/C:/Users/Rubén%20González%20V/Documents/GitHub/KenKen_BackTracking/KenKen_Backtracking/KenKen_Backtracking/src/kenken_backtracking/main.java</file>
+            <file>file:/C:/Users/Rubén%20González%20V/Documents/GitHub/KenKen_BackTracking/KenKen_Backtracking/KenKen_Backtracking/src/Model/Solver.java</file>
+            <file>file:/C:/Users/Rubén%20González%20V/Documents/GitHub/KenKen_BackTracking/KenKen_Backtracking/KenKen_Backtracking/src/Controller/C_MainMenu.java</file>
+            <file>file:/C:/Users/Rubén%20González%20V/Documents/GitHub/KenKen_BackTracking/KenKen_Backtracking/KenKen_Backtracking/src/Model/KenKen_Board.java</file>
+            <file>file:/C:/Users/Rubén%20González%20V/Documents/GitHub/KenKen_BackTracking/KenKen_Backtracking/KenKen_Backtracking/src/Model/Cage.java</file>
+            <file>file:/C:/Users/Rubén%20González%20V/Documents/GitHub/KenKen_BackTracking/KenKen_Backtracking/KenKen_Backtracking/src/View/MainMenu.java</file>
         </group>
     </open-files>
 </project-private>

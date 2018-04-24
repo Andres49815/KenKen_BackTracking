@@ -341,7 +341,7 @@ public class KenKen_Board {
     public static boolean groupIsComplete(int groupNo) {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                if (cages[i][j].id == groupNo && board.get(i).get(j) == 100)
+                if (cages[i][j].id == groupNo && KenKen_Board.get(i, j) == 100)
                     return false;
             }
         }

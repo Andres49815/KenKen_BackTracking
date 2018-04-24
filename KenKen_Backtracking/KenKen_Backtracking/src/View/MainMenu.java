@@ -201,7 +201,7 @@ public class MainMenu extends javax.swing.JFrame implements Runnable{
     public void run() {
         while (true) {
             try {
-                Thread.sleep(100);
+                Thread.sleep(10);
             } catch (InterruptedException e) {}
             gameTable.actualizar(table_Game);
         }

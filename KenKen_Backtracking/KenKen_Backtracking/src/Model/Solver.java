@@ -62,9 +62,9 @@ public class Solver {
         
     }
     public static void Solve() {
-        //DoPossibilities();
+        DoPossibilities();
         SolvePowers();
-        //SolveOperations();
+        SolveOperations();
     }
     
     private static void SolvePowers() {
@@ -110,7 +110,7 @@ public class Solver {
                             }
                         case 3:
                             {
-                                KenKen_Board.set100(groupID);
+//                                KenKen_Board.set100(groupID);
                                 Place place1 = people.get(0);
                                 Place place2 = people.get(1);
                                 Place place3 = people.get(2);
@@ -128,7 +128,7 @@ public class Solver {
                             }
                         case 4:
                             {
-                                KenKen_Board.set100(groupID);
+//                                KenKen_Board.set100(groupID);
                                 Place place1 = people.get(0);
                                 Place place2 = people.get(1);
                                 Place place3 = people.get(2);
