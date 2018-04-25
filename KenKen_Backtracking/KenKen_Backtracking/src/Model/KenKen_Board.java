@@ -21,6 +21,7 @@ public class KenKen_Board {
     public static HashMap<Integer, Integer> resultsMap;
     // Other Variables
     public static int size;
+    public static int threadCount;
     public static ArrayList<Integer> groupsArray;
     public static ArrayList<Integer> groupsArray2;
 

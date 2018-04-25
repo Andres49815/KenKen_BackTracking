@@ -6,7 +6,7 @@ import javax.swing.SwingUtilities;
  *
  * @author Lenovo
  */
-public class MainMenu extends javax.swing.JFrame implements Runnable{
+public class MainMenu extends javax.swing.JFrame{
     public GameTable gameTable = new GameTable();
 
     /**
@@ -45,6 +45,7 @@ public class MainMenu extends javax.swing.JFrame implements Runnable{
         button_Save = new javax.swing.JButton();
         button_Open = new javax.swing.JButton();
         button_Clear = new javax.swing.JButton();
+        spinner_Thread = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -102,7 +103,8 @@ public class MainMenu extends javax.swing.JFrame implements Runnable{
                             .addComponent(button_Powers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(button_Save, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(button_Open, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(button_Clear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(button_Clear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(spinner_Thread, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -117,6 +119,8 @@ public class MainMenu extends javax.swing.JFrame implements Runnable{
                 .addGap(18, 18, 18)
                 .addComponent(label_Threads)
                 .addGap(18, 18, 18)
+                .addComponent(spinner_Thread, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
                 .addComponent(button_Generate, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(button_Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -126,7 +130,7 @@ public class MainMenu extends javax.swing.JFrame implements Runnable{
                 .addComponent(button_Open, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(button_Save, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(221, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -196,23 +200,9 @@ public class MainMenu extends javax.swing.JFrame implements Runnable{
     private javax.swing.JLabel label_Size;
     private javax.swing.JLabel label_Threads;
     public javax.swing.JSpinner spinner_Size;
+    public javax.swing.JSpinner spinner_Thread;
     public javax.swing.JTable table_Game;
     // End of variables declaration//GEN-END:variables
 
     
-    public void ThreadInterface() {
-        //Thread thread = new Thread(this);
-        SwingUtilities.invokeLater(this);
-//        thread.start();
-    }
-    
-    @Override
-    public void run() {
-        while (true) {
-            try {
-                Thread.sleep(10);
-            } catch (InterruptedException e) {}
-            gameTable.actualizar(table_Game);
-        }
-    }
 }

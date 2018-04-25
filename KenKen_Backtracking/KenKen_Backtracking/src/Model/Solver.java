@@ -1,7 +1,5 @@
 package Model;
 
-import static Model.KenKen_Board.cages;
-import static Model.KenKen_Board.solutionFound;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -9,59 +7,77 @@ import java.util.HashMap;
  *
  * @author Andres Obando Alfaro
  */
-public class Solver {
+public class Solver implements Runnable{
     
     private static ArrayList<ArrayList<Integer>> solution;
     private static HashMap<Integer, ArrayList<ArrayList<Integer>>> possibilitiesMap = new HashMap<>();
     public static boolean solutionFound;
+    public static int actualGroup;
+    public static int actualGroupID = 0;
+    public static int cantThreads = 0;
     
-    public static void DoPossibilities() {
-        for (int i = 0; i < KenKen_Board.groupsArray.size();i++)
+    public static void DoPossibilities()
+    {
+        while(actualGroup >= KenKen_Board.groupsArray2.get(KenKen_Board.groupsArray2.size()-1))
         {
-            int groupID = KenKen_Board.groupsArray.get(i);
-            Cage cage = KenKen_Board.getCage(groupID);
-            switch(cage.operation)
+            actualGroup = KenKen_Board.groupsArray2.get(actualGroupID);
+            if(cantThreads < KenKen_Board.threadCount)
             {
-                case "%":
-                    possibilitiesMap.put(groupID, modulsPossibilities(cage.result));
-                    break;
-                case "-":
-                    possibilitiesMap.put(groupID, substractionPossibilities(cage.result));
-                    break;
-                case "/":
-                    possibilitiesMap.put(groupID, divisionPossibilities(cage.result));
-                    break;
-                case "*":
-                    if(cage.quantity==3)
-                    {
-                        possibilitiesMap.put(groupID, multiplicationPossibilities3(cage.result));
-                        break;
-                    }
-                    else
-                    {
-                        possibilitiesMap.put(groupID, multiplicationPossibilities4(cage.result));
-                        break;
-                    }
-                case "+":
-                    if(cage.quantity==3)
-                    {
-                        possibilitiesMap.put(groupID, addPossibilities3(cage.result));
-                        break;
-                    }
-                    else
-                    {
-                        possibilitiesMap.put(groupID, addPossibilities4(cage.result));
-                        break;
-                    }
-                default:
-                    possibilitiesMap.put(groupID, new ArrayList<>());
-                    break;
+                new Thread(new Solver()).start();
+                actualGroupID++;
+                cantThreads++;
             }
         }
-    }
-    public Solver() {
         
     }
+    
+    @Override
+    public void run() {
+        DoPossibilitiesAux(actualGroup);
+        cantThreads--;
+    }    
+    
+    public static void DoPossibilitiesAux(int groupID) {
+        Cage cage = KenKen_Board.getCage(groupID);
+        switch(cage.operation)
+        {
+            case "%":
+                possibilitiesMap.put(groupID, modulsPossibilities(cage.result));
+                break;
+            case "-":
+                possibilitiesMap.put(groupID, substractionPossibilities(cage.result));
+                break;
+            case "/":
+                possibilitiesMap.put(groupID, divisionPossibilities(cage.result));
+                break;
+            case "*":
+                if(cage.quantity==3)
+                {
+                    possibilitiesMap.put(groupID, multiplicationPossibilities3(cage.result));
+                    break;
+                }
+                else
+                {
+                    possibilitiesMap.put(groupID, multiplicationPossibilities4(cage.result));
+                    break;
+                }
+            case "+":
+                if(cage.quantity==3)
+                {
+                    possibilitiesMap.put(groupID, addPossibilities3(cage.result));
+                    break;
+                }
+                else
+                {
+                    possibilitiesMap.put(groupID, addPossibilities4(cage.result));
+                    break;
+                }
+            default:
+                possibilitiesMap.put(groupID, new ArrayList<>());
+                break;
+        }
+    }
+    
     public static void Solve() {
         DoPossibilities();
         SolvePowers();
@@ -715,4 +731,7 @@ public class Solver {
             System.out.println();
         }
     }
+
+    
+    
 }

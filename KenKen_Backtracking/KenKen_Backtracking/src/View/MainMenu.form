@@ -90,6 +90,7 @@
                               <Component id="button_Save" alignment="1" max="32767" attributes="0"/>
                               <Component id="button_Open" alignment="0" max="32767" attributes="0"/>
                               <Component id="button_Clear" alignment="0" max="32767" attributes="0"/>
+                              <Component id="spinner_Thread" alignment="1" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -109,6 +110,8 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="label_Threads" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="spinner_Thread" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Component id="button_Generate" min="-2" pref="47" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="button_Clear" min="-2" pref="47" max="-2" attributes="0"/>
@@ -118,7 +121,7 @@
                   <Component id="button_Open" min="-2" pref="52" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="button_Save" min="-2" pref="52" max="-2" attributes="0"/>
-                  <EmptySpace pref="221" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -183,6 +186,11 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Borrar"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JSpinner" name="spinner_Thread">
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>

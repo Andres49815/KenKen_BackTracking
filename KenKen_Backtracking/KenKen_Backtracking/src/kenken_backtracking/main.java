@@ -2,9 +2,6 @@ package kenken_backtracking;
 
 import Controller.C_MainMenu;
 import View.MainMenu;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
 
 
 
@@ -18,6 +15,6 @@ class main {
         new C_MainMenu(new MainMenu());
         
         
-        Queue<Integer> cola=new LinkedList();
+       
     }
 }

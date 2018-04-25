@@ -76,11 +76,8 @@ public class C_MainMenu implements ActionListener {
             if (view.isComplete()) {
                 view.table_Game.setVisible(true);
                 size = (int)view.spinner_Size.getValue();
-
+                KenKen_Board.threadCount = (int)view.spinner_Thread.getValue();
                 model = new KenKen_Board(size);
-                
-                
-              
                 view.gameTable.setTable(view.table_Game);
             }
         }
@@ -89,7 +86,7 @@ public class C_MainMenu implements ActionListener {
         }
     }
     private void Solve() {
-        //view.ThreadInterface();
+        
         Solver.Solve();
         
         view.gameTable.actualizar(view.table_Game);
