@@ -100,7 +100,7 @@ public class Cage {
     }
     // size_3: Multiplication, Sum
     private void size_3() {
-        operation = this.contaninsZero() ? "+" : "*";
+        operation = this.contaninsZero() ? "+" : random.nextInt() % 3 == 0 ? "+" : "*";
     }
     
     // Possibilities
@@ -156,7 +156,7 @@ public class Cage {
     
     // Obtein the cage
     public static boolean[][] getCage() {
-        switch(random.nextInt(13)) {
+        switch(random.nextInt(14)) {
             case 0:
                 return Line();
             case 1:
@@ -181,6 +181,8 @@ public class Cage {
                 return Square();
             case 11:
                 return Z();
+            case 12:
+                return Dot();
             default:
                 return Dot();
         }
