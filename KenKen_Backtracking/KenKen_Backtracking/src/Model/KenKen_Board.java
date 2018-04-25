@@ -305,6 +305,19 @@ public class KenKen_Board {
         return result;
     }
     
+    /* For Modules */
+    public static int[] LastVacantModule() {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (cages[i][j].operation.equals("%") && get(i, j) == 100) {
+                    int[] coord = {j, i};
+                    return coord;
+                }
+            }
+        }
+        return null;
+    }
+    
     // Getters and Setters
     public static ArrayList<ArrayList<Integer>> getBoard() {
         return board;
@@ -344,6 +357,16 @@ public class KenKen_Board {
         }
         return true;
     }
+    
+    // Put
+    public static void Put(Cage c, ArrayList<Integer> possibilities) {
+        for (int i = 0; i < c.quantity; i++) {
+            Place place = new Place(c.coordinates.get(i)[0], c.coordinates.get(i)[1]);
+            set(place, possibilities.get(i));
+        }
+    }
+    
+    
     // Others
     public static int getSize() {
         return size;
@@ -351,8 +374,6 @@ public class KenKen_Board {
     public static HashMap<Integer, ArrayList<Integer>> getMap() {
         return map;
     }
-    
-    
     // Other Methods
     public int group(int i, int j) {
         return group[i][j];

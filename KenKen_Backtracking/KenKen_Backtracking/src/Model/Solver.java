@@ -62,12 +62,13 @@ public class Solver {
         
     }
     public static void Solve() {
-        DoPossibilities();
-        System.out.println("Hola sha termine xdxdxdxddxdddd");
+        //DoPossibilities();
+        //System.out.println("Hola sha termine xdxdxdxddxdddd");
         SolvePowers();
-        SolveOperations();
+        SolveModules();
+        //SolveOperations();
     }
-    
+    // Powers
     private static void SolvePowers() {
         int number, root;
         
@@ -81,6 +82,33 @@ public class Solver {
             }
         }
     }
+    
+    // Modules
+    private static void SolveModules() {
+        int[] coord = KenKen_Board.LastVacantModule();
+        ArrayList<ArrayList<Integer>> possibilities;
+        
+        // IsComplete
+        if (coord == null) {
+            KenKen_Board.print();
+            return;
+        }
+        else {
+            Cage cage = KenKen_Board.cages[coord[1]][coord[0]];
+            possibilities = cage.Possibilities();
+            for (ArrayList<Integer> possibility : possibilities) {
+                KenKen_Board.Put(cage, possibility);
+                SolveModules();
+            }
+            ArrayList<Integer> ar = new ArrayList<Integer>();
+            ar.add(100);
+            ar.add(100);
+            KenKen_Board.Put(cage, ar);
+        }
+    }
+
+    
+    // Cosas de Ruben...
     private static void SolveOperations() {
         
         if (KenKen_Board.isComplete()) {
@@ -155,9 +183,6 @@ public class Solver {
             }
         }
     }
-        
-        
-        
     
     private static ArrayList<ArrayList<Integer>> modulsPossibilities(int number) {
         

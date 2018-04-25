@@ -105,7 +105,12 @@ public class Cage {
     
     // Possibilities
     public ArrayList<ArrayList<Integer>> Possibilities() {
-        return null;
+        switch (quantity) {
+            case 2:
+                return PossibleModules();
+            default:
+                return null;
+        }
     }
     private ArrayList<ArrayList<Integer>> PossibleModules() {
         ArrayList<Integer> possibility;
@@ -119,12 +124,34 @@ public class Cage {
                 if (i % j == result) {
                     possibility.add(i);
                     possibility.add(j);
-                    possibilities.add(possibility);
-                    break;
+                    if (moduleIsPossible(possibility))
+                        possibilities.add(possibility);
                 }
             }
         }
         return possibilities;
+    }
+    private boolean moduleIsPossible(ArrayList<Integer> possibility) {
+        Place place;
+        int value;
+        
+        for (int i = 0; i < possibility.size(); i++) {
+            place = new Place(coordinates.get(i)[0], coordinates.get(i)[1]);
+            value = possibility.get(i);
+            if (!KenKen_Board.isPossible(place, value))
+                return false;
+        }
+        return true;
+    }
+    private void Put(ArrayList<Integer> possibility) {
+        Place place;
+        int value;
+        
+        for (int i = 0; i < possibility.size(); i++) {
+            place = new Place(coordinates.get(i)[0], coordinates.get(i)[1]);
+            value = possibility.get(i);
+            KenKen_Board.set(place, value);
+        }
     }
     
     // Obtein the cage
