@@ -2,6 +2,8 @@ package Model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  *
@@ -12,29 +14,31 @@ public class Solver implements Runnable{
     private static ArrayList<ArrayList<Integer>> solution;
     private static HashMap<Integer, ArrayList<ArrayList<Integer>>> possibilitiesMap = new HashMap<>();
     public static boolean solutionFound;
-    public static int actualGroup;
-    public static int actualGroupID = 0;
     public static int cantThreads = 0;
+    public static Queue<Integer> cola = new LinkedList();
     
     public static void DoPossibilities()
     {
-        while(actualGroup >= KenKen_Board.groupsArray2.get(KenKen_Board.groupsArray2.size()-1))
+        KenKen_Board.groupsArray2.forEach((n) -> {
+            cola.add(n);
+        });
+        while(!cola.isEmpty())
         {
-            actualGroup = KenKen_Board.groupsArray2.get(actualGroupID);
             if(cantThreads < KenKen_Board.threadCount)
             {
                 new Thread(new Solver()).start();
-                actualGroupID++;
                 cantThreads++;
             }
         }
-        
     }
     
     @Override
     public void run() {
-        DoPossibilitiesAux(actualGroup);
-        cantThreads--;
+        if (!(cola.peek() == null))
+        {
+            DoPossibilitiesAux(cola.poll());
+            cantThreads--;
+        }
     }    
     
     public static void DoPossibilitiesAux(int groupID) {
@@ -138,6 +142,7 @@ public class Solver implements Runnable{
             for (int i = 0; i < KenKen_Board.groupsArray2.size();i++)
             {
                 int groupID = KenKen_Board.groupsArray2.get(i);
+                System.out.println("i:"+i+" group: "+groupID);
                 ArrayList<ArrayList<Integer>> possibilities = possibilitiesMap.get(groupID);
                 if(!KenKen_Board.groupIsComplete(groupID))
                 {
