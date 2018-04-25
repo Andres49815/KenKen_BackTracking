@@ -22,6 +22,7 @@ public class KenKen_Board {
     // Other Variables
     public static int size;
     public static ArrayList<Integer> groupsArray;
+    public static ArrayList<Integer> groupsArray2;
 
     
     private final Random random = new Random();
@@ -39,6 +40,7 @@ public class KenKen_Board {
         Cages(size);
         // ArrayGroup
         FillGroupArray();
+        FillGroupArray2();
         // View the results
         Results();
         // Clean the boards
@@ -174,8 +176,18 @@ public class KenKen_Board {
         
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                if (!groupsArray.contains(group[i][j]))
-                    groupsArray.add(group[i][j]);
+                if (!groupsArray.contains(cages[i][j].id))
+                    groupsArray.add(cages[i][j].id);
+            }
+        }
+    }
+    private static void FillGroupArray2() {
+        groupsArray2 = new ArrayList<>();
+        
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (!groupsArray2.contains(cages[i][j].id) && !cages[i][j].operation.equals("^"))
+                    groupsArray2.add(cages[i][j].id);
             }
         }
     }
@@ -360,10 +372,8 @@ public class KenKen_Board {
     public static boolean isComplete() {
         for (int i = 0; i < group.length; i++)
             for (int j = 0; j < group.length; j++) {
-                //if(cages[i][j].operation.equals("^") || cages[i][j].operation.equals("%") || cages[i][j].operation.equals("*") ) {
                     if(board.get(i).get(j) == 100)
                         return false;
-              //  }
             }
         return true;
     }
@@ -380,22 +390,22 @@ public class KenKen_Board {
     public static boolean isPossible(Place place, int value) {        
         return !board.get(place.x).contains(value) && !transverseBoard.get(place.y).contains(value) && value < size;
     }
-//    
-//    public static boolean isPossible2(ArrayList<Place> people) {
-//        
-//        for (int a = 0; a< people.size() ; a++)
-//        {
-//            Place place = people.get(a);
-//            if(!isPossible3(KenKen_Board.transverseBoard.get(place.y)) && !isPossible3(KenKen_Board.board.get(place.x)))
-//                return false;
-//        }
-//        return true;
-//    }
+    
+    public static boolean isPossible2(ArrayList<Place> people) {
+        
+        for (int a = 0; a< people.size() ; a++)
+        {
+            Place place = people.get(a);
+            if(!isPossible3(KenKen_Board.transverseBoard.get(place.y)) && !isPossible3(KenKen_Board.board.get(place.x)))
+                return false;
+        }
+        return true;
+    }
     
     public static boolean isPossible3(ArrayList<Integer> row) {
         ArrayList<Integer> nuevos = new ArrayList<>();
         int contador = 0;
-        for (int a = 0; a< size ; a++)
+        for (int a = 0; a < size ; a++)
         {
             if (row.get(a)!=100)
             {
@@ -504,9 +514,9 @@ public class KenKen_Board {
     public static boolean real() {
         for (int x=0; x<size; x++)
         {
-            if(!isPossible3(KenKen_Board.transverseBoard.get(x)) && !isPossible3(KenKen_Board.board.get(x)))
-                return false;
+            if(isPossible3(KenKen_Board.transverseBoard.get(x)) && isPossible3(KenKen_Board.board.get(x)))
+                return true;
         }
-        return true;
+        return false;
     }
 }
