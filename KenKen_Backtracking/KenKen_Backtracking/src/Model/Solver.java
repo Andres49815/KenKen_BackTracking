@@ -554,7 +554,7 @@ public class Solver implements Runnable{
                 }
             }
         }
-        return solutions;  
+        return solutions;
     }
     
     private static ArrayList<ArrayList<Integer>> addPossibilities4(int number) {
@@ -725,7 +725,7 @@ public class Solver implements Runnable{
         return solutions;  
     }
     // Other methods
-    
+
     // Print
     public static void print() {
         System.out.println();
