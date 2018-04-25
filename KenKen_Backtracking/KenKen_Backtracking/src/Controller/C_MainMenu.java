@@ -89,19 +89,18 @@ public class C_MainMenu implements ActionListener {
         }
     }
     private void Solve() {
+        //view.ThreadInterface();
         Solver.Solve();
-        //ThreadInterface();
+        
         view.gameTable.actualizar(view.table_Game);
         System.out.println("Matriz ----------------------------------------- ");
         KenKen_Board.print();
+        
     }
 
     
 
-    private void ThreadInterface() {
-        Thread thread = new Thread(view);
-        thread.start();
-    }
+    
 
     private void Save() throws FileNotFoundException {
                   

@@ -1,5 +1,7 @@
 package View;
 
+import javax.swing.SwingUtilities;
+
 /**
  *
  * @author Lenovo
@@ -197,6 +199,13 @@ public class MainMenu extends javax.swing.JFrame implements Runnable{
     public javax.swing.JTable table_Game;
     // End of variables declaration//GEN-END:variables
 
+    
+    public void ThreadInterface() {
+        //Thread thread = new Thread(this);
+        SwingUtilities.invokeLater(this);
+//        thread.start();
+    }
+    
     @Override
     public void run() {
         while (true) {

@@ -144,7 +144,6 @@ public class Solver {
                                             if (KenKen_Board.isComplete())
                                                 return;
                                         }
-                                        
                                     }
                                     break;
                                 }
@@ -216,7 +215,7 @@ public class Solver {
         {
             for (int y = 1; y<KenKen_Board.size;y++)
             {
-                if (x%y == number && x!=y)
+                if (x%y == number)
                 {
                     possibility = new ArrayList<>();
                     possibility.add(x);
@@ -240,7 +239,7 @@ public class Solver {
             for (int y = 0;y<KenKen_Board.size;y++)
             {
                 ArrayList<Integer> possibility = new ArrayList<>();
-                    if (x-y==number && x!=y && x>y)
+                    if (x-y==number && x>y)
                     {
                         possibility = new ArrayList<>();
                         possibility.add(x);
@@ -263,7 +262,7 @@ public class Solver {
         {
             for (int y = 1;y<KenKen_Board.size;y++)
             {
-                if (x/y==number && x!=y && x%y==0)
+                if (x/y==number && x%y==0)
                 {
                     possibility = new ArrayList<>();
                     possibility.add(x);
