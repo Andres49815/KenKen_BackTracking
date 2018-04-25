@@ -48,16 +48,19 @@ public class KenKen_Board {
         //CleanBoards();
     }
     public KenKen_Board(ArrayList<ArrayList<Integer>> board, ArrayList<ArrayList<Integer>> transverseBoard, 
-            int[][] group,Cage[][] cages,  HashMap<Integer, ArrayList<Integer>> map, 
-            int size, ArrayList<Integer> groupsArray, byte Powers, byte Modules, 
+            int[][] group,Cage[][] cages,  HashMap<Integer, ArrayList<Integer>> map, HashMap<Integer, Integer> resultsMap,
+            int size,int threadCount, ArrayList<Integer> groupsArray,ArrayList<Integer> groupsArray2, byte Powers, byte Modules, 
             boolean solutionFound ) {
         KenKen_Board.board = board;
         KenKen_Board.transverseBoard = transverseBoard;
         KenKen_Board.group = group;
         KenKen_Board.cages = cages;
         KenKen_Board.map = map;
+        KenKen_Board.resultsMap = resultsMap;
         KenKen_Board.size = size;
+        KenKen_Board.threadCount = threadCount;
         KenKen_Board.groupsArray = groupsArray;
+        KenKen_Board.groupsArray2 = groupsArray2;
         KenKen_Board.Powers = Powers;
         KenKen_Board.Modules = Modules;
         KenKen_Board.solutionFound = solutionFound;

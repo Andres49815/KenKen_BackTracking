@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Cage;
 import Model.KenKen_Board;
 import Model.Solver;
 import View.MainMenu;
@@ -11,8 +12,12 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFileChooser;
 
 /**
  *
@@ -100,21 +105,36 @@ public class C_MainMenu implements ActionListener {
     
 
     private void Save() throws FileNotFoundException {
-                  
-        try (PrintWriter outA = new PrintWriter("kenken.xml")) {
+        JFileChooser fc = new JFileChooser();
+        fc.setFileSelectionMode( JFileChooser.DIRECTORIES_ONLY );
+        String path="";
+        if( fc.showOpenDialog( view ) == JFileChooser.APPROVE_OPTION )
+        {
+            path = fc.getSelectedFile().getAbsolutePath();
+        }
+        try (PrintWriter outA = new PrintWriter(path+".xml")) {
             String xml = xstream.toXML(model);
             outA.println(xml);
         }
     }
     private void Open() throws FileNotFoundException {
         view.table_Game.setVisible(true);
-        reader = new FileReader("kenken.xml");
+        
+        JFileChooser fc = new JFileChooser();
+        fc.setFileSelectionMode( JFileChooser.DIRECTORIES_ONLY );
+        String path="";
+        if( fc.showOpenDialog( view ) == JFileChooser.APPROVE_OPTION )
+        {
+            path = fc.getSelectedFile().getAbsolutePath();
+        }      
+        
+        reader = new FileReader(path+".xml");
         
         KenKen_Board xml = (KenKen_Board) (xstream.fromXML(reader));
-       
+           
         model =  new KenKen_Board(xml.board,xml.transverseBoard,
-                xml.group,xml.cages,xml.map,
-                xml.size,xml.groupsArray,xml.Powers,xml.Modules,
+                xml.group,xml.cages,xml.map,xml.resultsMap,
+                xml.size,xml.threadCount,xml.groupsArray,xml.groupsArray2,xml.Powers,xml.Modules,
                 xml.solutionFound);
         
         view.gameTable.setTable(view.table_Game);
