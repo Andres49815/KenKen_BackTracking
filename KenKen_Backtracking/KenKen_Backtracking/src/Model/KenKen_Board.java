@@ -285,7 +285,7 @@ public class KenKen_Board {
         return 0;
     }
     private static int Difference(ArrayList<Integer> ar) {
-        return (ar.get(0) - ar.get(1) > 0 ? 1 : -1) * ar.get(0) - ar.get(1);
+        return Math.abs(ar.get(0) - ar.get(1));
     }
     private static int Division(ArrayList<Integer> ar) {
         int result;

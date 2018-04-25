@@ -134,14 +134,19 @@ public class Solver {
                                 {
                                     Place place1 = people.get(0);
                                     Place place2 = people.get(1);
-                                    if(KenKen_Board.isPossible(place1, possibility.get(0)) && KenKen_Board.isPossible(place2, possibility.get(1)))
+                                    if(KenKen_Board.isPossible(place1, possibility.get(0)))
                                     {
                                         KenKen_Board.set(place1, possibility.get(0));
-                                        KenKen_Board.set(place2, possibility.get(1));
-                                        SolveOperations();
-                                        if (KenKen_Board.isComplete())
-                                            return;
-                                    }       break;
+                                        if(KenKen_Board.isPossible(place2, possibility.get(1)))
+                                        {
+                                            KenKen_Board.set(place2, possibility.get(1));
+                                            SolveOperations();
+                                            if (KenKen_Board.isComplete())
+                                                return;
+                                        }
+                                        
+                                    }
+                                    break;
                                 }
                             case 3:
                                 {
@@ -196,6 +201,7 @@ public class Solver {
                                 break;
                         }
                     }
+                    KenKen_Board.set100(groupID);
                     return;
                 }
             } 
@@ -206,11 +212,11 @@ public class Solver {
         
         ArrayList<ArrayList<Integer>> solutions = new ArrayList<>();
         ArrayList<Integer> possibility = new ArrayList<>();
-        for (int x = 1;x<KenKen_Board.size;x++)
+        for (int x = 0; x<KenKen_Board.size;x++)
         {
-            for (int y = 1;y<KenKen_Board.size;y++)
+            for (int y = 1; y<KenKen_Board.size;y++)
             {
-                if (x%y==number && x!=y)
+                if (x%y == number && x!=y)
                 {
                     possibility = new ArrayList<>();
                     possibility.add(x);
@@ -234,7 +240,7 @@ public class Solver {
             for (int y = 0;y<KenKen_Board.size;y++)
             {
                 ArrayList<Integer> possibility = new ArrayList<>();
-                    if (x-y==number && x!=y)
+                    if (x-y==number && x!=y && x>y)
                     {
                         possibility = new ArrayList<>();
                         possibility.add(x);
@@ -394,14 +400,14 @@ public class Solver {
                             solutions.add(possibility);
                             possibility = new ArrayList<>();
                             possibility.add(b);
-                            possibility.add(c);
-                            possibility.add(a);
                             possibility.add(d);
+                            possibility.add(a);
+                            possibility.add(c);
                             solutions.add(possibility);
                             possibility = new ArrayList<>();
                             possibility.add(b);
-                            possibility.add(c);
                             possibility.add(d);
+                            possibility.add(c);
                             possibility.add(a);
                             solutions.add(possibility);
                             //
@@ -607,14 +613,14 @@ public class Solver {
                             solutions.add(possibility);
                             possibility = new ArrayList<>();
                             possibility.add(b);
-                            possibility.add(c);
-                            possibility.add(a);
                             possibility.add(d);
+                            possibility.add(a);
+                            possibility.add(c);
                             solutions.add(possibility);
                             possibility = new ArrayList<>();
                             possibility.add(b);
-                            possibility.add(c);
                             possibility.add(d);
+                            possibility.add(c);
                             possibility.add(a);
                             solutions.add(possibility);
                             //
