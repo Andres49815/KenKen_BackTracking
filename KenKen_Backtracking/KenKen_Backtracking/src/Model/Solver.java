@@ -39,7 +39,7 @@ public class Solver implements Runnable{
             DoPossibilitiesAux(cola.poll());
             cantThreads--;
         }
-    }    
+    }
     
     public static void DoPossibilitiesAux(int groupID) {
         Cage cage = KenKen_Board.getCage(groupID);
@@ -142,7 +142,7 @@ public class Solver implements Runnable{
             for (int i = 0; i < KenKen_Board.groupsArray2.size();i++)
             {
                 int groupID = KenKen_Board.groupsArray2.get(i);
-                System.out.println("i:"+i+" group: "+groupID);
+                //System.out.println("i:"+i+" group: "+groupID);
                 ArrayList<ArrayList<Integer>> possibilities = possibilitiesMap.get(groupID);
                 if(!KenKen_Board.groupIsComplete(groupID))
                 {
@@ -575,148 +575,158 @@ public class Solver implements Runnable{
                             possibility.add(b);
                             possibility.add(c);
                             possibility.add(d);
-                            solutions.add(possibility);
-                            possibility = new ArrayList<>();
-                            possibility.add(a);
-                            possibility.add(b);
-                            possibility.add(d);
-                            possibility.add(c);
-                            solutions.add(possibility);
-                            possibility = new ArrayList<>();
-                            possibility.add(a);
-                            possibility.add(c);
-                            possibility.add(b);
-                            possibility.add(d);
-                            solutions.add(possibility);
-                            possibility = new ArrayList<>();
-                            possibility.add(a);
-                            possibility.add(c);
-                            possibility.add(d);
-                            possibility.add(b);
-                            solutions.add(possibility);
-                            possibility = new ArrayList<>();
-                            possibility.add(a);
-                            possibility.add(d);
-                            possibility.add(b);
-                            possibility.add(c);
-                            solutions.add(possibility);
-                            possibility = new ArrayList<>();
-                            possibility.add(a);
-                            possibility.add(d);
-                            possibility.add(c);
-                            possibility.add(b);
-                            solutions.add(possibility);
                             //
-                            possibility = new ArrayList<>();
-                            possibility.add(b);
-                            possibility.add(a);
-                            possibility.add(c);
-                            possibility.add(d);
-                            solutions.add(possibility);
-                            possibility = new ArrayList<>();
-                            possibility.add(b);
-                            possibility.add(a);
-                            possibility.add(d);
-                            possibility.add(c);
-                            solutions.add(possibility);
-                            possibility = new ArrayList<>();
-                            possibility.add(b);
-                            possibility.add(c);
-                            possibility.add(a);
-                            possibility.add(d);
-                            solutions.add(possibility);
-                            possibility = new ArrayList<>();
-                            possibility.add(b);
-                            possibility.add(c);
-                            possibility.add(d);
-                            possibility.add(a);
-                            solutions.add(possibility);
-                            possibility = new ArrayList<>();
-                            possibility.add(b);
-                            possibility.add(d);
-                            possibility.add(a);
-                            possibility.add(c);
-                            solutions.add(possibility);
-                            possibility = new ArrayList<>();
-                            possibility.add(b);
-                            possibility.add(d);
-                            possibility.add(c);
-                            possibility.add(a);
-                            solutions.add(possibility);
-                            //
-                            possibility = new ArrayList<>();
-                            possibility.add(c);
-                            possibility.add(a);
-                            possibility.add(b);
-                            possibility.add(d);
-                            solutions.add(possibility);
-                            possibility = new ArrayList<>();
-                            possibility.add(c);
-                            possibility.add(a);
-                            possibility.add(d);
-                            possibility.add(b);
-                            solutions.add(possibility);
-                            possibility = new ArrayList<>();
-                            possibility.add(c);
-                            possibility.add(b);
-                            possibility.add(a);
-                            possibility.add(d);
-                            solutions.add(possibility);
-                            possibility = new ArrayList<>();
-                            possibility.add(c);
-                            possibility.add(b);
-                            possibility.add(d);
-                            possibility.add(a);
-                            solutions.add(possibility);
-                            possibility = new ArrayList<>();
-                            possibility.add(c);
-                            possibility.add(d);
-                            possibility.add(a);
-                            possibility.add(b);
-                            solutions.add(possibility);
-                            possibility = new ArrayList<>();
-                            possibility.add(c);
-                            possibility.add(d);
-                            possibility.add(b);
-                            possibility.add(a);
-                            solutions.add(possibility);
-                            //
-                            possibility = new ArrayList<>();
-                            possibility.add(d);
-                            possibility.add(a);
-                            possibility.add(b);
-                            possibility.add(c);
-                            solutions.add(possibility);
-                            possibility = new ArrayList<>();
-                            possibility.add(d);
-                            possibility.add(a);
-                            possibility.add(c);
-                            possibility.add(b);
-                            solutions.add(possibility);
-                            possibility = new ArrayList<>();
-                            possibility.add(d);
-                            possibility.add(b);
-                            possibility.add(a);
-                            possibility.add(c);
-                            solutions.add(possibility);
-                            possibility = new ArrayList<>();
-                            possibility.add(d);
-                            possibility.add(b);
-                            possibility.add(c);
-                            possibility.add(a);
-                            solutions.add(possibility);
-                            possibility = new ArrayList<>();
-                            possibility.add(d);
-                            possibility.add(c);
-                            possibility.add(a);
-                            possibility.add(b);
-                            solutions.add(possibility);
-                            possibility = new ArrayList<>();
-                            possibility.add(d);
-                            possibility.add(c);
-                            possibility.add(b);
-                            possibility.add(a);
-                            solutions.add(possibility);
+                            solutions.addAll(Permutations(possibility));
+//                            System.out.println("Esta aqui");
+//                            int fd = 0;
+//                            for (ArrayList<Integer> as : solutions) {
+//                                System.out.print(++fd + ":\t");
+//                                for (int xc : as)
+//                                    System.out.print("\t" + xc);
+//                                System.out.println();
+//                            }
+//                            solutions.add(possibility);
+//                            possibility = new ArrayList<>();
+//                            possibility.add(a);
+//                            possibility.add(b);
+//                            possibility.add(d);
+//                            possibility.add(c);
+//                            solutions.add(possibility);
+//                            possibility = new ArrayList<>();
+//                            possibility.add(a);
+//                            possibility.add(c);
+//                            possibility.add(b);
+//                            possibility.add(d);
+//                            solutions.add(possibility);
+//                            possibility = new ArrayList<>();
+//                            possibility.add(a);
+//                            possibility.add(c);
+//                            possibility.add(d);
+//                            possibility.add(b);
+//                            solutions.add(possibility);
+//                            possibility = new ArrayList<>();
+//                            possibility.add(a);
+//                            possibility.add(d);
+//                            possibility.add(b);
+//                            possibility.add(c);
+//                            solutions.add(possibility);
+//                            possibility = new ArrayList<>();
+//                            possibility.add(a);
+//                            possibility.add(d);
+//                            possibility.add(c);
+//                            possibility.add(b);
+//                            solutions.add(possibility);
+//                            //
+//                            possibility = new ArrayList<>();
+//                            possibility.add(b);
+//                            possibility.add(a);
+//                            possibility.add(c);
+//                            possibility.add(d);
+//                            solutions.add(possibility);
+//                            possibility = new ArrayList<>();
+//                            possibility.add(b);
+//                            possibility.add(a);
+//                            possibility.add(d);
+//                            possibility.add(c);
+//                            solutions.add(possibility);
+//                            possibility = new ArrayList<>();
+//                            possibility.add(b);
+//                            possibility.add(c);
+//                            possibility.add(a);
+//                            possibility.add(d);
+//                            solutions.add(possibility);
+//                            possibility = new ArrayList<>();
+//                            possibility.add(b);
+//                            possibility.add(c);
+//                            possibility.add(d);
+//                            possibility.add(a);
+//                            solutions.add(possibility);
+//                            possibility = new ArrayList<>();
+//                            possibility.add(b);
+//                            possibility.add(d);
+//                            possibility.add(a);
+//                            possibility.add(c);
+//                            solutions.add(possibility);
+//                            possibility = new ArrayList<>();
+//                            possibility.add(b);
+//                            possibility.add(d);
+//                            possibility.add(c);
+//                            possibility.add(a);
+//                            solutions.add(possibility);
+//                            //
+//                            possibility = new ArrayList<>();
+//                            possibility.add(c);
+//                            possibility.add(a);
+//                            possibility.add(b);
+//                            possibility.add(d);
+//                            solutions.add(possibility);
+//                            possibility = new ArrayList<>();
+//                            possibility.add(c);
+//                            possibility.add(a);
+//                            possibility.add(d);
+//                            possibility.add(b);
+//                            solutions.add(possibility);
+//                            possibility = new ArrayList<>();
+//                            possibility.add(c);
+//                            possibility.add(b);
+//                            possibility.add(a);
+//                            possibility.add(d);
+//                            solutions.add(possibility);
+//                            possibility = new ArrayList<>();
+//                            possibility.add(c);
+//                            possibility.add(b);
+//                            possibility.add(d);
+//                            possibility.add(a);
+//                            solutions.add(possibility);
+//                            possibility = new ArrayList<>();
+//                            possibility.add(c);
+//                            possibility.add(d);
+//                            possibility.add(a);
+//                            possibility.add(b);
+//                            solutions.add(possibility);
+//                            possibility = new ArrayList<>();
+//                            possibility.add(c);
+//                            possibility.add(d);
+//                            possibility.add(b);
+//                            possibility.add(a);
+//                            solutions.add(possibility);
+//                            //
+//                            possibility = new ArrayList<>();
+//                            possibility.add(d);
+//                            possibility.add(a);
+//                            possibility.add(b);
+//                            possibility.add(c);
+//                            solutions.add(possibility);
+//                            possibility = new ArrayList<>();
+//                            possibility.add(d);
+//                            possibility.add(a);
+//                            possibility.add(c);
+//                            possibility.add(b);
+//                            solutions.add(possibility);
+//                            possibility = new ArrayList<>();
+//                            possibility.add(d);
+//                            possibility.add(b);
+//                            possibility.add(a);
+//                            possibility.add(c);
+//                            solutions.add(possibility);
+//                            possibility = new ArrayList<>();
+//                            possibility.add(d);
+//                            possibility.add(b);
+//                            possibility.add(c);
+//                            possibility.add(a);
+//                            solutions.add(possibility);
+//                            possibility = new ArrayList<>();
+//                            possibility.add(d);
+//                            possibility.add(c);
+//                            possibility.add(a);
+//                            possibility.add(b);
+//                            solutions.add(possibility);
+//                            possibility = new ArrayList<>();
+//                            possibility.add(d);
+//                            possibility.add(c);
+//                            possibility.add(b);
+//                            possibility.add(a);
+//                            solutions.add(possibility);
                         }
                     }
                 }
@@ -725,7 +735,26 @@ public class Solver implements Runnable{
         return solutions;  
     }
     // Other methods
-
+    public static ArrayList<ArrayList<Integer>> Permutations(ArrayList<Integer> elements) {
+        return Permutations(elements, new ArrayList<Integer>(), elements.size(), 
+                elements.size(), new ArrayList<ArrayList<Integer>>());
+    }
+    private static ArrayList<ArrayList<Integer>> Permutations(ArrayList<Integer> elements, 
+           ArrayList<Integer> act, int n, int r,  ArrayList<ArrayList<Integer>> result) {
+        if (n == 0) {
+            result.add(act);
+        }
+        else {
+            for (int i = 0; i < r; i++) {
+                if (!act.contains(elements.get(i))) {
+                    ArrayList<Integer> newAct = ( ArrayList<Integer>)act.clone();
+                    newAct.add(elements.get(i));
+                    Permutations(elements, newAct, n - 1, r, result);
+                }
+            }
+        }
+        return result;
+    }
     // Print
     public static void print() {
         System.out.println();
