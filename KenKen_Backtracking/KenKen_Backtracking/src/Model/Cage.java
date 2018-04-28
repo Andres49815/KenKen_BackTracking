@@ -132,25 +132,21 @@ public class Cage {
         return possibilities;
     }
     private boolean moduleIsPossible(ArrayList<Integer> possibility) {
-        Place place;
         int value;
         
         for (int i = 0; i < possibility.size(); i++) {
-            place = new Place(coordinates.get(i)[0], coordinates.get(i)[1]);
             value = possibility.get(i);
-            if (!KenKen_Board.isPossible(place, value))
+            if (!KenKen_Board.isPossible(coordinates.get(i)[0],coordinates.get(i)[1], value))
                 return false;
         }
         return true;
     }
     private void Put(ArrayList<Integer> possibility) {
-        Place place;
         int value;
         
         for (int i = 0; i < possibility.size(); i++) {
-            place = new Place(coordinates.get(i)[0], coordinates.get(i)[1]);
             value = possibility.get(i);
-            KenKen_Board.set(place, value);
+            KenKen_Board.set(coordinates.get(i)[0],coordinates.get(i)[1], value);
         }
     }
     

@@ -1,12 +1,11 @@
 package View;
 
-import javax.swing.SwingUtilities;
-
 /**
  *
  * @author Lenovo
  */
-public class MainMenu extends javax.swing.JFrame{
+public class MainMenu extends javax.swing.JFrame {
+
     public GameTable gameTable = new GameTable();
 
     /**
@@ -15,13 +14,12 @@ public class MainMenu extends javax.swing.JFrame{
     public MainMenu() {
         initComponents();
     }
-    
-    
+
     public boolean isComplete() {
         int n;
-        
-        n = (int)spinner_Size.getValue();
-        return 0 < n && n < 20;
+
+        n = (int) spinner_Thread.getValue();
+        return -1 < n;
     }
 
     /**
@@ -72,6 +70,8 @@ public class MainMenu extends javax.swing.JFrame{
         label_Size.setText("Tamaño del KenKen: ");
 
         button_Generate.setText("Generar");
+
+        spinner_Size.setModel(new javax.swing.SpinnerNumberModel(1, 1, 19, 1));
 
         button_Powers.setText("Resolver");
 
@@ -151,43 +151,6 @@ public class MainMenu extends javax.swing.JFrame{
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainMenu().setVisible(true);
-               
-            }
-        });
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton button_Clear;
     public javax.swing.JButton button_Generate;
@@ -204,5 +167,4 @@ public class MainMenu extends javax.swing.JFrame{
     public javax.swing.JTable table_Game;
     // End of variables declaration//GEN-END:variables
 
-    
 }

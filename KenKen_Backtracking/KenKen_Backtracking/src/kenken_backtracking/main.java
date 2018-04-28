@@ -1,9 +1,7 @@
 package kenken_backtracking;
 
 import Controller.C_MainMenu;
-import Model.Solver;
 import View.MainMenu;
-import java.util.ArrayList;
 
 /**
  *
@@ -11,9 +9,8 @@ import java.util.ArrayList;
  * @author Andres Obando Alfaro
  */
 class main {
-    
+
     public static void main(String[] args) {
-        
-        new C_MainMenu(new MainMenu());
+        C_MainMenu c_MainMenu = new C_MainMenu(new MainMenu());
     }
 }
