@@ -229,7 +229,9 @@ public class KenKen_Board {
     private static void FillCoordinates() {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                int[] coord = {j, i};
+                ArrayList<Integer> coord = new ArrayList<>();
+                coord.add(i);
+                coord.add(j);
                 cages[i][j].coordinates.add(coord);
             }
         }
@@ -409,8 +411,8 @@ public class KenKen_Board {
     public static void Put(Cage c, ArrayList<Integer> possibilities) {
         for (int i = 0; i < c.quantity; i++) {
             ArrayList<Integer> place = new ArrayList<>();
-            place.add(c.coordinates.get(i)[0]);
-            place.add(c.coordinates.get(i)[1]);
+            place.add(c.coordinates.get(i).get(0));
+            place.add(c.coordinates.get(i).get(1));
             set(place.get(0), place.get(1), possibilities.get(i));
         }
     }
@@ -457,6 +459,11 @@ public class KenKen_Board {
         return !board.get(i).contains(value) && !transverseBoard.get(j).contains(value) && value < size;
     }
 
+    public static void SetPossibility(ArrayList<Integer> values, ArrayList<ArrayList<Integer>> people) {
+        for (int i = 0; i < values.size(); i++) {
+            set(people.get(i).get(0), people.get(i).get(1), values.get(i));
+        }
+    }
     // Print
     public static void print() {
         //printBoard(board);

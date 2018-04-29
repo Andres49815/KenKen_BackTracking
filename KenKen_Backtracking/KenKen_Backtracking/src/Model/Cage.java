@@ -15,7 +15,7 @@ public class Cage {
     public int id;
     public int quantity = 0;
     public int result;
-    public ArrayList<int[]> coordinates;
+    public ArrayList<ArrayList<Integer>> coordinates;
     public boolean[][] cage;
     public String operation = "";
     
@@ -24,13 +24,17 @@ public class Cage {
         actual = 1;
     }
     
+    public Cage(int q, String op) {
+        this.quantity = q;
+        this.operation = op;
+    }
     public Cage(int i, int j) {
         boolean[][] c;
         boolean doSomething;
         
         c = getCage();
         cage = new boolean[c.length][c[0].length];
-        coordinates = new ArrayList<int[]>();
+        coordinates = new ArrayList<ArrayList<Integer>>();
         for (int y = 0; y < c.length && y + i < KenKen_Board.size + 3; y++) {
             doSomething = false;
             if (KenKen_Board.group[i + y][j] == 0) {
@@ -72,8 +76,8 @@ public class Cage {
             }
     }
     private boolean contaninsZero() {
-        for (int[] coord : coordinates)
-            if (KenKen_Board.get(coord[1], coord[0]) == 0)
+        for (ArrayList<Integer> coord : coordinates)
+            if (KenKen_Board.get(coord.get(0), coord.get(1)) == 0)
                 return true;
         return false;
     }
@@ -94,8 +98,8 @@ public class Cage {
     private int Division() {
         int divider, divident;
         
-        divider = KenKen_Board.get(coordinates.get(0)[1], coordinates.get(0)[0]);
-        divident = KenKen_Board.get(coordinates.get(1)[1], coordinates.get(1)[0]);
+        divider = KenKen_Board.get(coordinates.get(0).get(0), coordinates.get(0).get(1));
+        divident = KenKen_Board.get(coordinates.get(1).get(0), coordinates.get(1).get(1));
         return divider % divident;
     }
     // size_3: Multiplication, Sum
@@ -104,50 +108,90 @@ public class Cage {
     }
     
     // Possibilities
-    public ArrayList<ArrayList<Integer>> Possibilities() {
-        switch (quantity) {
-            case 2:
-                return PossibleModules();
-            default:
-                return null;
-        }
+    public ArrayList<ArrayList<Integer>> Possibilities(ArrayList<ArrayList<Integer>> possibilities,ArrayList<ArrayList<Integer>> people) {
+        ArrayList<ArrayList<Integer>> res = new ArrayList<>();
+        for (ArrayList<Integer> pos : possibilities)
+            if (IsPossible(pos,people) && !res.contains(pos))
+                res.add(pos);
+        return res;
     }
-    private ArrayList<ArrayList<Integer>> PossibleModules() {
-        ArrayList<Integer> possibility;
-        ArrayList<ArrayList<Integer>> possibilities;
-        
-        possibility = new ArrayList<Integer>();
-        possibilities = new ArrayList<ArrayList<Integer>>();
-        
-        for (int i = 1; i < KenKen_Board.size; i++) {
-            for (int j = 1; j < KenKen_Board.size; j++) {
-                if (i % j == result) {
-                    possibility.add(i);
-                    possibility.add(j);
-                    if (moduleIsPossible(possibility))
-                        possibilities.add(possibility);
-                }
-            }
-        }
-        return possibilities;
-    }
-    private boolean moduleIsPossible(ArrayList<Integer> possibility) {
+    // Possible
+    public boolean IsPossible(ArrayList<Integer> possibility,ArrayList<ArrayList<Integer>> people) {
         int value;
         
         for (int i = 0; i < possibility.size(); i++) {
             value = possibility.get(i);
-            if (!KenKen_Board.isPossible(coordinates.get(i)[0],coordinates.get(i)[1], value))
+            if (!KenKen_Board.isPossible(people.get(i).get(0),people.get(i).get(1), value))
                 return false;
         }
         return true;
     }
-    private void Put(ArrayList<Integer> possibility) {
-        int value;
+    
+    // Add
+    private double Operation(int ... numbers) {
+        int operationResult;
         
-        for (int i = 0; i < possibility.size(); i++) {
-            value = possibility.get(i);
-            KenKen_Board.set(coordinates.get(i)[0],coordinates.get(i)[1], value);
+        switch (operation) {
+            case "%":
+                try {
+                    return numbers[0] > numbers[1] ? numbers[0] % numbers[1] : numbers[1] % numbers[0];
+                }
+                catch (ArithmeticException ae) {
+                    return -1;
+                }
+            case "/":
+                try {
+                return numbers[0] / numbers[1];
+                }
+                catch (ArithmeticException ae) {
+                    return -1;
+                }
+            case "-":
+                return Math.abs(numbers[0] - numbers[1]);
+            case "*":
+                operationResult = 1;
+                for (int n : numbers)
+                    operationResult *= n;
+                return operationResult;
+            case "+":
+                operationResult = 0;
+                for (int n : numbers)
+                    operationResult += n;
+                return operationResult;
+            default:
+                System.out.println("Hola");
+                return 0;
         }
+    }
+    private ArrayList<Integer> addAll(int ... list) {
+        ArrayList<Integer> l;
+        
+        l = new ArrayList<Integer>();
+        for (int actual : list)
+            l.add(actual);
+        return l;
+    }
+    
+    // Possibilities
+    public static ArrayList<ArrayList<Integer>> Permutations(ArrayList<Integer> elements) {
+        return Permutations(elements, new ArrayList<Integer>(), elements.size(), 
+                elements.size(), new ArrayList<ArrayList<Integer>>());
+    }
+    private static ArrayList<ArrayList<Integer>> Permutations(ArrayList<Integer> elements, 
+           ArrayList<Integer> act, int n, int r,  ArrayList<ArrayList<Integer>> result) {
+        if (n == 0) {
+            result.add(act);
+        }
+        else {
+            for (int i = 0; i < r; i++) {
+                if (!act.contains(elements.get(i))) {
+                    ArrayList<Integer> newAct = ( ArrayList<Integer>)act.clone();
+                    newAct.add(elements.get(i));
+                    Permutations(elements, newAct, n - 1, r, result);
+                }
+            }
+        }
+        return result;
     }
     
     // Obtein the cage
@@ -196,7 +240,6 @@ public class Cage {
             {true}};
         return cage;
     }
-    
     /**
      * XX XX XX XX
      */
@@ -301,9 +344,14 @@ public class Cage {
             {true, true}};
         return cage;
     }
+    /**
+     * XX XX //
+     * // XX XX
+     */
     private static boolean[][] Z() {
         boolean[][] cage = {{true, true, false},
             {false, true, true}};
         return cage;
     }
+
 }

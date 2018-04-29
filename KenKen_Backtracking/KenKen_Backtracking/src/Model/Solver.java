@@ -104,71 +104,19 @@ public class Solver implements Runnable {
         } else {
             for (int i = 0; i < KenKen_Board.groupsArray.size(); i++) {
                 int groupID = KenKen_Board.groupsArray.get(i);
-                ArrayList<ArrayList<Integer>> possibilities = possibilitiesMap.get(groupID);
                 if (!KenKen_Board.groupIsComplete(groupID)) {
+                    Cage cage = KenKen_Board.getCage(groupID);
                     ArrayList<ArrayList<Integer>> people = KenKen_Board.getPeople(groupID);
+                    ArrayList<ArrayList<Integer>> possibilities = possibilitiesMap.get(groupID);
                     for (ArrayList<Integer> possibility : possibilities) {
                         KenKen_Board.set100(groupID);
-                        switch (people.size()) {
-                            case 2: {
-                                ArrayList<Integer> place1 = people.get(0);
-                                ArrayList<Integer> place2 = people.get(1);
-                                if (KenKen_Board.isPossible(place1.get(0), place1.get(1), possibility.get(0))) {
-                                    KenKen_Board.set(place1.get(0), place1.get(1), possibility.get(0));
-                                    if (KenKen_Board.isPossible(place2.get(0), place2.get(1), possibility.get(1))) {
-                                        KenKen_Board.set(place2.get(0), place2.get(1), possibility.get(1));
-                                        SolveOperations();
-                                        if (KenKen_Board.isComplete()) {
-                                            return;
-                                        }
-                                    }
-                                }
-                                break;
+                        if(cage.IsPossible(possibility, people))
+                        {
+                            KenKen_Board.SetPossibility(possibility, people);
+                            SolveOperations();
+                            if (KenKen_Board.isComplete()) {
+                                return;
                             }
-                            case 3: {
-                                ArrayList<Integer> place1 = people.get(0);
-                                ArrayList<Integer> place2 = people.get(1);
-                                ArrayList<Integer> place3 = people.get(2);
-                                if (KenKen_Board.isPossible(place1.get(0), place1.get(1), possibility.get(0))) {
-                                    KenKen_Board.set(place1.get(0), place1.get(1), possibility.get(0));
-                                    if (KenKen_Board.isPossible(place2.get(0), place2.get(1), possibility.get(1))) {
-                                        KenKen_Board.set(place2.get(0), place2.get(1), possibility.get(1));
-                                        if (KenKen_Board.isPossible(place3.get(0), place3.get(1), possibility.get(2))) {
-                                            KenKen_Board.set(place3.get(0), place3.get(1), possibility.get(2));
-                                            SolveOperations();
-                                            if (KenKen_Board.isComplete()) {
-                                                return;
-                                            }
-                                        }
-                                    }
-                                }
-                                break;
-                            }
-                            case 4: {
-                                ArrayList<Integer> place1 = people.get(0);
-                                ArrayList<Integer> place2 = people.get(1);
-                                ArrayList<Integer> place3 = people.get(2);
-                                ArrayList<Integer> place4 = people.get(3);
-                                if (KenKen_Board.isPossible(place1.get(0), place1.get(1), possibility.get(0))) {
-                                    KenKen_Board.set(place1.get(0), place1.get(1), possibility.get(0));
-                                    if (KenKen_Board.isPossible(place2.get(0), place2.get(1), possibility.get(1))) {
-                                        KenKen_Board.set(place2.get(0), place2.get(1), possibility.get(1));
-                                        if (KenKen_Board.isPossible(place3.get(0), place3.get(1), possibility.get(2))) {
-                                            KenKen_Board.set(place3.get(0), place3.get(1), possibility.get(2));
-                                            if (KenKen_Board.isPossible(place4.get(0), place4.get(1), possibility.get(3))) {
-                                                KenKen_Board.set(place4.get(0), place4.get(1), possibility.get(3));
-                                                SolveOperations();
-                                                if (KenKen_Board.isComplete()) {
-                                                    return;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                                break;
-                            }
-                            default:
-                                break;
                         }
                     }
                     KenKen_Board.set100(groupID);
@@ -262,14 +210,17 @@ public class Solver implements Runnable {
                         possibility.add(a);
                         possibility.add(c);
                         solutions.add(possibility);
+                        possibility = new ArrayList<>();
                         possibility.add(b);
                         possibility.add(c);
                         possibility.add(a);
                         solutions.add(possibility);
+                        possibility = new ArrayList<>();
                         possibility.add(c);
                         possibility.add(a);
                         possibility.add(b);
                         solutions.add(possibility);
+                        possibility = new ArrayList<>();
                         possibility.add(c);
                         possibility.add(b);
                         possibility.add(a);
@@ -466,14 +417,17 @@ public class Solver implements Runnable {
                         possibility.add(a);
                         possibility.add(c);
                         solutions.add(possibility);
+                        possibility = new ArrayList<>();
                         possibility.add(b);
                         possibility.add(c);
                         possibility.add(a);
                         solutions.add(possibility);
+                        possibility = new ArrayList<>();
                         possibility.add(c);
                         possibility.add(a);
                         possibility.add(b);
                         solutions.add(possibility);
+                        possibility = new ArrayList<>();
                         possibility.add(c);
                         possibility.add(b);
                         possibility.add(a);
