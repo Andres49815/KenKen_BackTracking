@@ -16,7 +16,6 @@ public class Solver implements Runnable {
     public static Queue<Integer> cola = new LinkedList();
     public static long cantRecursion = 0;
     public static long cantPossibilities = 0;
-    
 
     public static void DoPossibilitiesQueue() {
         KenKen_Board.groupsArray.forEach((n) -> {
@@ -83,9 +82,9 @@ public class Solver implements Runnable {
         DoPossibilities();
         SortGroup();
         SolvePowers();
-        SolveOperations();
+         SolveOperations();
         long finishTime = System.currentTimeMillis();
-        return finishTime-startTime;
+        return finishTime - startTime;
     }
 
     // Powers
@@ -114,7 +113,7 @@ public class Solver implements Runnable {
                 int groupID = KenKen_Board.groupsArray.get(i);
                 if (!KenKen_Board.groupIsComplete(groupID)) {
                     Cage cage = KenKen_Board.getCage(groupID);
-                    cage.cantSolutionsTested=0;
+                    cage.cantSolutionsTested = 0;
                     ArrayList<ArrayList<Integer>> possibilities = possibilitiesMap.get(groupID);
                     for (ArrayList<Integer> possibility : possibilities) {
                         KenKen_Board.set100(groupID);
@@ -147,11 +146,15 @@ public class Solver implements Runnable {
                     possibility = new ArrayList<>();
                     possibility.add(x);
                     possibility.add(y);
-                    solutions.add(possibility);
+                    if (!solutions.contains(possibility)) {
+                        solutions.add(possibility);
+                    }
                     possibility = new ArrayList<>();
                     possibility.add(y);
                     possibility.add(x);
-                    solutions.add(possibility);
+                    if (!solutions.contains(possibility)) {
+                        solutions.add(possibility);
+                    }
                 }
             }
         }
@@ -168,11 +171,15 @@ public class Solver implements Runnable {
                     possibility = new ArrayList<>();
                     possibility.add(x);
                     possibility.add(y);
-                    solutions.add(possibility);
+                    if (!solutions.contains(possibility)) {
+                        solutions.add(possibility);
+                    }
                     possibility = new ArrayList<>();
                     possibility.add(y);
                     possibility.add(x);
-                    solutions.add(possibility);
+                    if (!solutions.contains(possibility)) {
+                        solutions.add(possibility);
+                    }
                 }
             }
         }
@@ -188,11 +195,15 @@ public class Solver implements Runnable {
                     possibility = new ArrayList<>();
                     possibility.add(x);
                     possibility.add(y);
-                    solutions.add(possibility);
+                    if (!solutions.contains(possibility)) {
+                        solutions.add(possibility);
+                    }
                     possibility = new ArrayList<>();
                     possibility.add(y);
                     possibility.add(x);
-                    solutions.add(possibility);
+                    if (!solutions.contains(possibility)) {
+                        solutions.add(possibility);
+                    }
                 }
             }
         }
@@ -210,36 +221,49 @@ public class Solver implements Runnable {
                         possibility.add(a);
                         possibility.add(b);
                         possibility.add(c);
-                        solutions.add(possibility);
+                        if (!solutions.contains(possibility)) {
+                            solutions.add(possibility);
+                        }
                         possibility = new ArrayList<>();
                         possibility.add(a);
                         possibility.add(c);
                         possibility.add(b);
-                        solutions.add(possibility);
+                        if (!solutions.contains(possibility)) {
+                            solutions.add(possibility);
+                        }
                         possibility = new ArrayList<>();
                         possibility.add(b);
                         possibility.add(a);
                         possibility.add(c);
-                        solutions.add(possibility);
+                        if (!solutions.contains(possibility)) {
+                            solutions.add(possibility);
+                        }
                         possibility = new ArrayList<>();
                         possibility.add(b);
                         possibility.add(c);
                         possibility.add(a);
-                        solutions.add(possibility);
+                        if (!solutions.contains(possibility)) {
+                            solutions.add(possibility);
+                        }
                         possibility = new ArrayList<>();
                         possibility.add(c);
                         possibility.add(a);
                         possibility.add(b);
-                        solutions.add(possibility);
+                        if (!solutions.contains(possibility)) {
+                            solutions.add(possibility);
+                        }
                         possibility = new ArrayList<>();
                         possibility.add(c);
                         possibility.add(b);
                         possibility.add(a);
-                        solutions.add(possibility);
+                        if (!solutions.contains(possibility)) {
+                            solutions.add(possibility);
+                        }
                     }
                 }
             }
         }
+        System.out.println(solutions.size() + "-" + Permutations(possibility).size());
         return solutions;
     }
 
@@ -256,153 +280,202 @@ public class Solver implements Runnable {
                             possibility.add(b);
                             possibility.add(c);
                             possibility.add(d);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(a);
                             possibility.add(b);
                             possibility.add(d);
                             possibility.add(c);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(a);
                             possibility.add(c);
                             possibility.add(b);
                             possibility.add(d);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(a);
                             possibility.add(c);
                             possibility.add(d);
                             possibility.add(b);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(a);
                             possibility.add(d);
                             possibility.add(b);
                             possibility.add(c);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(a);
                             possibility.add(d);
                             possibility.add(c);
                             possibility.add(b);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             //
                             possibility = new ArrayList<>();
                             possibility.add(b);
                             possibility.add(a);
                             possibility.add(c);
                             possibility.add(d);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(b);
                             possibility.add(a);
                             possibility.add(d);
                             possibility.add(c);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(b);
                             possibility.add(c);
                             possibility.add(a);
                             possibility.add(d);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(b);
                             possibility.add(c);
                             possibility.add(d);
                             possibility.add(a);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(b);
                             possibility.add(d);
                             possibility.add(a);
                             possibility.add(c);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(b);
                             possibility.add(d);
                             possibility.add(c);
                             possibility.add(a);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             //
                             possibility = new ArrayList<>();
                             possibility.add(c);
                             possibility.add(a);
                             possibility.add(b);
                             possibility.add(d);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(c);
                             possibility.add(a);
                             possibility.add(d);
                             possibility.add(b);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(c);
                             possibility.add(b);
                             possibility.add(a);
                             possibility.add(d);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(c);
                             possibility.add(b);
                             possibility.add(d);
                             possibility.add(a);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(c);
                             possibility.add(d);
                             possibility.add(a);
                             possibility.add(b);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(c);
                             possibility.add(d);
                             possibility.add(b);
                             possibility.add(a);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             //
                             possibility = new ArrayList<>();
                             possibility.add(d);
                             possibility.add(a);
                             possibility.add(b);
                             possibility.add(c);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(d);
                             possibility.add(a);
                             possibility.add(c);
                             possibility.add(b);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(d);
                             possibility.add(b);
                             possibility.add(a);
                             possibility.add(c);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(d);
                             possibility.add(b);
                             possibility.add(c);
                             possibility.add(a);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(d);
                             possibility.add(c);
                             possibility.add(a);
                             possibility.add(b);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(d);
                             possibility.add(c);
                             possibility.add(b);
                             possibility.add(a);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                         }
                     }
                 }
             }
         }
+        System.out.println(solutions.size() + "-" + Permutations(possibility).size());
         return solutions;
     }
 
@@ -417,36 +490,49 @@ public class Solver implements Runnable {
                         possibility.add(a);
                         possibility.add(b);
                         possibility.add(c);
-                        solutions.add(possibility);
+                        if (!solutions.contains(possibility)) {
+                            solutions.add(possibility);
+                        }
                         possibility = new ArrayList<>();
                         possibility.add(a);
                         possibility.add(c);
                         possibility.add(b);
-                        solutions.add(possibility);
+                        if (!solutions.contains(possibility)) {
+                            solutions.add(possibility);
+                        }
                         possibility = new ArrayList<>();
                         possibility.add(b);
                         possibility.add(a);
                         possibility.add(c);
-                        solutions.add(possibility);
+                        if (!solutions.contains(possibility)) {
+                            solutions.add(possibility);
+                        }
                         possibility = new ArrayList<>();
                         possibility.add(b);
                         possibility.add(c);
                         possibility.add(a);
-                        solutions.add(possibility);
+                        if (!solutions.contains(possibility)) {
+                            solutions.add(possibility);
+                        }
                         possibility = new ArrayList<>();
                         possibility.add(c);
                         possibility.add(a);
                         possibility.add(b);
-                        solutions.add(possibility);
+                        if (!solutions.contains(possibility)) {
+                            solutions.add(possibility);
+                        }
                         possibility = new ArrayList<>();
                         possibility.add(c);
                         possibility.add(b);
                         possibility.add(a);
-                        solutions.add(possibility);
+                        if (!solutions.contains(possibility)) {
+                            solutions.add(possibility);
+                        }
                     }
                 }
             }
         }
+        System.out.println(solutions.size() + "-" + Permutations(possibility).size());
         return solutions;
     }
 
@@ -463,148 +549,196 @@ public class Solver implements Runnable {
                             possibility.add(b);
                             possibility.add(c);
                             possibility.add(d);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(a);
                             possibility.add(b);
                             possibility.add(d);
                             possibility.add(c);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(a);
                             possibility.add(c);
                             possibility.add(b);
                             possibility.add(d);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(a);
                             possibility.add(c);
                             possibility.add(d);
                             possibility.add(b);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(a);
                             possibility.add(d);
                             possibility.add(b);
                             possibility.add(c);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(a);
                             possibility.add(d);
                             possibility.add(c);
                             possibility.add(b);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             //
                             possibility = new ArrayList<>();
                             possibility.add(b);
                             possibility.add(a);
                             possibility.add(c);
                             possibility.add(d);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(b);
                             possibility.add(a);
                             possibility.add(d);
                             possibility.add(c);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(b);
                             possibility.add(c);
                             possibility.add(a);
                             possibility.add(d);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(b);
                             possibility.add(c);
                             possibility.add(d);
                             possibility.add(a);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(b);
                             possibility.add(d);
                             possibility.add(a);
                             possibility.add(c);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(b);
                             possibility.add(d);
                             possibility.add(c);
                             possibility.add(a);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             //
                             possibility = new ArrayList<>();
                             possibility.add(c);
                             possibility.add(a);
                             possibility.add(b);
                             possibility.add(d);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(c);
                             possibility.add(a);
                             possibility.add(d);
                             possibility.add(b);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(c);
                             possibility.add(b);
                             possibility.add(a);
                             possibility.add(d);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(c);
                             possibility.add(b);
                             possibility.add(d);
                             possibility.add(a);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(c);
                             possibility.add(d);
                             possibility.add(a);
                             possibility.add(b);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(c);
                             possibility.add(d);
                             possibility.add(b);
                             possibility.add(a);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             //
                             possibility = new ArrayList<>();
                             possibility.add(d);
                             possibility.add(a);
                             possibility.add(b);
                             possibility.add(c);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(d);
                             possibility.add(a);
                             possibility.add(c);
                             possibility.add(b);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(d);
                             possibility.add(b);
                             possibility.add(a);
                             possibility.add(c);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(d);
                             possibility.add(b);
                             possibility.add(c);
                             possibility.add(a);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(d);
                             possibility.add(c);
                             possibility.add(a);
                             possibility.add(b);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                             possibility = new ArrayList<>();
                             possibility.add(d);
                             possibility.add(c);
                             possibility.add(b);
                             possibility.add(a);
-                            solutions.add(possibility);
+                            if (!solutions.contains(possibility)) {
+                                solutions.add(possibility);
+                            }
                         }
                     }
                 }
@@ -613,27 +747,27 @@ public class Solver implements Runnable {
         return solutions;
     }
 
-    // Other methods
-//    public static ArrayList<ArrayList<Integer>> Permutations(ArrayList<Integer> elements) {
-//        return Permutations(elements, new ArrayList<Integer>(), elements.size(),
-//                elements.size(), new ArrayList<ArrayList<Integer>>());
-//    }
-//    private static ArrayList<ArrayList<Integer>> Permutations(ArrayList<Integer> elements,
-//           ArrayList<Integer> act, int n, int r,  ArrayList<ArrayList<Integer>> result) {
-//        if (n == 0) {
-//            result.add(act);
-//        }
-//        else {
-//            for (int i = 0; i < r; i++) {
-//                if (!act.contains(elements.get(i))) {
-//                    ArrayList<Integer> newAct = ( ArrayList<Integer>)act.clone();
-//                    newAct.add(elements.get(i));
-//                    Permutations(elements, newAct, n - 1, r, result);
-//                }
-//            }
-//        }
-//        return result;
-//    }
+    public static ArrayList<ArrayList<Integer>> Permutations(ArrayList<Integer> elements) {
+        return Permutations(elements, new ArrayList<Integer>(), elements.size(),
+                elements.size(), new ArrayList<ArrayList<Integer>>());
+    }
+
+    private static ArrayList<ArrayList<Integer>> Permutations(ArrayList<Integer> elements,
+            ArrayList<Integer> act, int n, int r, ArrayList<ArrayList<Integer>> result) {
+        if (n == 0) {
+            result.add(act);
+        } else {
+            for (int i = 0; i < r; i++) {
+                if (!act.contains(elements.get(i))) {
+                    ArrayList<Integer> newAct = (ArrayList<Integer>) act.clone();
+                    newAct.add(elements.get(i));
+                    Permutations(elements, newAct, n - 1, r, result);
+                }
+            }
+        }
+        return result;
+    }
+
     // Print
     public static void print() {
         System.out.println();
@@ -644,21 +778,18 @@ public class Solver implements Runnable {
             System.out.println();
         }
     }
-    
+
     static void SortGroup() {
-        
-        
-        
+
         ArrayList<Cage> cages = new ArrayList<>();
         KenKen_Board.groupsArray.forEach((n) -> {
             cages.add(KenKen_Board.getCage(n));
         });
-        
-        
+
         cages.forEach((n) -> {
             n.cantSolutions = possibilitiesMap.get(n.id).size();
         });
-        
+
         Collections.sort(cages, new Comparator<Cage>() {
             @Override
             public int compare(Cage o, Cage u) {
