@@ -19,7 +19,7 @@ public class MainMenu extends javax.swing.JFrame {
         int n;
 
         n = (int) spinner_Thread.getValue();
-        return -1 < n;
+        return 0 < n;
     }
 
     /**
@@ -80,6 +80,8 @@ public class MainMenu extends javax.swing.JFrame {
         button_Open.setText("Cargar");
 
         button_Clear.setText("Borrar");
+
+        spinner_Thread.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

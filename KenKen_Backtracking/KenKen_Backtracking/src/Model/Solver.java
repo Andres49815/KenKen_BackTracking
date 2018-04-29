@@ -82,7 +82,7 @@ public class Solver implements Runnable {
         DoPossibilities();
         SortGroup();
         SolvePowers();
-         SolveOperations();
+        SolveOperations();
         long finishTime = System.currentTimeMillis();
         return finishTime - startTime;
     }
@@ -263,7 +263,6 @@ public class Solver implements Runnable {
                 }
             }
         }
-        System.out.println(solutions.size() + "-" + Permutations(possibility).size());
         return solutions;
     }
 
@@ -475,7 +474,6 @@ public class Solver implements Runnable {
                 }
             }
         }
-        System.out.println(solutions.size() + "-" + Permutations(possibility).size());
         return solutions;
     }
 
@@ -532,7 +530,6 @@ public class Solver implements Runnable {
                 }
             }
         }
-        System.out.println(solutions.size() + "-" + Permutations(possibility).size());
         return solutions;
     }
 

@@ -2,6 +2,7 @@ package Controller;
 
 import Model.KenKen_Board;
 import Model.Solver;
+import static Model.Solver.DoPossibilitiesQueue;
 import View.MainMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -86,6 +87,7 @@ public class C_MainMenu implements ActionListener {
         } catch (Exception e) {
             generate();
         }
+//        DoPossibilitiesQueue();
     }
 
     private void Solve() {
