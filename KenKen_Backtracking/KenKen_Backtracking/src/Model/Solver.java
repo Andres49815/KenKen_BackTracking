@@ -1,13 +1,11 @@
 package Model;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
-import javax.swing.JOptionPane;
 
 public class Solver implements Runnable {
 
@@ -116,10 +114,13 @@ public class Solver implements Runnable {
                 int groupID = KenKen_Board.groupsArray.get(i);
                 if (!KenKen_Board.groupIsComplete(groupID)) {
                     Cage cage = KenKen_Board.getCage(groupID);
+                    cage.cantSolutionsTested=0;
                     ArrayList<ArrayList<Integer>> possibilities = possibilitiesMap.get(groupID);
                     for (ArrayList<Integer> possibility : possibilities) {
                         KenKen_Board.set100(groupID);
                         cantPossibilities++;
+                        cage.cantSolutionsTested++;
+                        KenKen_Board.printCage();
                         if (cage.IsPossible(possibility)) {
                             cantRecursion++;
                             KenKen_Board.SetPossibility(possibility, cage.coordinates);
@@ -645,17 +646,26 @@ public class Solver implements Runnable {
     }
     
     static void SortGroup() {
+        
+        
+        
         ArrayList<Cage> cages = new ArrayList<>();
         KenKen_Board.groupsArray.forEach((n) -> {
             cages.add(KenKen_Board.getCage(n));
         });
+        
+        
+        cages.forEach((n) -> {
+            n.cantSolutions = possibilitiesMap.get(n.id).size();
+        });
+        
         Collections.sort(cages, new Comparator<Cage>() {
             @Override
             public int compare(Cage o, Cage u) {
-                if (possibilitiesMap.get(o.id).size() < possibilitiesMap.get(u.id).size()) {
+                if (o.cantSolutions < u.cantSolutions) {
                     return -1;
                 }
-                if (possibilitiesMap.get(o.id).size() > possibilitiesMap.get(u.id).size()) {
+                if (o.cantSolutions > u.cantSolutions) {
                     return 1;
                 }
                 return 0;

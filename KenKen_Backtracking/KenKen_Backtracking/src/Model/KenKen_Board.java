@@ -563,6 +563,16 @@ public class KenKen_Board {
         return null;
     }
     
+    public static void printCage()
+    {
+        for (int x= 0; x<groupsArray.size();x++)
+        {
+            Cage cage = getCage(groupsArray.get(x));
+            System.out.print(cage.cantSolutionsTested+"/"+cage.cantSolutions+"\t");
+        }
+        System.out.println();
+    }
+    
     
 
 }

@@ -10,6 +10,8 @@ import java.util.Random;
 public class Cage {
     // Static Values
     public static int actual = 1;
+    public int cantSolutions = 0;
+    public int cantSolutionsTested = 0;
     private static Random random = new Random();
     // Individual Values
     public int id;
