@@ -1,17 +1,24 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
+import javax.swing.JOptionPane;
 
 public class Solver implements Runnable {
 
     private static ArrayList<ArrayList<Integer>> solution;
-    private static HashMap<Integer, ArrayList<ArrayList<Integer>>> possibilitiesMap = new HashMap<>();
+    private static final HashMap<Integer, ArrayList<ArrayList<Integer>>> possibilitiesMap = new HashMap<>();
     public static boolean solutionFound;
     public static int cantThreads = 0;
     public static Queue<Integer> cola = new LinkedList();
+    public static long cantRecursion = 0;
+    public static long cantPossibilities = 0;
+    
 
     public static void DoPossibilitiesQueue() {
         KenKen_Board.groupsArray.forEach((n) -> {
@@ -73,10 +80,14 @@ public class Solver implements Runnable {
         }
     }
 
-    public static void Solve() {
+    public static long Solve() {
+        long startTime = System.currentTimeMillis();
         DoPossibilities();
+        SortGroup();
         SolvePowers();
         SolveOperations();
+        long finishTime = System.currentTimeMillis();
+        return finishTime-startTime;
     }
 
     // Powers
@@ -100,19 +111,18 @@ public class Solver implements Runnable {
         if (KenKen_Board.isComplete()) {
             solution = (ArrayList<ArrayList<Integer>>) KenKen_Board.getBoard().clone();
             solutionFound = true;
-            System.out.println("termino");
         } else {
             for (int i = 0; i < KenKen_Board.groupsArray.size(); i++) {
                 int groupID = KenKen_Board.groupsArray.get(i);
                 if (!KenKen_Board.groupIsComplete(groupID)) {
                     Cage cage = KenKen_Board.getCage(groupID);
-                    ArrayList<ArrayList<Integer>> people = KenKen_Board.getPeople(groupID);
                     ArrayList<ArrayList<Integer>> possibilities = possibilitiesMap.get(groupID);
                     for (ArrayList<Integer> possibility : possibilities) {
                         KenKen_Board.set100(groupID);
-                        if(cage.IsPossible(possibility, people))
-                        {
-                            KenKen_Board.SetPossibility(possibility, people);
+                        cantPossibilities++;
+                        if (cage.IsPossible(possibility)) {
+                            cantRecursion++;
+                            KenKen_Board.SetPossibility(possibility, cage.coordinates);
                             SolveOperations();
                             if (KenKen_Board.isComplete()) {
                                 return;
@@ -632,6 +642,30 @@ public class Solver implements Runnable {
             }
             System.out.println();
         }
+    }
+    
+    static void SortGroup() {
+        ArrayList<Cage> cages = new ArrayList<>();
+        KenKen_Board.groupsArray.forEach((n) -> {
+            cages.add(KenKen_Board.getCage(n));
+        });
+        Collections.sort(cages, new Comparator<Cage>() {
+            @Override
+            public int compare(Cage o, Cage u) {
+                if (possibilitiesMap.get(o.id).size() < possibilitiesMap.get(u.id).size()) {
+                    return -1;
+                }
+                if (possibilitiesMap.get(o.id).size() > possibilitiesMap.get(u.id).size()) {
+                    return 1;
+                }
+                return 0;
+            }
+        });
+        ArrayList<Integer> groups = new ArrayList<>();
+        cages.forEach((n) -> {
+            groups.add(n.id);
+        });
+        KenKen_Board.groupsArray = groups;
     }
 
 }

@@ -108,20 +108,20 @@ public class Cage {
     }
     
     // Possibilities
-    public ArrayList<ArrayList<Integer>> Possibilities(ArrayList<ArrayList<Integer>> possibilities,ArrayList<ArrayList<Integer>> people) {
+    public ArrayList<ArrayList<Integer>> Possibilities(ArrayList<ArrayList<Integer>> possibilities) {
         ArrayList<ArrayList<Integer>> res = new ArrayList<>();
         for (ArrayList<Integer> pos : possibilities)
-            if (IsPossible(pos,people) && !res.contains(pos))
+            if (IsPossible(pos) && !res.contains(pos))
                 res.add(pos);
         return res;
     }
     // Possible
-    public boolean IsPossible(ArrayList<Integer> possibility,ArrayList<ArrayList<Integer>> people) {
+    public boolean IsPossible(ArrayList<Integer> possibility) {
         int value;
         
         for (int i = 0; i < possibility.size(); i++) {
             value = possibility.get(i);
-            if (!KenKen_Board.isPossible(people.get(i).get(0),people.get(i).get(1), value))
+            if (!KenKen_Board.isPossible(coordinates.get(i).get(0),coordinates.get(i).get(1), value))
                 return false;
         }
         return true;

@@ -14,6 +14,7 @@ import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -89,11 +90,11 @@ public class C_MainMenu implements ActionListener {
 
     private void Solve() {
 
-        Solver.Solve();
-
+        long time = Solver.Solve();
+        
         view.gameTable.actualizar(view.table_Game);
-        System.out.println("Matriz ----------------------------------------- ");
-        KenKen_Board.print();
+        
+        JOptionPane.showMessageDialog(view, "El KenKen tardó resolviendose: "+time/1000 +" segundos con "+ Solver.cantRecursion + " recursiones y " +Solver.cantPossibilities+" posibilidades\n Se hicieron "+ (Solver.cantPossibilities-Solver.cantRecursion)+" cortes" );
 
     }
 

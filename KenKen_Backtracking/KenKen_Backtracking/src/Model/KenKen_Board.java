@@ -1,6 +1,8 @@
 package Model;
 
+import static Model.Solver.cola;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -25,6 +27,8 @@ public class KenKen_Board {
     public static int threadCount;
     public static ArrayList<Integer> groupsArray;
 
+    
+
     private final Random random = new Random();
     public static byte Powers;
     public static byte Modules;
@@ -39,11 +43,13 @@ public class KenKen_Board {
         // Group the boards
         Cages(size);
         // ArrayGroup
-        FillGroupArray();
+        
         // View the results
         Results();
         // Clean the boards
         //CleanBoards();
+        
+        FillGroupArray();
     }
 
     public KenKen_Board(ArrayList<ArrayList<Integer>> board, ArrayList<ArrayList<Integer>> transverseBoard,
@@ -556,5 +562,7 @@ public class KenKen_Board {
         }
         return null;
     }
+    
+    
 
 }
