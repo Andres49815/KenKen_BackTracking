@@ -20,6 +20,7 @@ public class Cage {
     public ArrayList<ArrayList<Integer>> coordinates;
     public boolean[][] cage;
     public String operation = "";
+    public boolean isLinear = false;
     
     
     public static void Reset() {
@@ -34,7 +35,7 @@ public class Cage {
         boolean[][] c;
         boolean doSomething;
         
-        c = getCage();
+        c = getCage(this);
         cage = new boolean[c.length][c[0].length];
         coordinates = new ArrayList<ArrayList<Integer>>();
         for (int y = 0; y < c.length && y + i < KenKen_Board.size + 3; y++) {
@@ -197,11 +198,13 @@ public class Cage {
     }
     
     // Obtein the cage
-    public static boolean[][] getCage() {
+    public static boolean[][] getCage(Cage c) {
         switch(random.nextInt(14)) {
             case 0:
+                c.isLinear = true;
                 return Line();
             case 1:
+                c.isLinear = true;
                 return UpsideLine();
             case 2:
                 return T();
