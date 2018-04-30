@@ -3,7 +3,7 @@ package Controller;
 import Model.KenKen_Board;
 import Model.Solver;
 import static Model.Solver.DoPossibilities;
-import static Model.Solver.DoPossibilitiesQueue;
+import Model.XML;
 import View.MainMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,6 +15,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.stage.DirectoryChooser;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
@@ -28,6 +29,7 @@ public class C_MainMenu implements ActionListener {
     FileReader reader = null;
     private MainMenu view;
     private KenKen_Board model;
+    private XML xmlAntes;
 
     public C_MainMenu(MainMenu v) {
         view = v;
@@ -87,6 +89,10 @@ public class C_MainMenu implements ActionListener {
         } catch (Exception e) {
             generate();
         }
+        xmlAntes = new XML(KenKen_Board.board, KenKen_Board.transverseBoard,
+                KenKen_Board.group, KenKen_Board.cages, KenKen_Board.map, KenKen_Board.resultsMap,
+                KenKen_Board.size, KenKen_Board.threadCount, KenKen_Board.groupsArray, KenKen_Board.Powers, KenKen_Board.Modules,
+                KenKen_Board.solutionFound);
     }
     
      private void doPossibilities() {
@@ -108,31 +114,25 @@ public class C_MainMenu implements ActionListener {
     }
 
     private void Save() throws FileNotFoundException {
-        JFileChooser fc = new JFileChooser();
-        fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        String path = "";
-        if (fc.showOpenDialog(view) == JFileChooser.APPROVE_OPTION) {
-            path = fc.getSelectedFile().getAbsolutePath();
-        }
-        try (PrintWriter outA = new PrintWriter(path + ".xml")) {
-            String xml = xstream.toXML(model);
-            outA.println(xml);
+        
+        try (PrintWriter outA = new PrintWriter("test//"+KenKen_Board.size+ ".xml")) {
+            
+            String archivo = xstream.toXML(xmlAntes);
+            outA.println(archivo);
         }
     }
 
     private void Open() throws FileNotFoundException {
         view.table_Game.setVisible(true);
 
-        JFileChooser fc = new JFileChooser();
-        fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        JFileChooser fc = new JFileChooser("test//");
         String path = "";
         if (fc.showOpenDialog(view) == JFileChooser.APPROVE_OPTION) {
             path = fc.getSelectedFile().getAbsolutePath();
         }
+        reader = new FileReader(path);
 
-        reader = new FileReader(path + ".xml");
-
-        KenKen_Board xml = (KenKen_Board) (xstream.fromXML(reader));
+        XML xml = (XML) (xstream.fromXML(reader));
 
         model = new KenKen_Board(xml.board, xml.transverseBoard,
                 xml.group, xml.cages, xml.map, xml.resultsMap,
