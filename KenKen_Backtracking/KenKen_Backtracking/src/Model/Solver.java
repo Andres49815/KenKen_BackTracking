@@ -79,7 +79,6 @@ public class Solver implements Runnable {
     public static long Solve() {
         long startTime = System.currentTimeMillis();
         SortGroup();
-        SolvePowers();
         SolveOperations();
         long finishTime = System.currentTimeMillis();
         return finishTime - startTime;
@@ -87,7 +86,7 @@ public class Solver implements Runnable {
 
     // Powers
     //Solve Powers O(size^2)
-    private static void SolvePowers() {
+    public static void SolvePowers() {
         int number, root;
         for (int i = 0; i < KenKen_Board.size; i++) {                                   //size
             for (int j = 0; j < KenKen_Board.size; j++) {                               //size^2

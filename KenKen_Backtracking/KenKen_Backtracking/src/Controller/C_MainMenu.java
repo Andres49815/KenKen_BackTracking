@@ -91,9 +91,9 @@ public class C_MainMenu implements ActionListener {
     
      private void doPossibilities() {
         KenKen_Board.InitializeBoards();
-        DoPossibilities();
-        KenKen_Board.InitializeBoards();
         view.gameTable.actualizar(view.table_Game);
+        Solver.SolvePowers();
+        DoPossibilities();
         
     }
 
@@ -141,6 +141,7 @@ public class C_MainMenu implements ActionListener {
 
         view.gameTable.setTable(view.table_Game);
     }
+
 
    
 }
