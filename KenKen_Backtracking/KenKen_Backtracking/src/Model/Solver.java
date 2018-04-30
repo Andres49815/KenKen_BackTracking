@@ -10,7 +10,6 @@ import java.util.Queue;
 public class Solver implements Runnable {
 
     private static ArrayList<ArrayList<Integer>> solution;
-    private static final HashMap<Integer, ArrayList<ArrayList<Integer>>> possibilitiesMap = new HashMap<>();
     public static boolean solutionFound;
     public static int cantThreads = 0;
     public static Queue<Integer> cola = new LinkedList();
@@ -47,39 +46,38 @@ public class Solver implements Runnable {
         Cage cage = KenKen_Board.getCage(groupID);
         switch (cage.operation) {
             case "%":
-                possibilitiesMap.put(groupID, modulsPossibilities(cage.result));
+                cage.setSolutions(modulsPossibilities(cage.result));
                 break;
             case "-":
-                possibilitiesMap.put(groupID, substractionPossibilities(cage.result));
+                cage.setSolutions(substractionPossibilities(cage.result));
                 break;
             case "/":
-                possibilitiesMap.put(groupID, divisionPossibilities(cage.result));
+                cage.setSolutions(cage.solutions =  divisionPossibilities(cage.result));
                 break;
             case "*":
                 if (cage.quantity == 3) {
-                    possibilitiesMap.put(groupID, multiplicationPossibilities3(cage.result));
+                    cage.setSolutions(multiplicationPossibilities3(cage.result));
                     break;
                 } else {
-                    possibilitiesMap.put(groupID, multiplicationPossibilities4(cage.result));
+                    cage.setSolutions(  multiplicationPossibilities4(cage.result));
                     break;
                 }
             case "+":
                 if (cage.quantity == 3) {
-                    possibilitiesMap.put(groupID, addPossibilities3(cage.result));
+                    cage.setSolutions(  addPossibilities3(cage.result));
                     break;
                 } else {
-                    possibilitiesMap.put(groupID, addPossibilities4(cage.result));
+                    cage.setSolutions( addPossibilities4(cage.result));
                     break;
                 }
             default:
-                possibilitiesMap.put(groupID, new ArrayList<>());
+                cage.setSolutions( new ArrayList<>());
                 break;
         }
     }
 
     public static long Solve() {
         long startTime = System.currentTimeMillis();
-        DoPossibilities();
         SortGroup();
         SolvePowers();
         SolveOperations();
@@ -106,7 +104,7 @@ public class Solver implements Runnable {
     private static void SolveOperations() {
 
         if (KenKen_Board.isComplete()) {
-            solution = (ArrayList<ArrayList<Integer>>) KenKen_Board.getBoard().clone();
+            solution = (ArrayList<ArrayList<Integer>>) KenKen_Board.board.clone();
             solutionFound = true;
         } else {
             for (int i = 0; i < KenKen_Board.groupsArray.size(); i++) {
@@ -114,14 +112,14 @@ public class Solver implements Runnable {
                 if (!KenKen_Board.groupIsComplete(groupID)) {
                     Cage cage = KenKen_Board.getCage(groupID);
                     cage.cantSolutionsTested = 0;
-                    ArrayList<ArrayList<Integer>> possibilities = possibilitiesMap.get(groupID);
+                    ArrayList<ArrayList<Integer>> possibilities = cage.solutions;
                     for (ArrayList<Integer> possibility : possibilities) {
                         KenKen_Board.set100(groupID);
                         cantPossibilities++;
                         cage.cantSolutionsTested++;
-                        KenKen_Board.printCage();
                         if (cage.IsPossible(possibility)) {
                             cantRecursion++;
+                            KenKen_Board.printCage();
                             KenKen_Board.SetPossibility(possibility, cage.coordinates);
                             SolveOperations();
                             if (KenKen_Board.isComplete()) {
@@ -744,26 +742,6 @@ public class Solver implements Runnable {
         return solutions;
     }
 
-    public static ArrayList<ArrayList<Integer>> Permutations(ArrayList<Integer> elements) {
-        return Permutations(elements, new ArrayList<Integer>(), elements.size(),
-                elements.size(), new ArrayList<ArrayList<Integer>>());
-    }
-
-    private static ArrayList<ArrayList<Integer>> Permutations(ArrayList<Integer> elements,
-            ArrayList<Integer> act, int n, int r, ArrayList<ArrayList<Integer>> result) {
-        if (n == 0) {
-            result.add(act);
-        } else {
-            for (int i = 0; i < r; i++) {
-                if (!act.contains(elements.get(i))) {
-                    ArrayList<Integer> newAct = (ArrayList<Integer>) act.clone();
-                    newAct.add(elements.get(i));
-                    Permutations(elements, newAct, n - 1, r, result);
-                }
-            }
-        }
-        return result;
-    }
 
     // Print
     public static void print() {
@@ -783,17 +761,13 @@ public class Solver implements Runnable {
             cages.add(KenKen_Board.getCage(n));
         });
 
-        cages.forEach((n) -> {
-            n.cantSolutions = possibilitiesMap.get(n.id).size();
-        });
-
         Collections.sort(cages, new Comparator<Cage>() {
             @Override
             public int compare(Cage o, Cage u) {
-                if (o.cantSolutions < u.cantSolutions) {
+                if (o.solutions.size() < u.solutions.size()) {
                     return -1;
                 }
-                if (o.cantSolutions > u.cantSolutions) {
+                if (o.solutions.size() > u.solutions.size()) {
                     return 1;
                 }
                 return 0;
@@ -805,5 +779,26 @@ public class Solver implements Runnable {
         });
         KenKen_Board.groupsArray = groups;
     }
+    
+//    public static ArrayList<ArrayList<Integer>> Permutations(ArrayList<Integer> elements) {
+//        return Permutations(elements, new ArrayList<Integer>(), elements.size(),
+//                elements.size(), new ArrayList<ArrayList<Integer>>());
+//    }
+//
+//    private static ArrayList<ArrayList<Integer>> Permutations(ArrayList<Integer> elements,
+//            ArrayList<Integer> act, int n, int r, ArrayList<ArrayList<Integer>> result) {
+//        if (n == 0) {
+//            result.add(act);
+//        } else {
+//            for (int i = 0; i < r; i++) {
+//                if (!act.contains(elements.get(i))) {
+//                    ArrayList<Integer> newAct = (ArrayList<Integer>) act.clone();
+//                    newAct.add(elements.get(i));
+//                    Permutations(elements, newAct, n - 1, r, result);
+//                }
+//            }
+//        }
+//        return result;
+//    }
 
 }

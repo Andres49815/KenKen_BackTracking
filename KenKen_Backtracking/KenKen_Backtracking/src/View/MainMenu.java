@@ -79,7 +79,7 @@ public class MainMenu extends javax.swing.JFrame {
 
         button_Open.setText("Cargar");
 
-        button_Clear.setText("Borrar");
+        button_Clear.setText("Calcular Posibilidades");
 
         spinner_Thread.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
 

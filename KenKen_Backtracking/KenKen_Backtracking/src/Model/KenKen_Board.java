@@ -1,8 +1,6 @@
 package Model;
 
-import static Model.Solver.cola;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -79,7 +77,7 @@ public class KenKen_Board {
         FillBoards();
     }
 
-    private static void InitializeBoards() {
+    public static void InitializeBoards() {
         board = new ArrayList<>();
         transverseBoard = new ArrayList<>();
         for (int i = 0; i < size; i++) {
@@ -142,7 +140,16 @@ public class KenKen_Board {
             }
         }
     }
-
+    
+    private boolean Complete() {
+        for (ArrayList<Integer> ar : board) {
+            if (ar.contains(100)) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
     private ArrayList<Integer> Possibilities(int i, int j) {
         ArrayList<Integer> possibilities;
 
@@ -155,19 +162,8 @@ public class KenKen_Board {
         return possibilities;
     }
 
-    private boolean Complete() {
-        for (ArrayList<Integer> ar : board) {
-            if (ar.contains(100)) {
-                return false;
-            }
-        }
-        return true;
-    }
+    
 
-    // Restore boards
-    public static void CleanBoards() {
-        InitializeBoards();
-    }
 
     /* Defines the groups in wich each operation will work */
     private void Cages(int n) {
@@ -181,31 +177,7 @@ public class KenKen_Board {
         FixDims();
         FillCoordinates();
     }
-
-    private boolean isGrouped() {
-        for (int i = 3; i < group.length - 3; i++) {
-            for (int j = 3; j < group.length - 3; j++) {
-                if (group[i][j] == 0) {
-                    return false;
-                }
-            }
-        }
-
-        return true;
-    }
-
-    private static void FillGroupArray() {
-        groupsArray = new ArrayList<>();
-
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                if (!groupsArray.contains(cages[i][j].id) && !cages[i][j].operation.equals("^")) {
-                    groupsArray.add(cages[i][j].id);
-                }
-            }
-        }
-    }
-
+    
     private static void Cages() {
         for (int i = 3; i < cages.length - 3; i++) {
             for (int j = 3; j < cages.length - 3; j++) {
@@ -216,6 +188,17 @@ public class KenKen_Board {
         }
     }
 
+    private boolean isGrouped() {
+        for (int i = 3; i < group.length - 3; i++) {
+            for (int j = 3; j < group.length - 3; j++) {
+                if (group[i][j] == 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
     private static void FixDims() {
         int[][] newGroup = new int[size][size];
         Cage[][] groupCages = new Cage[size][size];
@@ -243,6 +226,8 @@ public class KenKen_Board {
         }
     }
 
+     
+    
     /* Fill the results maps in order to get a O(n) each time we consult */
     private void Results() {
         FillResultsM();
@@ -260,11 +245,11 @@ public class KenKen_Board {
     public static void setCagesResults() {
         HashMap<Integer, ArrayList<Integer>> cagesResults;
 
-        cagesResults = new HashMap<Integer, ArrayList<Integer>>();
+        cagesResults = new HashMap<>();
         for (int i = 0; i < cages.length; i++) {
             for (int j = 0; j < cages.length; j++) {
                 if (!cagesResults.containsKey(cages[i][j].id)) {
-                    cagesResults.put(cages[i][j].id, new ArrayList<Integer>());
+                    cagesResults.put(cages[i][j].id, new ArrayList<>());
                 }
                 cagesResults.get(cages[i][j].id).add(get(i, j));
             }
@@ -352,24 +337,21 @@ public class KenKen_Board {
         return result;
     }
 
-    /* For Modules */
-    public static int[] LastVacantModule() {
+    
+    private static void FillGroupArray() {
+        groupsArray = new ArrayList<>();
+
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                if (cages[i][j].operation.equals("%") && get(i, j) == 100) {
-                    int[] coord = {j, i};
-                    return coord;
+                if (!groupsArray.contains(cages[i][j].id) && !cages[i][j].operation.equals("^")) {
+                    groupsArray.add(cages[i][j].id);
                 }
             }
         }
-        return null;
     }
 
     // Getters and Setters
-    public static ArrayList<ArrayList<Integer>> getBoard() {
-        return board;
-    }
-
+    
     public static int get(int i, int j) {
         return board.get(i).get(j);
     }
@@ -379,10 +361,6 @@ public class KenKen_Board {
         transverseBoard.get(y).set(x, val);
     }
 
-    // On Groups
-    public static int[][] getGroup() {
-        return group;
-    }
 
     public static ArrayList<Integer> getGroup(int n) {
         return map.get(n);
@@ -412,31 +390,7 @@ public class KenKen_Board {
         }
         return true;
     }
-
-    // Put
-    public static void Put(Cage c, ArrayList<Integer> possibilities) {
-        for (int i = 0; i < c.quantity; i++) {
-            ArrayList<Integer> place = new ArrayList<>();
-            place.add(c.coordinates.get(i).get(0));
-            place.add(c.coordinates.get(i).get(1));
-            set(place.get(0), place.get(1), possibilities.get(i));
-        }
-    }
-
-    // Others
-    public static int getSize() {
-        return size;
-    }
-
-    public static HashMap<Integer, ArrayList<Integer>> getMap() {
-        return map;
-    }
-
-    // Other Methods
-    public int group(int i, int j) {
-        return group[i][j];
-    }
-
+    
     public static boolean isComplete() {
         for (int i = 0; i < group.length; i++) {
             for (int j = 0; j < group.length; j++) {
@@ -464,6 +418,7 @@ public class KenKen_Board {
     public static boolean isPossible(int i, int j, int value) {
         return !board.get(i).contains(value) && !transverseBoard.get(j).contains(value) && value < size;
     }
+    
 
     public static void SetPossibility(ArrayList<Integer> values, ArrayList<ArrayList<Integer>> people) {
         for (int i = 0; i < values.size(); i++) {
@@ -512,45 +467,6 @@ public class KenKen_Board {
         System.out.println();
     }
 
-    public static int cantOfGroup(int groupID) {
-        int cant = 0;
-        for (int x = 0; x < size; x++) {
-            for (int y = 0; y < size; y++) {
-                if (cages[x][y].id == groupID) {
-                    cant++;
-                }
-            }
-        }
-        return cant;
-    }
-
-    public static int maxGroup() {
-        int big = 1;
-        for (int x = 0; x < size; x++) {
-            for (int y = 0; y < size; y++) {
-                if (group[x][y] >= big) {
-                    big = group[x][y];
-                }
-            }
-        }
-        return big;
-    }
-
-    static ArrayList<ArrayList<Integer>> getPeople(int i) {
-        ArrayList<ArrayList<Integer>> places = new ArrayList<>();
-        for (int a = 0; a < size; a++) {
-            for (int b = 0; b < size; b++) {
-                if (cages[a][b].id == i) {
-                    ArrayList<Integer> place = new ArrayList<>();
-                    place.add(a);
-                    place.add(b);
-                    places.add(place);
-                }
-            }
-        }
-        return places;
-
-    }
 
     public static Cage getCage(int ID) {
         for (int x = 0; x < size; x++) {
@@ -568,11 +484,73 @@ public class KenKen_Board {
         for (int x= 0; x<groupsArray.size();x++)
         {
             Cage cage = getCage(groupsArray.get(x));
-            System.out.print(cage.cantSolutionsTested+"/"+cage.cantSolutions+"\t");
+            System.out.print(cage.cantSolutionsTested+"/"+cage.solutions.size()+"\t");
         }
         System.out.println();
     }
     
+    
+    /* For Modules */
+//    public static int[] LastVacantModule() {
+//        for (int i = 0; i < size; i++) {
+//            for (int j = 0; j < size; j++) {
+//                if (cages[i][j].operation.equals("%") && get(i, j) == 100) {
+//                    int[] coord = {j, i};
+//                    return coord;
+//                }
+//            }
+//        }
+//        return null;
+//    }
+    // Put
+//    public static void Put(Cage c, ArrayList<Integer> possibilities) {
+//        for (int i = 0; i < c.quantity; i++) {
+//            ArrayList<Integer> place = new ArrayList<>();
+//            place.add(c.coordinates.get(i).get(0));
+//            place.add(c.coordinates.get(i).get(1));
+//            set(place.get(0), place.get(1), possibilities.get(i));
+//        }
+//    }
+    
+//    public static int cantOfGroup(int groupID) {
+//        int cant = 0;
+//        for (int x = 0; x < size; x++) {
+//            for (int y = 0; y < size; y++) {
+//                if (cages[x][y].id == groupID) {
+//                    cant++;
+//                }
+//            }
+//        }
+//        return cant;
+//    }
+//
+//    public static int maxGroup() {
+//        int big = 1;
+//        for (int x = 0; x < size; x++) {
+//            for (int y = 0; y < size; y++) {
+//                if (group[x][y] >= big) {
+//                    big = group[x][y];
+//                }
+//            }
+//        }
+//        return big;
+//    }
+//
+//    static ArrayList<ArrayList<Integer>> getPeople(int i) {
+//        ArrayList<ArrayList<Integer>> places = new ArrayList<>();
+//        for (int a = 0; a < size; a++) {
+//            for (int b = 0; b < size; b++) {
+//                if (cages[a][b].id == i) {
+//                    ArrayList<Integer> place = new ArrayList<>();
+//                    place.add(a);
+//                    place.add(b);
+//                    places.add(place);
+//                }
+//            }
+//        }
+//        return places;
+//
+//    }
     
 
 }

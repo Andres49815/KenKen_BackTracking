@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Random;
 
 /**
@@ -8,9 +9,9 @@ import java.util.Random;
  * @author Andres Obando Alfaro
  */
 public class Cage {
+
     // Static Values
     public static int actual = 1;
-    public int cantSolutions = 0;
     public int cantSolutionsTested = 0;
     private static Random random = new Random();
     // Individual Values
@@ -21,7 +22,7 @@ public class Cage {
     public boolean[][] cage;
     public String operation = "";
     public boolean isLinear = false;
-    
+    public ArrayList<ArrayList<Integer>> solutions;
     
     public static void Reset() {
         actual = 1;
@@ -31,6 +32,7 @@ public class Cage {
         this.quantity = q;
         this.operation = op;
     }
+
     public Cage(int i, int j) {
         boolean[][] c;
         boolean doSomething;
@@ -41,7 +43,7 @@ public class Cage {
         for (int y = 0; y < c.length && y + i < KenKen_Board.size + 3; y++) {
             doSomething = false;
             if (KenKen_Board.group[i + y][j] == 0) {
-                for (int x = 0; x  < c[0].length && x + j < KenKen_Board.size + 3; x++) {
+                for (int x = 0; x < c[0].length && x + j < KenKen_Board.size + 3; x++) {
                     if (c[y][x]) {
                         if (KenKen_Board.group[i + y][j + x] == 0) {
                             KenKen_Board.group[i + y][j + x] = actual;
@@ -50,21 +52,22 @@ public class Cage {
                             quantity++;
                             cage[y][x] = true;
                             doSomething = true;
-                        }
-                        else
+                        } else {
                             break;
+                        }
                     }
                 }
-            }
-            else
+            } else {
                 break;
-            if (doSomething)
+            }
+            if (doSomething) {
                 actual++;
+            }
         }
     }
     
     public void setOperation() {
-        if (operation.equals(""))
+        if (operation.equals("")) {
             switch (quantity) {
                 case 1:
                     size_1();
@@ -77,27 +80,34 @@ public class Cage {
                     size_3();
                     break;
             }
+        }
     }
+
     private boolean contaninsZero() {
-        for (ArrayList<Integer> coord : coordinates)
-            if (KenKen_Board.get(coord.get(0), coord.get(1)) == 0)
+        for (ArrayList<Integer> coord : coordinates) {
+            if (KenKen_Board.get(coord.get(0), coord.get(1)) == 0) {
                 return true;
+            }
+        }
         return false;
     }
+
     // size_1: Powers
     private void size_1() {
         operation = "^";
     }
+
     // size_2: Difference, Division, Module
     private void size_2() {
-        if (this.contaninsZero())
+        if (this.contaninsZero()) {
             operation = "-";
-        else
-            if (Division() == 0)
-                operation = "/";
-            else
-                operation = "%";
+        } else if (Division() == 0) {
+            operation = "/";
+        } else {
+            operation = "%";
+        }
     }
+
     private int Division() {
         int divider, divident;
         
@@ -105,101 +115,41 @@ public class Cage {
         divident = KenKen_Board.get(coordinates.get(1).get(0), coordinates.get(1).get(1));
         return divider % divident;
     }
+
     // size_3: Multiplication, Sum
     private void size_3() {
         operation = this.contaninsZero() ? "+" : random.nextInt() % 3 == 0 ? "+" : "*";
     }
-    
+
     // Possibilities
     public ArrayList<ArrayList<Integer>> Possibilities(ArrayList<ArrayList<Integer>> possibilities) {
         ArrayList<ArrayList<Integer>> res = new ArrayList<>();
-        for (ArrayList<Integer> pos : possibilities)
-            if (IsPossible(pos) && !res.contains(pos))
+        for (ArrayList<Integer> pos : possibilities) {
+            if (IsPossible(pos) && !res.contains(pos)) {
                 res.add(pos);
+            }
+        }
         return res;
     }
+
     // Possible
     public boolean IsPossible(ArrayList<Integer> possibility) {
         int value;
         
         for (int i = 0; i < possibility.size(); i++) {
             value = possibility.get(i);
-            if (!KenKen_Board.isPossible(coordinates.get(i).get(0),coordinates.get(i).get(1), value))
+            if (!KenKen_Board.isPossible(coordinates.get(i).get(0), coordinates.get(i).get(1), value)) {
                 return false;
+            }
         }
         return true;
     }
-    
-    // Add
-    private double Operation(int ... numbers) {
-        int operationResult;
-        
-        switch (operation) {
-            case "%":
-                try {
-                    return numbers[0] > numbers[1] ? numbers[0] % numbers[1] : numbers[1] % numbers[0];
-                }
-                catch (ArithmeticException ae) {
-                    return -1;
-                }
-            case "/":
-                try {
-                return numbers[0] / numbers[1];
-                }
-                catch (ArithmeticException ae) {
-                    return -1;
-                }
-            case "-":
-                return Math.abs(numbers[0] - numbers[1]);
-            case "*":
-                operationResult = 1;
-                for (int n : numbers)
-                    operationResult *= n;
-                return operationResult;
-            case "+":
-                operationResult = 0;
-                for (int n : numbers)
-                    operationResult += n;
-                return operationResult;
-            default:
-                System.out.println("Hola");
-                return 0;
-        }
-    }
-    private ArrayList<Integer> addAll(int ... list) {
-        ArrayList<Integer> l;
-        
-        l = new ArrayList<Integer>();
-        for (int actual : list)
-            l.add(actual);
-        return l;
-    }
-    
-    // Possibilities
-    public static ArrayList<ArrayList<Integer>> Permutations(ArrayList<Integer> elements) {
-        return Permutations(elements, new ArrayList<Integer>(), elements.size(), 
-                elements.size(), new ArrayList<ArrayList<Integer>>());
-    }
-    private static ArrayList<ArrayList<Integer>> Permutations(ArrayList<Integer> elements, 
-           ArrayList<Integer> act, int n, int r,  ArrayList<ArrayList<Integer>> result) {
-        if (n == 0) {
-            result.add(act);
-        }
-        else {
-            for (int i = 0; i < r; i++) {
-                if (!act.contains(elements.get(i))) {
-                    ArrayList<Integer> newAct = ( ArrayList<Integer>)act.clone();
-                    newAct.add(elements.get(i));
-                    Permutations(elements, newAct, n - 1, r, result);
-                }
-            }
-        }
-        return result;
-    }
-    
+
+
+
     // Obtein the cage
     public static boolean[][] getCage(Cage c) {
-        switch(random.nextInt(14)) {
+        switch (random.nextInt(14)) {
             case 0:
                 c.isLinear = true;
                 return Line();
@@ -232,19 +182,18 @@ public class Cage {
                 return Dot();
         }
     }
+
     /**
-     * XX // // //
-     * XX // // //
-     * XX // // //
-     * XX // // //
+     * XX // // // XX // // // XX // // // XX // // //
      */
     private static boolean[][] Line() {
         boolean[][] cage = {{true},
-            {true},
-            {true},
-            {true}};
+        {true},
+        {true},
+        {true}};
         return cage;
     }
+
     /**
      * XX XX XX XX
      */
@@ -252,86 +201,83 @@ public class Cage {
         boolean[][] cage = {{true, true, true, true}};
         return cage;
     }
+
     /**
-     * XX XX XX
-     * // XX //
+     * XX XX XX // XX //
      */
     private static boolean[][] T() {
         boolean[][] cage = {{true, true, true},
-            {false, true, false}};
+        {false, true, false}};
         return cage;
     }
+
     /**
-     * // XX //
-     * XX XX XX
+     * // XX // XX XX XX
      */
     private static boolean[][] InvertedT() {
         boolean[][] cage = {{false, true, false},
-            {true, true, true}};
+        {true, true, true}};
         return cage;
     }
+
     /**
-     * XX //
-     * XX XX
-     * XX //
+     * XX // XX XX XX //
      */
     private static boolean[][] SideT() {
         boolean[][] cage = {{true, false},
-            {true, true},
-            {true, false}};
+        {true, true},
+        {true, false}};
         return cage;
     }
+
     /**
-     * // XX
-     * XX XX
-     * // XX
+     * // XX XX XX // XX
      */
     private static boolean[][] InvertedSideT() {
         boolean[][] cage = {{false, true},
-            {true, true},
-            {false, true}};
+        {true, true},
+        {false, true}};
         return cage;
     }
+
     /**
-     * XX //
-     * XX //
-     * XX XX
+     * XX // XX // XX XX
      */
     private static boolean[][] L() {
         boolean[][] cage = {{true, false},
-            {true, false},
-            {true, true}};
+        {true, false},
+        {true, true}};
         return cage;
     }
+
     /**
-     * // XX
-     * // XX
-     * XX XX
+     * // XX // XX XX XX
      */
     private static boolean[][] InvertedL() {
         boolean[][] cage = {{false, true},
-            {false, true},
-            {true, true}};
+        {false, true},
+        {true, true}};
         return cage;
     }
+
     /**
-     * XX // //
-     * XX XX XX
+     * XX // // XX XX XX
      */
     private static boolean[][] UpsideL() {
         boolean[][] cage = {{true, false, false},
-            {true, true, true}};
+        {true, true, true}};
         return cage;
     }
+
     /**
-     * XX // // //
-     * XX // // //
+     * XX // // // XX // // //
      */
     private static boolean[][] LineDot() {
         boolean[][] cage = {{true},
-            {true}};
+        {true}};
         return cage;
     }
+
     /**
      * XX
      */
@@ -340,23 +286,94 @@ public class Cage {
         
         return cage;
     }
+
     /**
-     * XX XX
-     * XX XX
+     * XX XX XX XX
      */
     private static boolean[][] Square() {
         boolean[][] cage = {{true, true},
-            {true, true}};
+        {true, true}};
         return cage;
     }
+
     /**
-     * XX XX //
-     * // XX XX
+     * XX XX // // XX XX
      */
     private static boolean[][] Z() {
         boolean[][] cage = {{true, true, false},
-            {false, true, true}};
+        {false, true, true}};
         return cage;
     }
+    
+    void setSolutions(ArrayList<ArrayList<Integer>> possibilities) {
+        solutions = new ArrayList<>();
+        for (ArrayList<Integer> possibility : possibilities) {
+            if (IsPossibleTest(possibility)) {
+                solutions.add(possibility);
+            }
+            KenKen_Board.set100(id);
+        }
+    }
+    
+    public boolean IsPossibleTest(ArrayList<Integer> possibility) {
+        int value;
+        
+        for (int i = 0; i < possibility.size(); i++) {
+            value = possibility.get(i);
+            if (KenKen_Board.isPossible(coordinates.get(i).get(0), coordinates.get(i).get(1), value)) {
+                KenKen_Board.set(coordinates.get(i).get(0), coordinates.get(i).get(1), value);
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    // Add
+//    private double Operation(int... numbers) {
+//        int operationResult;
+//        
+//        switch (operation) {
+//            case "%":
+//                try {
+//                    return numbers[0] > numbers[1] ? numbers[0] % numbers[1] : numbers[1] % numbers[0];
+//                } catch (ArithmeticException ae) {
+//                    return -1;
+//                }
+//            case "/":
+//                try {
+//                    return numbers[0] / numbers[1];
+//                } catch (ArithmeticException ae) {
+//                    return -1;
+//                }
+//            case "-":
+//                return Math.abs(numbers[0] - numbers[1]);
+//            case "*":
+//                operationResult = 1;
+//                for (int n : numbers) {
+//                    operationResult *= n;
+//                }
+//                return operationResult;
+//            case "+":
+//                operationResult = 0;
+//                for (int n : numbers) {
+//                    operationResult += n;
+//                }
+//                return operationResult;
+//            default:
+//                System.out.println("Hola");
+//                return 0;
+//        }
+//    }
+
+//    private ArrayList<Integer> addAll(int... list) {
+//        ArrayList<Integer> l;
+//        
+//        l = new ArrayList<Integer>();
+//        for (int actual : list) {
+//            l.add(actual);
+//        }
+//        return l;
+//    }
 
 }

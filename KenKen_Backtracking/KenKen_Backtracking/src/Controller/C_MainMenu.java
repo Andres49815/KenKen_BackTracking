@@ -2,6 +2,7 @@ package Controller;
 
 import Model.KenKen_Board;
 import Model.Solver;
+import static Model.Solver.DoPossibilities;
 import static Model.Solver.DoPossibilitiesQueue;
 import View.MainMenu;
 import java.awt.event.ActionEvent;
@@ -50,9 +51,8 @@ public class C_MainMenu implements ActionListener {
             case "Generar":
                 generate();
                 break;
-            case "Borrar":
-                KenKen_Board.CleanBoards();
-                view.gameTable.actualizar(view.table_Game);
+            case "Calcular Posibilidades":
+                doPossibilities();
                 break;
             case "Resolver":
                 Solve();
@@ -87,7 +87,14 @@ public class C_MainMenu implements ActionListener {
         } catch (Exception e) {
             generate();
         }
-//        DoPossibilitiesQueue();
+    }
+    
+     private void doPossibilities() {
+        KenKen_Board.InitializeBoards();
+        DoPossibilities();
+        KenKen_Board.InitializeBoards();
+        view.gameTable.actualizar(view.table_Game);
+        
     }
 
     private void Solve() {
@@ -134,4 +141,6 @@ public class C_MainMenu implements ActionListener {
 
         view.gameTable.setTable(view.table_Game);
     }
+
+   
 }

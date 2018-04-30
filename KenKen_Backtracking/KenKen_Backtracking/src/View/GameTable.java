@@ -34,7 +34,7 @@ public class GameTable {
         for (int i = 0; i < KenKen_Board.size; i++) {
             for (int j = 0; j < KenKen_Board.size; j++) {
                 Cage cage = KenKen_Board.cages[i][j];
-                number = KenKen_Board.getBoard().get(i).get(j);
+                number = KenKen_Board.board.get(i).get(j);
 
                 text = new JTextPane();
                 text.setContentType("text/html");
@@ -52,7 +52,7 @@ public class GameTable {
             defaultTable.addRow(row);
         }
         t.setModel(defaultTable);
-        t.setRowHeight(t.getWidth() / KenKen_Board.getSize());
+        t.setRowHeight(t.getWidth() / KenKen_Board.size);
     }
 
     public void actualizar(JTable t) {
@@ -67,7 +67,7 @@ public class GameTable {
             for (int j = 0; j < KenKen_Board.size; j++) {
                 Cage cage = KenKen_Board.cages[i][j];
                 text = (JTextPane) defaultTable.getValueAt(i, j);
-                number = KenKen_Board.getBoard().get(i).get(j);
+                number = KenKen_Board.board.get(i).get(j);
                 text.setContentType("text/html");
                 operation = cage.result + cage.operation;
                 if (number == 100) {
