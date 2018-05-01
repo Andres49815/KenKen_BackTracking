@@ -31,6 +31,8 @@ public class KenKen_Board {
     public static byte Powers;
     public static byte Modules;
     public static boolean solutionFound;
+    
+    public static long time = 0;
 
     // Constructor
     public KenKen_Board(int size) {
@@ -49,11 +51,7 @@ public class KenKen_Board {
         
         FillGroupArray();
     }
-
-    public KenKen_Board(ArrayList<ArrayList<Integer>> board, ArrayList<ArrayList<Integer>> transverseBoard,
-            int[][] group, Cage[][] cages, HashMap<Integer, ArrayList<Integer>> map, HashMap<Integer, Integer> resultsMap,
-            int size, int threadCount, ArrayList<Integer> groupsArray, byte Powers, byte Modules,
-            boolean solutionFound) {
+     public KenKen_Board(ArrayList<ArrayList<Integer>> board, ArrayList<ArrayList<Integer>> transverseBoard, int[][] group, Cage[][] cages, HashMap<Integer, ArrayList<Integer>> map, HashMap<Integer, Integer> resultsMap, int size, int threadCount, ArrayList<Integer> groupsArray, byte Powers, byte Modules, boolean solutionFound, long time) {
         KenKen_Board.board = board;
         KenKen_Board.transverseBoard = transverseBoard;
         KenKen_Board.group = group;
@@ -66,7 +64,7 @@ public class KenKen_Board {
         KenKen_Board.Powers = Powers;
         KenKen_Board.Modules = Modules;
         KenKen_Board.solutionFound = solutionFound;
-
+        KenKen_Board.time = time;
     }
 
     /* Initialize the boards in order to get clean arrays to work and use get

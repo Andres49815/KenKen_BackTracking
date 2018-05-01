@@ -28,12 +28,13 @@ public class XML {
     public  int threadCount;
     public  ArrayList<Integer> groupsArray;
 
-    private final Random random = new Random();
     public  byte Powers;
     public  byte Modules;
     public  boolean solutionFound;
+    
+    public  long time;
 
-    public XML(ArrayList<ArrayList<Integer>> board, ArrayList<ArrayList<Integer>> transverseBoard, int[][] group, Cage[][] cages, HashMap<Integer, ArrayList<Integer>> map, HashMap<Integer, Integer> resultsMap, int size, int threadCount, ArrayList<Integer> groupsArray, byte Powers, byte Modules, boolean solutionFound) {
+    public XML(ArrayList<ArrayList<Integer>> board, ArrayList<ArrayList<Integer>> transverseBoard, int[][] group, Cage[][] cages, HashMap<Integer, ArrayList<Integer>> map, HashMap<Integer, Integer> resultsMap, int size, int threadCount, ArrayList<Integer> groupsArray, byte Powers, byte Modules, boolean solutionFound, long time) {
         this.board = board;
         this.transverseBoard = transverseBoard;
         this.group = group;
@@ -46,7 +47,12 @@ public class XML {
         this.Powers = Powers;
         this.Modules = Modules;
         this.solutionFound = solutionFound;
+        this.time = time;
     }
+
+    
+
+    
     
     
 }

@@ -87,7 +87,6 @@
                               <Component id="button_Generate" max="32767" attributes="0"/>
                               <Component id="spinner_Size" max="32767" attributes="0"/>
                               <Component id="button_Powers" max="32767" attributes="0"/>
-                              <Component id="button_Save" alignment="1" max="32767" attributes="0"/>
                               <Component id="button_Open" alignment="0" max="32767" attributes="0"/>
                               <Component id="button_Clear" alignment="0" max="32767" attributes="0"/>
                               <Component id="spinner_Thread" alignment="1" max="32767" attributes="0"/>
@@ -119,8 +118,6 @@
                   <Component id="button_Powers" min="-2" pref="52" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                   <Component id="button_Open" min="-2" pref="52" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="button_Save" min="-2" pref="52" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -166,14 +163,6 @@
         <Component class="javax.swing.JButton" name="button_Powers">
           <Properties>
             <Property name="text" type="java.lang.String" value="Resolver"/>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JButton" name="button_Save">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Guardar"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

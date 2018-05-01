@@ -58,13 +58,13 @@ public class C_MainMenu implements ActionListener {
                 break;
             case "Resolver":
                 Solve();
-                break;
-            case "Guardar":
+
                 try {
                     Save();
                 } catch (FileNotFoundException ex) {
                     Logger.getLogger(C_MainMenu.class.getName()).log(Level.SEVERE, null, ex);
                 }
+
                 break;
             case "Cargar":
                 try {
@@ -92,34 +92,50 @@ public class C_MainMenu implements ActionListener {
         xmlAntes = new XML(KenKen_Board.board, KenKen_Board.transverseBoard,
                 KenKen_Board.group, KenKen_Board.cages, KenKen_Board.map, KenKen_Board.resultsMap,
                 KenKen_Board.size, KenKen_Board.threadCount, KenKen_Board.groupsArray, KenKen_Board.Powers, KenKen_Board.Modules,
-                KenKen_Board.solutionFound);
+                KenKen_Board.solutionFound, KenKen_Board.time);
     }
-    
-     private void doPossibilities() {
+
+    private void doPossibilities() {
         KenKen_Board.InitializeBoards();
         view.gameTable.actualizar(view.table_Game);
         Solver.SolvePowers();
         DoPossibilities();
-        
+
     }
 
     private void Solve() {
 
         long time = Solver.Solve();
-        
+
         view.gameTable.actualizar(view.table_Game);
-        
-        JOptionPane.showMessageDialog(view, "El KenKen tardó resolviendose: "+time/1000 +" segundos con "+ Solver.cantRecursion + " recursiones y " +Solver.cantPossibilities+" posibilidades\n Se hicieron "+ (Solver.cantPossibilities-Solver.cantRecursion)+" cortes" );
+
+        JOptionPane.showMessageDialog(view, "El KenKen tardó resolviendose: " + time / 1000 + " segundos con " + Solver.cantRecursion + " recursiones y " + Solver.cantPossibilities + " posibilidades\n Se hicieron " + (Solver.cantPossibilities - Solver.cantRecursion) + " cortes");
 
     }
 
     private void Save() throws FileNotFoundException {
-        
-        try (PrintWriter outA = new PrintWriter("test//"+KenKen_Board.size+ ".xml")) {
-            
-            String archivo = xstream.toXML(xmlAntes);
-            outA.println(archivo);
+        try
+        {
+            reader = new FileReader("test//" + KenKen_Board.size + ".xml");
+            XML xml = (XML) (xstream.fromXML(reader));
+            if (xml.time > KenKen_Board.time) {
+                try (PrintWriter outA = new PrintWriter("test//" + KenKen_Board.size + ".xml")) {
+                    xmlAntes.time = KenKen_Board.time;
+                    String archivo = xstream.toXML(xmlAntes);
+                    outA.println(archivo);
+                }
+            }
         }
+        catch(FileNotFoundException ex)
+        {
+            try (PrintWriter outA = new PrintWriter("test//" + KenKen_Board.size + ".xml")) {
+                    xmlAntes.time = KenKen_Board.time;
+                    String archivo = xstream.toXML(xmlAntes);
+                    outA.println(archivo);
+                }            
+        }
+        
+
     }
 
     private void Open() throws FileNotFoundException {
@@ -137,11 +153,9 @@ public class C_MainMenu implements ActionListener {
         model = new KenKen_Board(xml.board, xml.transverseBoard,
                 xml.group, xml.cages, xml.map, xml.resultsMap,
                 xml.size, xml.threadCount, xml.groupsArray, xml.Powers, xml.Modules,
-                xml.solutionFound);
+                xml.solutionFound, xml.time);
 
         view.gameTable.setTable(view.table_Game);
     }
 
-
-   
 }

@@ -81,7 +81,9 @@ public class Solver implements Runnable {
         SortGroup();
         SolveOperations();
         long finishTime = System.currentTimeMillis();
-        return finishTime - startTime;
+        long time = finishTime - startTime;
+        KenKen_Board.time = time;
+        return time;
     }
 
     // Powers
