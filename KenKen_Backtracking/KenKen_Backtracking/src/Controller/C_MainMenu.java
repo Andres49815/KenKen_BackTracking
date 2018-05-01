@@ -36,7 +36,6 @@ public class C_MainMenu implements ActionListener {
         // For MVC
         view.button_Generate.addActionListener(this);
         view.button_Powers.addActionListener(this);
-        view.button_Save.addActionListener(this);
         view.button_Open.addActionListener(this);
         view.button_Clear.addActionListener(this);
         view.table_Game.setVisible(false);
@@ -114,8 +113,7 @@ public class C_MainMenu implements ActionListener {
     }
 
     private void Save() throws FileNotFoundException {
-        try
-        {
+        try {
             reader = new FileReader("test//" + KenKen_Board.size + ".xml");
             XML xml = (XML) (xstream.fromXML(reader));
             if (xml.time > KenKen_Board.time) {
@@ -125,16 +123,13 @@ public class C_MainMenu implements ActionListener {
                     outA.println(archivo);
                 }
             }
-        }
-        catch(FileNotFoundException ex)
-        {
+        } catch (FileNotFoundException ex) {
             try (PrintWriter outA = new PrintWriter("test//" + KenKen_Board.size + ".xml")) {
-                    xmlAntes.time = KenKen_Board.time;
-                    String archivo = xstream.toXML(xmlAntes);
-                    outA.println(archivo);
-                }            
+                xmlAntes.time = KenKen_Board.time;
+                String archivo = xstream.toXML(xmlAntes);
+                outA.println(archivo);
+            }
         }
-        
 
     }
 
