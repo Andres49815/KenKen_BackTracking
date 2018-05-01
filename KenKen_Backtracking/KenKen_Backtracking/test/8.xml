@@ -1,121 +1,121 @@
 <Model.XML>
   <board>
     <list>
-      <int>2</int>
-      <int>5</int>
-      <int>0</int>
-      <int>7</int>
-      <int>3</int>
-      <int>1</int>
       <int>4</int>
+      <int>5</int>
+      <int>3</int>
+      <int>0</int>
+      <int>1</int>
+      <int>2</int>
       <int>6</int>
+      <int>7</int>
     </list>
     <list>
       <int>0</int>
-      <int>6</int>
-      <int>3</int>
-      <int>4</int>
-      <int>1</int>
+      <int>2</int>
       <int>5</int>
       <int>7</int>
-      <int>2</int>
+      <int>6</int>
+      <int>4</int>
+      <int>3</int>
+      <int>1</int>
     </list>
     <list>
       <int>3</int>
-      <int>2</int>
-      <int>1</int>
-      <int>0</int>
-      <int>6</int>
-      <int>4</int>
-      <int>5</int>
       <int>7</int>
+      <int>2</int>
+      <int>4</int>
+      <int>0</int>
+      <int>1</int>
+      <int>5</int>
+      <int>6</int>
     </list>
     <list>
       <int>1</int>
-      <int>4</int>
-      <int>6</int>
-      <int>2</int>
       <int>0</int>
-      <int>7</int>
+      <int>4</int>
+      <int>2</int>
       <int>3</int>
+      <int>6</int>
+      <int>7</int>
       <int>5</int>
     </list>
     <list>
       <int>5</int>
-      <int>3</int>
-      <int>2</int>
+      <int>4</int>
+      <int>6</int>
       <int>1</int>
       <int>7</int>
       <int>0</int>
-      <int>6</int>
-      <int>4</int>
-    </list>
-    <list>
-      <int>4</int>
-      <int>7</int>
-      <int>5</int>
-      <int>3</int>
       <int>2</int>
-      <int>6</int>
-      <int>1</int>
-      <int>0</int>
-    </list>
-    <list>
-      <int>7</int>
-      <int>1</int>
-      <int>4</int>
-      <int>6</int>
-      <int>5</int>
-      <int>2</int>
-      <int>0</int>
       <int>3</int>
     </list>
     <list>
       <int>6</int>
-      <int>0</int>
+      <int>1</int>
       <int>7</int>
+      <int>3</int>
+      <int>2</int>
+      <int>5</int>
+      <int>0</int>
+      <int>4</int>
+    </list>
+    <list>
+      <int>2</int>
+      <int>3</int>
+      <int>1</int>
+      <int>6</int>
+      <int>5</int>
+      <int>7</int>
+      <int>4</int>
+      <int>0</int>
+    </list>
+    <list>
+      <int>7</int>
+      <int>6</int>
+      <int>0</int>
       <int>5</int>
       <int>4</int>
       <int>3</int>
-      <int>2</int>
       <int>1</int>
+      <int>2</int>
     </list>
   </board>
   <transverseBoard>
     <list>
-      <int>2</int>
+      <int>4</int>
       <int>0</int>
       <int>3</int>
       <int>1</int>
       <int>5</int>
-      <int>4</int>
-      <int>7</int>
-      <int>6</int>
-    </list>
-    <list>
-      <int>5</int>
       <int>6</int>
       <int>2</int>
-      <int>4</int>
-      <int>3</int>
-      <int>7</int>
-      <int>1</int>
-      <int>0</int>
-    </list>
-    <list>
-      <int>0</int>
-      <int>3</int>
-      <int>1</int>
-      <int>6</int>
-      <int>2</int>
-      <int>5</int>
-      <int>4</int>
       <int>7</int>
     </list>
     <list>
+      <int>5</int>
+      <int>2</int>
+      <int>7</int>
+      <int>0</int>
+      <int>4</int>
+      <int>1</int>
+      <int>3</int>
+      <int>6</int>
+    </list>
+    <list>
+      <int>3</int>
+      <int>5</int>
+      <int>2</int>
+      <int>4</int>
+      <int>6</int>
+      <int>7</int>
+      <int>1</int>
+      <int>0</int>
+    </list>
+    <list>
+      <int>0</int>
       <int>7</int>
       <int>4</int>
-      <int>0</int>
       <int>2</int>
       <int>1</int>
       <int>3</int>
@@ -123,171 +123,143 @@
       <int>5</int>
     </list>
     <list>
-      <int>3</int>
       <int>1</int>
       <int>6</int>
       <int>0</int>
+      <int>3</int>
       <int>7</int>
       <int>2</int>
       <int>5</int>
       <int>4</int>
     </list>
     <list>
-      <int>1</int>
-      <int>5</int>
-      <int>4</int>
-      <int>7</int>
-      <int>0</int>
-      <int>6</int>
       <int>2</int>
+      <int>4</int>
+      <int>1</int>
+      <int>6</int>
+      <int>0</int>
+      <int>5</int>
+      <int>7</int>
       <int>3</int>
     </list>
     <list>
-      <int>4</int>
-      <int>7</int>
-      <int>5</int>
-      <int>3</int>
       <int>6</int>
-      <int>1</int>
-      <int>0</int>
+      <int>3</int>
+      <int>5</int>
+      <int>7</int>
       <int>2</int>
+      <int>0</int>
+      <int>4</int>
+      <int>1</int>
     </list>
     <list>
-      <int>6</int>
-      <int>2</int>
       <int>7</int>
+      <int>1</int>
+      <int>6</int>
       <int>5</int>
+      <int>3</int>
       <int>4</int>
       <int>0</int>
-      <int>3</int>
-      <int>1</int>
+      <int>2</int>
     </list>
   </transverseBoard>
   <group>
     <int-array>
-      <int>42</int>
+      <int>2</int>
       <int>2</int>
       <int>3</int>
-      <int>7</int>
-      <int>8</int>
-      <int>9</int>
-      <int>11</int>
-      <int>11</int>
-    </int-array>
-    <int-array>
-      <int>2</int>
-      <int>2</int>
-      <int>2</int>
-      <int>7</int>
-      <int>12</int>
-      <int>15</int>
-      <int>11</int>
-      <int>11</int>
-    </int-array>
-    <int-array>
-      <int>17</int>
-      <int>18</int>
-      <int>18</int>
-      <int>7</int>
-      <int>43</int>
-      <int>15</int>
-      <int>20</int>
-      <int>23</int>
-    </int-array>
-    <int-array>
-      <int>17</int>
-      <int>44</int>
-      <int>26</int>
-      <int>7</int>
-      <int>19</int>
-      <int>15</int>
-      <int>15</int>
-      <int>23</int>
-    </int-array>
-    <int-array>
-      <int>45</int>
-      <int>28</int>
-      <int>26</int>
-      <int>30</int>
-      <int>31</int>
-      <int>32</int>
-      <int>46</int>
-      <int>23</int>
-    </int-array>
-    <int-array>
-      <int>28</int>
-      <int>26</int>
-      <int>26</int>
-      <int>30</int>
-      <int>30</int>
-      <int>30</int>
-      <int>33</int>
-      <int>33</int>
-    </int-array>
-    <int-array>
-      <int>34</int>
-      <int>47</int>
-      <int>36</int>
-      <int>37</int>
-      <int>38</int>
-      <int>38</int>
-      <int>38</int>
-      <int>38</int>
-    </int-array>
-    <int-array>
-      <int>39</int>
-      <int>36</int>
-      <int>36</int>
-      <int>36</int>
-      <int>40</int>
-      <int>40</int>
+      <int>51</int>
+      <int>6</int>
       <int>48</int>
+      <int>9</int>
+      <int>13</int>
+    </int-array>
+    <int-array>
+      <int>14</int>
+      <int>2</int>
+      <int>2</int>
+      <int>6</int>
+      <int>6</int>
+      <int>15</int>
+      <int>9</int>
+      <int>13</int>
+    </int-array>
+    <int-array>
+      <int>52</int>
+      <int>18</int>
+      <int>22</int>
+      <int>23</int>
+      <int>6</int>
+      <int>9</int>
+      <int>9</int>
+      <int>13</int>
+    </int-array>
+    <int-array>
+      <int>18</int>
+      <int>18</int>
+      <int>22</int>
+      <int>25</int>
+      <int>26</int>
+      <int>26</int>
+      <int>28</int>
+      <int>13</int>
+    </int-array>
+    <int-array>
+      <int>30</int>
+      <int>18</int>
+      <int>22</int>
+      <int>25</int>
+      <int>25</int>
+      <int>25</int>
+      <int>32</int>
+      <int>28</int>
+    </int-array>
+    <int-array>
+      <int>30</int>
+      <int>30</int>
+      <int>22</int>
+      <int>34</int>
+      <int>34</int>
+      <int>37</int>
+      <int>39</int>
+      <int>32</int>
+    </int-array>
+    <int-array>
       <int>41</int>
+      <int>43</int>
+      <int>45</int>
+      <int>34</int>
+      <int>34</int>
+      <int>37</int>
+      <int>49</int>
+      <int>39</int>
+    </int-array>
+    <int-array>
+      <int>41</int>
+      <int>43</int>
+      <int>45</int>
+      <int>46</int>
+      <int>47</int>
+      <int>37</int>
+      <int>37</int>
+      <int>50</int>
     </int-array>
   </group>
   <cages>
     <Model.Cage-array>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
-        <id>42</id>
-        <quantity>1</quantity>
-        <result>8</result>
-        <coordinates>
-          <list>
-            <int>0</int>
-            <int>0</int>
-          </list>
-        </coordinates>
-        <cage>
-          <boolean-array>
-            <boolean>true</boolean>
-          </boolean-array>
-          <boolean-array>
-            <boolean>false</boolean>
-          </boolean-array>
-          <boolean-array>
-            <boolean>false</boolean>
-          </boolean-array>
-          <boolean-array>
-            <boolean>false</boolean>
-          </boolean-array>
-        </cage>
-        <operation>^</operation>
-        <isLinear>true</isLinear>
-      </Model.Cage>
-      <Model.Cage>
-        <cantSolutionsTested>10</cantSolutionsTested>
         <id>2</id>
         <quantity>4</quantity>
-        <result>14</result>
+        <result>16</result>
         <coordinates>
           <list>
             <int>0</int>
-            <int>1</int>
+            <int>0</int>
           </list>
           <list>
-            <int>1</int>
             <int>0</int>
+            <int>1</int>
           </list>
           <list>
             <int>1</int>
@@ -300,12 +272,12 @@
         </coordinates>
         <cage>
           <boolean-array>
-            <boolean>false</boolean>
+            <boolean>true</boolean>
             <boolean>true</boolean>
             <boolean>false</boolean>
           </boolean-array>
           <boolean-array>
-            <boolean>true</boolean>
+            <boolean>false</boolean>
             <boolean>true</boolean>
             <boolean>true</boolean>
           </boolean-array>
@@ -314,311 +286,545 @@
         <isLinear>false</isLinear>
         <solutions>
           <list>
-            <int>5</int>
-            <int>0</int>
+            <int>1</int>
+            <int>7</int>
+            <int>1</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>1</int>
+            <int>7</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>6</int>
             <int>2</int>
             <int>7</int>
           </list>
           <list>
-            <int>5</int>
-            <int>0</int>
+            <int>1</int>
+            <int>6</int>
             <int>7</int>
             <int>2</int>
           </list>
           <list>
+            <int>1</int>
             <int>7</int>
-            <int>0</int>
-            <int>2</int>
-            <int>5</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>0</int>
-            <int>5</int>
-            <int>2</int>
-          </list>
-          <list>
-            <int>6</int>
-            <int>0</int>
             <int>2</int>
             <int>6</int>
           </list>
           <list>
+            <int>1</int>
             <int>7</int>
-            <int>0</int>
-            <int>3</int>
-            <int>4</int>
+            <int>6</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>1</int>
+            <int>2</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>1</int>
+            <int>7</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>7</int>
+            <int>1</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>7</int>
+            <int>2</int>
+            <int>1</int>
           </list>
           <list>
             <int>7</int>
+            <int>1</int>
+            <int>2</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>1</int>
+            <int>6</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>6</int>
+            <int>1</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>6</int>
+            <int>2</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>5</int>
             <int>3</int>
-            <int>0</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>7</int>
+            <int>3</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>1</int>
+            <int>3</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>7</int>
+            <int>3</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>1</int>
+            <int>3</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>5</int>
+            <int>3</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>6</int>
+            <int>3</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>1</int>
+            <int>3</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>1</int>
             <int>4</int>
+            <int>5</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>4</int>
+            <int>6</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>4</int>
+            <int>1</int>
+            <int>5</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>4</int>
+            <int>1</int>
+            <int>6</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>4</int>
+            <int>5</int>
+            <int>1</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>4</int>
+            <int>5</int>
+            <int>6</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>4</int>
+            <int>6</int>
+            <int>1</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>4</int>
+            <int>6</int>
+            <int>5</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>4</int>
+            <int>1</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>4</int>
+            <int>6</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>4</int>
+            <int>1</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>4</int>
+            <int>5</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>4</int>
+            <int>7</int>
+            <int>3</int>
+            <int>2</int>
           </list>
           <list>
             <int>7</int>
             <int>4</int>
-            <int>0</int>
             <int>3</int>
+            <int>2</int>
           </list>
           <list>
             <int>5</int>
-            <int>0</int>
-            <int>3</int>
-            <int>6</int>
-          </list>
-          <list>
-            <int>5</int>
-            <int>0</int>
             <int>6</int>
             <int>3</int>
-          </list>
-          <list>
-            <int>5</int>
-            <int>3</int>
-            <int>0</int>
-            <int>6</int>
+            <int>2</int>
           </list>
           <list>
             <int>6</int>
-            <int>0</int>
-            <int>3</int>
-            <int>5</int>
-          </list>
-          <list>
-            <int>6</int>
-            <int>0</int>
-            <int>5</int>
-            <int>3</int>
-          </list>
-          <list>
-            <int>6</int>
-            <int>3</int>
-            <int>0</int>
-            <int>5</int>
-          </list>
-          <list>
-            <int>5</int>
-            <int>4</int>
-            <int>0</int>
-            <int>5</int>
-          </list>
-          <list>
             <int>5</int>
             <int>3</int>
             <int>2</int>
+          </list>
+          <list>
             <int>4</int>
+            <int>5</int>
+            <int>2</int>
+            <int>5</int>
           </list>
           <list>
             <int>5</int>
             <int>4</int>
             <int>2</int>
-            <int>3</int>
+            <int>5</int>
           </list>
           <list>
             <int>5</int>
             <int>4</int>
-            <int>3</int>
+            <int>5</int>
             <int>2</int>
           </list>
         </solutions>
       </Model.Cage>
+      <Model.Cage reference="../Model.Cage"/>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
         <id>3</id>
-        <quantity>1</quantity>
-        <result>0</result>
-        <coordinates>
-          <list>
-            <int>0</int>
-            <int>2</int>
-          </list>
-        </coordinates>
-        <cage>
-          <boolean-array>
-            <boolean>true</boolean>
-          </boolean-array>
-        </cage>
-        <operation>^</operation>
-        <isLinear>false</isLinear>
-      </Model.Cage>
-      <Model.Cage>
-        <cantSolutionsTested>11</cantSolutionsTested>
-        <id>7</id>
-        <quantity>4</quantity>
-        <result>13</result>
-        <coordinates>
-          <list>
-            <int>0</int>
-            <int>3</int>
-          </list>
-          <list>
-            <int>1</int>
-            <int>3</int>
-          </list>
-          <list>
-            <int>2</int>
-            <int>3</int>
-          </list>
-          <list>
-            <int>3</int>
-            <int>3</int>
-          </list>
-        </coordinates>
-        <cage>
-          <boolean-array>
-            <boolean>true</boolean>
-          </boolean-array>
-          <boolean-array>
-            <boolean>true</boolean>
-          </boolean-array>
-          <boolean-array>
-            <boolean>true</boolean>
-          </boolean-array>
-          <boolean-array>
-            <boolean>true</boolean>
-          </boolean-array>
-        </cage>
-        <operation>+</operation>
-        <isLinear>true</isLinear>
-        <solutions>
-          <list>
-            <int>5</int>
-            <int>0</int>
-            <int>1</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>5</int>
-            <int>0</int>
-            <int>7</int>
-            <int>1</int>
-          </list>
-          <list>
-            <int>5</int>
-            <int>7</int>
-            <int>0</int>
-            <int>1</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>0</int>
-            <int>1</int>
-            <int>5</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>5</int>
-            <int>0</int>
-            <int>1</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>0</int>
-            <int>2</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>0</int>
-            <int>7</int>
-            <int>2</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>2</int>
-            <int>0</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>7</int>
-            <int>0</int>
-            <int>2</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>0</int>
-            <int>4</int>
-            <int>2</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>4</int>
-            <int>0</int>
-            <int>2</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>2</int>
-            <int>1</int>
-            <int>3</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>2</int>
-            <int>3</int>
-            <int>1</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>3</int>
-            <int>1</int>
-            <int>2</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>3</int>
-            <int>2</int>
-            <int>1</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>3</int>
-            <int>1</int>
-            <int>5</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>5</int>
-            <int>1</int>
-            <int>3</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>5</int>
-            <int>3</int>
-            <int>1</int>
-          </list>
-          <list>
-            <int>5</int>
-            <int>3</int>
-            <int>4</int>
-            <int>1</int>
-          </list>
-          <list>
-            <int>5</int>
-            <int>4</int>
-            <int>1</int>
-            <int>3</int>
-          </list>
-          <list>
-            <int>5</int>
-            <int>4</int>
-            <int>3</int>
-            <int>1</int>
-          </list>
-        </solutions>
-      </Model.Cage>
-      <Model.Cage>
-        <cantSolutionsTested>0</cantSolutionsTested>
-        <id>8</id>
         <quantity>1</quantity>
         <result>27</result>
         <coordinates>
           <list>
             <int>0</int>
+            <int>2</int>
+          </list>
+        </coordinates>
+        <cage>
+          <boolean-array>
+            <boolean>true</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>false</boolean>
+          </boolean-array>
+        </cage>
+        <operation>^</operation>
+        <isLinear>false</isLinear>
+      </Model.Cage>
+      <Model.Cage>
+        <cantSolutionsTested>0</cantSolutionsTested>
+        <id>51</id>
+        <quantity>1</quantity>
+        <result>0</result>
+        <coordinates>
+          <list>
+            <int>0</int>
+            <int>3</int>
+          </list>
+        </coordinates>
+        <cage>
+          <boolean-array>
+            <boolean>true</boolean>
+            <boolean>false</boolean>
+            <boolean>false</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>false</boolean>
+            <boolean>false</boolean>
+            <boolean>false</boolean>
+          </boolean-array>
+        </cage>
+        <operation>^</operation>
+        <isLinear>false</isLinear>
+      </Model.Cage>
+      <Model.Cage>
+        <cantSolutionsTested>0</cantSolutionsTested>
+        <id>6</id>
+        <quantity>4</quantity>
+        <result>14</result>
+        <coordinates>
+          <list>
+            <int>0</int>
             <int>4</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>4</int>
+          </list>
+        </coordinates>
+        <cage>
+          <boolean-array>
+            <boolean>false</boolean>
+            <boolean>true</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>true</boolean>
+            <boolean>true</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>false</boolean>
+            <boolean>true</boolean>
+          </boolean-array>
+        </cage>
+        <operation>+</operation>
+        <isLinear>false</isLinear>
+        <solutions>
+          <list>
+            <int>1</int>
+            <int>6</int>
+            <int>7</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>7</int>
+            <int>6</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>1</int>
+            <int>7</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>7</int>
+            <int>1</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>1</int>
+            <int>6</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>6</int>
+            <int>1</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>2</int>
+            <int>7</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>7</int>
+            <int>2</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>2</int>
+            <int>5</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>6</int>
+            <int>2</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>3</int>
+            <int>6</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>6</int>
+            <int>3</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>3</int>
+            <int>5</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>1</int>
+            <int>5</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>1</int>
+            <int>7</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>1</int>
+            <int>7</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>1</int>
+            <int>5</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>2</int>
+            <int>5</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>2</int>
+            <int>6</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>6</int>
+            <int>2</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>6</int>
+            <int>5</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>1</int>
+            <int>2</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>1</int>
+            <int>6</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>2</int>
+            <int>1</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>2</int>
+            <int>6</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>6</int>
+            <int>1</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>6</int>
+            <int>2</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>1</int>
+            <int>2</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>1</int>
+            <int>5</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>2</int>
+            <int>1</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>2</int>
+            <int>5</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>2</int>
+            <int>3</int>
+            <int>2</int>
+          </list>
+        </solutions>
+      </Model.Cage>
+      <Model.Cage>
+        <cantSolutionsTested>0</cantSolutionsTested>
+        <id>48</id>
+        <quantity>1</quantity>
+        <result>8</result>
+        <coordinates>
+          <list>
+            <int>0</int>
+            <int>5</int>
           </list>
         </coordinates>
         <cage>
@@ -632,403 +838,21 @@
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
         <id>9</id>
-        <quantity>1</quantity>
-        <result>1</result>
-        <coordinates>
-          <list>
-            <int>0</int>
-            <int>5</int>
-          </list>
-        </coordinates>
-        <cage>
-          <boolean-array>
-            <boolean>true</boolean>
-          </boolean-array>
-        </cage>
-        <operation>^</operation>
-        <isLinear>false</isLinear>
-      </Model.Cage>
-      <Model.Cage>
-        <cantSolutionsTested>2</cantSolutionsTested>
-        <id>11</id>
         <quantity>4</quantity>
-        <result>19</result>
+        <result>90</result>
         <coordinates>
           <list>
             <int>0</int>
             <int>6</int>
           </list>
           <list>
-            <int>0</int>
-            <int>7</int>
-          </list>
-          <list>
             <int>1</int>
             <int>6</int>
           </list>
           <list>
-            <int>1</int>
-            <int>7</int>
-          </list>
-        </coordinates>
-        <cage>
-          <boolean-array>
-            <boolean>true</boolean>
-            <boolean>true</boolean>
-          </boolean-array>
-          <boolean-array>
-            <boolean>true</boolean>
-            <boolean>true</boolean>
-          </boolean-array>
-        </cage>
-        <operation>+</operation>
-        <isLinear>false</isLinear>
-        <solutions>
-          <list>
-            <int>7</int>
-            <int>5</int>
-            <int>0</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>6</int>
-            <int>7</int>
-            <int>2</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>6</int>
-            <int>4</int>
-            <int>2</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>5</int>
-            <int>3</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>5</int>
-            <int>7</int>
-            <int>3</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>7</int>
-            <int>3</int>
-            <int>5</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>4</int>
-            <int>3</int>
-            <int>5</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>5</int>
-            <int>3</int>
-            <int>4</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>5</int>
-            <int>4</int>
-            <int>3</int>
-          </list>
-        </solutions>
-      </Model.Cage>
-      <Model.Cage reference="../Model.Cage[7]"/>
-    </Model.Cage-array>
-    <Model.Cage-array>
-      <Model.Cage reference="../../Model.Cage-array/Model.Cage[2]"/>
-      <Model.Cage reference="../../Model.Cage-array/Model.Cage[2]"/>
-      <Model.Cage reference="../../Model.Cage-array/Model.Cage[2]"/>
-      <Model.Cage reference="../../Model.Cage-array/Model.Cage[4]"/>
-      <Model.Cage>
-        <cantSolutionsTested>0</cantSolutionsTested>
-        <id>12</id>
-        <quantity>1</quantity>
-        <result>1</result>
-        <coordinates>
-          <list>
-            <int>1</int>
-            <int>4</int>
-          </list>
-        </coordinates>
-        <cage>
-          <boolean-array>
-            <boolean>true</boolean>
-          </boolean-array>
-        </cage>
-        <operation>^</operation>
-        <isLinear>false</isLinear>
-      </Model.Cage>
-      <Model.Cage>
-        <cantSolutionsTested>17</cantSolutionsTested>
-        <id>15</id>
-        <quantity>4</quantity>
-        <result>19</result>
-        <coordinates>
-          <list>
-            <int>1</int>
-            <int>5</int>
-          </list>
-          <list>
             <int>2</int>
             <int>5</int>
           </list>
-          <list>
-            <int>3</int>
-            <int>5</int>
-          </list>
-          <list>
-            <int>3</int>
-            <int>6</int>
-          </list>
-        </coordinates>
-        <cage>
-          <boolean-array>
-            <boolean>true</boolean>
-            <boolean>false</boolean>
-          </boolean-array>
-          <boolean-array>
-            <boolean>true</boolean>
-            <boolean>false</boolean>
-          </boolean-array>
-          <boolean-array>
-            <boolean>true</boolean>
-            <boolean>true</boolean>
-          </boolean-array>
-        </cage>
-        <operation>+</operation>
-        <isLinear>false</isLinear>
-        <solutions>
-          <list>
-            <int>5</int>
-            <int>7</int>
-            <int>6</int>
-            <int>1</int>
-          </list>
-          <list>
-            <int>6</int>
-            <int>7</int>
-            <int>5</int>
-            <int>1</int>
-          </list>
-          <list>
-            <int>2</int>
-            <int>7</int>
-            <int>3</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>3</int>
-            <int>7</int>
-            <int>2</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>2</int>
-            <int>3</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>3</int>
-            <int>2</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>2</int>
-            <int>4</int>
-            <int>6</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>2</int>
-            <int>6</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>6</int>
-            <int>4</int>
-            <int>2</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>3</int>
-            <int>7</int>
-            <int>6</int>
-            <int>3</int>
-          </list>
-          <list>
-            <int>6</int>
-            <int>3</int>
-            <int>7</int>
-            <int>3</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>3</int>
-            <int>6</int>
-            <int>3</int>
-          </list>
-          <list>
-            <int>3</int>
-            <int>4</int>
-            <int>5</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>3</int>
-            <int>5</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>7</int>
-            <int>5</int>
-            <int>3</int>
-          </list>
-          <list>
-            <int>5</int>
-            <int>4</int>
-            <int>3</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>5</int>
-            <int>4</int>
-            <int>7</int>
-            <int>3</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>4</int>
-            <int>5</int>
-            <int>3</int>
-          </list>
-        </solutions>
-      </Model.Cage>
-      <Model.Cage reference="../../Model.Cage-array/Model.Cage[7]"/>
-      <Model.Cage reference="../../Model.Cage-array/Model.Cage[7]"/>
-    </Model.Cage-array>
-    <Model.Cage-array>
-      <Model.Cage>
-        <cantSolutionsTested>1</cantSolutionsTested>
-        <id>17</id>
-        <quantity>2</quantity>
-        <result>3</result>
-        <coordinates>
-          <list>
-            <int>2</int>
-            <int>0</int>
-          </list>
-          <list>
-            <int>3</int>
-            <int>0</int>
-          </list>
-        </coordinates>
-        <cage>
-          <boolean-array>
-            <boolean>true</boolean>
-          </boolean-array>
-          <boolean-array>
-            <boolean>true</boolean>
-          </boolean-array>
-        </cage>
-        <operation>/</operation>
-        <isLinear>false</isLinear>
-        <solutions>
-          <list>
-            <int>3</int>
-            <int>1</int>
-          </list>
-          <list>
-            <int>1</int>
-            <int>3</int>
-          </list>
-        </solutions>
-      </Model.Cage>
-      <Model.Cage>
-        <cantSolutionsTested>1</cantSolutionsTested>
-        <id>18</id>
-        <quantity>2</quantity>
-        <result>2</result>
-        <coordinates>
-          <list>
-            <int>2</int>
-            <int>1</int>
-          </list>
-          <list>
-            <int>2</int>
-            <int>2</int>
-          </list>
-        </coordinates>
-        <cage>
-          <boolean-array>
-            <boolean>true</boolean>
-            <boolean>true</boolean>
-            <boolean>false</boolean>
-            <boolean>false</boolean>
-          </boolean-array>
-        </cage>
-        <operation>/</operation>
-        <isLinear>true</isLinear>
-        <solutions>
-          <list>
-            <int>2</int>
-            <int>1</int>
-          </list>
-          <list>
-            <int>2</int>
-            <int>4</int>
-          </list>
-        </solutions>
-      </Model.Cage>
-      <Model.Cage reference="../Model.Cage[2]"/>
-      <Model.Cage reference="../../Model.Cage-array/Model.Cage[4]"/>
-      <Model.Cage>
-        <cantSolutionsTested>0</cantSolutionsTested>
-        <id>43</id>
-        <quantity>1</quantity>
-        <result>216</result>
-        <coordinates>
-          <list>
-            <int>2</int>
-            <int>4</int>
-          </list>
-        </coordinates>
-        <cage>
-          <boolean-array>
-            <boolean>true</boolean>
-            <boolean>false</boolean>
-          </boolean-array>
-          <boolean-array>
-            <boolean>false</boolean>
-            <boolean>false</boolean>
-          </boolean-array>
-          <boolean-array>
-            <boolean>false</boolean>
-            <boolean>false</boolean>
-          </boolean-array>
-        </cage>
-        <operation>^</operation>
-        <isLinear>false</isLinear>
-      </Model.Cage>
-      <Model.Cage reference="../../Model.Cage-array[2]/Model.Cage[6]"/>
-      <Model.Cage>
-        <cantSolutionsTested>0</cantSolutionsTested>
-        <id>20</id>
-        <quantity>1</quantity>
-        <result>125</result>
-        <coordinates>
           <list>
             <int>2</int>
             <int>6</int>
@@ -1036,84 +860,314 @@
         </coordinates>
         <cage>
           <boolean-array>
+            <boolean>false</boolean>
             <boolean>true</boolean>
-            <boolean>false</boolean>
-            <boolean>false</boolean>
           </boolean-array>
           <boolean-array>
             <boolean>false</boolean>
-            <boolean>false</boolean>
-            <boolean>false</boolean>
-          </boolean-array>
-        </cage>
-        <operation>^</operation>
-        <isLinear>false</isLinear>
-      </Model.Cage>
-      <Model.Cage>
-        <cantSolutionsTested>1</cantSolutionsTested>
-        <id>23</id>
-        <quantity>3</quantity>
-        <result>140</result>
-        <coordinates>
-          <list>
-            <int>2</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>3</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>7</int>
-          </list>
-        </coordinates>
-        <cage>
-          <boolean-array>
             <boolean>true</boolean>
-            <boolean>false</boolean>
           </boolean-array>
           <boolean-array>
             <boolean>true</boolean>
-            <boolean>false</boolean>
-          </boolean-array>
-          <boolean-array>
             <boolean>true</boolean>
-            <boolean>false</boolean>
           </boolean-array>
         </cage>
         <operation>*</operation>
         <isLinear>false</isLinear>
         <solutions>
           <list>
+            <int>1</int>
+            <int>3</int>
+            <int>5</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>3</int>
+            <int>6</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>3</int>
+            <int>1</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>3</int>
+            <int>6</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>3</int>
+            <int>1</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>3</int>
+            <int>5</int>
+            <int>1</int>
+          </list>
+        </solutions>
+      </Model.Cage>
+      <Model.Cage>
+        <cantSolutionsTested>0</cantSolutionsTested>
+        <id>13</id>
+        <quantity>4</quantity>
+        <result>210</result>
+        <coordinates>
+          <list>
+            <int>0</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>3</int>
+            <int>7</int>
+          </list>
+        </coordinates>
+        <cage>
+          <boolean-array>
+            <boolean>true</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>true</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>true</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>true</boolean>
+          </boolean-array>
+        </cage>
+        <operation>*</operation>
+        <isLinear>true</isLinear>
+        <solutions>
+          <list>
+            <int>1</int>
+            <int>5</int>
+            <int>6</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>5</int>
+            <int>7</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>6</int>
+            <int>5</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>6</int>
             <int>7</int>
             <int>5</int>
-            <int>4</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>7</int>
+            <int>5</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>7</int>
+            <int>6</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>1</int>
+            <int>6</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>1</int>
+            <int>7</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>6</int>
+            <int>1</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>6</int>
+            <int>7</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>7</int>
+            <int>1</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>7</int>
+            <int>6</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>1</int>
+            <int>5</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>1</int>
+            <int>7</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>5</int>
+            <int>1</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>5</int>
+            <int>7</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>7</int>
+            <int>1</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>7</int>
+            <int>5</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>1</int>
+            <int>5</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>1</int>
+            <int>6</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>5</int>
+            <int>1</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>5</int>
+            <int>6</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>6</int>
+            <int>1</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>6</int>
+            <int>5</int>
+            <int>1</int>
           </list>
         </solutions>
       </Model.Cage>
     </Model.Cage-array>
     <Model.Cage-array>
-      <Model.Cage reference="../../Model.Cage-array[3]/Model.Cage"/>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
-        <id>44</id>
+        <id>14</id>
+        <quantity>1</quantity>
+        <result>0</result>
+        <coordinates>
+          <list>
+            <int>1</int>
+            <int>0</int>
+          </list>
+        </coordinates>
+        <cage>
+          <boolean-array>
+            <boolean>true</boolean>
+          </boolean-array>
+        </cage>
+        <operation>^</operation>
+        <isLinear>false</isLinear>
+      </Model.Cage>
+      <Model.Cage reference="../../Model.Cage-array/Model.Cage"/>
+      <Model.Cage reference="../../Model.Cage-array/Model.Cage"/>
+      <Model.Cage reference="../../Model.Cage-array/Model.Cage[5]"/>
+      <Model.Cage reference="../../Model.Cage-array/Model.Cage[5]"/>
+      <Model.Cage>
+        <cantSolutionsTested>0</cantSolutionsTested>
+        <id>15</id>
         <quantity>1</quantity>
         <result>64</result>
         <coordinates>
           <list>
-            <int>3</int>
             <int>1</int>
+            <int>5</int>
+          </list>
+        </coordinates>
+        <cage>
+          <boolean-array>
+            <boolean>true</boolean>
+          </boolean-array>
+        </cage>
+        <operation>^</operation>
+        <isLinear>false</isLinear>
+      </Model.Cage>
+      <Model.Cage reference="../../Model.Cage-array/Model.Cage[7]"/>
+      <Model.Cage reference="../../Model.Cage-array/Model.Cage[8]"/>
+    </Model.Cage-array>
+    <Model.Cage-array>
+      <Model.Cage>
+        <cantSolutionsTested>0</cantSolutionsTested>
+        <id>52</id>
+        <quantity>1</quantity>
+        <result>27</result>
+        <coordinates>
+          <list>
+            <int>2</int>
+            <int>0</int>
           </list>
         </coordinates>
         <cage>
           <boolean-array>
             <boolean>true</boolean>
             <boolean>false</boolean>
-            <boolean>false</boolean>
           </boolean-array>
           <boolean-array>
             <boolean>false</boolean>
+            <boolean>false</boolean>
+          </boolean-array>
+          <boolean-array>
             <boolean>false</boolean>
             <boolean>false</boolean>
           </boolean-array>
@@ -1122,11 +1176,705 @@
         <isLinear>false</isLinear>
       </Model.Cage>
       <Model.Cage>
-        <cantSolutionsTested>8</cantSolutionsTested>
-        <id>26</id>
+        <cantSolutionsTested>0</cantSolutionsTested>
+        <id>18</id>
         <quantity>4</quantity>
-        <result>20</result>
+        <result>12</result>
         <coordinates>
+          <list>
+            <int>2</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>3</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>3</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>4</int>
+            <int>1</int>
+          </list>
+        </coordinates>
+        <cage>
+          <boolean-array>
+            <boolean>false</boolean>
+            <boolean>true</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>true</boolean>
+            <boolean>true</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>false</boolean>
+            <boolean>true</boolean>
+          </boolean-array>
+        </cage>
+        <operation>+</operation>
+        <isLinear>false</isLinear>
+        <solutions>
+          <list>
+            <int>0</int>
+            <int>1</int>
+            <int>4</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>1</int>
+            <int>7</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>4</int>
+            <int>1</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>4</int>
+            <int>7</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>7</int>
+            <int>1</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>7</int>
+            <int>4</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>4</int>
+            <int>0</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>4</int>
+            <int>7</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>7</int>
+            <int>0</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>7</int>
+            <int>4</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>1</int>
+            <int>0</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>1</int>
+            <int>4</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>4</int>
+            <int>0</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>4</int>
+            <int>1</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>1</int>
+            <int>5</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>1</int>
+            <int>6</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>5</int>
+            <int>1</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>5</int>
+            <int>6</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>6</int>
+            <int>1</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>6</int>
+            <int>5</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>5</int>
+            <int>0</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>5</int>
+            <int>6</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>6</int>
+            <int>0</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>6</int>
+            <int>5</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>1</int>
+            <int>0</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>1</int>
+            <int>6</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>6</int>
+            <int>0</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>6</int>
+            <int>1</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>1</int>
+            <int>0</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>1</int>
+            <int>5</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>5</int>
+            <int>0</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>5</int>
+            <int>1</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>2</int>
+            <int>3</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>2</int>
+            <int>7</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>7</int>
+            <int>2</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>7</int>
+            <int>3</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>7</int>
+            <int>0</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>7</int>
+            <int>3</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>2</int>
+            <int>0</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>2</int>
+            <int>3</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>2</int>
+            <int>4</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>2</int>
+            <int>6</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>4</int>
+            <int>2</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>4</int>
+            <int>6</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>6</int>
+            <int>2</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>6</int>
+            <int>4</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>4</int>
+            <int>0</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>4</int>
+            <int>6</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>6</int>
+            <int>0</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>6</int>
+            <int>4</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>2</int>
+            <int>0</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>2</int>
+            <int>4</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>4</int>
+            <int>0</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>4</int>
+            <int>2</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>5</int>
+            <int>2</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>5</int>
+            <int>0</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>5</int>
+            <int>0</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>5</int>
+            <int>2</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>4</int>
+            <int>3</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>4</int>
+            <int>5</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>5</int>
+            <int>3</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>0</int>
+            <int>5</int>
+            <int>4</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>4</int>
+            <int>0</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>4</int>
+            <int>3</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>1</int>
+            <int>3</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>1</int>
+            <int>7</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>1</int>
+            <int>3</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>1</int>
+            <int>4</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>1</int>
+            <int>6</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>1</int>
+            <int>4</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>2</int>
+            <int>7</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>2</int>
+            <int>1</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>2</int>
+            <int>7</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>2</int>
+            <int>1</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>2</int>
+            <int>3</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>2</int>
+            <int>6</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>6</int>
+            <int>2</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>6</int>
+            <int>3</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>1</int>
+            <int>3</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>1</int>
+            <int>6</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>6</int>
+            <int>1</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>6</int>
+            <int>3</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>1</int>
+            <int>2</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>1</int>
+            <int>3</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>2</int>
+            <int>1</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>2</int>
+            <int>3</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>2</int>
+            <int>4</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>2</int>
+            <int>5</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>4</int>
+            <int>2</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>4</int>
+            <int>5</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>5</int>
+            <int>2</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>5</int>
+            <int>4</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>1</int>
+            <int>4</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>1</int>
+            <int>5</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>4</int>
+            <int>1</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>4</int>
+            <int>5</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>5</int>
+            <int>1</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>5</int>
+            <int>4</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>1</int>
+            <int>2</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>1</int>
+            <int>4</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>2</int>
+            <int>1</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>2</int>
+            <int>4</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>4</int>
+            <int>1</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>4</int>
+            <int>2</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>4</int>
+            <int>3</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>2</int>
+            <int>3</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>2</int>
+            <int>5</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>2</int>
+            <int>3</int>
+            <int>2</int>
+          </list>
+        </solutions>
+      </Model.Cage>
+      <Model.Cage>
+        <cantSolutionsTested>0</cantSolutionsTested>
+        <id>22</id>
+        <quantity>4</quantity>
+        <result>336</result>
+        <coordinates>
+          <list>
+            <int>2</int>
+            <int>2</int>
+          </list>
           <list>
             <int>3</int>
             <int>2</int>
@@ -1137,23 +1885,195 @@
           </list>
           <list>
             <int>5</int>
-            <int>1</int>
-          </list>
-          <list>
-            <int>5</int>
             <int>2</int>
           </list>
         </coordinates>
         <cage>
           <boolean-array>
-            <boolean>false</boolean>
             <boolean>true</boolean>
           </boolean-array>
           <boolean-array>
-            <boolean>false</boolean>
             <boolean>true</boolean>
           </boolean-array>
           <boolean-array>
+            <boolean>true</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>true</boolean>
+          </boolean-array>
+        </cage>
+        <operation>*</operation>
+        <isLinear>true</isLinear>
+        <solutions>
+          <list>
+            <int>2</int>
+            <int>4</int>
+            <int>6</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>4</int>
+            <int>7</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>6</int>
+            <int>4</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>6</int>
+            <int>7</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>7</int>
+            <int>4</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>7</int>
+            <int>6</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>2</int>
+            <int>4</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>2</int>
+            <int>7</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>4</int>
+            <int>2</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>4</int>
+            <int>7</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>7</int>
+            <int>2</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>7</int>
+            <int>4</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>2</int>
+            <int>4</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>2</int>
+            <int>6</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>4</int>
+            <int>2</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>4</int>
+            <int>6</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>6</int>
+            <int>2</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>6</int>
+            <int>4</int>
+            <int>2</int>
+          </list>
+        </solutions>
+      </Model.Cage>
+      <Model.Cage>
+        <cantSolutionsTested>0</cantSolutionsTested>
+        <id>23</id>
+        <quantity>1</quantity>
+        <result>64</result>
+        <coordinates>
+          <list>
+            <int>2</int>
+            <int>3</int>
+          </list>
+        </coordinates>
+        <cage>
+          <boolean-array>
+            <boolean>true</boolean>
+          </boolean-array>
+        </cage>
+        <operation>^</operation>
+        <isLinear>false</isLinear>
+      </Model.Cage>
+      <Model.Cage reference="../../Model.Cage-array/Model.Cage[5]"/>
+      <Model.Cage reference="../../Model.Cage-array/Model.Cage[7]"/>
+      <Model.Cage reference="../../Model.Cage-array/Model.Cage[7]"/>
+      <Model.Cage reference="../../Model.Cage-array/Model.Cage[8]"/>
+    </Model.Cage-array>
+    <Model.Cage-array>
+      <Model.Cage reference="../../Model.Cage-array[3]/Model.Cage[2]"/>
+      <Model.Cage reference="../../Model.Cage-array[3]/Model.Cage[2]"/>
+      <Model.Cage reference="../../Model.Cage-array[3]/Model.Cage[3]"/>
+      <Model.Cage>
+        <cantSolutionsTested>0</cantSolutionsTested>
+        <id>25</id>
+        <quantity>4</quantity>
+        <result>10</result>
+        <coordinates>
+          <list>
+            <int>3</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>4</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>4</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>4</int>
+            <int>5</int>
+          </list>
+        </coordinates>
+        <cage>
+          <boolean-array>
+            <boolean>true</boolean>
+            <boolean>false</boolean>
+            <boolean>false</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>true</boolean>
             <boolean>true</boolean>
             <boolean>true</boolean>
           </boolean-array>
@@ -1162,207 +2082,226 @@
         <isLinear>false</isLinear>
         <solutions>
           <list>
+            <int>1</int>
+            <int>2</int>
+            <int>0</int>
             <int>7</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>2</int>
+            <int>7</int>
+            <int>0</int>
+          </list>
+          <list>
             <int>1</int>
             <int>7</int>
-            <int>5</int>
+            <int>2</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>1</int>
+            <int>0</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>1</int>
+            <int>7</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>7</int>
+            <int>0</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>7</int>
+            <int>1</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>1</int>
+            <int>2</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>2</int>
+            <int>0</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>2</int>
+            <int>1</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>3</int>
+            <int>0</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>3</int>
+            <int>6</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>6</int>
+            <int>0</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>6</int>
+            <int>3</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>3</int>
+            <int>1</int>
+            <int>0</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>3</int>
+            <int>1</int>
+            <int>6</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>3</int>
+            <int>6</int>
+            <int>0</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>3</int>
+            <int>6</int>
+            <int>1</int>
+            <int>0</int>
           </list>
           <list>
             <int>6</int>
             <int>1</int>
-            <int>6</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>2</int>
-            <int>7</int>
-            <int>4</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>4</int>
-            <int>7</int>
-            <int>2</int>
-          </list>
-          <list>
-            <int>5</int>
-            <int>2</int>
-            <int>6</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>5</int>
-            <int>2</int>
-            <int>7</int>
-            <int>6</int>
+            <int>0</int>
+            <int>3</int>
           </list>
           <list>
             <int>6</int>
-            <int>2</int>
-            <int>5</int>
-            <int>7</int>
+            <int>1</int>
+            <int>3</int>
+            <int>0</int>
           </list>
           <list>
             <int>6</int>
-            <int>2</int>
-            <int>7</int>
-            <int>5</int>
+            <int>3</int>
+            <int>0</int>
+            <int>1</int>
           </list>
           <list>
-            <int>7</int>
-            <int>2</int>
-            <int>5</int>
             <int>6</int>
+            <int>3</int>
+            <int>1</int>
+            <int>0</int>
           </list>
           <list>
-            <int>7</int>
             <int>2</int>
             <int>6</int>
+            <int>2</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>3</int>
+            <int>0</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>3</int>
+            <int>5</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>3</int>
+            <int>2</int>
+            <int>0</int>
             <int>5</int>
           </list>
           <list>
             <int>3</int>
-            <int>4</int>
-            <int>6</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>3</int>
-            <int>4</int>
-            <int>7</int>
-            <int>6</int>
-          </list>
-          <list>
-            <int>6</int>
-            <int>3</int>
-            <int>7</int>
-            <int>4</int>
-          </list>
-          <list>
-            <int>6</int>
-            <int>4</int>
-            <int>3</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>6</int>
-            <int>4</int>
-            <int>7</int>
-            <int>3</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>3</int>
-            <int>6</int>
-            <int>4</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>4</int>
-            <int>3</int>
-            <int>6</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>4</int>
-            <int>6</int>
-            <int>3</int>
-          </list>
-          <list>
+            <int>2</int>
             <int>5</int>
-            <int>3</int>
-            <int>5</int>
-            <int>7</int>
+            <int>0</int>
           </list>
           <list>
+            <int>1</int>
+            <int>2</int>
+            <int>1</int>
             <int>6</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>2</int>
+            <int>6</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>6</int>
+            <int>2</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>1</int>
             <int>3</int>
-            <int>6</int>
+            <int>1</int>
             <int>5</int>
           </list>
           <list>
+            <int>1</int>
+            <int>3</int>
             <int>5</int>
-            <int>4</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>1</int>
+            <int>2</int>
             <int>5</int>
-            <int>6</int>
           </list>
         </solutions>
       </Model.Cage>
-      <Model.Cage reference="../../Model.Cage-array/Model.Cage[4]"/>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
-        <id>19</id>
-        <quantity>1</quantity>
-        <result>0</result>
-        <coordinates>
-          <list>
-            <int>3</int>
-            <int>4</int>
-          </list>
-        </coordinates>
-        <cage>
-          <boolean-array>
-            <boolean>false</boolean>
-            <boolean>false</boolean>
-            <boolean>false</boolean>
-          </boolean-array>
-          <boolean-array>
-            <boolean>true</boolean>
-            <boolean>false</boolean>
-            <boolean>false</boolean>
-          </boolean-array>
-        </cage>
-        <operation>^</operation>
-        <isLinear>false</isLinear>
-      </Model.Cage>
-      <Model.Cage reference="../../Model.Cage-array[2]/Model.Cage[6]"/>
-      <Model.Cage reference="../../Model.Cage-array[2]/Model.Cage[6]"/>
-      <Model.Cage reference="../../Model.Cage-array[3]/Model.Cage[8]"/>
-    </Model.Cage-array>
-    <Model.Cage-array>
-      <Model.Cage>
-        <cantSolutionsTested>0</cantSolutionsTested>
-        <id>45</id>
-        <quantity>1</quantity>
-        <result>125</result>
-        <coordinates>
-          <list>
-            <int>4</int>
-            <int>0</int>
-          </list>
-        </coordinates>
-        <cage>
-          <boolean-array>
-            <boolean>true</boolean>
-          </boolean-array>
-        </cage>
-        <operation>^</operation>
-        <isLinear>false</isLinear>
-      </Model.Cage>
-      <Model.Cage>
-        <cantSolutionsTested>1</cantSolutionsTested>
-        <id>28</id>
+        <id>26</id>
         <quantity>2</quantity>
         <result>3</result>
         <coordinates>
           <list>
+            <int>3</int>
             <int>4</int>
-            <int>1</int>
           </list>
           <list>
+            <int>3</int>
             <int>5</int>
-            <int>0</int>
           </list>
         </coordinates>
         <cage>
           <boolean-array>
-            <boolean>false</boolean>
             <boolean>true</boolean>
-            <boolean>false</boolean>
+            <boolean>true</boolean>
           </boolean-array>
           <boolean-array>
-            <boolean>true</boolean>
             <boolean>false</boolean>
             <boolean>false</boolean>
           </boolean-array>
@@ -1372,307 +2311,239 @@
         <solutions>
           <list>
             <int>3</int>
-            <int>4</int>
-          </list>
-        </solutions>
-      </Model.Cage>
-      <Model.Cage reference="../../Model.Cage-array[4]/Model.Cage[3]"/>
-      <Model.Cage>
-        <cantSolutionsTested>10</cantSolutionsTested>
-        <id>30</id>
-        <quantity>4</quantity>
-        <result>12</result>
-        <coordinates>
-          <list>
-            <int>4</int>
-            <int>3</int>
+            <int>5</int>
           </list>
           <list>
             <int>5</int>
             <int>3</int>
           </list>
           <list>
-            <int>5</int>
-            <int>4</int>
+            <int>3</int>
+            <int>6</int>
           </list>
           <list>
-            <int>5</int>
-            <int>5</int>
+            <int>6</int>
+            <int>3</int>
           </list>
-        </coordinates>
-        <cage>
-          <boolean-array>
-            <boolean>true</boolean>
-            <boolean>false</boolean>
-            <boolean>false</boolean>
-          </boolean-array>
-          <boolean-array>
-            <boolean>true</boolean>
-            <boolean>true</boolean>
-            <boolean>true</boolean>
-          </boolean-array>
-        </cage>
-        <operation>+</operation>
-        <isLinear>false</isLinear>
-        <solutions>
           <list>
-            <int>1</int>
-            <int>0</int>
-            <int>4</int>
+            <int>3</int>
             <int>7</int>
           </list>
           <list>
-            <int>1</int>
-            <int>0</int>
-            <int>5</int>
-            <int>6</int>
-          </list>
-          <list>
-            <int>3</int>
-            <int>0</int>
-            <int>2</int>
             <int>7</int>
-          </list>
-          <list>
-            <int>2</int>
-            <int>0</int>
-            <int>4</int>
-            <int>6</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>0</int>
-            <int>2</int>
-            <int>6</int>
-          </list>
-          <list>
-            <int>3</int>
-            <int>0</int>
-            <int>4</int>
-            <int>5</int>
-          </list>
-          <list>
-            <int>3</int>
-            <int>0</int>
-            <int>5</int>
-            <int>4</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>0</int>
-            <int>5</int>
-            <int>3</int>
-          </list>
-          <list>
-            <int>2</int>
-            <int>1</int>
-            <int>2</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>1</int>
-            <int>3</int>
-            <int>2</int>
-            <int>6</int>
-          </list>
-          <list>
-            <int>3</int>
-            <int>1</int>
-            <int>2</int>
-            <int>6</int>
-          </list>
-          <list>
-            <int>1</int>
-            <int>2</int>
-            <int>4</int>
-            <int>5</int>
-          </list>
-          <list>
-            <int>1</int>
-            <int>2</int>
-            <int>5</int>
-            <int>4</int>
-          </list>
-          <list>
-            <int>1</int>
-            <int>4</int>
-            <int>2</int>
-            <int>5</int>
-          </list>
-          <list>
-            <int>1</int>
-            <int>4</int>
-            <int>5</int>
-            <int>2</int>
-          </list>
-          <list>
-            <int>1</int>
-            <int>5</int>
-            <int>2</int>
-            <int>4</int>
-          </list>
-          <list>
-            <int>1</int>
-            <int>5</int>
-            <int>4</int>
-            <int>2</int>
-          </list>
-          <list>
-            <int>2</int>
-            <int>1</int>
-            <int>4</int>
-            <int>5</int>
-          </list>
-          <list>
-            <int>2</int>
-            <int>1</int>
-            <int>5</int>
-            <int>4</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>1</int>
-            <int>2</int>
-            <int>5</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>1</int>
-            <int>5</int>
-            <int>2</int>
-          </list>
-          <list>
-            <int>3</int>
-            <int>1</int>
-            <int>5</int>
-            <int>3</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>1</int>
-            <int>4</int>
-            <int>3</int>
-          </list>
-          <list>
-            <int>2</int>
-            <int>3</int>
-            <int>2</int>
-            <int>5</int>
-          </list>
-          <list>
-            <int>2</int>
-            <int>3</int>
-            <int>5</int>
-            <int>2</int>
-          </list>
-          <list>
-            <int>2</int>
-            <int>5</int>
-            <int>2</int>
-            <int>3</int>
-          </list>
-          <list>
-            <int>3</int>
-            <int>2</int>
-            <int>4</int>
-            <int>3</int>
-          </list>
-          <list>
-            <int>3</int>
-            <int>4</int>
-            <int>2</int>
             <int>3</int>
           </list>
         </solutions>
       </Model.Cage>
+      <Model.Cage reference="../Model.Cage[5]"/>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
-        <id>31</id>
-        <quantity>1</quantity>
-        <result>343</result>
-        <coordinates>
-          <list>
-            <int>4</int>
-            <int>4</int>
-          </list>
-        </coordinates>
-        <cage>
-          <boolean-array>
-            <boolean>true</boolean>
-          </boolean-array>
-        </cage>
-        <operation>^</operation>
-        <isLinear>false</isLinear>
-      </Model.Cage>
-      <Model.Cage>
-        <cantSolutionsTested>0</cantSolutionsTested>
-        <id>32</id>
-        <quantity>1</quantity>
-        <result>0</result>
-        <coordinates>
-          <list>
-            <int>4</int>
-            <int>5</int>
-          </list>
-        </coordinates>
-        <cage>
-          <boolean-array>
-            <boolean>true</boolean>
-            <boolean>false</boolean>
-          </boolean-array>
-          <boolean-array>
-            <boolean>false</boolean>
-            <boolean>false</boolean>
-          </boolean-array>
-          <boolean-array>
-            <boolean>false</boolean>
-            <boolean>false</boolean>
-          </boolean-array>
-        </cage>
-        <operation>^</operation>
-        <isLinear>false</isLinear>
-      </Model.Cage>
-      <Model.Cage>
-        <cantSolutionsTested>0</cantSolutionsTested>
-        <id>46</id>
-        <quantity>1</quantity>
-        <result>216</result>
-        <coordinates>
-          <list>
-            <int>4</int>
-            <int>6</int>
-          </list>
-        </coordinates>
-        <cage>
-          <boolean-array>
-            <boolean>true</boolean>
-            <boolean>false</boolean>
-          </boolean-array>
-          <boolean-array>
-            <boolean>false</boolean>
-            <boolean>false</boolean>
-          </boolean-array>
-        </cage>
-        <operation>^</operation>
-        <isLinear>false</isLinear>
-      </Model.Cage>
-      <Model.Cage reference="../../Model.Cage-array[3]/Model.Cage[8]"/>
-    </Model.Cage-array>
-    <Model.Cage-array>
-      <Model.Cage reference="../../Model.Cage-array[5]/Model.Cage[2]"/>
-      <Model.Cage reference="../../Model.Cage-array[4]/Model.Cage[3]"/>
-      <Model.Cage reference="../../Model.Cage-array[4]/Model.Cage[3]"/>
-      <Model.Cage reference="../../Model.Cage-array[5]/Model.Cage[4]"/>
-      <Model.Cage reference="../../Model.Cage-array[5]/Model.Cage[4]"/>
-      <Model.Cage reference="../../Model.Cage-array[5]/Model.Cage[4]"/>
-      <Model.Cage>
-        <cantSolutionsTested>1</cantSolutionsTested>
-        <id>33</id>
+        <id>28</id>
         <quantity>2</quantity>
         <result>1</result>
         <coordinates>
           <list>
+            <int>3</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>4</int>
+            <int>7</int>
+          </list>
+        </coordinates>
+        <cage>
+          <boolean-array>
+            <boolean>true</boolean>
+            <boolean>false</boolean>
+            <boolean>false</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>false</boolean>
+            <boolean>true</boolean>
+            <boolean>false</boolean>
+          </boolean-array>
+        </cage>
+        <operation>%</operation>
+        <isLinear>false</isLinear>
+        <solutions>
+          <list>
+            <int>2</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>3</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>1</int>
             <int>5</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>3</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>3</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>7</int>
+          </list>
+        </solutions>
+      </Model.Cage>
+      <Model.Cage reference="../../Model.Cage-array/Model.Cage[8]"/>
+    </Model.Cage-array>
+    <Model.Cage-array>
+      <Model.Cage>
+        <cantSolutionsTested>0</cantSolutionsTested>
+        <id>30</id>
+        <quantity>3</quantity>
+        <result>30</result>
+        <coordinates>
+          <list>
+            <int>4</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>1</int>
+          </list>
+        </coordinates>
+        <cage>
+          <boolean-array>
+            <boolean>true</boolean>
+            <boolean>false</boolean>
+            <boolean>false</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>true</boolean>
+            <boolean>true</boolean>
+            <boolean>false</boolean>
+          </boolean-array>
+        </cage>
+        <operation>*</operation>
+        <isLinear>false</isLinear>
+        <solutions>
+          <list>
+            <int>1</int>
+            <int>5</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>6</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>1</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>6</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>1</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>5</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>5</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>2</int>
+            <int>3</int>
+          </list>
+        </solutions>
+      </Model.Cage>
+      <Model.Cage reference="../../Model.Cage-array[3]/Model.Cage[2]"/>
+      <Model.Cage reference="../../Model.Cage-array[3]/Model.Cage[3]"/>
+      <Model.Cage reference="../../Model.Cage-array[4]/Model.Cage[4]"/>
+      <Model.Cage reference="../../Model.Cage-array[4]/Model.Cage[4]"/>
+      <Model.Cage reference="../../Model.Cage-array[4]/Model.Cage[4]"/>
+      <Model.Cage>
+        <cantSolutionsTested>0</cantSolutionsTested>
+        <id>32</id>
+        <quantity>2</quantity>
+        <result>2</result>
+        <coordinates>
+          <list>
+            <int>4</int>
             <int>6</int>
           </list>
           <list>
@@ -1682,14 +2553,453 @@
         </coordinates>
         <cage>
           <boolean-array>
+            <boolean>true</boolean>
             <boolean>false</boolean>
             <boolean>false</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>false</boolean>
+            <boolean>true</boolean>
+            <boolean>false</boolean>
+          </boolean-array>
+        </cage>
+        <operation>%</operation>
+        <isLinear>false</isLinear>
+        <solutions>
+          <list>
+            <int>2</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>3</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>7</int>
+          </list>
+        </solutions>
+      </Model.Cage>
+      <Model.Cage reference="../../Model.Cage-array[4]/Model.Cage[7]"/>
+    </Model.Cage-array>
+    <Model.Cage-array>
+      <Model.Cage reference="../../Model.Cage-array[5]/Model.Cage"/>
+      <Model.Cage reference="../../Model.Cage-array[5]/Model.Cage"/>
+      <Model.Cage reference="../../Model.Cage-array[3]/Model.Cage[3]"/>
+      <Model.Cage>
+        <cantSolutionsTested>0</cantSolutionsTested>
+        <id>34</id>
+        <quantity>4</quantity>
+        <result>180</result>
+        <coordinates>
+          <list>
+            <int>5</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>4</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>4</int>
+          </list>
+        </coordinates>
+        <cage>
+          <boolean-array>
+            <boolean>true</boolean>
+            <boolean>true</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>true</boolean>
+            <boolean>true</boolean>
+          </boolean-array>
+        </cage>
+        <operation>*</operation>
+        <isLinear>false</isLinear>
+        <solutions>
+          <list>
+            <int>1</int>
+            <int>6</int>
+            <int>6</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>5</int>
+            <int>1</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>3</int>
+            <int>6</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>5</int>
+            <int>3</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>5</int>
+            <int>6</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>6</int>
+            <int>3</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>3</int>
+            <int>2</int>
+            <int>6</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>3</int>
+            <int>5</int>
+            <int>2</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>3</int>
+            <int>5</int>
+            <int>6</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>3</int>
+            <int>6</int>
+            <int>2</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>2</int>
+            <int>3</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>3</int>
+            <int>2</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>5</int>
+            <int>2</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>5</int>
+            <int>3</int>
+            <int>2</int>
+          </list>
+        </solutions>
+      </Model.Cage>
+      <Model.Cage reference="../Model.Cage[4]"/>
+      <Model.Cage>
+        <cantSolutionsTested>0</cantSolutionsTested>
+        <id>37</id>
+        <quantity>4</quantity>
+        <result>105</result>
+        <coordinates>
+          <list>
+            <int>5</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>5</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>6</int>
+          </list>
+        </coordinates>
+        <cage>
+          <boolean-array>
+            <boolean>true</boolean>
+            <boolean>false</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>true</boolean>
             <boolean>false</boolean>
           </boolean-array>
           <boolean-array>
             <boolean>true</boolean>
             <boolean>true</boolean>
+          </boolean-array>
+        </cage>
+        <operation>*</operation>
+        <isLinear>false</isLinear>
+        <solutions>
+          <list>
+            <int>1</int>
+            <int>5</int>
+            <int>3</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>1</int>
+            <int>5</int>
+            <int>7</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>3</int>
+            <int>5</int>
+            <int>1</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>3</int>
+            <int>5</int>
+            <int>7</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>1</int>
+            <int>3</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>1</int>
+            <int>7</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>3</int>
+            <int>1</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>3</int>
+            <int>7</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>7</int>
+            <int>1</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>7</int>
+            <int>3</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>5</int>
+            <int>1</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>5</int>
+            <int>3</int>
+            <int>1</int>
+          </list>
+        </solutions>
+      </Model.Cage>
+      <Model.Cage>
+        <cantSolutionsTested>0</cantSolutionsTested>
+        <id>39</id>
+        <quantity>2</quantity>
+        <result>0</result>
+        <coordinates>
+          <list>
+            <int>5</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>7</int>
+          </list>
+        </coordinates>
+        <cage>
+          <boolean-array>
+            <boolean>true</boolean>
             <boolean>false</boolean>
+            <boolean>false</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>false</boolean>
+            <boolean>true</boolean>
+            <boolean>false</boolean>
+          </boolean-array>
+        </cage>
+        <operation>-</operation>
+        <isLinear>false</isLinear>
+        <solutions/>
+      </Model.Cage>
+      <Model.Cage reference="../../Model.Cage-array[5]/Model.Cage[7]"/>
+    </Model.Cage-array>
+    <Model.Cage-array>
+      <Model.Cage>
+        <cantSolutionsTested>0</cantSolutionsTested>
+        <id>41</id>
+        <quantity>2</quantity>
+        <result>2</result>
+        <coordinates>
+          <list>
+            <int>6</int>
+            <int>0</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>0</int>
+          </list>
+        </coordinates>
+        <cage>
+          <boolean-array>
+            <boolean>true</boolean>
+            <boolean>false</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>true</boolean>
+            <boolean>false</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>false</boolean>
+            <boolean>false</boolean>
+          </boolean-array>
+        </cage>
+        <operation>%</operation>
+        <isLinear>false</isLinear>
+        <solutions>
+          <list>
+            <int>2</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>2</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>5</int>
+            <int>7</int>
+          </list>
+        </solutions>
+      </Model.Cage>
+      <Model.Cage>
+        <cantSolutionsTested>0</cantSolutionsTested>
+        <id>43</id>
+        <quantity>2</quantity>
+        <result>3</result>
+        <coordinates>
+          <list>
+            <int>6</int>
+            <int>1</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>1</int>
+          </list>
+        </coordinates>
+        <cage>
+          <boolean-array>
+            <boolean>true</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>true</boolean>
+          </boolean-array>
+        </cage>
+        <operation>%</operation>
+        <isLinear>false</isLinear>
+        <solutions>
+          <list>
+            <int>5</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>3</int>
+            <int>6</int>
+          </list>
+          <list>
+            <int>6</int>
+            <int>3</int>
+          </list>
+          <list>
+            <int>3</int>
+            <int>7</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>3</int>
+          </list>
+        </solutions>
+      </Model.Cage>
+      <Model.Cage>
+        <cantSolutionsTested>0</cantSolutionsTested>
+        <id>45</id>
+        <quantity>2</quantity>
+        <result>1</result>
+        <coordinates>
+          <list>
+            <int>6</int>
+            <int>2</int>
+          </list>
+          <list>
+            <int>7</int>
+            <int>2</int>
+          </list>
+        </coordinates>
+        <cage>
+          <boolean-array>
+            <boolean>true</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>true</boolean>
           </boolean-array>
         </cage>
         <operation>-</operation>
@@ -1700,48 +3010,87 @@
             <int>0</int>
           </list>
           <list>
+            <int>0</int>
             <int>1</int>
+          </list>
+          <list>
             <int>2</int>
+            <int>1</int>
           </list>
           <list>
-            <int>3</int>
-            <int>2</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>3</int>
-          </list>
-          <list>
-            <int>3</int>
-            <int>4</int>
-          </list>
-          <list>
-            <int>4</int>
             <int>5</int>
+            <int>6</int>
           </list>
           <list>
             <int>7</int>
             <int>6</int>
           </list>
+          <list>
+            <int>6</int>
+            <int>7</int>
+          </list>
         </solutions>
       </Model.Cage>
-      <Model.Cage reference="../Model.Cage[7]"/>
-    </Model.Cage-array>
-    <Model.Cage-array>
+      <Model.Cage reference="../../Model.Cage-array[6]/Model.Cage[4]"/>
+      <Model.Cage reference="../../Model.Cage-array[6]/Model.Cage[4]"/>
+      <Model.Cage reference="../../Model.Cage-array[6]/Model.Cage[6]"/>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
-        <id>34</id>
+        <id>49</id>
         <quantity>1</quantity>
-        <result>343</result>
+        <result>64</result>
         <coordinates>
           <list>
             <int>6</int>
-            <int>0</int>
+            <int>6</int>
           </list>
         </coordinates>
         <cage>
           <boolean-array>
             <boolean>true</boolean>
+            <boolean>false</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>false</boolean>
+            <boolean>false</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>false</boolean>
+            <boolean>false</boolean>
+          </boolean-array>
+        </cage>
+        <operation>^</operation>
+        <isLinear>false</isLinear>
+      </Model.Cage>
+      <Model.Cage reference="../../Model.Cage-array[6]/Model.Cage[7]"/>
+    </Model.Cage-array>
+    <Model.Cage-array>
+      <Model.Cage reference="../../Model.Cage-array[7]/Model.Cage"/>
+      <Model.Cage reference="../../Model.Cage-array[7]/Model.Cage[2]"/>
+      <Model.Cage reference="../../Model.Cage-array[7]/Model.Cage[3]"/>
+      <Model.Cage>
+        <cantSolutionsTested>0</cantSolutionsTested>
+        <id>46</id>
+        <quantity>1</quantity>
+        <result>125</result>
+        <coordinates>
+          <list>
+            <int>7</int>
+            <int>3</int>
+          </list>
+        </coordinates>
+        <cage>
+          <boolean-array>
+            <boolean>true</boolean>
+            <boolean>false</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>false</boolean>
+            <boolean>false</boolean>
+          </boolean-array>
+          <boolean-array>
+            <boolean>false</boolean>
+            <boolean>false</boolean>
           </boolean-array>
         </cage>
         <operation>^</operation>
@@ -1751,252 +3100,11 @@
         <cantSolutionsTested>0</cantSolutionsTested>
         <id>47</id>
         <quantity>1</quantity>
-        <result>1</result>
-        <coordinates>
-          <list>
-            <int>6</int>
-            <int>1</int>
-          </list>
-        </coordinates>
-        <cage>
-          <boolean-array>
-            <boolean>true</boolean>
-            <boolean>false</boolean>
-          </boolean-array>
-          <boolean-array>
-            <boolean>false</boolean>
-            <boolean>false</boolean>
-          </boolean-array>
-        </cage>
-        <operation>^</operation>
-        <isLinear>false</isLinear>
-      </Model.Cage>
-      <Model.Cage>
-        <cantSolutionsTested>2</cantSolutionsTested>
-        <id>36</id>
-        <quantity>4</quantity>
-        <result>16</result>
-        <coordinates>
-          <list>
-            <int>6</int>
-            <int>2</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>1</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>2</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>3</int>
-          </list>
-        </coordinates>
-        <cage>
-          <boolean-array>
-            <boolean>false</boolean>
-            <boolean>true</boolean>
-            <boolean>false</boolean>
-          </boolean-array>
-          <boolean-array>
-            <boolean>true</boolean>
-            <boolean>true</boolean>
-            <boolean>true</boolean>
-          </boolean-array>
-        </cage>
-        <operation>+</operation>
-        <isLinear>false</isLinear>
-        <solutions>
-          <list>
-            <int>4</int>
-            <int>0</int>
-            <int>5</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>0</int>
-            <int>7</int>
-            <int>5</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>5</int>
-            <int>7</int>
-            <int>0</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>7</int>
-            <int>5</int>
-            <int>0</int>
-          </list>
-          <list>
-            <int>5</int>
-            <int>0</int>
-            <int>4</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>5</int>
-            <int>0</int>
-            <int>7</int>
-            <int>4</int>
-          </list>
-          <list>
-            <int>5</int>
-            <int>7</int>
-            <int>4</int>
-            <int>0</int>
-          </list>
-          <list>
-            <int>2</int>
-            <int>3</int>
-            <int>4</int>
-            <int>7</int>
-          </list>
-          <list>
-            <int>2</int>
-            <int>3</int>
-            <int>7</int>
-            <int>4</int>
-          </list>
-          <list>
-            <int>2</int>
-            <int>7</int>
-            <int>3</int>
-            <int>4</int>
-          </list>
-          <list>
-            <int>2</int>
-            <int>7</int>
-            <int>4</int>
-            <int>3</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>3</int>
-            <int>5</int>
-            <int>4</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>5</int>
-            <int>3</int>
-            <int>4</int>
-          </list>
-        </solutions>
-      </Model.Cage>
-      <Model.Cage>
-        <cantSolutionsTested>0</cantSolutionsTested>
-        <id>37</id>
-        <quantity>1</quantity>
-        <result>216</result>
-        <coordinates>
-          <list>
-            <int>6</int>
-            <int>3</int>
-          </list>
-        </coordinates>
-        <cage>
-          <boolean-array>
-            <boolean>true</boolean>
-          </boolean-array>
-          <boolean-array>
-            <boolean>false</boolean>
-          </boolean-array>
-        </cage>
-        <operation>^</operation>
-        <isLinear>false</isLinear>
-      </Model.Cage>
-      <Model.Cage>
-        <cantSolutionsTested>4</cantSolutionsTested>
-        <id>38</id>
-        <quantity>4</quantity>
-        <result>10</result>
-        <coordinates>
-          <list>
-            <int>6</int>
-            <int>4</int>
-          </list>
-          <list>
-            <int>6</int>
-            <int>5</int>
-          </list>
-          <list>
-            <int>6</int>
-            <int>6</int>
-          </list>
-          <list>
-            <int>6</int>
-            <int>7</int>
-          </list>
-        </coordinates>
-        <cage>
-          <boolean-array>
-            <boolean>true</boolean>
-            <boolean>true</boolean>
-            <boolean>true</boolean>
-            <boolean>true</boolean>
-          </boolean-array>
-        </cage>
-        <operation>+</operation>
-        <isLinear>true</isLinear>
-        <solutions>
-          <list>
-            <int>2</int>
-            <int>3</int>
-            <int>0</int>
-            <int>5</int>
-          </list>
-          <list>
-            <int>2</int>
-            <int>5</int>
-            <int>0</int>
-            <int>3</int>
-          </list>
-          <list>
-            <int>2</int>
-            <int>5</int>
-            <int>3</int>
-            <int>0</int>
-          </list>
-          <list>
-            <int>5</int>
-            <int>2</int>
-            <int>0</int>
-            <int>3</int>
-          </list>
-          <list>
-            <int>5</int>
-            <int>2</int>
-            <int>3</int>
-            <int>0</int>
-          </list>
-          <list>
-            <int>5</int>
-            <int>3</int>
-            <int>0</int>
-            <int>2</int>
-          </list>
-        </solutions>
-      </Model.Cage>
-      <Model.Cage reference="../Model.Cage[5]"/>
-      <Model.Cage reference="../Model.Cage[5]"/>
-      <Model.Cage reference="../Model.Cage[5]"/>
-    </Model.Cage-array>
-    <Model.Cage-array>
-      <Model.Cage>
-        <cantSolutionsTested>0</cantSolutionsTested>
-        <id>39</id>
-        <quantity>1</quantity>
-        <result>216</result>
+        <result>64</result>
         <coordinates>
           <list>
             <int>7</int>
-            <int>0</int>
+            <int>4</int>
           </list>
         </coordinates>
         <cage>
@@ -2014,99 +3122,29 @@
         <operation>^</operation>
         <isLinear>false</isLinear>
       </Model.Cage>
-      <Model.Cage reference="../../Model.Cage-array[7]/Model.Cage[3]"/>
-      <Model.Cage reference="../../Model.Cage-array[7]/Model.Cage[3]"/>
-      <Model.Cage reference="../../Model.Cage-array[7]/Model.Cage[3]"/>
-      <Model.Cage>
-        <cantSolutionsTested>1</cantSolutionsTested>
-        <id>40</id>
-        <quantity>2</quantity>
-        <result>1</result>
-        <coordinates>
-          <list>
-            <int>7</int>
-            <int>4</int>
-          </list>
-          <list>
-            <int>7</int>
-            <int>5</int>
-          </list>
-        </coordinates>
-        <cage>
-          <boolean-array>
-            <boolean>true</boolean>
-            <boolean>true</boolean>
-            <boolean>false</boolean>
-          </boolean-array>
-          <boolean-array>
-            <boolean>false</boolean>
-            <boolean>false</boolean>
-            <boolean>false</boolean>
-          </boolean-array>
-        </cage>
-        <operation>%</operation>
-        <isLinear>false</isLinear>
-        <solutions>
-          <list>
-            <int>4</int>
-            <int>3</int>
-          </list>
-          <list>
-            <int>5</int>
-            <int>4</int>
-          </list>
-          <list>
-            <int>4</int>
-            <int>5</int>
-          </list>
-        </solutions>
-      </Model.Cage>
-      <Model.Cage reference="../Model.Cage[5]"/>
+      <Model.Cage reference="../../Model.Cage-array[6]/Model.Cage[6]"/>
+      <Model.Cage reference="../../Model.Cage-array[6]/Model.Cage[6]"/>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
-        <id>48</id>
+        <id>50</id>
         <quantity>1</quantity>
         <result>8</result>
         <coordinates>
           <list>
             <int>7</int>
-            <int>6</int>
+            <int>7</int>
           </list>
         </coordinates>
         <cage>
           <boolean-array>
             <boolean>true</boolean>
             <boolean>false</boolean>
-            <boolean>false</boolean>
           </boolean-array>
           <boolean-array>
             <boolean>false</boolean>
             <boolean>false</boolean>
-            <boolean>false</boolean>
-          </boolean-array>
-        </cage>
-        <operation>^</operation>
-        <isLinear>false</isLinear>
-      </Model.Cage>
-      <Model.Cage>
-        <cantSolutionsTested>0</cantSolutionsTested>
-        <id>41</id>
-        <quantity>1</quantity>
-        <result>1</result>
-        <coordinates>
-          <list>
-            <int>7</int>
-            <int>7</int>
-          </list>
-        </coordinates>
-        <cage>
-          <boolean-array>
-            <boolean>false</boolean>
-            <boolean>true</boolean>
-            <boolean>false</boolean>
           </boolean-array>
           <boolean-array>
-            <boolean>false</boolean>
             <boolean>false</boolean>
             <boolean>false</boolean>
           </boolean-array>
@@ -2120,22 +3158,25 @@
   <threadCount>1</threadCount>
   <groupsArray>
     <int>2</int>
-    <int>7</int>
-    <int>11</int>
-    <int>15</int>
-    <int>17</int>
+    <int>6</int>
+    <int>9</int>
+    <int>13</int>
     <int>18</int>
-    <int>23</int>
+    <int>22</int>
+    <int>25</int>
     <int>26</int>
     <int>28</int>
     <int>30</int>
-    <int>33</int>
-    <int>36</int>
-    <int>38</int>
-    <int>40</int>
+    <int>32</int>
+    <int>34</int>
+    <int>37</int>
+    <int>39</int>
+    <int>41</int>
+    <int>43</int>
+    <int>45</int>
   </groupsArray>
   <Powers>0</Powers>
   <Modules>0</Modules>
   <solutionFound>true</solutionFound>
-  <time>21</time>
+  <time>0</time>
 </Model.XML>

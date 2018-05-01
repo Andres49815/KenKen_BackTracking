@@ -15,7 +15,6 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.stage.DirectoryChooser;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
@@ -150,6 +149,11 @@ public class C_MainMenu implements ActionListener {
                 xml.group, xml.cages, xml.map, xml.resultsMap,
                 xml.size, xml.threadCount, xml.groupsArray, xml.Powers, xml.Modules,
                 xml.solutionFound, xml.time);
+        
+        xmlAntes = new XML(KenKen_Board.board, KenKen_Board.transverseBoard,
+                KenKen_Board.group, KenKen_Board.cages, KenKen_Board.map, KenKen_Board.resultsMap,
+                KenKen_Board.size, KenKen_Board.threadCount, KenKen_Board.groupsArray, KenKen_Board.Powers, KenKen_Board.Modules,
+                KenKen_Board.solutionFound, KenKen_Board.time);
 
         view.gameTable.setTable(view.table_Game);
     }
