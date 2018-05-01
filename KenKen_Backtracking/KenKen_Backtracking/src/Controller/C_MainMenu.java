@@ -117,6 +117,7 @@ public class C_MainMenu implements ActionListener {
             reader = new FileReader("test//" + KenKen_Board.size + ".xml");
             XML xml = (XML) (xstream.fromXML(reader));
             if (xml.time > KenKen_Board.time) {
+                JOptionPane.showMessageDialog(view,"Nuevo Record: "+ " Antes: "+ xml.time + " Nuevo: "+ KenKen_Board.time);
                 try (PrintWriter outA = new PrintWriter("test//" + KenKen_Board.size + ".xml")) {
                     xmlAntes.time = KenKen_Board.time;
                     String archivo = xstream.toXML(xmlAntes);
