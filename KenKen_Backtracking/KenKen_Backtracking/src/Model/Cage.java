@@ -1,7 +1,6 @@
 package Model;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Random;
 
 /**
@@ -12,6 +11,7 @@ public class Cage {
 
     // Static Values
     public static int actual = 1;
+    public static long cantSolutions;
     public int cantSolutionsTested = 0;
     private static Random random = new Random();
     // Individual Values

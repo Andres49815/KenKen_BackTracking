@@ -79,6 +79,7 @@ public class Solver implements Runnable {
     public static long Solve() {
         long startTime = System.currentTimeMillis();
         SortGroup();
+        KenKen_Board.cantSolutions();
         SolveOperations();
         long finishTime = System.currentTimeMillis();
         long time = finishTime - startTime;

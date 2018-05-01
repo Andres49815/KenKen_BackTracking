@@ -479,12 +479,21 @@ public class KenKen_Board {
     
     public static void printCage()
     {
+        System.out.print((Solver.cantPossibilities*100)/Cage.cantSolutions+"%\t");
         for (int x= 0; x<groupsArray.size();x++)
         {
             Cage cage = getCage(groupsArray.get(x));
             System.out.print(cage.cantSolutionsTested+"/"+cage.solutions.size()+"\t");
         }
         System.out.println();
+    }
+    
+    public static void cantSolutions()
+    {
+        long result=1;
+        for (int x= 0 ; x<groupsArray.size();x++)
+            result = result * getCage(groupsArray.get(x)).solutions.size();
+        Cage.cantSolutions = result;
     }
     
     

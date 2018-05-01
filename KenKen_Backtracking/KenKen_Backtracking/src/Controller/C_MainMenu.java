@@ -98,6 +98,8 @@ public class C_MainMenu implements ActionListener {
         view.gameTable.actualizar(view.table_Game);
         Solver.SolvePowers();
         DoPossibilities();
+        
+        
 
     }
 
