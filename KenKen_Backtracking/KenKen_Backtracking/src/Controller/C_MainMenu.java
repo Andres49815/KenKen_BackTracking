@@ -134,7 +134,7 @@ public class C_MainMenu implements ActionListener {
 //                long finishTime = System.currentTimeMillis();
 //                System.out.println("Hilo: "+(100)+" Tiempo: " + (finishTime-startTime));            
 //            }
-        }
+//    }
     }
 
     private void Solve() {
