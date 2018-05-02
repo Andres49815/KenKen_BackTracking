@@ -6,24 +6,36 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Solver implements Runnable {
 
     private static ArrayList<ArrayList<Integer>> solution;
     public static boolean solutionFound;
     public static int cantThreads = 0;
-    public static Queue<Integer> cola = new LinkedList();
+    public static Queue<Integer> cola;
     public static long cantRecursion = 0;
     public static long cantPossibilities = 0;
+    public static boolean flag;
 
     public static void DoPossibilitiesQueue() {
+        cola = new LinkedList();
+        flag = false;
         KenKen_Board.groupsArray.forEach((n) -> {
             cola.add(n);
         });
-        while (!cola.isEmpty()) {
-            if (cantThreads < KenKen_Board.threadCount) {
-                new Thread(new Solver()).start();
-                cantThreads++;
+        while (!flag) {
+            while (!(cola.peek() == null)) {
+                if (cantThreads < KenKen_Board.threadCount) {
+                    new Thread(new Solver()).start();
+                    cantThreads++;
+                }
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Solver.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         }
     }
@@ -33,6 +45,10 @@ public class Solver implements Runnable {
         if (!(cola.peek() == null)) {
             DoPossibilitiesAux(cola.poll());
             cantThreads--;
+            if (cola.peek() == null) {
+                System.out.println("Terminooo");
+                flag = true;
+            }
         }
     }
 
@@ -52,26 +68,26 @@ public class Solver implements Runnable {
                 cage.setSolutions(substractionPossibilities(cage.result));
                 break;
             case "/":
-                cage.setSolutions(cage.solutions =  divisionPossibilities(cage.result));
+                cage.setSolutions(cage.solutions = divisionPossibilities(cage.result));
                 break;
             case "*":
                 if (cage.quantity == 3) {
                     cage.setSolutions(multiplicationPossibilities3(cage.result));
                     break;
                 } else {
-                    cage.setSolutions(  multiplicationPossibilities4(cage.result));
+                    cage.setSolutions(multiplicationPossibilities4(cage.result));
                     break;
                 }
             case "+":
                 if (cage.quantity == 3) {
-                    cage.setSolutions(  addPossibilities3(cage.result));
+                    cage.setSolutions(addPossibilities3(cage.result));
                     break;
                 } else {
-                    cage.setSolutions( addPossibilities4(cage.result));
+                    cage.setSolutions(addPossibilities4(cage.result));
                     break;
                 }
             default:
-                cage.setSolutions( new ArrayList<>());
+                cage.setSolutions(new ArrayList<>());
                 break;
         }
     }
@@ -744,7 +760,6 @@ public class Solver implements Runnable {
         return solutions;
     }
 
-
     // Print
     public static void print() {
         System.out.println();
@@ -781,7 +796,7 @@ public class Solver implements Runnable {
         });
         KenKen_Board.groupsArray = groups;
     }
-    
+
 //    public static ArrayList<ArrayList<Integer>> Permutations(ArrayList<Integer> elements) {
 //        return Permutations(elements, new ArrayList<Integer>(), elements.size(),
 //                elements.size(), new ArrayList<ArrayList<Integer>>());
@@ -802,5 +817,4 @@ public class Solver implements Runnable {
 //        }
 //        return result;
 //    }
-
 }

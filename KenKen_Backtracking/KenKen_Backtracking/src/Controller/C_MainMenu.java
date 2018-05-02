@@ -3,6 +3,7 @@ package Controller;
 import Model.KenKen_Board;
 import Model.Solver;
 import static Model.Solver.DoPossibilities;
+import static Model.Solver.DoPossibilitiesQueue;
 import Model.XML;
 import View.MainMenu;
 import java.awt.event.ActionEvent;
@@ -97,10 +98,42 @@ public class C_MainMenu implements ActionListener {
         KenKen_Board.InitializeBoards();
         view.gameTable.actualizar(view.table_Game);
         Solver.SolvePowers();
-        DoPossibilities();
-        
-        
-
+//        DoPossibilitiesQueue();
+        System.out.println("Cant"+KenKen_Board.groupsArray.size());
+        for(int x = 0; x<4; x++){
+            if(x==0)
+            {
+                KenKen_Board.threadCount = x+1;
+                long startTime = System.currentTimeMillis();
+                Solver.DoPossibilitiesQueue();
+                long finishTime = System.currentTimeMillis();
+                System.out.println("Hilo: "+(x+1)+" Tiempo: " + (finishTime-startTime));            
+            }
+            else if (x==1)
+            {
+                KenKen_Board.threadCount = (KenKen_Board.groupsArray.size()/3)*1; ;
+                long startTime = System.currentTimeMillis();
+                Solver.DoPossibilitiesQueue();
+                long finishTime = System.currentTimeMillis();
+                System.out.println("Hilo: "+(33)+" Tiempo: " + (finishTime-startTime));            
+            }
+            else if (x==2)
+            {
+                KenKen_Board.threadCount = (KenKen_Board.groupsArray.size()/3)*2; ;
+                long startTime = System.currentTimeMillis();
+                Solver.DoPossibilitiesQueue();
+                long finishTime = System.currentTimeMillis();
+                System.out.println("Hilo: "+(66)+" Tiempo: " + (finishTime-startTime));            
+            }
+            else
+            {
+                KenKen_Board.threadCount = KenKen_Board.groupsArray.size();
+                long startTime = System.currentTimeMillis();
+                Solver.DoPossibilitiesQueue();
+                long finishTime = System.currentTimeMillis();
+                System.out.println("Hilo: "+(100)+" Tiempo: " + (finishTime-startTime));            
+            }
+        }
     }
 
     private void Solve() {
