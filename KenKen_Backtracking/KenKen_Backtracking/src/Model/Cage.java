@@ -132,18 +132,6 @@ public class Cage {
         return res;
     }
 
-    // Possible
-    public boolean IsPossible(ArrayList<Integer> possibility) {
-        int value;
-        
-        for (int i = 0; i < possibility.size(); i++) {
-            value = possibility.get(i);
-            if (!KenKen_Board.isPossible(coordinates.get(i).get(0), coordinates.get(i).get(1), value)) {
-                return false;
-            }
-        }
-        return true;
-    }
 
 
 
@@ -305,28 +293,32 @@ public class Cage {
         return cage;
     }
     
+    //O(MAX(possibilities, size))
     void setSolutions(ArrayList<ArrayList<Integer>> possibilities) {
         solutions = new ArrayList<>();
-        for (ArrayList<Integer> possibility : possibilities) {
-            if (IsPossibleTest(possibility)) {
-                solutions.add(possibility);
+        for (ArrayList<Integer> possibility : possibilities) {          //Possibilities+1
+            if (IsPossible(possibility)) {                              //Size
+                solutions.add(possibility);                             //c
             }
-            KenKen_Board.set100(id);
+            set100();                                                   //cant of cells
         }
     }
     
-    public boolean IsPossibleTest(ArrayList<Integer> possibility) {
-        int value;
-        
-        for (int i = 0; i < possibility.size(); i++) {
-            value = possibility.get(i);
-            if (KenKen_Board.isPossible(coordinates.get(i).get(0), coordinates.get(i).get(1), value)) {
-                KenKen_Board.set(coordinates.get(i).get(0), coordinates.get(i).get(1), value);
-            } else {
+    //O(size)
+    public boolean IsPossible(ArrayList<Integer> possibility) {
+        for (int i = 0; i < coordinates.size(); i++) {                                                              // cantCells
+            if (KenKen_Board.isPossible(coordinates.get(i).get(0), coordinates.get(i).get(1),possibility.get(i))) { // size
+                KenKen_Board.set(coordinates.get(i).get(0), coordinates.get(i).get(1), possibility.get(i));         // c
+            } else 
                 return false;
-            }
         }
         return true;
+    }
+    
+    public void set100() {
+        for (ArrayList<Integer> coord : coordinates) {
+            KenKen_Board.set(coord.get(0), coord.get(1),100);
+        }
     }
     
     // Add

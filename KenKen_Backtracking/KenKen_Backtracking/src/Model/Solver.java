@@ -12,12 +12,13 @@ import java.util.logging.Logger;
 public class Solver implements Runnable {
 
     private static ArrayList<ArrayList<Integer>> solution;
+    private static HashMap<Integer, Cage> cagesMap = new HashMap();
     public static boolean solutionFound;
     public static int cantThreads = 0;
     public static Queue<Integer> cola;
     public static long cantRecursion = 0;
-    public static long cantPossibilities = 0;
     public static boolean flag;
+    public static int cantPossibilities;
 
     public static void DoPossibilitiesQueue() {
         cola = new LinkedList();
@@ -57,7 +58,7 @@ public class Solver implements Runnable {
             DoPossibilitiesAux(KenKen_Board.groupsArray.get(i));
         }
     }
-
+    //O(MAX(possibilities, size))
     public static void DoPossibilitiesAux(int groupID) {
         Cage cage = KenKen_Board.getCage(groupID);
         switch (cage.operation) {
@@ -86,9 +87,6 @@ public class Solver implements Runnable {
                     cage.setSolutions(addPossibilities4(cage.result));
                     break;
                 }
-            default:
-                cage.setSolutions(new ArrayList<>());
-                break;
         }
     }
 
@@ -118,34 +116,34 @@ public class Solver implements Runnable {
         }
     }
 
-    // Cosas de Ruben...
+    // O(Brute Force, that is the multiplication of all the solutions of each cage)
+    //Omega(groupsArray.size()+1)
     private static void SolveOperations() {
 
         if (KenKen_Board.isComplete()) {
             solution = (ArrayList<ArrayList<Integer>>) KenKen_Board.board.clone();
-            solutionFound = true;
         } else {
-            for (int i = 0; i < KenKen_Board.groupsArray.size(); i++) {
-                int groupID = KenKen_Board.groupsArray.get(i);
-                if (!KenKen_Board.groupIsComplete(groupID)) {
-                    Cage cage = KenKen_Board.getCage(groupID);
+            for (int i = 0; i < KenKen_Board.groupsArray.size(); i++) {                 //groupsArray.size()+1
+                int groupID = KenKen_Board.groupsArray.get(i);                          //groupsArray.size()+1
+                if (!KenKen_Board.groupIsComplete(groupID)) {                           //size^2
+                    Cage cage = cagesMap.get(groupID);                                  //groupsArray.size()+1
                     cage.cantSolutionsTested = 0;
-                    ArrayList<ArrayList<Integer>> possibilities = cage.solutions;
-                    for (ArrayList<Integer> possibility : possibilities) {
-                        KenKen_Board.set100(groupID);
-                        cantPossibilities++;
+                    cantPossibilities++;
+                    ArrayList<ArrayList<Integer>> possibilities = cage.solutions;       //groupsArray.size()+1    
+                    for (ArrayList<Integer> possibility : possibilities) { //BAROMETER  //(groupsArray.size()+1)* possibilities
+                        cage.set100();      
                         cage.cantSolutionsTested++;
-                        if (cage.IsPossible(possibility)) {
+                        if (cage.IsPossible(possibility)) {                             //cant of cells in cage
                             cantRecursion++;
                             KenKen_Board.printCage();
-                            KenKen_Board.SetPossibility(possibility, cage.coordinates);
+                            KenKen_Board.SetPossibility(possibility, cage.coordinates); //cant of cells in cage
                             SolveOperations();
-                            if (KenKen_Board.isComplete()) {
+                            if (KenKen_Board.isComplete()) {                            //size^2
                                 return;
                             }
                         }
                     }
-                    KenKen_Board.set100(groupID);
+                    cage.set100();                                                      //cant of cells in cage
                     return;
                 }
             }
@@ -775,6 +773,7 @@ public class Solver implements Runnable {
 
         ArrayList<Cage> cages = new ArrayList<>();
         KenKen_Board.groupsArray.forEach((n) -> {
+            cagesMap.put(n, KenKen_Board.getCage(n));
             cages.add(KenKen_Board.getCage(n));
         });
 

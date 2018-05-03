@@ -99,7 +99,7 @@ public class C_MainMenu implements ActionListener {
         view.gameTable.actualizar(view.table_Game);
         Solver.SolvePowers();
         DoPossibilities();
-//        DoPossibilitiesQueue();
+////        DoPossibilitiesQueue();
 //        System.out.println("Cant"+KenKen_Board.groupsArray.size());
 //        for(int x = 0; x<4; x++){
 //            if(x==0)

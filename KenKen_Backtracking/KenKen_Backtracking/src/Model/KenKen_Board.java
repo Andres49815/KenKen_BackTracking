@@ -355,7 +355,7 @@ public class KenKen_Board {
     }
 
     public static void set(int x, int y, int val) {
-        board.get(x).set(y, val);
+        board.get(x).set(y, val);          
         transverseBoard.get(y).set(x, val);
     }
 
@@ -414,7 +414,7 @@ public class KenKen_Board {
     }
 
     public static boolean isPossible(int i, int j, int value) {
-        return !board.get(i).contains(value) && !transverseBoard.get(j).contains(value) && value < size;
+        return !board.get(i).contains(value) && !transverseBoard.get(j).contains(value) && value < size; 
     }
     
 
@@ -479,7 +479,6 @@ public class KenKen_Board {
     
     public static void printCage()
     {
-        System.out.print((Solver.cantPossibilities*100)/Cage.cantSolutions+"%\t");
         for (int x= 0; x<groupsArray.size();x++)
         {
             Cage cage = getCage(groupsArray.get(x));
