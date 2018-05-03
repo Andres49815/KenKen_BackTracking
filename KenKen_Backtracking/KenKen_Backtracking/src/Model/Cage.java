@@ -23,6 +23,7 @@ public class Cage {
     public String operation = "";
     public boolean isLinear = false;
     public ArrayList<ArrayList<Integer>> solutions;
+    public int cantTimes=0;
     
     public static void Reset() {
         actual = 1;

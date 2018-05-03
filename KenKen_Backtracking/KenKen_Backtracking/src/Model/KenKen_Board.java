@@ -487,6 +487,16 @@ public class KenKen_Board {
         System.out.println();
     }
     
+    public static void printCage2()
+    {
+        for (int x= 0; x<groupsArray.size();x++)
+        {
+            Cage cage = getCage(groupsArray.get(x));
+            System.out.print(cage.cantTimes+"\t");
+        }
+        System.out.println();
+    }
+    
     public static void cantSolutions()
     {
         long result=1;
