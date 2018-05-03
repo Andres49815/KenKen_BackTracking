@@ -122,21 +122,23 @@ public class Solver implements Runnable {
 
         if (KenKen_Board.isComplete()) {
             solution = (ArrayList<ArrayList<Integer>>) KenKen_Board.board.clone();
+            KenKen_Board.printCage2();
         } else {
             for (int i = 0; i < KenKen_Board.groupsArray.size(); i++) {                 //groupsArray.size()+1
                 int groupID = KenKen_Board.groupsArray.get(i);                          //groupsArray.size()+1
                 if (!KenKen_Board.groupIsComplete(groupID)) {                           //size^2
                     Cage cage = cagesMap.get(groupID);
-                    cage.cantSolutionsTested = 0;
+                    cage.cantTimes++;
+                    //cage.cantSolutionsTested = 0;
                     ArrayList<ArrayList<Integer>> possibilities = cage.solutions;       //groupsArray.size()+1    
                     for (ArrayList<Integer> possibility : possibilities) { //BAROMETER  //(groupsArray.size()+1)* possibilities
                         cage.set100();      
-                        cage.cantSolutionsTested++;
+                        //cage.cantSolutionsTested++;
                         cantPossibilities++;
                         if (cage.IsPossible(possibility)) {                             //cant of cells in cage
                             cantRecursion++;
                             if(cantRecursion%1000==0)
-                                KenKen_Board.printCage();
+                                KenKen_Board.printCage2();
                             KenKen_Board.SetPossibility(possibility, cage.coordinates); //cant of cells in cage
                             SolveOperations();
                             if (KenKen_Board.isComplete()) {                            //size^2
