@@ -5,7 +5,7 @@ import java.util.Random;
 
 /**
  *
- * @author Andres Obando Alfaro
+ * @author Andres Obando Alfaro, Ruben Gonzalez
  */
 public class Cage {
 
