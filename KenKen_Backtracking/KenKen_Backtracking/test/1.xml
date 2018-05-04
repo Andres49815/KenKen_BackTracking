@@ -43,6 +43,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>true</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
     </Model.Cage-array>
   </cages>
@@ -52,5 +53,5 @@
   <Powers>0</Powers>
   <Modules>0</Modules>
   <solutionFound>true</solutionFound>
-  <time>15</time>
+  <time>4</time>
 </Model.XML>
