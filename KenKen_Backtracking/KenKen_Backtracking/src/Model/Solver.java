@@ -130,7 +130,6 @@ public class Solver implements Runnable {
                 int groupID = KenKen_Board.groupsArray.get(i);                          //groupsArray.size()+1
                 if (!KenKen_Board.groupIsComplete(groupID)) {                           //size^2
                     Cage cage = cagesMap.get(groupID);
-                    //cage.cantTimes++;
                     cage.cantSolutionsTested = 0;
                     ArrayList<ArrayList<Integer>> possibilities = cage.solutions;       //groupsArray.size()+1    
                     for (ArrayList<Integer> possibility : possibilities) { //BAROMETER  //(groupsArray.size()+1)* possibilities
