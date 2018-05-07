@@ -790,6 +790,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -1422,6 +1423,7 @@
             <int>7</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../Model.Cage[2]"/>
       <Model.Cage>
@@ -1445,6 +1447,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>true</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -2225,6 +2228,7 @@
             <int>4</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -2513,6 +2517,7 @@
             <int>4</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -2541,6 +2546,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -4017,6 +4023,7 @@
             <int>6</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -4043,6 +4050,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -4157,6 +4165,7 @@
             <int>1</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -4176,6 +4185,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -4226,6 +4236,7 @@
             <int>10</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../Model.Cage[12]"/>
       <Model.Cage>
@@ -4268,6 +4279,7 @@
             <int>12</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -4290,6 +4302,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>true</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
     </Model.Cage-array>
     <Model.Cage-array>
@@ -4456,6 +4469,7 @@
             <int>4</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array/Model.Cage[2]"/>
       <Model.Cage reference="../../Model.Cage-array/Model.Cage[2]"/>
@@ -4531,6 +4545,7 @@
             <int>11</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array/Model.Cage[12]"/>
       <Model.Cage reference="../../Model.Cage-array/Model.Cage[12]"/>
@@ -4558,6 +4573,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -4612,6 +4628,7 @@
             <int>2</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array/Model.Cage[5]"/>
       <Model.Cage reference="../../Model.Cage-array/Model.Cage[6]"/>
@@ -4636,6 +4653,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>true</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array/Model.Cage[8]"/>
       <Model.Cage>
@@ -4875,6 +4893,7 @@
             <int>6</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array/Model.Cage[10]"/>
       <Model.Cage reference="../../Model.Cage-array[2]/Model.Cage[11]"/>
@@ -4896,6 +4915,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -5170,6 +5190,7 @@
             <int>10</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -5198,6 +5219,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -5217,6 +5239,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
     </Model.Cage-array>
     <Model.Cage-array>
@@ -5238,6 +5261,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -5257,6 +5281,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -5407,6 +5432,7 @@
             <int>0</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[3]/Model.Cage[4]"/>
       <Model.Cage>
@@ -5427,6 +5453,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -7665,6 +7692,7 @@
             <int>5</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -7829,6 +7857,7 @@
             <int>2</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../Model.Cage[7]"/>
       <Model.Cage reference="../../Model.Cage-array[3]/Model.Cage[9]"/>
@@ -7865,6 +7894,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -7956,6 +7986,7 @@
             <int>2</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[4]/Model.Cage[3]"/>
       <Model.Cage reference="../../Model.Cage-array[3]/Model.Cage[4]"/>
@@ -7989,6 +8020,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -8151,6 +8183,7 @@
             <int>3</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -8177,6 +8210,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -12515,6 +12549,7 @@
             <int>6</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -13673,6 +13708,7 @@
             <int>7</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -13699,6 +13735,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
     </Model.Cage-array>
     <Model.Cage-array>
@@ -14296,6 +14333,7 @@
             <int>9</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -14324,6 +14362,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>true</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[4]/Model.Cage[6]"/>
       <Model.Cage reference="../../Model.Cage-array[4]/Model.Cage[6]"/>
@@ -14374,6 +14413,7 @@
             <int>12</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -14422,6 +14462,7 @@
             <int>12</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[5]/Model.Cage[11]"/>
       <Model.Cage reference="../../Model.Cage-array[5]/Model.Cage[11]"/>
@@ -14507,6 +14548,7 @@
             <int>12</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
     </Model.Cage-array>
     <Model.Cage-array>
@@ -14647,6 +14689,7 @@
             <int>4</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -14810,6 +14853,7 @@
             <int>4</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[4]/Model.Cage[3]"/>
       <Model.Cage reference="../../Model.Cage-array[6]/Model.Cage[4]"/>
@@ -16560,6 +16604,7 @@
             <int>8</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[6]/Model.Cage[8]"/>
       <Model.Cage reference="../../Model.Cage-array[6]/Model.Cage[9]"/>
@@ -16620,6 +16665,7 @@
             <int>9</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[5]/Model.Cage[13]"/>
       <Model.Cage reference="../../Model.Cage-array[5]/Model.Cage[14]"/>
@@ -16656,6 +16702,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -17274,6 +17321,7 @@
             <int>8</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -17296,6 +17344,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>true</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[7]/Model.Cage[7]"/>
       <Model.Cage>
@@ -17316,6 +17365,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[6]/Model.Cage[9]"/>
       <Model.Cage>
@@ -17341,6 +17391,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -17407,6 +17458,7 @@
             <int>2</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[7]/Model.Cage[12]"/>
       <Model.Cage>
@@ -18740,6 +18792,7 @@
             <int>6</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[5]/Model.Cage[14]"/>
       <Model.Cage>
@@ -18760,6 +18813,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
     </Model.Cage-array>
     <Model.Cage-array>
@@ -18783,6 +18837,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -18809,6 +18864,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[8]/Model.Cage[5]"/>
       <Model.Cage>
@@ -18829,6 +18885,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[7]/Model.Cage[7]"/>
       <Model.Cage reference="../../Model.Cage-array[7]/Model.Cage[7]"/>
@@ -18853,6 +18910,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -19011,6 +19069,7 @@
             <int>5</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[8]/Model.Cage[11]"/>
       <Model.Cage>
@@ -19096,6 +19155,7 @@
             <int>10</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[8]/Model.Cage[13]"/>
       <Model.Cage reference="../../Model.Cage-array[8]/Model.Cage[13]"/>
@@ -19117,6 +19177,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
     </Model.Cage-array>
     <Model.Cage-array>
@@ -19197,6 +19258,7 @@
             <int>8</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -19225,6 +19287,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -19251,6 +19314,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[8]/Model.Cage[5]"/>
       <Model.Cage reference="../../Model.Cage-array[8]/Model.Cage[5]"/>
@@ -19281,6 +19345,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -20121,6 +20186,7 @@
             <int>5</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -20143,6 +20209,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>true</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[9]/Model.Cage[10]"/>
       <Model.Cage reference="../../Model.Cage-array[8]/Model.Cage[11]"/>
@@ -20170,6 +20237,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -20230,6 +20298,7 @@
             <int>4</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
     </Model.Cage-array>
     <Model.Cage-array>
@@ -20262,6 +20331,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -20316,6 +20386,7 @@
             <int>9</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -20342,6 +20413,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -20415,6 +20487,7 @@
             <int>5</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[10]/Model.Cage[7]"/>
       <Model.Cage>
@@ -20438,6 +20511,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>true</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -20506,6 +20580,7 @@
             <int>3</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[9]/Model.Cage[10]"/>
       <Model.Cage>
@@ -21663,6 +21738,7 @@
             <int>5</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../Model.Cage[11]"/>
       <Model.Cage>
@@ -21692,6 +21768,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[10]/Model.Cage[15]"/>
       <Model.Cage reference="../../Model.Cage-array[10]/Model.Cage[15]"/>
@@ -21716,6 +21793,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -21735,6 +21813,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[11]/Model.Cage[4]"/>
       <Model.Cage>
@@ -21764,6 +21843,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>true</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[10]/Model.Cage[7]"/>
       <Model.Cage reference="../../Model.Cage-array[10]/Model.Cage[7]"/>
@@ -21790,6 +21870,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -22982,6 +23063,7 @@
             <int>2</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[11]/Model.Cage[11]"/>
       <Model.Cage reference="../../Model.Cage-array[11]/Model.Cage[11]"/>
@@ -23003,6 +23085,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[10]/Model.Cage[15]"/>
     </Model.Cage-array>
@@ -23116,6 +23199,7 @@
             <int>10</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../Model.Cage"/>
       <Model.Cage reference="../../Model.Cage-array[11]/Model.Cage[4]"/>
@@ -23140,6 +23224,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -23232,6 +23317,7 @@
             <int>10</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -23928,6 +24014,7 @@
             <int>2</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[12]/Model.Cage[11]"/>
       <Model.Cage reference="../../Model.Cage-array[12]/Model.Cage[11]"/>
@@ -23983,6 +24070,7 @@
             <int>0</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -24011,6 +24099,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>true</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -24039,6 +24128,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
     </Model.Cage-array>
     <Model.Cage-array>
@@ -24062,6 +24152,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -24081,6 +24172,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -25021,6 +25113,7 @@
             <int>11</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -25063,6 +25156,7 @@
             <int>13</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../Model.Cage[6]"/>
       <Model.Cage reference="../../Model.Cage-array[13]/Model.Cage[8]"/>
@@ -25093,6 +25187,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage>
         <cantSolutionsTested>0</cantSolutionsTested>
@@ -28469,6 +28564,7 @@
             <int>7</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[13]/Model.Cage[13]"/>
       <Model.Cage reference="../../Model.Cage-array[13]/Model.Cage[13]"/>
@@ -28582,6 +28678,7 @@
             <int>8</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../Model.Cage"/>
       <Model.Cage reference="../Model.Cage"/>
@@ -28607,6 +28704,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[13]/Model.Cage[9]"/>
       <Model.Cage>
@@ -28636,6 +28734,7 @@
         </cage>
         <operation>^</operation>
         <isLinear>false</isLinear>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../../Model.Cage-array[14]/Model.Cage[12]"/>
       <Model.Cage reference="../../Model.Cage-array[14]/Model.Cage[12]"/>
@@ -28705,6 +28804,7 @@
             <int>12</int>
           </list>
         </solutions>
+        <cantTimes>0</cantTimes>
       </Model.Cage>
       <Model.Cage reference="../Model.Cage[14]"/>
     </Model.Cage-array>
@@ -28765,5 +28865,5 @@
   <Powers>0</Powers>
   <Modules>0</Modules>
   <solutionFound>true</solutionFound>
-  <time>16521</time>
+  <time>14589</time>
 </Model.XML>
